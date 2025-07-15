@@ -1,4 +1,91 @@
-import { LifeEvents } from "@/lib/types";
+import type { TimelineData, LifeEvents } from "./types";
+
+export const headerData = {
+  name: "Patricia G. Penisten",
+  header: "Final Road Trip",
+  subheader:
+    "A life beautifully lived, and a legacy of love that will forever remain in our hearts.",
+};
+
+export const footerData = {
+  quote: "Those we love never truly leave us.",
+  subquote: "Forever remembered. Forever missed. Forever loved.",
+};
+
+export const timelineData: TimelineData[] = [
+  {
+    id: 1,
+    time: "Before the trip",
+    title: "Pat & Judi",
+    description:
+      "Pat spent time with Judi just a few days before her final journey began together with family.",
+    src: "/timeline/gma-judi.png",
+    alt: "Pat & Judi",
+  },
+  {
+    id: 2,
+    time: "The beginning",
+    title: "Pat Solo",
+    description:
+      "She settled in with Judi by her side, ready to begin her final road trip with peace and grace.",
+    src: "/timeline/gma-solo.png",
+    alt: "Pat Solo",
+  },
+  {
+    id: 3,
+    time: "First stop",
+    title: "Pat & Ettie",
+    description:
+      "Her first visit was with her mother Ettie, where they shared a sweet and quiet morning moment.",
+    src: "/timeline/gma-ettie.png",
+    alt: "Pat & Ettie",
+  },
+  {
+    id: 4,
+    time: "Second stop",
+    title: "Pat & Hugh",
+    description:
+      "Next, she visited her father Hugh, who no doubt welcomed her with pride and warmth in spirit.",
+    src: "/timeline/gma-hugh.png",
+    alt: "Pat & Hugh",
+  },
+  {
+    id: 5,
+    time: "Third stop",
+    title: "Pat & Chuck",
+    description:
+      "She made a stop to see her brother Chuck, thankful for the time they had to talk and connect.",
+    src: "/timeline/gma-chuck.png",
+    alt: "Pat & Chuck",
+  },
+  {
+    id: 6,
+    time: "Fourth stop",
+    title: "Pat, Jimmy, & Randi",
+    description:
+      "A few feet further, she visited her children Jimmy and Randi for hugs, laughter, and reflection.",
+    src: "/timeline/gma-jimmy.png",
+    alt: "Pat, Jimmy, & Randi",
+  },
+  {
+    id: 7,
+    time: "Final goodbye",
+    title: "Pat, Chuck, Jimmy, & Randi",
+    description:
+      "Her final visit brought time with Chuck, Jimmy, and Randi. Her journey could now come to rest.",
+    src: "/timeline/gma-jimmy-n-chuck.png",
+    alt: "Pat, Chuck, Jimmy, & Randi",
+  },
+  {
+    id: 8,
+    time: "The end",
+    title: "Cheryl & Judi",
+    description:
+      "Cheryl could not join the trip, so Judi gave her a kiss for Pat, a final act of sisterly love.",
+    src: "/timeline/gma-judi-n-cheryl.png",
+    alt: "Cheryl & Judi",
+  },
+];
 
 export const lifeEvents: LifeEvents[] = [
   {
