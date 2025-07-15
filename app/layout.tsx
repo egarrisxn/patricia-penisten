@@ -21,7 +21,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Patricia G. Penisten",
+  title: "Memories of Patricia",
   description: "Celebrating the life of Patricia G. Penisten (1935-2025).",
 };
 

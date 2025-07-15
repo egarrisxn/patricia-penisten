@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 import { Upload, Image as ImageIcon, Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -19,17 +20,43 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [caption, setCaption] = useState("");
+  const [dragActive, setDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  // const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   const supabase = createClient();
 
-  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
+  const handleFiles = (files: FileList) => {
+    const file = files[0];
+    if (file && file.type.startsWith("image/")) {
       setSelectedFile(file);
-      // const url = URL.createObjectURL(file);
-      // setPreviewUrl(url);
+    } else {
+      toast.error("Please upload a valid image file.");
+    }
+  };
+
+  const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      handleFiles(e.target.files);
+    }
+  };
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      handleFiles(e.dataTransfer.files);
     }
   };
 
@@ -39,7 +66,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
 
     setIsUploading(true);
     try {
-      // Upload file to Supabase Storage
       const fileExt = selectedFile.name.split(".").pop();
       const fileName = `${Date.now()}.${fileExt}`;
 
@@ -56,7 +82,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
       const response = await fetch("/api/get-ip");
       const { ip } = await response.json();
 
-      // Insert photo record
       const { data, error } = await supabase
         .from("photos")
         .insert({
@@ -73,18 +98,17 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
 
       setIsSubmitted(true);
       onPhotoSubmitted(data);
+      toast.success("Photo submitted! Pending approval.");
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setName("");
         setCaption("");
         setSelectedFile(null);
-        // setPreviewUrl(null);
       }, 3000);
     } catch (error) {
-      console.error("Error uploading photo:", error);
-      alert("Error uploading photo. Please try again.");
+      console.error("Upload failed:", error);
+      toast.error("Error uploading photo. Please try again.");
     } finally {
       setIsUploading(false);
     }
@@ -136,7 +160,13 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               />
               <label
                 htmlFor='photo-upload'
-                className='hover:border-ring hover:ring-ring/50 border-input flex h-36 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed transition-all hover:bg-purple-50/20 hover:ring-1 dark:hover:bg-purple-950/5'
+                onDragEnter={handleDrag}
+                onDragLeave={handleDrag}
+                onDragOver={handleDrag}
+                onDrop={handleDrop}
+                className={`hover:border-ring hover:ring-ring/50 border-input flex h-36 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed transition-all hover:bg-purple-50/20 hover:ring-1 dark:hover:bg-purple-950/5 ${
+                  dragActive ? "bg-purple-100/30 dark:bg-purple-950/10" : ""
+                }`}
               >
                 {selectedFile ? (
                   <div className='flex flex-col items-center justify-center gap-2'>
@@ -152,51 +182,42 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                   <div className='flex flex-col items-center justify-center pt-5 pb-6'>
                     <Upload className='text-muted-foreground mb-2 size-8' />
                     <p className='text-muted-foreground/90 text-sm'>
-                      Click to upload photo
+                      Click or drag to upload photo
                     </p>
                   </div>
                 )}
-                {/* {previewUrl ? (
-                  <img
-                    src={previewUrl}
-                    alt='Preview'
-                    className='size-full rounded-md object-cover'
-                  />
-                ) : (
-                  <div className='flex flex-col items-center justify-center pt-5 pb-6'>
-                    <Upload className='text-muted-foreground mb-2 size-8' />
-                    <p className='text-muted-foreground/90 text-sm'>
-                      Click to upload photo
-                    </p>
-                  </div>
-                )} */}
               </label>
             </div>
           </div>
+
           <div>
             <Label htmlFor='name' className='text-muted-foreground'>
               Your Name (Optional)
             </Label>
             <Input
               id='name'
+              aria-label='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder='Enter your name'
+              placeholder='Jane Doe'
               className='mt-1'
             />
           </div>
+
           <div>
             <Label htmlFor='caption' className='text-muted-foreground'>
               Caption (Optional)
             </Label>
             <Textarea
               id='caption'
+              aria-label='captionname'
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
-              placeholder='Share a memory or describe this photo...'
+              placeholder='Hanging out by the fire during thanksgiving...'
               className='mt-1 min-h-16'
             />
           </div>
+
           <Button
             type='submit'
             disabled={!selectedFile || isUploading}

@@ -1,7 +1,7 @@
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SectionHeader from "@/components/landing/section-header";
-import { lifeEvents } from "@/lib/data";
+import { lifeStoryBlurbs, lifeStoryData } from "@/lib/data";
 
 export default function LifeStory() {
   return (
@@ -16,29 +16,13 @@ export default function LifeStory() {
         />
         <div className='grid items-start gap-12 lg:grid-cols-2'>
           <div className='space-y-6'>
-            <Card className='shadow-lg'>
-              <CardContent className='p-8'>
-                <p className='mb-6 text-lg leading-relaxed'>
-                  Patricia was born on the family farm between Connerville and
-                  Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie
-                  Irene (Tisdale) Blevins. She grew up in Connerville and
-                  attended Tishomingo Schools.
-                </p>
-                <p className='mb-6 text-lg leading-relaxed'>
-                  She married John Penisten on November 26, 1956 in Ada,
-                  Oklahoma where they lived, later moving to Douglas, Wyoming
-                  and returning to Oklahoma, living in Bray until 1967 when they
-                  moved to Lawton.
-                </p>
-                <p className='mb-6 text-lg leading-relaxed'>
-                  Patricia finished her education with a Bachelors Degree in
-                  Elementary Education from Cameron University and worked at
-                  Douglas Elementary for 34 years before retiring.
-                </p>
-                <p className='text-lg leading-relaxed'>
-                  She enjoyed shopping and loved being with her family and
-                  taking care of the grandchildren.
-                </p>
+            <Card className='p-4 shadow-lg'>
+              <CardContent className='mt-6 p-3'>
+                {lifeStoryBlurbs.map((text, index) => (
+                  <p key={index} className='mb-6 text-lg leading-relaxed'>
+                    {text}
+                  </p>
+                ))}
               </CardContent>
             </Card>
             <Card className='shadow-lg'>
@@ -64,7 +48,7 @@ export default function LifeStory() {
               Timeline
             </h3>
             <div className='space-y-6'>
-              {lifeEvents.map((event, index) => (
+              {lifeStoryData.map((event, index) => (
                 <div key={index} className='flex items-start space-x-4'>
                   <div className='flex size-20 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg'>
                     <span className='mx-auto flex text-center text-sm font-bold text-wrap text-white'>

@@ -18,6 +18,12 @@ export interface Entry {
   submitted_by_ip: string;
 }
 
+export interface LifeStoryData {
+  year: string;
+  title: string;
+  description: string;
+}
+
 export interface TimelineData {
   id: number;
   time: string;
@@ -27,8 +33,14 @@ export interface TimelineData {
   alt: string;
 }
 
-export interface LifeEvents {
-  year: string;
-  title: string;
-  description: string;
+export interface TimelineHeaderData {
+  name: string;
+  header: string;
+  subheader: string;
+}
+
+export interface FooterData {
+  header: string;
+  date: string;
+  subheader: string;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -35,7 +36,9 @@ export default function Navbar() {
     >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between py-4'>
-          <div className='text-2xl font-bold'>Memories of Patricia</div>
+          <Link className='text-2xl font-bold' href='/'>
+            Memories of Patricia
+          </Link>
           <div className='flex md:gap-1 lg:gap-4'>
             <div className='hidden gap-1 md:flex lg:gap-4'>
               {navigation.map((item) => (

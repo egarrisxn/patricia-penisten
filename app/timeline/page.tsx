@@ -1,12 +1,15 @@
-import Link from "next/link";
+import TimelineNavbar from "@/components/timeline/navbar";
+import TimelineHeader from "@/components/timeline/header";
+import TimelineContent from "@/components/timeline/timeline-content";
+import Footer from "@/components/footer";
 
 export default function TimelinePage() {
   return (
-    <div className='mx-auto grid h-screen w-full place-items-center'>
-      <section className='flex gap-4'>
-        <Link href='/timeline/1'>Timeline 1</Link>
-        <Link href='/timeline/2'>Timeline 2</Link>
-      </section>
+    <div>
+      <TimelineNavbar />
+      <TimelineHeader />
+      <TimelineContent />
+      <Footer />
     </div>
   );
 }

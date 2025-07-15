@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { Heart, Check } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Check } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
 import type { Entry } from "@/lib/types";
 
 interface EntryFormProps {
@@ -103,32 +103,33 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
             </Label>
             <Input
               id='name'
+              aria-label='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder='Jane Doe'
               className='mt-1'
             />
           </div>
-
           <div>
             <Label htmlFor='relationship' className='text-muted-foreground'>
               Relationship (Optional)
             </Label>
             <Input
               id='relationship'
+              aria-label='relationship'
               value={relationship}
               onChange={(e) => setRelationship(e.target.value)}
               placeholder='Former Colleague'
               className='mt-1'
             />
           </div>
-
           <div>
             <Label htmlFor='message' className='text-muted-foreground'>
               Your Memory or Message *
             </Label>
             <Textarea
               id='message'
+              aria-label='message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder='It was a beautiful day in the summer of 1990...'
@@ -136,7 +137,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               required
             />
           </div>
-
           <Button
             type='submit'
             disabled={!message.trim() || isSubmitting}
