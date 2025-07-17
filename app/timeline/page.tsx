@@ -5,11 +5,13 @@ import Footer from "@/components/footer";
 
 export default function TimelinePage() {
   return (
-    <div>
+    <main className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <TimelineNavbar />
-      <TimelineHeader />
-      <TimelineContent />
+      <div>
+        <TimelineHeader />
+        <TimelineContent />
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }

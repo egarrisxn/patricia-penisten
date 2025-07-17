@@ -1,60 +1,51 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+import ThemeToggle from "@/components/theme-toggle";
+import ScrollToSectionButton from "@/components/landing/scroll-to-section";
+import { landingNavigation } from "@/lib/data";
 
-const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "Life Story", href: "#lifestory" },
-  { name: "Photo Gallery", href: "#photos" },
-  { name: "Guestbook", href: "#guestbook" },
-];
-
-export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+export default function LandingNavbar() {
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (!navRef.current) return;
+      if (window.scrollY > 50) {
+        navRef.current.classList.add("scrolled");
+      } else {
+        navRef.current.classList.remove("scrolled");
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <nav
-      className={`fixed top-0 z-50 w-full transition-all ${isScrolled ? "bg-background/95 text-black shadow-lg backdrop-blur-sm dark:text-white" : "bg-transparent text-white"}`}
+    <header
+      ref={navRef}
+      className='fixed top-0 z-50 w-full bg-transparent text-white transition-all'
     >
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between py-4'>
-          <Link className='text-2xl font-bold' href='/'>
+      <div className='mx-auto flex flex-row items-center justify-between p-4 lg:px-6'>
+        <section className='flex'>
+          <Link
+            className='tracking-snug text-lg font-bold lg:text-2xl 2xl:text-3xl'
+            href='/'
+          >
             Memories of Patricia
           </Link>
-          <div className='flex md:gap-1 lg:gap-4'>
-            <div className='hidden gap-1 md:flex lg:gap-4'>
-              {navigation.map((item) => (
-                <Button
-                  variant='ghost'
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                >
-                  {item.name}
-                </Button>
-              ))}
-            </div>
-            <ThemeToggle />
-          </div>
-        </div>
+        </section>
+        <section className='flex lg:gap-3 2xl:gap-4'>
+          <nav className='hidden flex-row items-center sm:flex sm:gap-0.5 lg:gap-4 2xl:gap-5'>
+            {landingNavigation.map((item) => (
+              <ScrollToSectionButton key={item.name} item={item} />
+            ))}
+          </nav>
+          <ThemeToggle />
+        </section>
       </div>
-    </nav>
+    </header>
   );
 }

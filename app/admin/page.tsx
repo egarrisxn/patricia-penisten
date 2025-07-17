@@ -15,9 +15,9 @@ export default async function AdminPage() {
   }
 
   return (
-    <div className='grid min-h-[100dvh] w-full max-w-screen grid-rows-[auto_1fr]'>
+    <main className='grid min-h-dvh w-full grid-rows-[auto_1fr]'>
       <AdminNavbar />
       <AdminDashboard />
-    </div>
+    </main>
   );
 }

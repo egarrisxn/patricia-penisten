@@ -139,7 +139,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
     <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
       <CardHeader>
         <CardTitle className='text-accent-foreground flex items-center gap-2'>
-          <ImageIcon className='size-5' />
+          <ImageIcon className='size-5 text-blue-500' />
           Share a Photo
         </CardTitle>
       </CardHeader>

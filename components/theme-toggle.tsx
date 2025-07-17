@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function ThemeToggle() {
+export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -25,9 +25,9 @@ export function ThemeToggle() {
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? (
-        <SunIcon className='size-4 text-amber-300 sm:size-6' />
+        <SunIcon className='size-4.5 text-amber-300 lg:size-5.5' />
       ) : (
-        <MoonIcon className='size-4 text-blue-800 sm:size-6' />
+        <MoonIcon className='size-4.5 text-blue-800 lg:size-5.5' />
       )}
     </Button>
   );

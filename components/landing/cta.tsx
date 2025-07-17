@@ -12,7 +12,7 @@ export default function CTA() {
         <div className='mx-auto max-w-4xl text-center'>
           <div className='pt-14 pb-16 md:rounded-2xl md:bg-white md:px-10 md:shadow-xl md:backdrop-blur-sm md:dark:bg-black'>
             <div className='mb-6 flex justify-center'>
-              <MapPin className='size-12 text-rose-400' />
+              <MapPin className='size-12 text-green-500' />
             </div>
             <h2 className='text-accent-foreground mb-4 font-serif text-3xl md:text-4xl'>
               Patricia embarked on one final voyage...

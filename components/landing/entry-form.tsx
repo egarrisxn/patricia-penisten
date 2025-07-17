@@ -91,7 +91,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
     <Card className='mx-auto w-full max-w-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
       <CardHeader>
         <CardTitle className='text-accent-foreground flex items-center gap-2'>
-          <Heart className='size-5' />
+          <Heart className='size-5 text-red-500' />
           Share a Memory
         </CardTitle>
       </CardHeader>

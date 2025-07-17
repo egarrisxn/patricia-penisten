@@ -1,39 +1,32 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { Shield, LogOut } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
+import Link from "next/link";
+import { Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/theme-toggle";
+import LogoutButton from "@/components/admin/logout";
 
 export default function AdminNavbar() {
-  const router = useRouter();
-  const supabase = createClient();
-
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push("/");
-  };
-
   return (
-    <div className='border-b shadow-sm'>
-      <div className='container mx-auto p-4'>
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center gap-3'>
-            <Shield className='size-8 text-blue-600' />
-            <h1 className='text-2xl font-bold text-gray-900'>
-              Admin Dashboard
-            </h1>
-          </div>
-          <Button
-            onClick={handleLogout}
-            variant='outline'
-            className='flex items-center gap-2'
+    <header className='bshadow-sm w-full border-b'>
+      <div className='mx-auto flex flex-row items-center justify-between p-4 lg:px-6'>
+        <section>
+          <Link
+            className='tracking-snug flex flex-row items-center gap-3 text-lg font-bold lg:text-2xl 2xl:text-3xl'
+            href='/admin'
           >
-            <LogOut className='size-4' />
-            Logout
-          </Button>
-        </div>
+            <Shield className='size-8 text-blue-600' />
+            <span>Admin Dashboard</span>
+          </Link>
+        </section>
+        <section className='flex lg:gap-3 2xl:gap-4'>
+          <nav className='flex items-center md:gap-1 lg:gap-4'>
+            <Link href='/'>
+              <Button variant='ghost'>Home</Button>
+            </Link>
+            <LogoutButton />
+          </nav>
+          <ThemeToggle />
+        </section>
       </div>
-    </div>
+    </header>
   );
 }

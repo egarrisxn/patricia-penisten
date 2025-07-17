@@ -5,6 +5,21 @@ import type {
   FooterData,
 } from "./types";
 
+//! LANDING PAGE
+
+export const landingNavigation = [
+  { name: "Life Story", href: "#lifestory" },
+  { name: "Photo Gallery", href: "#photos" },
+  { name: "Guestbook", href: "#guestbook" },
+];
+
+export const lifeStoryBlurbs = [
+  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
+  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
+  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
+  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
+];
+
 export const lifeStoryData: LifeStoryData[] = [
   {
     year: "1935",
@@ -54,13 +69,6 @@ export const lifeStoryData: LifeStoryData[] = [
     description:
       "Loved shopping, spending time with family, and especially doting on her grandchildren.",
   },
-];
-
-export const lifeStoryBlurbs = [
-  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
-  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
-  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
-  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
 ];
 
 export const timelineData: TimelineData[] = [

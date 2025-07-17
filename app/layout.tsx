@@ -1,38 +1,73 @@
-import type { Metadata } from "next"; // Viewport
-import { Geist, Geist_Mono } from "next/font/google";
 // import { Analytics } from "@vercel/analytics/react";
+import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import { Raleway, Geist_Mono, Bitter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import "./globals.css";
+import { SITE_DATA } from "@/lib/config";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = Raleway({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontMono = Geist_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+const fontSerif = Bitter({
+  variable: "--font-serif",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(defaultUrl),
-  title: "Memories of Patricia",
-  description: "Celebrating the life of Patricia G. Penisten (1935-2025).",
+  metadataBase: new URL(SITE_DATA.url),
+  title: {
+    default: SITE_DATA.title,
+    template: `%s | ${SITE_DATA.title}`,
+  },
+  description: SITE_DATA.description,
+  applicationName: SITE_DATA.title,
+  referrer: "origin-when-cross-origin",
+  creator: SITE_DATA.website,
+  keywords: [
+    "memories",
+    "memorial",
+    "tribute",
+    "obituary",
+    "funeral",
+    "rip",
+    "grandma",
+    "mother",
+    "teacher",
+    "patricia",
+    "penisten",
+  ],
+  openGraph: {
+    title: SITE_DATA.title,
+    description: SITE_DATA.description,
+    url: SITE_DATA.url,
+    siteName: SITE_DATA.title,
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_DATA.title,
+    description: SITE_DATA.description,
+    creator: SITE_DATA.socialHandle,
+    site: SITE_DATA.socialHandle,
+  },
+  verification: {},
 };
 
-// export const viewport: Viewport = {
-//   width: "device-width",
-//   initialScale: 1,
-//   themeColor: [
-//     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-//     { media: "(prefers-color-scheme: dark)", color: "#000000" },
-//   ],
-// };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#020618" },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -40,15 +75,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang='en'>
+    <html suppressHydrationWarning className='scroll-smooth' lang='en'>
+      <head>
+        <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable} font-sans antialiased`}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           {children}
           <Toaster />
         </ThemeProvider>
-        {/* <Analytics /> */}
+        {/* <Analytics/> */}
       </body>
     </html>
   );

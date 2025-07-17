@@ -1,9 +1,24 @@
 {
-  "name": "patricia-g-penisten",
+  "name": "memories-of-patricia",
   "version": "1.0.0",
   "description": "Celebrating the life of Patricia G. Penisten (1935-2025).",
+  "homepage": "https://memories-of-patricia.vercel.app",
   "author": "Ethan G. (https://egxo.dev)",
+  "license": "MIT",
   "private": true,
+  "keywords": [
+    "memories",
+    "memorial",
+    "tribute",
+    "obituary",
+    "funeral",
+    "rip",
+    "grandma",
+    "mother",
+    "teacher",
+    "patricia",
+    "penisten"
+  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prebuild": "pnpm run lint",
