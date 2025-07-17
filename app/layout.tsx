@@ -1,7 +1,7 @@
-// import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Raleway, Geist_Mono, Bitter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_DATA } from "@/lib/config";
@@ -86,7 +86,7 @@ export default function RootLayout({
           {children}
           <Toaster />
         </ThemeProvider>
-        {/* <Analytics/> */}
+        <Analytics />
       </body>
     </html>
   );

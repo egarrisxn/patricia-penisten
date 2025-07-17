@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function Error({
+export default function TimelineErrorPage({
   error,
   reset,
 }: {
@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <section className='flex size-full items-center justify-center'>
+    <section className='grid min-h-dvh w-full place-items-center'>
       <div className='flex flex-auto flex-col items-center justify-center px-4 text-center sm:flex-row'>
         <h1 className='text-2xl font-extrabold tracking-tight text-gray-900 sm:mr-5 sm:border-r sm:border-gray-900/10 sm:pr-5 sm:text-3xl dark:text-gray-200 sm:dark:border-gray-300/10'>
           Error
