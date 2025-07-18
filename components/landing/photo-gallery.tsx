@@ -74,23 +74,23 @@ export default function PhotoGallery() {
 
   return (
     <div
-      id='photos'
-      className='bg-gradient-to-t from-slate-200 via-slate-100 to-slate-50 py-24 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950'
+      id='photogallery'
+      className='5xl:py-32 bg-gradient-to-t from-slate-200 via-slate-100 to-slate-50 py-24 xl:py-28 dark:from-slate-950/80 dark:via-slate-950/90 dark:to-slate-950'
     >
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
+      <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <div className='space-y-6'>
           <SectionHeader
             header='Photo Gallery'
             subheader='Share your cherished memories with photos.'
           />
-          <div className='grid grid-cols-1 gap-6 lg:gap-12'>
-            <section className='order-2 lg:order-1'>
+          <div className='5xl:gap-16 grid grid-cols-1 gap-6 lg:gap-12'>
+            <section>
               <PhotoGrid
                 approvedPhotos={approvedPhotos}
                 userPhotos={userPhotos}
               />
             </section>
-            <section className='order-1 lg:order-2'>
+            <section>
               <PhotoUpload onPhotoSubmitted={handlePhotoSubmitted} />
             </section>
           </div>

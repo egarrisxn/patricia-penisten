@@ -29,16 +29,16 @@ export default function LandingNavbar() {
       className='fixed top-0 z-50 w-full bg-transparent text-white transition-all'
     >
       <div className='mx-auto flex flex-row items-center justify-between p-4 lg:px-6'>
-        <section className='flex'>
+        <section>
           <Link
-            className='tracking-snug text-lg font-bold lg:text-2xl 2xl:text-3xl'
+            className='tracking-snug text-lg font-bold lg:text-2xl'
             href='/'
           >
             Memories of Patricia
           </Link>
         </section>
-        <section className='flex lg:gap-3 2xl:gap-4'>
-          <nav className='hidden flex-row items-center sm:flex sm:gap-0.5 lg:gap-4 2xl:gap-5'>
+        <section className='flex-row items-center sm:flex sm:gap-0.5 lg:gap-3'>
+          <nav className='hidden flex-row items-center sm:flex sm:gap-0.5 lg:gap-3'>
             {landingNavigation.map((item) => (
               <ScrollToSectionButton key={item.name} item={item} />
             ))}

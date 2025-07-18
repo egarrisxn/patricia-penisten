@@ -4,19 +4,24 @@ import ThemeToggle from "@/components/theme-toggle";
 
 export default function TimelineNavbar() {
   return (
-    <header className='absolute top-0 z-50 w-full bg-transparent text-black shadow-lg backdrop-blur-sm dark:text-white'>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between py-4'>
-          <Link className='text-2xl font-bold' href='/'>
+    <header className='bg-background w-full border-b shadow-sm'>
+      <div className='mx-auto flex flex-row items-center justify-between p-4 lg:px-6'>
+        <section>
+          <Link
+            className='tracking-snug text-lg font-bold lg:text-2xl'
+            href='/'
+          >
             Memories of Patricia
           </Link>
-          <nav className='flex md:gap-1 lg:gap-4'>
-            <Link href='/'>
-              <Button variant='ghost'>Memorial Page</Button>
+        </section>
+        <section>
+          <nav className='flex-row items-center sm:flex sm:gap-0.5 lg:gap-3'>
+            <Link href='/' className='hidden items-center sm:flex'>
+              <Button variant='ghost'>Home</Button>
             </Link>
             <ThemeToggle />
           </nav>
-        </div>
+        </section>
       </div>
     </header>
   );

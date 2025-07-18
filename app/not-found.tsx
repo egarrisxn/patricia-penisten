@@ -1,22 +1,26 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-export default function NotFoundPage() {
+export default function NotFound() {
   return (
-    <main className='grid min-h-dvh w-full place-items-center'>
+    <section className='grid min-h-screen w-full place-items-center'>
       <div className='flex flex-auto flex-col items-center justify-center px-4 text-center sm:flex-row'>
-        <h1 className='text-2xl font-extrabold tracking-tight text-gray-900 sm:mr-5 sm:border-r sm:border-gray-900/10 sm:pr-5 sm:text-3xl dark:text-gray-200 sm:dark:border-gray-300/10'>
+        <h1 className='sm:border-foreground text-7xl font-bold sm:mr-5 sm:border-r-2 sm:pr-5 sm:text-2xl'>
           404
         </h1>
-        <p className='mt-2 text-gray-700 sm:mt-0 dark:text-gray-400'>
-          Page not be found.
+        <p className='text-accent-foreground/90 mt-3 text-lg sm:mt-0 sm:text-base'>
+          Page could not be found.
         </p>
-        <Link
-          href='/'
-          className='font-medium text-[#17c9e0] underline-offset-4 hover:text-[#17c8e0da] hover:underline sm:pl-1.5'
-        >
-          Return Home
+        <Link href='/' className='mt-0.5 sm:mt-0'>
+          <Button
+            size='sm'
+            className='text-lg font-medium sm:text-base'
+            variant='link'
+          >
+            Return Home
+          </Button>
         </Link>
       </div>
-    </main>
+    </section>
   );
 }

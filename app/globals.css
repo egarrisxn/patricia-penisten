@@ -214,13 +214,13 @@ header.scrolled {
 }
 
 ::selection {
-  background: var(--foreground);
-  color: var(--background);
+  background: var(--background);
+  color: var(--foreground);
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--background) var(--foreground);
+  scrollbar-color: var(--foreground) var(--background);
 }
 
 ::-webkit-scrollbar {
@@ -228,12 +228,12 @@ header.scrolled {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--background);
+  background: var(--foreground);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--foreground);
+  background: var(--background);
 }
 
 .timeline-fade-in {

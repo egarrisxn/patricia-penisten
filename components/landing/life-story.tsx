@@ -7,16 +7,16 @@ export default function LifeStory() {
   return (
     <section
       id='lifestory'
-      className='bg-gradient-to-b from-slate-200 via-slate-100 to-slate-50 pt-40 pb-24 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950'
+      className='5xl:pt-48 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-50 pt-40 pb-24 xl:pt-44 dark:from-slate-950/80 dark:via-slate-950/90 dark:to-slate-950'
     >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
         <SectionHeader
           header='Life Story'
-          subheader='A remarkable journey of love and dedication.'
+          subheader='A remarkable journey full of joy.'
         />
-        <div className='grid items-start gap-12 lg:grid-cols-2'>
-          <div className='space-y-6'>
-            <Card className='p-4 shadow-lg'>
+        <div className='grid items-start gap-12 lg:grid-cols-2 lg:gap-16'>
+          <div className='space-y-6 lg:space-y-12'>
+            <Card className='sm:border-border/20 rounded-none border-none bg-transparent py-0 shadow-none backdrop-blur-sm sm:rounded-xl sm:border sm:bg-white sm:p-4 sm:shadow-lg sm:dark:bg-black'>
               <CardContent className='mt-6 p-3'>
                 {lifeStoryBlurbs.map((text, index) => (
                   <p key={index} className='mb-6 text-lg leading-relaxed'>
@@ -25,15 +25,15 @@ export default function LifeStory() {
                 ))}
               </CardContent>
             </Card>
-            <Card className='shadow-lg'>
+            <Card className='sm:border-border/20 rounded-none border-none bg-transparent py-0 shadow-none backdrop-blur-sm sm:rounded-xl sm:border sm:bg-white sm:p-4 sm:py-6 sm:shadow-lg sm:dark:bg-black'>
               <CardHeader>
-                <CardTitle className='flex items-center text-2xl'>
-                  <Star className='mr-3 size-6 text-amber-500' />
+                <CardTitle className='hidden items-center text-2xl sm:flex'>
+                  <Star className='mr-3 size-6 text-yellow-600' />
                   Legacy of Teaching
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className='text-lg leading-relaxed'>
+              <CardContent className='mt-6 p-3 sm:mt-0 sm:p-0 sm:px-6 sm:pt-0'>
+                <p className='mb-6 text-lg leading-relaxed sm:mb-0'>
                   For 34 years, Pat dedicated her life to teaching at Douglas
                   Elementary School. She touched the lives of hundreds of
                   students, always believing in their potential and inspiring
