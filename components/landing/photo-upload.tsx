@@ -117,19 +117,17 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   if (isSubmitted) {
     return (
       <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-        <CardContent className='pt-6'>
-          <div className='text-center'>
-            <div className='mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-green-100'>
-              <Check className='size-8 text-green-600' />
-            </div>
-            <h3 className='text-accent-foreground mb-2 text-lg font-semibold'>
-              Photo Submitted!
-            </h3>
-            <p className='text-gray-600'>
-              Your photo is pending approval and will be visible to others once
-              reviewed.
-            </p>
+        <CardContent className='pt-6 text-center'>
+          <div className='mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-green-100'>
+            <Check className='size-8 text-green-600' />
           </div>
+          <h3 className='text-accent-foreground mb-2 text-lg font-semibold'>
+            Photo Submitted!
+          </h3>
+          <p className='text-gray-600'>
+            Your photo is pending approval and will be visible to others once
+            reviewed.
+          </p>
         </CardContent>
       </Card>
     );
@@ -199,7 +197,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               aria-label='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder='Jane Doe'
               className='mt-1'
             />
           </div>
@@ -213,7 +210,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               aria-label='captionname'
               value={caption}
               onChange={(e) => setCaption(e.target.value)}
-              placeholder='Hanging out by the fire during thanksgiving...'
               className='mt-1 min-h-16'
             />
           </div>

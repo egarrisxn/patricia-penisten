@@ -21,7 +21,7 @@ export default function TimelineHeader() {
         </p>
         <div className='mt-8 flex items-center justify-center space-x-2'>
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className='size-4 fill-amber-400 text-amber-400' />
+            <Star key={i} className='size-4 fill-yellow-600 text-yellow-600' />
           ))}
         </div>
       </header>

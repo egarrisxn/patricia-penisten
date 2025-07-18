@@ -68,30 +68,28 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
 
   if (isSubmitted) {
     return (
-      <Card className='mx-auto w-full max-w-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-        <CardContent className='pt-6'>
-          <div className='text-center'>
-            <div className='mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-green-100'>
-              <Check className='size-8 text-green-600' />
-            </div>
-            <h3 className='text-accent-foreground mb-2 text-lg font-semibold'>
-              Entry Submitted!
-            </h3>
-            <p className='text-gray-600'>
-              Your message is pending approval and will be visible to others
-              once reviewed.
-            </p>
+      <Card className='mx-auto w-full max-w-7xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
+        <CardContent className='pt-6 text-center'>
+          <div className='mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-green-100'>
+            <Check className='size-8 text-green-600' />
           </div>
+          <h3 className='text-accent-foreground mb-2 text-lg font-semibold'>
+            Entry Submitted!
+          </h3>
+          <p className='text-gray-600'>
+            Your message is pending approval and will be visible to others once
+            reviewed.
+          </p>
         </CardContent>
       </Card>
     );
   }
 
   return (
-    <Card className='mx-auto w-full max-w-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
+    <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
       <CardHeader>
         <CardTitle className='text-accent-foreground flex items-center gap-2'>
-          <Heart className='size-5 text-red-500' />
+          <Heart className='size-5 text-rose-400' />
           Share a Memory
         </CardTitle>
       </CardHeader>
@@ -106,7 +104,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               aria-label='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder='Jane Doe'
               className='mt-1'
             />
           </div>
@@ -119,7 +116,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               aria-label='relationship'
               value={relationship}
               onChange={(e) => setRelationship(e.target.value)}
-              placeholder='Former Colleague'
               className='mt-1'
             />
           </div>
@@ -132,7 +128,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               aria-label='message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder='It was a beautiful day in the summer of 1990...'
               className='mt-1 min-h-32'
               required
             />

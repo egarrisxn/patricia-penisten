@@ -9,7 +9,7 @@ import type {
 
 export const landingNavigation = [
   { name: "Life Story", href: "#lifestory" },
-  { name: "Photo Gallery", href: "#photgallery" },
+  { name: "Photo Gallery", href: "#photogallery" },
   { name: "Guestbook", href: "#guestbook" },
 ];
 

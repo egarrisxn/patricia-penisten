@@ -28,8 +28,8 @@ export default function LandingNavbar() {
       ref={navRef}
       className='fixed top-0 z-50 w-full bg-transparent text-white transition-all'
     >
-      <div className='mx-auto flex flex-row items-center justify-between p-4 lg:px-6'>
-        <section>
+      <div className='mx-auto flex flex-row items-center justify-between px-1.5 py-3 sm:py-4 lg:px-4.5'>
+        <section className='pl-1.5 lg:pl-1'>
           <Link
             className='tracking-snug text-lg font-bold lg:text-2xl'
             href='/'
