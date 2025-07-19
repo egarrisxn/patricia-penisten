@@ -3,16 +3,19 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Clock, ImageIcon, X } from "lucide-react";
+import PhotoUpload from "@/components/landing/photo-upload";
 import type { Photo } from "@/lib/types";
 
 interface PhotoGridProps {
   approvedPhotos: Photo[];
   userPhotos: Photo[];
+  onPhotoSubmitted: (photo: Photo) => void;
 }
 
 export default function PhotoGrid({
   approvedPhotos,
   userPhotos,
+  onPhotoSubmitted,
 }: PhotoGridProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
@@ -25,20 +28,6 @@ export default function PhotoGrid({
   ];
 
   const isPending = (status: string) => status === "pending";
-
-  if (allPhotos.length === 0) {
-    return (
-      <section className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800'>
-          <ImageIcon className='text-foreground/80 size-12' />
-        </div>
-        <p className='text-foreground/80 text-lg'>No photos shared yet</p>
-        <p className='text-foreground/70 text-sm'>
-          Be the first to share a cherished memory
-        </p>
-      </section>
-    );
-  }
 
   return (
     <>
@@ -72,9 +61,9 @@ export default function PhotoGrid({
             )}
           </div>
         ))}
+        <PhotoUpload onPhotoSubmitted={onPhotoSubmitted} />
       </section>
 
-      {/* Photo Modal */}
       {selectedPhoto && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4'>
           <div className='relative max-h-[90vh] w-full max-w-4xl'>
