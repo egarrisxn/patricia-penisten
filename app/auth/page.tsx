@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import ThemeToggle from "@/components/theme-toggle";
+import ThemeToggle from "@/components/shared/theme-toggle";
 import AuthForm from "@/components/auth/form";
 
 export default async function AuthPage() {

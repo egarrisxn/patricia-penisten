@@ -1,17 +1,33 @@
-import TimelineNavbar from "@/components/timeline/navbar";
+import PagesNavbar from "@/components/shared/navbar";
 import TimelineHeader from "@/components/timeline/header";
 import TimelineContent from "@/components/timeline/timeline-content";
-import Footer from "@/components/footer";
+import Footer from "@/components/shared/footer";
+import ScrollToTopButton from "@/components/shared/scroll-to-top";
 
 export default function TimelinePage() {
   return (
-    <main className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
-      <TimelineNavbar />
-      <div>
-        <TimelineHeader />
-        <TimelineContent />
-      </div>
+    <div className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
+      <PagesNavbar />
+
+      <main>
+        <section
+          id='home'
+          className='bg-linear-to-tr from-rose-50 via-white to-blue-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950'
+        >
+          <TimelineHeader />
+        </section>
+
+        <section
+          id='timeline'
+          className='min-h-screen bg-linear-to-br from-rose-50 via-white to-blue-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950'
+        >
+          <TimelineContent />
+        </section>
+      </main>
+
       <Footer />
-    </main>
+
+      <ScrollToTopButton />
+    </div>
   );
 }

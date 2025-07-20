@@ -1,3 +1,5 @@
+import * as motion from "motion/react-client";
+
 interface SectionHeaderProps {
   header: string;
   subheader?: string | React.ReactNode;
@@ -8,8 +10,14 @@ export default function SectionHeader({
   subheader,
 }: SectionHeaderProps) {
   return (
-    <header className='5xl:mb-32 mb-20 text-center lg:mb-24'>
-      <div className='5xl:space-y-2.5 mx-auto max-w-3xl'>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className='5xl:mb-32 mb-20 text-center lg:mb-24'
+    >
+      <header className='5xl:space-y-2.5 mx-auto max-w-3xl'>
         <h1 className='text-foreground text-shadow-foreground/10 5xl:text-[5rem] mb-2.5 text-[2.5rem] leading-[1.1] font-bold text-shadow-md lg:mb-3.5 lg:text-[4.25rem] lg:leading-none'>
           {header}
         </h1>
@@ -18,7 +26,7 @@ export default function SectionHeader({
             {subheader}
           </h2>
         )}
-      </div>
-    </header>
+      </header>
+    </motion.div>
   );
 }

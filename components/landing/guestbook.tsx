@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion } from "motion/react";
 import { createClient } from "@/lib/supabase/client";
-import SectionHeader from "@/components/landing/section-header";
 import EntryForm from "@/components/landing/entry-form";
 import EntryList from "@/components/landing/entry-list";
 import type { Entry } from "@/lib/types";
@@ -75,35 +73,16 @@ export default function Guestbook() {
   };
 
   return (
-    <div
-      id='guestbook'
-      className='5xl:py-32 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-50 py-24 dark:from-slate-950/80 dark:via-slate-950/90 dark:to-slate-950'
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true, amount: 0.3 }}
-        className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'
-      >
-        <div className='space-y-6'>
-          <SectionHeader
-            header='Guestbook'
-            subheader='Share your thoughts and stories.'
-          />
-          <div className='5xl:gap-16 grid grid-cols-1 gap-6 lg:gap-12'>
-            <section>
-              <EntryList
-                approvedEntries={approvedEntries}
-                userEntries={userEntries}
-              />
-            </section>
-            <section>
-              <EntryForm onEntrySubmitted={handleEntrySubmitted} />
-            </section>
-          </div>
-        </div>
-      </motion.div>
+    <div className='5xl:gap-16 grid grid-cols-1 gap-6 lg:gap-12'>
+      <section>
+        <EntryList
+          approvedEntries={approvedEntries}
+          userEntries={userEntries}
+        />
+      </section>
+      <section>
+        <EntryForm onEntrySubmitted={handleEntrySubmitted} />
+      </section>
     </div>
   );
 }

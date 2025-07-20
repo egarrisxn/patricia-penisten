@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import ThemeToggle from "@/components/theme-toggle";
+import ThemeToggle from "@/components/shared/theme-toggle";
 
-export default function TimelineNavbar() {
+export default function PagesNavbar() {
   return (
     <header className='bg-background/95 w-full text-black shadow-sm backdrop-blur-sm dark:text-white'>
       <div className='mx-auto flex flex-row items-center justify-between px-1.5 py-3 sm:py-4 lg:px-4.5'>

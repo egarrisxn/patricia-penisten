@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import ThemeToggle from "@/components/theme-toggle";
+import ThemeToggle from "@/components/shared/theme-toggle";
 import ScrollToSectionButton from "@/components/landing/scroll-to-section";
 import { landingNavigation } from "@/lib/data";
 
