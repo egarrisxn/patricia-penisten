@@ -15,7 +15,7 @@ export default function ScrollDownButton() {
       className='z-50 animate-bounce cursor-pointer text-slate-100/70 transition-colors duration-200 hover:text-white'
       onClick={scrollDown}
     >
-      <ChevronDown className='size-8' />
+      <ChevronDown className='size-6 lg:size-8' />
     </Button>
   );
 }

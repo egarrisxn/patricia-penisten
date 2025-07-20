@@ -32,8 +32,8 @@ export default function ScrollToTopButton() {
       ref={buttonRef}
       onClick={scrollToTop}
       size='icon'
-      variant='secondary'
-      className='pointer-events-none fixed right-4 bottom-4 z-50 cursor-pointer rounded-full p-2 opacity-0 transition-opacity duration-300 lg:size-11'
+      variant='basic'
+      className='text-foreground/80 hover:text-foreground pointer-events-none fixed right-4 bottom-4 z-50 cursor-pointer opacity-0 transition-opacity duration-300'
     >
       <ChevronUp className='size-6 lg:size-8' />
     </Button>

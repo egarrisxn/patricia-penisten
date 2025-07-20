@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { motion } from "motion/react";
 import { createClient } from "@/lib/supabase/client";
 import SectionHeader from "@/components/landing/section-header";
 import PhotoGrid from "@/components/landing/photo-grid";
@@ -74,7 +75,13 @@ export default function PhotoGallery() {
       id='photogallery'
       className='5xl:py-32 bg-gradient-to-t from-slate-200 via-slate-100 to-slate-50 py-24 dark:from-slate-950/80 dark:via-slate-950/90 dark:to-slate-950'
     >
-      <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'
+      >
         <div className='space-y-6'>
           <SectionHeader
             header='Photo Gallery'
@@ -86,7 +93,7 @@ export default function PhotoGallery() {
             onPhotoSubmitted={handlePhotoSubmitted}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

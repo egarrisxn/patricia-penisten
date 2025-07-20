@@ -18,8 +18,8 @@ export default function LandingPage() {
         <Guestbook />
         <CTA />
       </main>
-      <ScrollToTopButton />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
