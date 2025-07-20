@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import PhotoGrid from "@/components/landing/photo-grid";
 import type { Photo } from "@/lib/types";
 
-export default function PhotoGallery() {
+export default function LandingPhotoGallery() {
   const [userPhotos, setUserPhotos] = useState<Photo[]>([]);
   const [approvedPhotos, setApprovedPhotos] = useState<Photo[]>([]);
   const [userIP, setUserIP] = useState<string>("");

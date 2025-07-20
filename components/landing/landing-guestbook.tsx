@@ -6,7 +6,7 @@ import EntryForm from "@/components/landing/entry-form";
 import EntryList from "@/components/landing/entry-list";
 import type { Entry } from "@/lib/types";
 
-export default function Guestbook() {
+export default function LandingGuestbook() {
   const [userEntries, setUserEntries] = useState<Entry[]>([]);
   const [approvedEntries, setApprovedEntries] = useState<Entry[]>([]);
   const [userIP, setUserIP] = useState<string>("");

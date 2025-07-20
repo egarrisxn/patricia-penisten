@@ -1,7 +1,7 @@
 import { Heart, Star } from "lucide-react";
 import { timelineHeaderData } from "@/lib/data";
 
-export default function TimelineHeader() {
+export default function TimelineHero() {
   return (
     <header className='relative mx-auto max-w-4xl px-4 pt-40 pb-28 text-center'>
       <div className='mb-6 flex justify-center'>

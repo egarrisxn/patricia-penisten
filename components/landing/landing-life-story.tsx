@@ -29,7 +29,7 @@ const itemVariants = {
   },
 };
 
-export default function LifeStory() {
+export default function LandingLifeStory() {
   return (
     <motion.div
       className='grid items-start gap-12 lg:grid-cols-2 lg:gap-16'

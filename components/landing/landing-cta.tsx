@@ -29,7 +29,7 @@ const itemVariants = {
   },
 };
 
-export default function CTA() {
+export default function LandingCTA() {
   return (
     <motion.div
       className='mx-auto max-w-5xl text-center'

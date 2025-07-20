@@ -29,7 +29,7 @@ const itemVariants = {
   },
 };
 
-export default function Hero() {
+export default function LandingHero() {
   return (
     <section id='home' className='relative h-screen w-full overflow-hidden'>
       {/* Background image */}

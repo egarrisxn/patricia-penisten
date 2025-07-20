@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react";
 import { footerData } from "@/lib/data";
 
-export default function Footer() {
+export default function SharedFooter() {
   return (
     <footer className='from-background dark:from-background w-full bg-gradient-to-t via-white/70 to-white/80 dark:via-black/70 dark:to-black/80'>
       <div className='mx-auto px-4 pt-18 pb-14 text-center sm:px-6 sm:pt-20 sm:pb-16'>

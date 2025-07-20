@@ -5,7 +5,7 @@ interface SectionHeaderProps {
   subheader?: string | React.ReactNode;
 }
 
-export default function SectionHeader({
+export default function LandingHeader({
   header,
   subheader,
 }: SectionHeaderProps) {

@@ -24,7 +24,7 @@ export default function ScrollToTopButton() {
   }, []);
 
   const scrollToTop = () => {
-    document.querySelector("#home")?.scrollIntoView();
+    document.querySelector("#hero")?.scrollIntoView();
   };
 
   return (
