@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { Heart, Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import type { Entry } from "@/lib/types";
 
 interface EntryFormProps {
@@ -29,11 +30,9 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
 
     setIsSubmitting(true);
     try {
-      // Get users IP address (simplified)
       const response = await fetch("/api/get-ip");
       const { ip } = await response.json();
 
-      // Insert entry record
       const { data, error } = await supabase
         .from("entries")
         .insert({
@@ -51,7 +50,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
       setIsSubmitted(true);
       onEntrySubmitted(data);
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setName("");
@@ -68,15 +66,15 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
 
   if (isSubmitted) {
     return (
-      <Card className='mx-auto w-full max-w-7xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-        <CardContent className='pt-6 text-center'>
-          <div className='mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-green-100'>
-            <Check className='size-8 text-green-600' />
+      <Card className='mx-auto w-full max-w-7xl bg-white shadow-lg backdrop-blur-sm dark:bg-slate-950'>
+        <CardContent className='px-4 text-center'>
+          <div className='mx-auto mb-4 flex size-12 items-center justify-center rounded-full md:size-14 xl:size-16'>
+            <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
           </div>
-          <h3 className='text-accent-foreground mb-2 text-lg font-semibold'>
+          <h3 className='text-muted-foreground mb-2 font-semibold'>
             Entry Submitted!
           </h3>
-          <p className='text-gray-600'>
+          <p className='text-muted-foreground/90 text-sm tracking-tight'>
             Your message is pending approval and will be visible to others once
             reviewed.
           </p>
@@ -86,13 +84,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
   }
 
   return (
-    <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white px-4 py-8 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-      <CardHeader>
-        <CardTitle className='text-accent-foreground flex items-center gap-2'>
-          <Heart className='size-5 text-rose-400' />
-          Share a Memory
-        </CardTitle>
-      </CardHeader>
+    <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white shadow-lg backdrop-blur-sm dark:bg-slate-950'>
       <CardContent>
         <form onSubmit={handleSubmit} className='space-y-4'>
           <div>
@@ -101,7 +93,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
             </Label>
             <Input
               id='name'
-              aria-label='name'
               value={name}
               onChange={(e) => setName(e.target.value)}
               className='mt-1'
@@ -113,7 +104,6 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
             </Label>
             <Input
               id='relationship'
-              aria-label='relationship'
               value={relationship}
               onChange={(e) => setRelationship(e.target.value)}
               className='mt-1'
@@ -125,10 +115,9 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
             </Label>
             <Textarea
               id='message'
-              aria-label='message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className='mt-1 min-h-32'
+              className='mt-1 min-h-40'
               required
             />
           </div>

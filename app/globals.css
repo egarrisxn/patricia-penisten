@@ -210,7 +210,7 @@
 }
 
 header.scrolled {
-  @apply bg-background/95 text-black shadow-lg backdrop-blur-sm dark:text-white;
+  @apply bg-background/95 text-black shadow-sm backdrop-blur-sm dark:text-white;
 }
 
 ::selection {

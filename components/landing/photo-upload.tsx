@@ -184,7 +184,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               </label>
             </div>
           </div>
-
           <div className='flex flex-shrink-0 flex-col gap-1.5 lg:gap-2'>
             <div>
               <Label htmlFor='name' className='sr-only'>
@@ -197,7 +196,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 placeholder='Name (optional)'
               />
             </div>
-
             <div>
               <Label htmlFor='caption' className='sr-only'>
                 Caption (optional)
@@ -210,7 +208,6 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 placeholder='Caption (optional)'
               />
             </div>
-
             <Button
               type='submit'
               disabled={!selectedFile || isUploading}

@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ScrollDownButton() {
   const scrollDown = () => {
@@ -8,11 +9,13 @@ export default function ScrollDownButton() {
   };
 
   return (
-    <button
-      className='z-50 animate-bounce rounded-full p-2 text-slate-100/70 transition-colors duration-200 outline-none hover:text-white'
+    <Button
+      size='icon'
+      variant='basic'
+      className='z-50 animate-bounce cursor-pointer text-slate-100/70 transition-colors duration-200 hover:text-white'
       onClick={scrollDown}
     >
       <ChevronDown className='size-8' />
-    </button>
+    </Button>
   );
 }

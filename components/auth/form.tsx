@@ -46,14 +46,14 @@ export default function AuthForm() {
       <Card className='w-full max-w-md'>
         <CardHeader className='text-center'>
           <div className='mb-4 flex justify-center'>
-            <div className='flex h-16 w-16 items-center justify-center rounded-full bg-blue-100'>
-              <Shield className='h-8 w-8 text-blue-600' />
+            <div className='bg-accent flex h-16 w-16 items-center justify-center rounded-full'>
+              <Shield className='h-8 w-8 text-blue-500' />
             </div>
           </div>
-          <CardTitle className='text-2xl font-bold text-gray-900'>
+          <CardTitle className='text-accent-foreground text-2xl font-bold'>
             Admin Login
           </CardTitle>
-          <p className='text-gray-600'>
+          <p className='text-accent-foreground/90'>
             Access the admin dashboard to manage submissions
           </p>
         </CardHeader>
@@ -66,45 +66,48 @@ export default function AuthForm() {
             )}
 
             <div>
-              <Label htmlFor='email' className='text-gray-700'>
+              <Label htmlFor='email' className='text-muted-foreground'>
                 Email
               </Label>
               <Input
                 id='email'
                 type='email'
+                aria-label='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder='admin@example.com'
                 className='mt-1'
                 required
                 disabled={isLoading}
+                placeholder='admin@example.com'
               />
             </div>
 
-            <div>
-              <Label htmlFor='password' className='text-gray-700'>
+            <div className='pb-1'>
+              <Label htmlFor='password' className='text-muted-foreground'>
                 Password
               </Label>
-              <div className='relative mt-1'>
+              <div className='relative'>
                 <Input
                   id='password'
+                  aria-label='password'
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder='Enter your password'
+                  className='mt-1'
                   required
                   disabled={isLoading}
+                  placeholder='Enter your password'
                 />
                 <button
                   type='button'
                   onClick={() => setShowPassword(!showPassword)}
-                  className='absolute top-1/2 right-3 -translate-y-1/2 transform text-gray-400 hover:text-gray-600'
+                  className='text-accent-foreground/70 hover:text-accent-foreground/90 absolute top-1/2 right-3 -translate-y-1/2 transform'
                   disabled={isLoading}
                 >
                   {showPassword ? (
-                    <EyeOff className='h-4 w-4' />
+                    <EyeOff className='size-4' />
                   ) : (
-                    <Eye className='h-4 w-4' />
+                    <Eye className='size-4' />
                   )}
                 </button>
               </div>
@@ -113,7 +116,7 @@ export default function AuthForm() {
             <Button
               type='submit'
               disabled={isLoading || !email || !password}
-              className='w-full bg-blue-600 text-white hover:bg-blue-700'
+              className='w-full bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 shadow-lg hover:from-purple-500 hover:to-rose-500 hover:text-white'
             >
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ScrollToTopButton() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -27,12 +28,14 @@ export default function ScrollToTopButton() {
   };
 
   return (
-    <button
+    <Button
       ref={buttonRef}
       onClick={scrollToTop}
-      className='pointer-events-none fixed right-5 bottom-4 z-50 rounded-full p-2 text-slate-950/70 opacity-0 transition-opacity duration-300 outline-none hover:text-black dark:text-slate-100/70 dark:hover:text-white'
+      size='icon'
+      variant='secondary'
+      className='pointer-events-none fixed right-4 bottom-4 z-50 cursor-pointer rounded-full p-2 opacity-0 transition-opacity duration-300 lg:size-11'
     >
-      <ChevronUp className='size-8' />
-    </button>
+      <ChevronUp className='size-6 lg:size-8' />
+    </Button>
   );
 }

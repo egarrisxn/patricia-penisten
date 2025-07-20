@@ -15,12 +15,16 @@ export default function StatCard({
 }: StatsCardProps) {
   return (
     <Card>
-      <CardContent className='p-6'>
-        <div className='flex items-center gap-3'>
-          <div className={`${className} size-8`}>{icon}</div>
+      <CardContent className='p-4 md:p-6'>
+        <div className='flex items-center gap-2 md:gap-3'>
+          <div className={`${className} size-6 md:size-8`}>{icon}</div>
           <div>
-            <p className='text-muted-foreground/90 text-sm'>{label}</p>
-            <p className='text-accent-foreground text-2xl font-bold'>{count}</p>
+            <p className='text-muted-foreground/90 text-xs md:text-sm'>
+              {label}
+            </p>
+            <p className='text-accent-foreground text-xl font-bold md:text-2xl'>
+              {count}
+            </p>
           </div>
         </div>
       </CardContent>

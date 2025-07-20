@@ -80,7 +80,7 @@ export default function RootLayout({
         <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
       </head>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable} font-sans antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable} overscroll-x-contain font-sans antialiased`}
       >
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           {children}

@@ -76,7 +76,7 @@ export default function Guestbook() {
   return (
     <div
       id='guestbook'
-      className='5xl:py-32 border-b bg-gradient-to-b from-slate-200 via-slate-100 to-slate-50 py-24 dark:from-slate-950/80 dark:via-slate-950/90 dark:to-slate-950'
+      className='5xl:py-32 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-50 py-24 dark:from-slate-950/80 dark:via-slate-950/90 dark:to-slate-950'
     >
       <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
         <div className='space-y-6'>

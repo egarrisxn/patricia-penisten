@@ -4,7 +4,7 @@ import ThemeToggle from "@/components/theme-toggle";
 
 export default function TimelineNavbar() {
   return (
-    <header className='bg-background w-full border-b shadow-sm'>
+    <header className='bg-background/95 w-full text-black shadow-sm backdrop-blur-sm dark:text-white'>
       <div className='mx-auto flex flex-row items-center justify-between px-1.5 py-3 sm:py-4 lg:px-4.5'>
         <section className='pl-1.5 lg:pl-1'>
           <Link
