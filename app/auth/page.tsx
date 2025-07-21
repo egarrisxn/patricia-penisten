@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import ThemeToggle from "@/components/shared/theme-toggle";
-import AuthForm from "@/components/auth/form";
+import AuthNavbar from "@/components/auth/auth-navbar";
+import AuthForm from "@/components/auth/auth-form";
 
 export default async function AuthPage() {
   const supabase = await createClient();
@@ -15,11 +15,12 @@ export default async function AuthPage() {
   }
 
   return (
-    <main className='grid min-h-dvh w-full place-items-center'>
-      <div className='absolute top-4 right-4 z-10'>
-        <ThemeToggle />
-      </div>
-      <AuthForm />
-    </main>
+    <div>
+      <AuthNavbar />
+
+      <main className='grid min-h-dvh w-full place-items-center'>
+        <AuthForm />
+      </main>
+    </div>
   );
 }

@@ -33,10 +33,10 @@ export interface TimelineData {
   alt: string;
 }
 
-export interface TimelineHeaderData {
-  name: string;
-  header: string;
-  subheader: string;
+export interface TimelineHeroData {
+  title: string;
+  subtitle: string;
+  quote: string;
 }
 
 export interface FooterData {

@@ -140,7 +140,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className='container mx-auto px-4 py-8'>
+    <>
       <div className='mb-6 grid grid-cols-2 gap-4 md:mb-8 md:grid-cols-4 md:gap-6'>
         <StatCard
           icon={<Clock />}
@@ -198,6 +198,6 @@ export default function AdminDashboard() {
           />
         </TabsContent>
       </Tabs>
-    </div>
+    </>
   );
 }

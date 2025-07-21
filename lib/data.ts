@@ -1,7 +1,7 @@
 import type {
   TimelineData,
   LifeStoryData,
-  TimelineHeaderData,
+  TimelineHeroData,
   FooterData,
 } from "./types";
 
@@ -146,10 +146,10 @@ export const timelineData: TimelineData[] = [
   },
 ];
 
-export const timelineHeaderData: TimelineHeaderData = {
-  header: "Final Road Trip",
-  name: "Patricia G. Penisten",
-  subheader:
+export const timelineHeroData: TimelineHeroData = {
+  title: "Farewell Tour",
+  subtitle: "With Patricia & Judi",
+  quote:
     "A life beautifully lived, and a legacy of love that will forever remain in our hearts.",
 };
 
