@@ -39,31 +39,31 @@ export default function EntryList({
 
   return (
     <>
-      <section className='grid grid-cols-1 gap-6 lg:gap-8'>
+      <div className='grid grid-cols-1 gap-6 md:gap-8'>
         {allEntries.map((entry) => (
           <Card
             key={`entry-${entry.id}`}
-            className='border-border/20 px-6 py-10 shadow-lg backdrop-blur-sm hover:shadow-xl lg:min-h-60'
+            className='border-border/20 dark:bg-card h-full border bg-white shadow-lg backdrop-blur-sm hover:shadow-xl'
           >
-            <CardContent className='px-4 pt-2 pb-4'>
+            <CardContent className='flex h-full flex-col p-6 md:p-8'>
               <div className='flex items-start space-x-4'>
                 <div className='min-w-0 flex-1 flex-col'>
-                  <div className='mb-4 flex items-start justify-between lg:mb-6'>
+                  <div className='mb-4 flex items-start justify-between md:mb-6'>
                     {isPending(entry.status) && (
-                      <div className='absolute top-2 right-2 rounded-full bg-yellow-200 px-2 py-0.5 text-xs text-yellow-800'>
+                      <div className='absolute top-2 right-2 rounded-full bg-yellow-200 px-2 py-0.5 text-xs text-amber-600'>
                         <User className='mr-1 inline-block size-3' /> Pending
                         (only you)
                       </div>
                     )}
                     <div>
-                      <h4 className='5xl:text-3xl 5xl:mb-1 mb-0.5 text-xl font-medium lg:text-2xl'>
+                      <h4 className='mb-0.5 text-xl font-medium md:text-2xl'>
                         {entry.name || "Anonymous"}
                       </h4>
-                      <p className='5xl:text-xl text-purple-700 italic lg:text-lg dark:text-purple-300'>
+                      <p className='text-sm text-purple-700 md:text-base dark:text-purple-300'>
                         {entry.relationship || "Unknown"}
                       </p>
                     </div>
-                    <time className='text-accent-foreground/80 5xl:text-lg text-sm lg:text-base'>
+                    <time className='text-accent-foreground/80 text-sm md:text-base'>
                       {new Date(entry.created_at).toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "long",
@@ -71,7 +71,7 @@ export default function EntryList({
                       })}
                     </time>
                   </div>
-                  <p className='text-foreground/90 5xl:text-xl lg:text-lg'>
+                  <p className='text-foreground/90 grow pt-4 text-sm italic md:text-base'>
                     <q>{entry.message}</q>
                   </p>
                 </div>
@@ -79,7 +79,7 @@ export default function EntryList({
             </CardContent>
           </Card>
         ))}
-      </section>
+      </div>
     </>
   );
 }

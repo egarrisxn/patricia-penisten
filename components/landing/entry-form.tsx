@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -84,7 +84,10 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
 
   return (
     <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-      <CardContent>
+      <CardHeader className='lg:px-10'>
+        <CardTitle>Sign Guestbook</CardTitle>
+      </CardHeader>
+      <CardContent className='lg:px-10'>
         <form onSubmit={handleSubmit} className='space-y-4'>
           <div>
             <Label htmlFor='name' className='text-muted-foreground'>

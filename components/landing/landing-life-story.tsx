@@ -1,8 +1,6 @@
 import * as motion from "motion/react-client";
-import { type Easing } from "motion/react";
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
 import { lifeStoryBlurbs, lifeStoryData } from "@/lib/data";
 
 const containerVariants = {
@@ -11,7 +9,7 @@ const containerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.3,
       staggerChildren: 0.2,
       delayChildren: 0.1,
     },
@@ -24,8 +22,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: [0, 0.71, 0.2, 1.01] as Easing,
+      duration: 0.2,
     },
   },
 };

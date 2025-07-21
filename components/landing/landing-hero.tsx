@@ -1,6 +1,5 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { easeOut } from "motion/react";
 import ScrollDownButton from "@/components/landing/scroll-down";
 
 const containerVariants = {
@@ -10,7 +9,6 @@ const containerVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: easeOut,
       staggerChildren: 0.2,
       delayChildren: 0.4,
     },
@@ -24,7 +22,6 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: easeOut,
     },
   },
 };
@@ -36,7 +33,7 @@ export default function LandingHero() {
         className='absolute inset-0 z-10 size-full'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: easeOut }}
+        transition={{ duration: 1.5 }}
       >
         <Image
           src='/backgrounds/bg-00.avif'
@@ -50,7 +47,7 @@ export default function LandingHero() {
         className='absolute inset-0 z-20 size-full bg-black/20 dark:bg-black/30'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.2, ease: easeOut }}
+        transition={{ duration: 1.5, delay: 0.2 }}
       />
       <div className='absolute inset-0 z-30 flex size-full pb-42 sm:pb-24 lg:pb-28'>
         <motion.div
@@ -100,7 +97,7 @@ export default function LandingHero() {
         className='absolute bottom-[6.25rem] z-30 flex w-full justify-center sm:bottom-[2.75rem]'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 2.2, ease: easeOut }}
+        transition={{ duration: 0.8, delay: 2.2 }}
       >
         <ScrollDownButton />
       </motion.div>
