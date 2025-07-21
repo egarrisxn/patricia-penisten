@@ -21,7 +21,7 @@ export default function ThemeToggle() {
     <Button
       variant='ghost'
       size='icon'
-      className='hover:bg-transparent dark:hover:bg-transparent'
+      className='cursor-pointer hover:bg-transparent dark:hover:bg-transparent'
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? (

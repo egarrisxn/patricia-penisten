@@ -31,7 +31,7 @@ export default function LandingNavbar() {
       <div className='mx-auto flex flex-row items-center justify-between px-1.5 py-3 sm:py-4 lg:px-4.5'>
         <section className='pl-1.5 lg:pl-1'>
           <Link
-            className='tracking-snug text-lg font-bold lg:text-2xl'
+            className='tracking-snug cursor-pointer text-lg font-bold lg:text-2xl'
             href='/'
           >
             Memories of Patricia

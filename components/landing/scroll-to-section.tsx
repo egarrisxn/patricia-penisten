@@ -17,7 +17,11 @@ export default function ScrollToSectionButton({
   };
 
   return (
-    <Button variant='ghost' onClick={() => scrollToSection(item.href)}>
+    <Button
+      variant='ghost'
+      className='cursor-pointer'
+      onClick={() => scrollToSection(item.href)}
+    >
       {item.name}
     </Button>
   );

@@ -20,7 +20,10 @@ export default async function AdminPage() {
       <SharedNavbar />
 
       <main>
-        <section id='dashboard' className='container mx-auto px-4 py-8'>
+        <section
+          id='dashboard'
+          className='5xl:py-32 container mx-auto px-4 py-24'
+        >
           <AdminDashboard />
         </section>
       </main>

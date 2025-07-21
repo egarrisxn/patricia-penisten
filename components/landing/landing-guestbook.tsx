@@ -74,15 +74,9 @@ export default function LandingGuestbook() {
 
   return (
     <div className='5xl:gap-16 grid grid-cols-1 gap-6 lg:gap-12'>
-      <section>
-        <EntryList
-          approvedEntries={approvedEntries}
-          userEntries={userEntries}
-        />
-      </section>
-      <section>
-        <EntryForm onEntrySubmitted={handleEntrySubmitted} />
-      </section>
+      <EntryList approvedEntries={approvedEntries} userEntries={userEntries} />
+
+      <EntryForm onEntrySubmitted={handleEntrySubmitted} />
     </div>
   );
 }

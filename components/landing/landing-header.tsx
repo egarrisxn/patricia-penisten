@@ -18,7 +18,7 @@ export default function LandingHeader({
       className='5xl:mb-32 mb-20 text-center md:mb-24'
     >
       <header className='mx-auto max-w-3xl'>
-        <h1 className='text-accent-foreground/90 text-shadow-accent-foreground/10 xs:text-5xl mb-2 text-4xl font-semibold tracking-tight text-shadow-md lg:text-[4.5rem]'>
+        <h1 className='text-accent-foreground/90 text-shadow-accent-foreground/10 xs:text-5xl mb-2 text-4xl font-bold tracking-tight text-shadow-md lg:text-[4.5rem]'>
           {header}
         </h1>
         {subheader && (

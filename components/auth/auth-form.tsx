@@ -46,8 +46,8 @@ export default function AuthForm() {
       <Card className='w-full max-w-md'>
         <CardHeader className='text-center'>
           <div className='mb-4 flex justify-center'>
-            <div className='bg-accent flex h-16 w-16 items-center justify-center rounded-full'>
-              <Shield className='h-8 w-8 text-blue-500' />
+            <div className='bg-accent flex size-16 items-center justify-center rounded-full'>
+              <Shield className='size-8 text-blue-500' />
             </div>
           </div>
           <CardTitle className='text-accent-foreground text-2xl font-bold'>

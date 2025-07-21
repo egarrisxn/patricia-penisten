@@ -5,7 +5,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { timelineData } from "@/lib/data";
 
-export default function TimelineContent() {
+export default function FarewellTimeline() {
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
   const [altText, setAltText] = useState<string>("");
@@ -32,7 +32,7 @@ export default function TimelineContent() {
   }, []);
 
   return (
-    <div className='min-h-screen bg-linear-to-br from-rose-50 via-white to-blue-50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950'>
+    <>
       <div className='relative mx-auto max-w-6xl px-4'>
         {/* Timeline line */}
         <div className='absolute left-4 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2'></div>
@@ -120,6 +120,6 @@ export default function TimelineContent() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

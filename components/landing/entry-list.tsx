@@ -39,7 +39,7 @@ export default function EntryList({
 
   return (
     <>
-      <section className='5xl:gap-10 grid grid-cols-1 gap-6 lg:gap-8'>
+      <section className='grid grid-cols-1 gap-6 lg:gap-8'>
         {allEntries.map((entry) => (
           <Card
             key={`entry-${entry.id}`}
@@ -48,7 +48,7 @@ export default function EntryList({
             <CardContent className='px-4 pt-2 pb-4'>
               <div className='flex items-start space-x-4'>
                 <div className='min-w-0 flex-1 flex-col'>
-                  <div className='5xl:mb-7 mb-4 flex items-start justify-between lg:mb-6'>
+                  <div className='mb-4 flex items-start justify-between lg:mb-6'>
                     {isPending(entry.status) && (
                       <div className='absolute top-2 right-2 rounded-full bg-yellow-200 px-2 py-0.5 text-xs text-yellow-800'>
                         <User className='mr-1 inline-block size-3' /> Pending
