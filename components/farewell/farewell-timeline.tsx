@@ -1,21 +1,49 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
-import { timelineData } from "@/lib/data";
+import { motion } from "motion/react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { farewellTimelineItem } from "@/lib/data";
+import type { FarewellTimelineItem } from "@/lib/types";
 
 export default function FarewellTimeline() {
-  const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-  const [altText, setAltText] = useState<string>("");
+  const [selectedItem, setSelectedItem] = useState<FarewellTimelineItem | null>(
+    null
+  );
+
+  const handleImageClick = (item: FarewellTimelineItem) => {
+    setSelectedItem(item);
+  };
+
+  const handleCloseDialog = () => {
+    setSelectedItem(null);
+  };
+
+  useEffect(() => {
+    if (selectedItem) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedItem]);
 
   return (
     <>
       <div className='relative mx-auto max-w-6xl px-4'>
         {/* Timeline line */}
         <div className='absolute left-4 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2'></div>
-        {timelineData.map((item, index) => (
+
+        {farewellTimelineItem.map((item, index) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, y: 32 }}
@@ -28,13 +56,13 @@ export default function FarewellTimeline() {
             <div className='absolute left-0 -translate-x-1/2 -translate-y-2 transform md:left-1/2'>
               <div className='size-3.5 rounded-full border-2 border-white bg-indigo-400 shadow-lg md:size-4 md:border-3'></div>
             </div>
-            {/* Content */}
+
+            {/* Timeline content */}
             <div
               className={`pl-3 md:flex md:items-center md:pl-0 ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               }`}
             >
-              {/* Image */}
               <div
                 className={`md:w-1/2 ${
                   index % 2 === 0 ? "md:pl-12" : "md:pr-12"
@@ -42,38 +70,33 @@ export default function FarewellTimeline() {
               >
                 <motion.div
                   layoutId={item.src}
-                  className='dark:bg-card relative rounded-t-xl bg-white p-2.5 md:rounded-2xl md:p-0.5 md:shadow-lg md:hover:shadow-xl'
+                  className='dark:bg-card md:dark:border-border relative rounded-t-xl bg-white p-2 md:rounded-xl md:border md:border-white/20 md:p-0 md:shadow-lg md:hover:shadow-xl'
                 >
                   <Image
                     src={item.src || "/placeholder.svg"}
-                    alt={item.alt}
+                    alt={item.alt || "Farewell Tour Photo"}
                     width={600}
                     height={400}
-                    className='h-64 w-full cursor-pointer rounded-xl object-cover md:h-80'
-                    onClick={() => {
-                      setEnlargedImage(item.src || "/placeholder.svg");
-                      setAltText(item.alt);
-                    }}
+                    className='h-64 w-full cursor-pointer rounded-lg object-cover md:h-80'
+                    onClick={() => handleImageClick(item)}
                   />
                 </motion.div>
               </div>
-
-              {/* Text */}
               <div
                 className={`mt-0 md:mt-0 md:w-1/2 ${
                   index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                 }`}
               >
-                <div className='dark:bg-card dark:md:border-border text-card-foreground rounded-b-2xl bg-white p-6 shadow-xl backdrop-blur-xs hover:shadow-2xl md:rounded-2xl md:border md:border-white/20 md:shadow-lg md:hover:shadow-lg'>
+                <div className='dark:bg-card md:dark:border-border text-card-foreground rounded-b-xl bg-white p-6 shadow-lg backdrop-blur-xs hover:shadow-xl md:rounded-xl md:hover:shadow-lg'>
                   <div className='mb-4 flex items-center'>
-                    <div className='mb-4 rounded-2xl bg-linear-to-r from-rose-500 to-blue-500 px-3 py-1.5 text-xs font-medium text-white'>
+                    <div className='mb-4 rounded-xl bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white'>
                       {item.time}
                     </div>
                   </div>
-                  <h3 className='text-foreground mb-3 pl-2 text-3xl'>
+                  <h3 className='text-accent-foreground text-xl font-medium lg:text-2xl'>
                     {item.title}
                   </h3>
-                  <p className='text-foreground/70 mb-3 pl-2 text-lg'>
+                  <p className='text-accent-foreground/90 mb-3 w-full max-w-xs pt-2 text-base lg:max-w-md lg:text-lg'>
                     {item.description}
                   </p>
                 </div>
@@ -84,161 +107,41 @@ export default function FarewellTimeline() {
         <div className='h-16 md:h-24'></div>
       </div>
 
-      <AnimatePresence>
-        {enlargedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className='fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4'
-            onClick={() => setEnlargedImage(null)}
-          >
-            <div className='relative max-h-[90vh] w-full max-w-4xl'>
-              <button
-                onClick={() => setEnlargedImage(null)}
-                className='absolute -top-12 right-0 text-white transition-colors hover:text-gray-300'
-              >
-                <X className='size-8' />
-              </button>
-              <motion.div layoutId={enlargedImage}>
+      {/* Photo Dialog */}
+      <Dialog
+        open={!!selectedItem}
+        onOpenChange={(open) => {
+          if (!open) {
+            handleCloseDialog();
+          }
+        }}
+      >
+        <DialogContent className='max-w-4xl p-0'>
+          {selectedItem && (
+            <>
+              <div>
                 <Image
-                  src={enlargedImage}
-                  alt={altText}
+                  src={selectedItem.src}
+                  alt={selectedItem.alt || "Farewell Tour Photo"}
                   width={1200}
                   height={800}
-                  className='h-auto max-h-[90vh] w-auto rounded-xl object-contain'
+                  className='size-auto max-h-[80vh] rounded-t-lg object-contain'
                 />
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </div>
+              <div className='p-4'>
+                <DialogHeader>
+                  <DialogTitle className='text-accent-foreground mb-2 truncate text-lg font-medium md:text-xl'>
+                    {selectedItem.title || "Farewell Tour"}
+                  </DialogTitle>
+                </DialogHeader>
+                <div className='text-accent-foreground/90 text-sm md:text-base'>
+                  <p>{selectedItem.description || "With Patricia & Judi"}</p>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
-
-// "use client";
-
-// import { useState, useEffect } from "react";
-// import Image from "next/image";
-// import { X } from "lucide-react";
-// import { timelineData } from "@/lib/data";
-
-// export default function FarewellTimeline() {
-//   const [visibleItems, setVisibleItems] = useState<number[]>([]);
-//   const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
-//   const [altText, setAltText] = useState<string>("");
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             const id = Number.parseInt(
-//               entry.target.getAttribute("data-id") || "0"
-//             );
-//             setVisibleItems((prev) => [...new Set([...prev, id])]);
-//           }
-//         });
-//       },
-//       { threshold: 0.2 }
-//     );
-
-//     const elements = document.querySelectorAll("[data-id]");
-//     elements.forEach((el) => observer.observe(el));
-
-//     return () => observer.disconnect();
-//   }, []);
-
-//   return (
-//     <>
-//       <div className='relative mx-auto max-w-6xl px-4'>
-//         {/* Timeline line */}
-//         <div className='absolute left-4 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2'></div>
-//         {timelineData.map((item, index) => (
-//           <div
-//             key={item.id}
-//             data-id={item.id}
-//             className={`relative mb-16 transition-all duration-1000 md:mb-24 ${
-//               visibleItems.includes(item.id)
-//                 ? "translate-y-0 opacity-100"
-//                 : "translate-y-8 opacity-0"
-//             }`}
-//           >
-//             {/* Timeline dot */}
-//             <div className='absolute left-0 -translate-x-1/2 -translate-y-2 transform md:left-1/2'>
-//               <div className='size-3.5 rounded-full border-2 border-white bg-indigo-400 shadow-lg md:size-4 md:border-3'></div>
-//             </div>
-
-//             {/* Content */}
-//             <div
-//               className={`pl-3 md:flex md:items-center md:pl-0 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
-//             >
-//               {/* Image */}
-//               <div
-//                 className={`md:w-1/2 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`}
-//               >
-//                 <div className='dark:bg-card relative rounded-t-xl bg-white p-2.5 md:rounded-2xl md:p-0.5 md:shadow-lg md:hover:shadow-xl'>
-//                   <Image
-//                     src={item.src || "/placeholder.svg"}
-//                     alt={item.alt}
-//                     width={600}
-//                     height={400}
-//                     className='h-64 w-full cursor-pointer rounded-xl object-cover md:h-80'
-//                     onClick={() => {
-//                       setEnlargedImage(item.src || "/placeholder.svg");
-//                       setAltText(item.alt);
-//                     }}
-//                   />
-//                 </div>
-//               </div>
-
-//               {/* Text */}
-//               <div
-//                 className={`mt-0 md:mt-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}
-//               >
-//                 <div className='dark:bg-card dark:md:border-border text-card-foreground rounded-b-2xl bg-white p-6 shadow-xl backdrop-blur-xs hover:shadow-2xl md:rounded-2xl md:border md:border-white/20 md:shadow-lg md:hover:shadow-lg'>
-//                   <div className='mb-4 flex items-center'>
-//                     <div className='mb-4 rounded-2xl bg-linear-to-r from-rose-500 to-blue-500 px-3 py-1.5 text-xs font-medium text-white'>
-//                       {item.time}
-//                     </div>
-//                   </div>
-//                   <h3 className='text-foreground mb-3 pl-2 text-3xl'>
-//                     {item.title}
-//                   </h3>
-//                   <p className='text-foreground/70 mb-3 pl-2 text-lg'>
-//                     {item.description}
-//                   </p>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//         <div className='h-16 md:h-24'></div>
-//       </div>
-
-//       {enlargedImage && (
-//         <div
-//           className='fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4'
-//           onClick={() => setEnlargedImage(null)}
-//         >
-//           <div className='relative max-h-[90vh] w-full max-w-4xl'>
-//             <button
-//               onClick={() => setEnlargedImage(null)}
-//               className='absolute -top-12 right-0 text-white transition-colors hover:text-gray-300'
-//             >
-//               <X className='size-8' />
-//             </button>
-//             <Image
-//               src={enlargedImage}
-//               alt={altText}
-//               width={1200}
-//               height={800}
-//               className='h-auto max-h-[90vh] w-auto rounded-xl object-contain'
-//             />
-//           </div>
-//         </div>
-//       )}
-//     </>
-//   );
-// }

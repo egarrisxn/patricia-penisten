@@ -22,44 +22,41 @@ const fontSerif = Bitter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_DATA.url),
-  title: {
-    default: SITE_DATA.title,
-    template: `%s | ${SITE_DATA.title}`,
-  },
+  metadataBase: new URL(SITE_DATA.rootUrl),
+  title: SITE_DATA.rootTitle,
   description: SITE_DATA.description,
-  applicationName: SITE_DATA.title,
-  referrer: "origin-when-cross-origin",
+  applicationName: SITE_DATA.rootTitle,
   creator: SITE_DATA.website,
+  referrer: "origin-when-cross-origin",
   keywords: [
     "memories",
     "memorial",
+    "farewell",
     "tribute",
-    "obituary",
-    "funeral",
-    "rip",
-    "grandma",
-    "mother",
+    "memories",
+    "gallery",
+    "timeline",
     "teacher",
     "patricia",
     "penisten",
+    "rememberance",
+    "Patricia Penisten",
   ],
   openGraph: {
-    title: SITE_DATA.title,
+    title: SITE_DATA.rootTitle,
     description: SITE_DATA.description,
-    url: SITE_DATA.url,
-    siteName: SITE_DATA.title,
+    url: SITE_DATA.rootUrl,
+    siteName: SITE_DATA.rootTitle,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_DATA.title,
+    title: SITE_DATA.rootTitle,
     description: SITE_DATA.description,
     creator: SITE_DATA.socialHandle,
     site: SITE_DATA.socialHandle,
   },
-  verification: {},
 };
 
 export const viewport: Viewport = {
@@ -77,7 +74,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning className='scroll-smooth' lang='en'>
       <head>
-        <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
+        <meta name='apple-mobile-web-app-title' content={SITE_DATA.rootTitle} />
       </head>
       <body
         className={`${fontSans.variable} ${fontMono.variable} ${fontSerif.variable} overscroll-x-contain font-sans antialiased`}

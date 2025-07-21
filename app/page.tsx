@@ -13,15 +13,14 @@ export default function LandingPage() {
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <LandingNavbar />
 
-      <main>
-        <section id='hero' className='relative h-screen w-full overflow-hidden'>
-          <LandingHero />
+      <main className='bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900'>
+        <section id='hero'>
+          <div className='relative min-h-screen w-full overflow-hidden'>
+            <LandingHero />
+          </div>
         </section>
 
-        <section
-          id='lifestory'
-          className='5xl:py-32 to-background dark:to-background bg-gradient-to-b from-slate-200 via-slate-100 py-24 dark:from-slate-950/80 dark:via-slate-950/90'
-        >
+        <section id='lifestory' className='5xl:py-32 py-24'>
           <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Life Story'
@@ -35,7 +34,7 @@ export default function LandingPage() {
           <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Photo Gallery'
-              subheader='Share your cherished memories with photos.'
+              subheader='Share your cherished memories in photos.'
             />
             <LandingPhotoGallery />
           </div>
@@ -53,7 +52,7 @@ export default function LandingPage() {
 
         <section
           id='cta'
-          className='5xl:pt-40 5xl:pb-72 to-background dark:to-background bg-gradient-to-t from-slate-200 via-slate-100 pt-24 pb-52 md:pt-24 md:pb-64 xl:pt-36 xl:pb-68 dark:from-slate-900/80 dark:via-slate-950/80'
+          className='5xl:pt-40 5xl:pb-72 pt-24 pb-52 md:pt-24 md:pb-64 xl:pt-36 xl:pb-68'
         >
           <div className='5xl:max-w-[88rem] mx-auto max-w-md px-4 sm:px-6 md:max-w-2xl lg:max-w-3xl lg:px-8 xl:max-w-7xl 2xl:max-w-[84rem]'>
             <LandingCTA />

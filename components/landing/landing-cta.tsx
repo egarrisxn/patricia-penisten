@@ -21,7 +21,7 @@ export default function LandingCTA() {
               size='lg'
               className='cursor-pointer bg-rose-400/90 font-medium text-white hover:bg-rose-400 md:h-11 md:text-xl xl:h-13 xl:text-2xl dark:bg-rose-400/90 dark:hover:bg-rose-400'
             >
-              The Road Trip
+              The Farewell Tour
             </Button>
           </Link>
         </div>

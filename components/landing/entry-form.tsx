@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Book, Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -85,7 +85,10 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
   return (
     <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white shadow-lg backdrop-blur-sm dark:bg-slate-950'>
       <CardHeader className='lg:px-10'>
-        <CardTitle>Sign Guestbook</CardTitle>
+        <CardTitle className='flex flex-row items-center text-base lg:text-lg'>
+          <Book className='mr-2.5 size-4 text-blue-400 lg:size-5' /> Sign
+          Guestbook
+        </CardTitle>
       </CardHeader>
       <CardContent className='lg:px-10'>
         <form onSubmit={handleSubmit} className='space-y-4'>
@@ -98,6 +101,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className='mt-1'
+              placeholder='Jane Doe'
             />
           </div>
           <div>
@@ -109,6 +113,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               value={relationship}
               onChange={(e) => setRelationship(e.target.value)}
               className='mt-1'
+              placeholder='Old family friend'
             />
           </div>
           <div>
@@ -121,6 +126,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
               onChange={(e) => setMessage(e.target.value)}
               className='mt-1 min-h-40'
               required
+              placeholder='You and your light will be missed.'
             />
           </div>
           <Button

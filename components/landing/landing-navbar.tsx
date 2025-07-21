@@ -9,7 +9,7 @@ export default function LandingNavbar() {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const toggleVisibility = () => {
       if (!navRef.current) return;
       if (window.scrollY > 50) {
         navRef.current.classList.add("scrolled");
@@ -18,17 +18,18 @@ export default function LandingNavbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
     <header
       ref={navRef}
+      id='landing-header'
       className='fixed top-0 z-50 w-full bg-transparent text-white transition-all'
     >
-      <div className='mx-auto flex flex-row items-center justify-between px-1 py-3 lg:px-4'>
-        <div className='pl-2 lg:pl-1'>
+      <div className='mx-auto flex flex-row items-center justify-between p-4'>
+        <div className='flex items-center'>
           <Link
             className='tracking-snug cursor-pointer text-lg font-bold lg:text-2xl'
             href='/'
@@ -37,13 +38,13 @@ export default function LandingNavbar() {
           </Link>
         </div>
 
-        <div className='xs:gap-0.5 flex flex-row items-center sm:gap-2 lg:gap-4'>
-          <nav className='xs:flex xs:gap-2.5 hidden flex-row items-center sm:gap-4 lg:gap-6'>
+        <div className='flex flex-row items-center sm:gap-6 lg:gap-8'>
+          <nav className='hidden flex-row items-center sm:flex sm:gap-6 lg:gap-8'>
             {landingNavigation.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className='group hover:text-primary relative cursor-pointer text-xs font-medium transition-colors sm:text-sm'
+                className='group hover:text-primary relative cursor-pointer text-sm font-medium transition-colors'
               >
                 {link.name}
                 <span className='bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>

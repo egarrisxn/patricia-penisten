@@ -1,3 +1,4 @@
+"use client";
 import * as motion from "motion/react-client";
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,9 +10,9 @@ const containerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3,
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
+      duration: 0.5,
+      staggerChildren: 0.3,
+      delayChildren: 0.2,
     },
   },
 };
@@ -22,7 +23,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.2,
+      duration: 0.5,
     },
   },
 };
@@ -30,21 +31,18 @@ const itemVariants = {
 export default function LandingLifeStory() {
   return (
     <motion.div
-      className='grid items-start gap-12 lg:grid-cols-2 lg:gap-16'
+      className='grid items-start gap-16 md:px-16 lg:grid-cols-2 lg:px-0'
       variants={containerVariants}
       initial='hidden'
       whileInView='visible'
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: "some" }}
     >
-      <motion.div className='space-y-12' variants={containerVariants}>
+      <div className='space-y-12'>
         <motion.div variants={itemVariants}>
-          <Card className='sm:border-border/20 sm:bg-card rounded-none border-none bg-transparent py-0 shadow-none backdrop-blur-sm sm:rounded-xl sm:border sm:p-4 sm:shadow-lg'>
-            <CardContent className='px-2 sm:px-6'>
+          <Card className='lg:border-border/20 lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-xl lg:border lg:px-4 lg:py-8 lg:shadow-lg lg:backdrop-blur-sm'>
+            <CardContent className='px-2 lg:px-6'>
               {lifeStoryBlurbs.map((text, index) => (
-                <p
-                  key={index}
-                  className='py-2 lg:py-2.5 lg:text-lg lg:leading-relaxed'
-                >
+                <p key={index} className='py-2 lg:text-lg lg:leading-relaxed'>
                   {text}
                 </p>
               ))}
@@ -52,14 +50,14 @@ export default function LandingLifeStory() {
           </Card>
         </motion.div>
         <motion.div variants={itemVariants}>
-          <Card className='sm:border-border/20 sm:bg-card rounded-none border-none bg-transparent py-0 shadow-none backdrop-blur-sm sm:rounded-xl sm:border sm:p-4 sm:py-8 sm:shadow-lg'>
-            <CardHeader className='px-2 sm:px-6'>
-              <CardTitle className='xs:text-lg flex items-center text-base leading-none lg:text-2xl'>
-                <Star className='xs:size-6 xs:mr-3 mr-2.5 size-5 text-yellow-500' />
+          <Card className='lg:border-border/20 lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-xl lg:border lg:px-4 lg:py-8 lg:shadow-lg lg:backdrop-blur-sm'>
+            <CardHeader className='px-2 lg:px-6'>
+              <CardTitle className='xs:text-lg flex items-center text-xl leading-none lg:text-2xl'>
+                <Star className='xs:size-6 mr-2.5 size-5 text-yellow-500 lg:size-7' />
                 Legacy of Teaching
               </CardTitle>
             </CardHeader>
-            <CardContent className='px-2 sm:px-6'>
+            <CardContent className='px-2 lg:px-6'>
               <p className='lg:text-lg lg:leading-relaxed'>
                 For 34 years, Pat dedicated her life to teaching at Douglas
                 Elementary School. She touched the lives of hundreds of
@@ -70,41 +68,41 @@ export default function LandingLifeStory() {
             </CardContent>
           </Card>
         </motion.div>
-      </motion.div>
-      <motion.div className='space-y-6' variants={containerVariants}>
+      </div>
+      <div className='space-y-6'>
         <motion.h3
           variants={itemVariants}
-          className='text-foreground/90 mb-8 text-2xl font-bold lg:text-3xl'
+          className='text-foreground/90 mb-8 text-lg font-bold md:text-2xl lg:text-3xl'
         >
           Timeline
         </motion.h3>
-        <div className='space-y-7 lg:space-y-6'>
+        <div className='space-y-6 lg:space-y-7'>
           {lifeStoryData.map((event, index) => (
             <motion.div
               key={index}
-              className='flex items-start space-x-3.5 lg:space-x-4'
+              className='flex items-start space-x-3 md:space-x-3.5 lg:space-x-4'
               variants={itemVariants}
             >
               <motion.div
-                className='flex size-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 shadow-lg sm:size-16 lg:size-20'
+                className='flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 shadow-lg lg:size-20'
                 variants={itemVariants}
               >
-                <span className='mx-auto flex text-center text-xs font-bold text-wrap text-white sm:text-sm'>
+                <span className='mx-auto flex text-center text-xs font-bold text-wrap text-white lg:text-sm'>
                   {event.year}
                 </span>
               </motion.div>
               <div className='flex-1'>
-                <h4 className='text-accent-foreground mb-2 text-lg font-bold tracking-tight lg:text-xl lg:tracking-normal'>
+                <h4 className='text-accent-foreground mb-0.5 font-bold tracking-tight md:text-lg md:leading-snug md:tracking-normal lg:text-xl'>
                   {event.title}
                 </h4>
-                <p className='text-accent-foreground/90 xs:text-base text-[0.9rem] font-medium tracking-tight lg:text-[1.15rem] lg:tracking-normal'>
+                <p className='text-accent-foreground/90 text-[0.85rem] font-medium tracking-tight md:text-base md:leading-snug md:tracking-normal lg:text-[1.15rem]'>
                   {event.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

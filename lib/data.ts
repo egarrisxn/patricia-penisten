@@ -1,7 +1,7 @@
 import type {
-  TimelineData,
+  FarewellTimelineItem,
   LifeStoryData,
-  TimelineHeroData,
+  FarewellHero,
   FooterData,
 } from "./types";
 
@@ -71,7 +71,14 @@ export const lifeStoryData: LifeStoryData[] = [
   },
 ];
 
-export const timelineData: TimelineData[] = [
+export const farewellHero: FarewellHero = {
+  title: "Farewell Tour",
+  subtitle: "With Patricia & Judi",
+  quote:
+    "A life beautifully lived, and a legacy of love that will forever remain in our hearts.",
+};
+
+export const farewellTimelineItem: FarewellTimelineItem[] = [
   {
     id: 1,
     time: "Before the trip",
@@ -145,13 +152,6 @@ export const timelineData: TimelineData[] = [
     alt: "Cheryl & Judi",
   },
 ];
-
-export const timelineHeroData: TimelineHeroData = {
-  title: "Farewell Tour",
-  subtitle: "With Patricia & Judi",
-  quote:
-    "A life beautifully lived, and a legacy of love that will forever remain in our hearts.",
-};
 
 export const footerData: FooterData = {
   header: "In Loving Memory of Patricia G. Penisten",

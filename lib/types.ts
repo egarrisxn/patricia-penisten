@@ -24,19 +24,19 @@ export interface LifeStoryData {
   description: string;
 }
 
-export interface TimelineData {
+export interface FarewellHero {
+  title: string;
+  subtitle: string;
+  quote: string;
+}
+
+export interface FarewellTimelineItem {
   id: number;
   time: string;
   title: string;
   description: string;
   src: string;
   alt: string;
-}
-
-export interface TimelineHeroData {
-  title: string;
-  subtitle: string;
-  quote: string;
 }
 
 export interface FooterData {

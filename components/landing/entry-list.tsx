@@ -21,65 +21,63 @@ export default function EntryList({
     ),
   ];
 
-  const isPending = (status: string) => status === "pending";
-
   if (allEntries.length === 0) {
     return (
-      <section className='pt-20 pb-24 text-center'>
+      <div className='pt-20 pb-24 text-center'>
         <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800'>
           <MessageCircle className='text-foreground/80 size-12' />
         </div>
-        <p className='text-foreground/80 text-lg'>No Guestbook entries yet</p>
+        <p className='text-foreground/80 text-lg'>No Guestbook entries</p>
         <p className='text-foreground/70 text-sm'>
-          Be the first to add a lovely story
+          Be the first to add to our guestbook
         </p>
-      </section>
+      </div>
     );
   }
 
+  const isPending = (status: string) => status === "pending";
+
   return (
-    <>
-      <div className='grid grid-cols-1 gap-6 md:gap-8'>
-        {allEntries.map((entry) => (
-          <Card
-            key={`entry-${entry.id}`}
-            className='border-border/20 dark:bg-card h-full border bg-white shadow-lg backdrop-blur-sm hover:shadow-xl'
-          >
-            <CardContent className='flex h-full flex-col p-6 md:p-8'>
-              <div className='flex items-start space-x-4'>
-                <div className='min-w-0 flex-1 flex-col'>
-                  <div className='mb-4 flex items-start justify-between md:mb-6'>
-                    {isPending(entry.status) && (
-                      <div className='absolute top-2 right-2 rounded-full bg-yellow-200 px-2 py-0.5 text-xs text-amber-600'>
-                        <User className='mr-1 inline-block size-3' /> Pending
-                        (only you)
-                      </div>
-                    )}
-                    <div>
-                      <h4 className='mb-0.5 text-xl font-medium md:text-2xl'>
-                        {entry.name || "Anonymous"}
-                      </h4>
-                      <p className='text-sm text-purple-700 md:text-base dark:text-purple-300'>
-                        {entry.relationship || "Unknown"}
-                      </p>
+    <div className='grid grid-cols-1 gap-6 md:gap-8'>
+      {allEntries.map((entry) => (
+        <Card
+          key={`entry-${entry.id}`}
+          className='dark:border-border/20 dark:bg-card h-full border border-white/20 bg-white shadow-lg backdrop-blur-xs hover:shadow-xl'
+        >
+          <CardContent className='flex h-full flex-col p-6 md:p-8'>
+            <div className='flex items-start space-x-4'>
+              <div className='min-w-0 flex-1 flex-col'>
+                <div className='mb-4 flex items-start justify-between md:mb-6'>
+                  {isPending(entry.status) && (
+                    <div className='absolute top-2 right-2 rounded-full bg-amber-400 px-2 py-1 text-xs text-slate-950'>
+                      <User className='mr-[1px] mb-[1px] inline-block size-3' />{" "}
+                      Pending
                     </div>
-                    <time className='text-accent-foreground/80 text-sm md:text-base'>
-                      {new Date(entry.created_at).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </time>
+                  )}
+                  <div>
+                    <h4 className='mb-0.5 text-xl font-medium md:text-2xl'>
+                      {entry.name || "Anonymous"}
+                    </h4>
+                    <p className='text-sm text-purple-700 md:text-base dark:text-purple-300'>
+                      {entry.relationship || "Unknown"}
+                    </p>
                   </div>
-                  <p className='text-foreground/90 grow pt-4 text-sm italic md:text-base'>
-                    <q>{entry.message}</q>
-                  </p>
+                  <time className='text-accent-foreground/80 text-sm md:text-base'>
+                    {new Date(entry.created_at).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </time>
                 </div>
+                <p className='text-foreground/90 grow pt-4 text-sm italic md:text-base'>
+                  <q>{entry.message}</q>
+                </p>
               </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
   );
 }

@@ -21,13 +21,13 @@ export default function ThemeToggle() {
     <Button
       variant='ghost'
       size='icon'
-      className='cursor-pointer hover:bg-transparent dark:hover:bg-transparent'
+      className='m-0 size-fit cursor-pointer p-0 hover:bg-transparent dark:hover:bg-transparent'
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? (
-        <SunIcon className='size-4.5 text-yellow-600 lg:size-5.5' />
+        <SunIcon className='size-5 text-yellow-600 lg:size-5.5' />
       ) : (
-        <MoonIcon className='size-4.5 text-blue-600 lg:size-5.5' />
+        <MoonIcon className='size-5 text-blue-600 lg:size-5.5' />
       )}
     </Button>
   );

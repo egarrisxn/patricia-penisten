@@ -24,16 +24,17 @@ export default function ScrollToTopButton() {
   }, []);
 
   const scrollToTop = () => {
-    document.querySelector("#hero")?.scrollIntoView();
+    document.querySelector("#hero")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <Button
       ref={buttonRef}
       onClick={scrollToTop}
+      id='toggle-button'
       size='icon'
       variant='basic'
-      className='text-foreground/80 hover:text-foreground pointer-events-none fixed right-4 bottom-4 z-50 cursor-pointer opacity-0 transition-opacity duration-300'
+      className='text-foreground/80 hover:text-foreground fixed right-4 bottom-4 z-50 hidden cursor-pointer transition-opacity duration-300 lg:block'
     >
       <ChevronUp className='size-6 lg:size-8' />
     </Button>

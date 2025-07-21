@@ -1,6 +1,6 @@
 import * as motion from "motion/react-client";
 import { Heart } from "lucide-react";
-import { timelineHeroData } from "@/lib/data";
+import { farewellHero } from "@/lib/data";
 
 export default function FarewellHero() {
   return (
@@ -17,14 +17,14 @@ export default function FarewellHero() {
         </div>
 
         <h1 className='text-accent-foreground/90 text-shadow-accent-foreground/10 xs:mb-2 xs:leading-none xs:text-[2.5rem] mb-0.5 font-serif text-4xl font-bold text-shadow-lg lg:text-[4rem] xl:text-[5.25rem]'>
-          {timelineHeroData.title}
+          {farewellHero.title}
         </h1>
         <h2 className='text-accent-foreground xs:text-xl xs:font-light xs:leading-none xs:tracking-tight xs:mb-8 mb-6 text-lg lg:mb-8 lg:text-3xl xl:text-4xl'>
-          {timelineHeroData.subtitle}
+          {farewellHero.subtitle}
         </h2>
 
         <p className='text-accent-foreground/90 xs:text-base mx-auto max-w-sm px-4 text-sm tracking-tight italic lg:max-w-lg lg:text-lg'>
-          <q>{timelineHeroData.quote}</q>
+          <q>{farewellHero.quote}</q>
         </p>
       </header>
     </motion.div>
