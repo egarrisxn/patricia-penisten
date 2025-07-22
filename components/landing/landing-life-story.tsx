@@ -1,44 +1,22 @@
 "use client";
+
 import * as motion from "motion/react-client";
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CONTAINER_VARIANT_STAGGER, ITEM_VARIANT } from "@/lib/motion";
 import { lifeStoryBlurbs, lifeStoryData } from "@/lib/data";
-
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 
 export default function LandingLifeStory() {
   return (
     <motion.div
       className='grid items-start gap-16 md:px-16 lg:grid-cols-2 lg:px-0'
-      variants={containerVariants}
+      variants={CONTAINER_VARIANT_STAGGER}
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: "some" }}
     >
       <div className='space-y-12'>
-        <motion.div variants={itemVariants}>
+        <motion.div variants={ITEM_VARIANT}>
           <Card className='lg:border-border/20 lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-xl lg:border lg:px-4 lg:py-8 lg:shadow-lg lg:backdrop-blur-sm'>
             <CardContent className='px-2 lg:px-6'>
               {lifeStoryBlurbs.map((text, index) => (
@@ -49,7 +27,7 @@ export default function LandingLifeStory() {
             </CardContent>
           </Card>
         </motion.div>
-        <motion.div variants={itemVariants}>
+        <motion.div variants={ITEM_VARIANT}>
           <Card className='lg:border-border/20 lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-xl lg:border lg:px-4 lg:py-8 lg:shadow-lg lg:backdrop-blur-sm'>
             <CardHeader className='px-2 lg:px-6'>
               <CardTitle className='xs:text-lg flex items-center text-xl leading-none lg:text-2xl'>
@@ -71,7 +49,7 @@ export default function LandingLifeStory() {
       </div>
       <div className='space-y-6'>
         <motion.h3
-          variants={itemVariants}
+          variants={ITEM_VARIANT}
           className='text-foreground/90 mb-8 text-lg font-bold md:text-2xl lg:text-3xl'
         >
           Timeline
@@ -81,16 +59,13 @@ export default function LandingLifeStory() {
             <motion.div
               key={index}
               className='flex items-start space-x-3 md:space-x-3.5 lg:space-x-4'
-              variants={itemVariants}
+              variants={ITEM_VARIANT}
             >
-              <motion.div
-                className='flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 shadow-lg lg:size-20'
-                variants={itemVariants}
-              >
+              <div className='flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 shadow-lg lg:size-20'>
                 <span className='mx-auto flex text-center text-xs font-bold text-wrap text-white lg:text-sm'>
                   {event.year}
                 </span>
-              </motion.div>
+              </div>
               <div className='flex-1'>
                 <h4 className='text-accent-foreground mb-0.5 font-bold tracking-tight md:text-lg md:leading-snug md:tracking-normal lg:text-xl'>
                   {event.title}

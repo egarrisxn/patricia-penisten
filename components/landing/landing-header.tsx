@@ -13,7 +13,7 @@ export default function LandingHeader({
     <motion.div
       initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "none" }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.3 }}
       className='5xl:mb-32 mb-20 text-center md:mb-24'
     >

@@ -6,25 +6,24 @@ export const SITE_URL =
       "https://memories-of-patricia.vercel.app");
 
 export const SITE_DATA: {
-  rootTitle: string;
+  title: string;
   farewellTitle: string;
   description: string;
-  rootUrl: string;
+  url: string;
   farewellUrl: string;
-  ogImage: string;
-  twitterImage: string;
-  alt: string;
+  farewellOG: string;
+  altText: string;
   socialHandle: string;
   website: string;
 } = {
-  rootTitle: "Memories of Patricia",
-  farewellTitle: "The Farewell Tour",
-  description: "Celebrating the life of Patricia G. Penisten (1935-2025).",
-  rootUrl: SITE_URL,
-  farewellUrl: `${SITE_URL}/opengraph-image.png`,
-  ogImage: `${SITE_URL}/opengraph-image.png`,
-  twitterImage: `${SITE_URL}/twitter-image.png`,
-  alt: "A beautiful image commemorating Patricia Penisten's life.",
+  title: "Patricia Penisten: A Life Remembered",
+  farewellTitle: "Patricia Penisten: The Farewell Tour",
+  description:
+    "Celebrating the life and legacy of Patricia G. Penisten (1935-2025).",
+  url: SITE_URL,
+  farewellUrl: `${SITE_URL}/farewell`,
+  farewellOG: `${SITE_URL}/og.png`,
+  altText: "A beautiful image commemorating Patricia G. Penisten's life.",
   socialHandle: "@eg__xo",
   website: "https://egxo.dev",
 };

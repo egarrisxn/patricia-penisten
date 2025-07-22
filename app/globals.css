@@ -114,5 +114,5 @@
 
 /* Landing navbar */
 #landing-header.scrolled {
-  @apply bg-background/90 text-black shadow-sm backdrop-blur-md dark:text-white;
+  @apply bg-background/90 pointer-events-auto text-black opacity-100 shadow-sm backdrop-blur-md dark:text-white;
 }

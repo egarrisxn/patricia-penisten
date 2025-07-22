@@ -1,31 +1,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import ScrollDownButton from "@/components/landing/scroll-down";
-
-const containerVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-
-      staggerChildren: 0.2,
-      delayChildren: 0.4,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
+import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
 
 export default function LandingHero() {
   return (
@@ -37,7 +13,7 @@ export default function LandingHero() {
         transition={{ duration: 1.5 }}
       >
         <Image
-          src='/backgrounds/bg-00.avif'
+          src='/bg/bg-00.avif'
           alt='Patricia G Penisten Background'
           fill
           priority
@@ -50,20 +26,19 @@ export default function LandingHero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 0.2 }}
       />
-
       <motion.div
         className='5xl:max-w-7xl absolute inset-0 z-30 mx-auto flex size-full max-w-6xl flex-col items-center justify-center gap-4 px-4 pt-8 pb-48 md:pt-24 md:pb-36 lg:flex-row lg:pb-24'
-        variants={containerVariants}
+        variants={CONTAINER_VARIANT_SCALE}
         initial='hidden'
         animate='visible'
       >
         <motion.aside
-          variants={itemVariants}
+          variants={ITEM_VARIANT}
           className='flex w-fit items-center lg:items-end'
         >
           <figure className='5xl:size-116 4xl:size-108 size-48 overflow-hidden lg:size-72 xl:size-84 2xl:size-96'>
             <Image
-              src='/icons/7.png'
+              src='/icon/7.png'
               alt='Patricia G Penisten Icon'
               height={500}
               width={500}
@@ -75,7 +50,7 @@ export default function LandingHero() {
           </figure>
         </motion.aside>
         <motion.header
-          variants={itemVariants}
+          variants={ITEM_VARIANT}
           className='flex w-fit max-w-xs flex-col items-center text-center lg:max-w-none lg:items-start lg:text-start'
         >
           <h1 className='5xl:text-[4.8rem] 4xl:text-[4.6rem] mb-1 bg-gradient-to-bl from-yellow-50 via-red-300 to-rose-300 bg-clip-text font-serif text-[2.1rem] leading-tight font-bold text-transparent text-shadow-lg md:leading-none lg:text-[3.20rem] xl:text-[4.1rem] xl:tracking-[-0.015em] 2xl:text-[4.5rem]'>

@@ -7,7 +7,6 @@ import ScrollToTopButton from "@/components/shared/scroll-to-top";
 import { SITE_DATA } from "@/lib/config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_DATA.rootUrl),
   title: SITE_DATA.farewellTitle,
   description: SITE_DATA.description,
   openGraph: {
@@ -19,10 +18,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: SITE_DATA.ogImage,
-        alt: SITE_DATA.alt,
-        // url: "https://memories-of-patricia.vercel.app/opengraph-image.png",
-        // alt: "A beautiful image commemorating Patricia Penisten's life",
+        url: SITE_DATA.farewellOG,
+        alt: SITE_DATA.altText,
         width: 1200,
         height: 630,
       },
@@ -36,10 +33,8 @@ export const metadata: Metadata = {
     site: SITE_DATA.socialHandle,
     images: [
       {
-        url: SITE_DATA.twitterImage,
-        alt: SITE_DATA.alt,
-        // url: "https://memories-of-patricia.vercel.app/opengraph-image.png",
-        // alt: "A beautiful image commemorating Patricia Penisten's life.",
+        url: SITE_DATA.farewellOG,
+        alt: SITE_DATA.altText,
         width: 1200,
         height: 630,
       },

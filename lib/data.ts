@@ -1,4 +1,5 @@
 import type {
+  NavLinks,
   FarewellTimelineItem,
   LifeStoryData,
   FarewellHero,
@@ -6,12 +7,6 @@ import type {
 } from "./types";
 
 //! LANDING PAGE
-
-export const landingNavigation = [
-  { name: "Life Story", href: "#lifestory" },
-  { name: "Photo Gallery", href: "#photogallery" },
-  { name: "Guestbook", href: "#guestbook" },
-];
 
 export const lifeStoryBlurbs = [
   `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
@@ -71,6 +66,14 @@ export const lifeStoryData: LifeStoryData[] = [
   },
 ];
 
+export const landingNavigation: NavLinks[] = [
+  { name: "Life Story", href: "#lifestory" },
+  { name: "Photo Gallery", href: "#photogallery" },
+  { name: "Guestbook", href: "#guestbook" },
+];
+
+//! FAREWELL PAGE
+
 export const farewellHero: FarewellHero = {
   title: "Farewell Tour",
   subtitle: "With Patricia & Judi",
@@ -85,7 +88,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat & Judi",
     description:
       "Pat spent time with Judi just a few days before her final journey began together with family.",
-    src: "/timeline/gma-judi.png",
+    src: "/farewell/gma-judi.png",
     alt: "Pat & Judi",
   },
   {
@@ -94,7 +97,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat Solo",
     description:
       "She settled in with Judi by her side, ready to begin her final road trip with peace and grace.",
-    src: "/timeline/gma-solo.png",
+    src: "/farewell/gma-solo.png",
     alt: "Pat Solo",
   },
   {
@@ -103,7 +106,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat & Ettie",
     description:
       "Her first visit was with her mother Ettie, where they shared a sweet and quiet morning moment.",
-    src: "/timeline/gma-ettie.png",
+    src: "/farewell/gma-ettie.png",
     alt: "Pat & Ettie",
   },
   {
@@ -112,7 +115,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat & Hugh",
     description:
       "Next, she visited her father Hugh, who no doubt welcomed her with pride and warmth in spirit.",
-    src: "/timeline/gma-hugh.png",
+    src: "/farewell/gma-hugh.png",
     alt: "Pat & Hugh",
   },
   {
@@ -121,7 +124,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat & Chuck",
     description:
       "She made a stop to see her brother Chuck, thankful for the time they had to talk and connect.",
-    src: "/timeline/gma-chuck.png",
+    src: "/farewell/gma-chuck.png",
     alt: "Pat & Chuck",
   },
   {
@@ -130,7 +133,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat, Jimmy, & Randi",
     description:
       "A few feet further, she visited her children Jimmy and Randi for hugs, laughter, and reflection.",
-    src: "/timeline/gma-jimmy.png",
+    src: "/farewell/gma-jimmy.png",
     alt: "Pat, Jimmy, & Randi",
   },
   {
@@ -139,7 +142,7 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Pat, Chuck, Jimmy, & Randi",
     description:
       "Her final visit brought time with Chuck, Jimmy, and Randi. Her journey could now come to rest.",
-    src: "/timeline/gma-jimmy-n-chuck.png",
+    src: "/farewell/gma-jimmy-n-chuck.png",
     alt: "Pat, Chuck, Jimmy, & Randi",
   },
   {
@@ -148,10 +151,12 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     title: "Cheryl & Judi",
     description:
       "Cheryl could not join the trip, so Judi gave her a kiss for Pat, a final act of sisterly love.",
-    src: "/timeline/gma-judi-n-cheryl.png",
+    src: "/farewell/gma-judi-n-cheryl.png",
     alt: "Cheryl & Judi",
   },
 ];
+
+//! SHARED PAGES
 
 export const footerData: FooterData = {
   header: "In Loving Memory of Patricia G. Penisten",

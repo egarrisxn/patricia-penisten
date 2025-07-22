@@ -17,9 +17,10 @@ export default function SharedFooter() {
           <span>by</span>
           <a
             href='https://egxo.dev'
-            className='text-primary underline-offset-4 group-hover:underline'
+            className='group-hover:text-primary relative cursor-pointer transition-colors'
           >
             egxo.dev
+            <span className='bg-primary absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
           </a>
         </div>
       </div>

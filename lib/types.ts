@@ -18,6 +18,17 @@ export interface Entry {
   submitted_by_ip: string;
 }
 
+export interface NavLinks {
+  name: string;
+  href: string;
+}
+
+export interface FooterData {
+  header: string;
+  date: string;
+  subheader: string;
+}
+
 export interface LifeStoryData {
   year: string;
   title: string;
@@ -37,10 +48,4 @@ export interface FarewellTimelineItem {
   description: string;
   src: string;
   alt: string;
-}
-
-export interface FooterData {
-  header: string;
-  date: string;
-  subheader: string;
 }

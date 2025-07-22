@@ -11,13 +11,13 @@ export default function LandingNavbar() {
   useEffect(() => {
     const toggleVisibility = () => {
       if (!navRef.current) return;
-      if (window.scrollY > 50) {
+      if (window.scrollY > 120) {
         navRef.current.classList.add("scrolled");
       } else {
         navRef.current.classList.remove("scrolled");
       }
     };
-
+    toggleVisibility();
     window.addEventListener("scroll", toggleVisibility);
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
@@ -26,7 +26,7 @@ export default function LandingNavbar() {
     <header
       ref={navRef}
       id='landing-header'
-      className='fixed top-0 z-50 w-full bg-transparent text-white transition-all'
+      className='pointer-events-none fixed top-0 z-50 w-full opacity-0 transition-all'
     >
       <div className='mx-auto flex flex-row items-center justify-between p-4'>
         <div className='flex items-center'>
@@ -34,7 +34,7 @@ export default function LandingNavbar() {
             className='tracking-snug cursor-pointer text-lg font-bold lg:text-2xl'
             href='/'
           >
-            Memories of Patricia
+            Patricia G. Penisten
           </Link>
         </div>
 
