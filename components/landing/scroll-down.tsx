@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ScrollDownButton() {
   const scrollDown = () => {
-    document
-      .querySelector("#lifestory")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.querySelector("#herstory")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

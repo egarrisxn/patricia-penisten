@@ -13,9 +13,9 @@ export default function LandingPage() {
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <LandingNavbar />
 
-      <main className='bg-gradient-to-b from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900'>
+      <main className='via-background dark:via-background bg-linear-to-b from-slate-100 to-slate-100 dark:from-slate-900 dark:to-slate-900'>
         <section id='hero'>
-          <div className='relative min-h-screen w-full overflow-hidden'>
+          <div className='relative h-screen w-full overflow-hidden'>
             <LandingHero />
           </div>
         </section>

@@ -23,12 +23,6 @@ export interface NavLinks {
   href: string;
 }
 
-export interface FooterData {
-  header: string;
-  date: string;
-  subheader: string;
-}
-
 export interface LifeStoryData {
   year: string;
   title: string;
@@ -39,6 +33,7 @@ export interface FarewellHero {
   title: string;
   subtitle: string;
   quote: string;
+  about: string;
 }
 
 export interface FarewellTimelineItem {
@@ -48,4 +43,10 @@ export interface FarewellTimelineItem {
   description: string;
   src: string;
   alt: string;
+}
+
+export interface FooterData {
+  header: string;
+  date: string;
+  subheader: string;
 }

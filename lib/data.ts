@@ -4,7 +4,7 @@ import type {
   LifeStoryData,
   FarewellHero,
   FooterData,
-} from "./types";
+} from "@/lib/types";
 
 //! LANDING PAGE
 
@@ -66,19 +66,19 @@ export const lifeStoryData: LifeStoryData[] = [
   },
 ];
 
-export const landingNavigation: NavLinks[] = [
-  { name: "Life Story", href: "#lifestory" },
-  { name: "Photo Gallery", href: "#photogallery" },
-  { name: "Guestbook", href: "#guestbook" },
+export const adminNavigation: NavLinks[] = [
+  { name: "Home", href: "/" },
+  { name: "Farewell Tour", href: "/farewell" },
 ];
 
 //! FAREWELL PAGE
 
 export const farewellHero: FarewellHero = {
   title: "Farewell Tour",
-  subtitle: "With Patricia & Judi",
+  subtitle: "With Pat & Judi",
   quote:
     "A life beautifully lived, and a legacy of love that will forever remain in our hearts.",
+  about: `Join us on Patricia's final, heartwarming "Farewell Tour." Her daughter, Judi, lovingly carried her mother's ashes on a special journey to visit cherished relatives, bringing Pat to those she held dear one last time. This page is a tribute to their extraordinary bond and the enduring connections of family.`,
 };
 
 export const farewellTimelineItem: FarewellTimelineItem[] = [
@@ -154,6 +154,15 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
     src: "/farewell/gma-judi-n-cheryl.png",
     alt: "Cheryl & Judi",
   },
+];
+
+//! ADMIN PAGE
+
+export const landingNavigation: NavLinks[] = [
+  { name: "Life Story", href: "#lifestory" },
+  { name: "Photo Gallery", href: "#photogallery" },
+  { name: "Guestbook", href: "#guestbook" },
+  { name: "Farewell Tour", href: "/farewell" },
 ];
 
 //! SHARED PAGES

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import SharedNavbar from "@/components/shared/navbar";
+import AdminNavbar from "@/components/admin/admin-navbar";
 import AdminDashboard from "@/components/admin/admin-dashboard";
 import AdminFooter from "@/components/admin/admin-footer";
 
@@ -17,7 +17,7 @@ export default async function AdminPage() {
 
   return (
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
-      <SharedNavbar />
+      <AdminNavbar />
 
       <main>
         <section

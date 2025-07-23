@@ -38,8 +38,8 @@ export default function FarewellTimeline() {
   }, [selectedItem]);
 
   return (
-    <>
-      <div className='relative mx-auto max-w-6xl px-4'>
+    <div>
+      <div className='relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
         {/* Timeline line */}
         <div className='absolute left-4 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2'></div>
 
@@ -142,6 +142,6 @@ export default function FarewellTimeline() {
           )}
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 }

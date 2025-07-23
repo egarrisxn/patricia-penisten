@@ -23,7 +23,7 @@ export default function LandingCTA() {
 
         <motion.h1
           variants={ITEM_VARIANT}
-          className='text-accent-foreground/90 text-shadow-accent-foreground/10 mb-4 font-serif text-4xl font-bold text-shadow-md md:px-10 md:text-6xl xl:text-[5rem]'
+          className='text-accent-foreground/90 text-shadow-accent-foreground/10 mb-4 font-serif text-4xl font-bold text-shadow-lg md:px-10 md:text-6xl xl:text-[5rem]'
         >
           Patricia did embark on one final voyage...
         </motion.h1>
