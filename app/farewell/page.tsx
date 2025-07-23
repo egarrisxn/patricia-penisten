@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import FarewellNav from "@/components/farewell/farewell-navbar";
+import FarewellNavbar from "@/components/farewell/farewell-navbar";
 import FarewellHero from "@/components/farewell/farewell-hero";
 import FarewellTimeline from "@/components/farewell/farewell-timeline";
+import FarewellQuote from "@/components/farewell/farewell-quote";
 import SharedFooter from "@/components/shared/footer";
 import ScrollToTopButton from "@/components/shared/scroll-to-top";
 import { SITE_DATA } from "@/lib/config";
@@ -44,16 +45,20 @@ export const metadata: Metadata = {
 
 export default function FarewellPage() {
   return (
-    <div className='relative grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
-      <FarewellNav />
+    <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
+      <FarewellNavbar />
 
-      <main className='dark:via-background via-background bg-linear-to-b from-rose-50 to-blue-50 dark:from-slate-800 dark:to-slate-900'>
-        <section id='hero'>
+      <main className='via-background dark:via-background bg-gradient-to-b from-rose-50 to-blue-50 dark:from-slate-800 dark:to-slate-900'>
+        <section
+          id='hero'
+          className='mx-auto grid min-h-[calc(100dvh-10rem)] w-full place-items-center'
+        >
           <FarewellHero />
         </section>
 
-        <section id='timeline'>
+        <section className='5xl:pb-40 pb-32'>
           <FarewellTimeline />
+          <FarewellQuote />
         </section>
       </main>
 

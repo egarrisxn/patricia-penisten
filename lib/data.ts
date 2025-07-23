@@ -1,18 +1,18 @@
 import type {
   NavLinks,
-  FarewellTimelineItem,
   LifeStoryData,
-  FarewellHero,
-  FooterData,
+  FarewellHeroData,
+  FarewellTimelineItems,
+  SharedFooterData,
 } from "@/lib/types";
 
 //! LANDING PAGE
 
-export const lifeStoryBlurbs = [
-  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
-  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
-  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
-  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
+export const landingNavigation: NavLinks[] = [
+  { name: "Life Story", href: "#lifestory" },
+  { name: "Photo Gallery", href: "#photogallery" },
+  { name: "Guestbook", href: "#guestbook" },
+  { name: "Farewell Tour", href: "/farewell" },
 ];
 
 export const lifeStoryData: LifeStoryData[] = [
@@ -66,22 +66,23 @@ export const lifeStoryData: LifeStoryData[] = [
   },
 ];
 
-export const adminNavigation: NavLinks[] = [
-  { name: "Home", href: "/" },
-  { name: "Farewell Tour", href: "/farewell" },
+export const lifeStoryBlurbs = [
+  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
+  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
+  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
+  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
 ];
 
 //! FAREWELL PAGE
 
-export const farewellHero: FarewellHero = {
+export const farewellHeroData: FarewellHeroData = {
+  pre: "The",
   title: "Farewell Tour",
   subtitle: "With Pat & Judi",
-  quote:
-    "A life beautifully lived, and a legacy of love that will forever remain in our hearts.",
-  about: `Join us on Patricia's final, heartwarming "Farewell Tour." Her daughter, Judi, lovingly carried her mother's ashes on a special journey to visit cherished relatives, bringing Pat to those she held dear one last time. This page is a tribute to their extraordinary bond and the enduring connections of family.`,
+  description: `Join us on Patricia's final, heartwarming "Farewell Tour." Her daughter, Judi, lovingly carried her mother's ashes on a special journey to visit cherished relatives, bringing Pat to those she held dear one last time. This page is a tribute to their extraordinary bond and the enduring connections of family.`,
 };
 
-export const farewellTimelineItem: FarewellTimelineItem[] = [
+export const farewellTimelineItems: FarewellTimelineItems[] = [
   {
     id: 1,
     time: "Before the trip",
@@ -156,19 +157,19 @@ export const farewellTimelineItem: FarewellTimelineItem[] = [
   },
 ];
 
+export const farewellQuoteText =
+  "A life beautifully lived, and a legacy of love that will forever remain in our hearts.";
+
 //! ADMIN PAGE
 
-export const landingNavigation: NavLinks[] = [
-  { name: "Life Story", href: "#lifestory" },
-  { name: "Photo Gallery", href: "#photogallery" },
-  { name: "Guestbook", href: "#guestbook" },
+export const adminNavigation: NavLinks[] = [
+  { name: "Home", href: "/" },
   { name: "Farewell Tour", href: "/farewell" },
 ];
 
 //! SHARED PAGES
 
-export const footerData: FooterData = {
-  header: "In Loving Memory of Patricia G. Penisten",
+export const sharedFooterData: SharedFooterData = {
+  text: "In Loving Memory of Patricia G. Penisten",
   date: "December 22nd, 1935 - June 5th, 2025",
-  subheader: "Forever in our hearts",
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import {
@@ -8,42 +8,48 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
-import { farewellTimelineItem } from "@/lib/data";
-import type { FarewellTimelineItem } from "@/lib/types";
+import { Button } from "@/components/ui/button";
+import { farewellTimelineItems } from "@/lib/data";
+import type { FarewellTimelineItems } from "@/lib/types";
 
 export default function FarewellTimeline() {
-  const [selectedItem, setSelectedItem] = useState<FarewellTimelineItem | null>(
-    null
-  );
+  const [selectedItem, setSelectedItem] =
+    useState<FarewellTimelineItems | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handleImageClick = (item: FarewellTimelineItem) => {
+  const handleItemClick = (item: FarewellTimelineItems) => {
     setSelectedItem(item);
+    setDialogOpen(true);
   };
 
-  const handleCloseDialog = () => {
-    setSelectedItem(null);
-  };
+  const navigateTimeline = (direction: "prev" | "next") => {
+    if (!selectedItem) return;
 
-  useEffect(() => {
-    if (selectedItem) {
-      document.body.style.overflow = "hidden";
+    const currentIndex = farewellTimelineItems.findIndex(
+      (item) => item.id === selectedItem.id
+    );
+
+    let nextIndex;
+    if (direction === "next") {
+      nextIndex = (currentIndex + 1) % farewellTimelineItems.length;
     } else {
-      document.body.style.overflow = "unset";
+      nextIndex =
+        (currentIndex - 1 + farewellTimelineItems.length) %
+        farewellTimelineItems.length;
     }
 
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [selectedItem]);
+    setSelectedItem(farewellTimelineItems[nextIndex]);
+  };
 
   return (
-    <div>
-      <div className='relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>
+    <>
+      <div className='relative mx-auto max-w-6xl px-4 lg:px-8'>
         {/* Timeline line */}
         <div className='absolute left-4 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2'></div>
 
-        {farewellTimelineItem.map((item, index) => (
+        {farewellTimelineItems.map((item, index) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, y: 32 }}
@@ -57,11 +63,11 @@ export default function FarewellTimeline() {
               <div className='size-3.5 rounded-full border-2 border-white bg-indigo-400 shadow-lg md:size-4 md:border-3'></div>
             </div>
 
-            {/* Timeline content */}
             <div
-              className={`pl-3 md:flex md:items-center md:pl-0 ${
+              className={`group cursor-pointer pl-3 md:flex md:items-center md:pl-0 ${
                 index % 2 === 0 ? "md:flex-row-reverse" : ""
               }`}
+              onClick={() => handleItemClick(item)}
             >
               <div
                 className={`md:w-1/2 ${
@@ -70,15 +76,14 @@ export default function FarewellTimeline() {
               >
                 <motion.div
                   layoutId={item.src}
-                  className='dark:bg-card md:dark:border-border relative rounded-t-xl bg-white p-2 md:rounded-xl md:border md:border-white/20 md:p-0 md:shadow-lg md:hover:shadow-xl'
+                  className='dark:bg-card md:dark:border-border relative rounded-t-xl bg-white p-2 transition-shadow duration-300 group-hover:shadow-xl md:rounded-xl md:border md:border-white/20 md:p-0 md:shadow-lg'
                 >
                   <Image
                     src={item.src || "/placeholder.svg"}
                     alt={item.alt || "Farewell Tour Photo"}
                     width={600}
                     height={400}
-                    className='h-64 w-full cursor-pointer rounded-lg object-cover md:h-80'
-                    onClick={() => handleImageClick(item)}
+                    className='h-64 w-full rounded-lg object-cover md:h-80'
                   />
                 </motion.div>
               </div>
@@ -87,7 +92,7 @@ export default function FarewellTimeline() {
                   index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                 }`}
               >
-                <div className='dark:bg-card md:dark:border-border text-card-foreground rounded-b-xl bg-white p-6 shadow-lg backdrop-blur-xs hover:shadow-xl md:rounded-xl md:hover:shadow-lg'>
+                <div className='text-card-foreground dark:bg-card md:dark:border-border rounded-b-xl bg-white p-6 shadow-lg backdrop-blur-xs transition-shadow duration-300 group-hover:shadow-xl md:rounded-xl md:hover:shadow-lg'>
                   <div className='mb-4 flex items-center'>
                     <div className='mb-4 rounded-xl bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white'>
                       {item.time}
@@ -96,26 +101,29 @@ export default function FarewellTimeline() {
                   <h3 className='text-accent-foreground text-xl font-medium lg:text-2xl'>
                     {item.title}
                   </h3>
-                  <p className='text-accent-foreground/90 mb-3 w-full max-w-xs pt-2 text-base lg:max-w-md lg:text-lg'>
+
+                  <p className='text-accent-foreground/90 mb-3 line-clamp-2 w-full max-w-xs pt-2 text-base lg:max-w-md lg:text-lg'>
                     {item.description}
                   </p>
+                  <Button
+                    variant='link'
+                    className='text-primary px-0 pt-2 text-sm'
+                  >
+                    View Details
+                  </Button>
                 </div>
               </div>
             </div>
           </motion.div>
         ))}
         <div className='h-16 md:h-24'></div>
+        {/* Timeline dot */}
+        <div className='absolute left-4 -translate-x-1/2 -translate-y-2 transform md:left-1/2'>
+          <div className='size-3.5 rounded-full border-2 border-white bg-indigo-400 shadow-lg md:size-4 md:border-3'></div>
+        </div>
       </div>
 
-      {/* Photo Dialog */}
-      <Dialog
-        open={!!selectedItem}
-        onOpenChange={(open) => {
-          if (!open) {
-            handleCloseDialog();
-          }
-        }}
-      >
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className='max-w-4xl p-0'>
           {selectedItem && (
             <>
@@ -125,7 +133,7 @@ export default function FarewellTimeline() {
                   alt={selectedItem.alt || "Farewell Tour Photo"}
                   width={1200}
                   height={800}
-                  className='size-auto max-h-[80vh] rounded-t-lg object-contain'
+                  className='size-auto max-h-[70vh] w-full rounded-t-lg object-contain'
                 />
               </div>
               <div className='p-4'>
@@ -133,15 +141,40 @@ export default function FarewellTimeline() {
                   <DialogTitle className='text-accent-foreground mb-2 truncate text-lg font-medium md:text-xl'>
                     {selectedItem.title || "Farewell Tour"}
                   </DialogTitle>
+                  <DialogDescription className='text-accent-foreground/90 text-sm md:text-base'>
+                    {selectedItem.time}
+                  </DialogDescription>
                 </DialogHeader>
-                <div className='text-accent-foreground/90 text-sm md:text-base'>
+                <div className='text-accent-foreground/90 mt-2 text-sm md:text-base'>
                   <p>{selectedItem.description || "With Patricia & Judi"}</p>
+                </div>
+
+                <div className='mt-4 flex justify-between gap-4'>
+                  <Button
+                    onClick={() => navigateTimeline("prev")}
+                    disabled={selectedItem.id === farewellTimelineItems[0].id}
+                    variant='outline'
+                    className='flex-1'
+                  >
+                    Previous
+                  </Button>
+                  <Button
+                    onClick={() => navigateTimeline("next")}
+                    disabled={
+                      selectedItem.id ===
+                      farewellTimelineItems[farewellTimelineItems.length - 1].id
+                    }
+                    variant='outline'
+                    className='flex-1'
+                  >
+                    Next
+                  </Button>
                 </div>
               </div>
             </>
           )}
         </DialogContent>
       </Dialog>
-    </div>
+    </>
   );
 }

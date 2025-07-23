@@ -11,20 +11,26 @@ export default function ScrollToTopButton() {
     const toggleVisibility = () => {
       if (!buttonRef.current) return;
       if (window.scrollY > 500) {
-        buttonRef.current.classList.remove("opacity-0", "pointer-events-none");
-        buttonRef.current.classList.add("opacity-100");
+        buttonRef.current.classList.replace("opacity-0", "opacity-100");
+        buttonRef.current.classList.remove("pointer-events-none");
       } else {
-        buttonRef.current.classList.remove("opacity-100");
-        buttonRef.current.classList.add("opacity-0", "pointer-events-none");
+        buttonRef.current.classList.replace("opacity-100", "opacity-0");
+        buttonRef.current.classList.add("pointer-events-none");
       }
     };
 
     window.addEventListener("scroll", toggleVisibility);
+    toggleVisibility();
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    document.querySelector("#hero")?.scrollIntoView({ behavior: "smooth" });
+    const heroElement = document.getElementById("hero");
+    if (heroElement) {
+      heroElement.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
@@ -34,7 +40,8 @@ export default function ScrollToTopButton() {
       id='toggle-button'
       size='icon'
       variant='basic'
-      className='text-foreground/80 hover:text-foreground fixed right-4 bottom-4 z-50 hidden cursor-pointer transition-opacity duration-300 lg:block'
+      className='text-foreground/80 hover:text-foreground pointer-events-none fixed right-4 bottom-4 z-50 hidden cursor-pointer opacity-0 transition-opacity duration-300 lg:block'
+      aria-label='Scroll to top'
     >
       <ChevronUp className='size-6 lg:size-8' />
     </Button>

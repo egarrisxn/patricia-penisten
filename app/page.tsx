@@ -13,7 +13,7 @@ export default function LandingPage() {
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <LandingNavbar />
 
-      <main className='via-background dark:via-background bg-linear-to-b from-slate-100 to-slate-100 dark:from-slate-900 dark:to-slate-900'>
+      <main className='via-background dark:via-background from-slate-blue-50 bg-linear-to-b to-blue-50 dark:from-slate-900 dark:to-slate-900'>
         <section id='hero'>
           <div className='relative h-screen w-full overflow-hidden'>
             <LandingHero />

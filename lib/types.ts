@@ -29,14 +29,14 @@ export interface LifeStoryData {
   description: string;
 }
 
-export interface FarewellHero {
+export interface FarewellHeroData {
+  pre: string;
   title: string;
   subtitle: string;
-  quote: string;
-  about: string;
+  description: string;
 }
 
-export interface FarewellTimelineItem {
+export interface FarewellTimelineItems {
   id: number;
   time: string;
   title: string;
@@ -45,8 +45,7 @@ export interface FarewellTimelineItem {
   alt: string;
 }
 
-export interface FooterData {
-  header: string;
+export interface SharedFooterData {
+  text: string;
   date: string;
-  subheader: string;
 }
