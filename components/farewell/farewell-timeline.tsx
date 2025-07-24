@@ -55,7 +55,7 @@ export default function FarewellTimeline() {
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className='relative mb-16 md:mb-24'
           >
             {/* Timeline dot */}
