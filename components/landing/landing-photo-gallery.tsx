@@ -3,11 +3,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import PhotoGrid from "@/components/landing/photo-grid";
-import type { Photo } from "@/lib/types";
+import type { PhotoEntry } from "@/lib/types";
 
 export default function LandingPhotoGallery() {
-  const [userPhotos, setUserPhotos] = useState<Photo[]>([]);
-  const [approvedPhotos, setApprovedPhotos] = useState<Photo[]>([]);
+  const [userPhotos, setUserPhotos] = useState<PhotoEntry[]>([]);
+  const [approvedPhotos, setApprovedPhotos] = useState<PhotoEntry[]>([]);
   const [userIP, setUserIP] = useState<string>("");
   const supabase = createClient();
 
@@ -64,7 +64,7 @@ export default function LandingPhotoGallery() {
     }
   }, [userIP, fetchUserSubmissions]);
 
-  const handlePhotoSubmitted = (photo: Photo) => {
+  const handlePhotoSubmitted = (photo: PhotoEntry) => {
     setUserPhotos((prev) => [photo, ...prev]);
   };
 

@@ -1,11 +1,11 @@
 import { Users } from "lucide-react";
 import PhotoCard from "@/components/admin/photo-card";
 import EntryCard from "@/components/admin/entry-card";
-import type { Photo, Entry } from "@/lib/types";
+import type { PhotoEntry, GuestbookEntry } from "@/lib/types";
 
 interface PendingSectionProps {
-  pendingPhotos: Photo[];
-  pendingEntries: Entry[];
+  pendingPhotos: PhotoEntry[];
+  pendingEntries: GuestbookEntry[];
   onPhotoAction: (id: string, action: "approve" | "deny" | "delete") => void;
   onEntryAction: (id: string, action: "approve" | "deny" | "delete") => void;
 }

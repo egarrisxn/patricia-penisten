@@ -10,12 +10,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import PhotoUpload from "@/components/landing/photo-upload";
-import type { Photo } from "@/lib/types";
+import type { PhotoEntry } from "@/lib/types";
 
 interface PhotoGridProps {
-  approvedPhotos: Photo[];
-  userPhotos: Photo[];
-  onPhotoSubmitted: (photo: Photo) => void;
+  approvedPhotos: PhotoEntry[];
+  userPhotos: PhotoEntry[];
+  onPhotoSubmitted: (photo: PhotoEntry) => void;
 }
 
 export default function PhotoGrid({
@@ -23,7 +23,7 @@ export default function PhotoGrid({
   userPhotos,
   onPhotoSubmitted,
 }: PhotoGridProps) {
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<PhotoEntry | null>(null);
 
   const allPhotos = [
     ...approvedPhotos,
@@ -67,15 +67,15 @@ export default function PhotoGrid({
         {allPhotos.map((photo) => (
           <div
             key={photo.id}
-            className='group relative m-0 aspect-square cursor-pointer overflow-hidden rounded-lg border-white bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-slate-950'
+            className='group relative mx-auto aspect-square w-full cursor-pointer overflow-hidden rounded-lg shadow-lg backdrop-blur-xs transition-all duration-300 hover:shadow-xl'
             onClick={() => setSelectedPhoto(photo)}
           >
             <Image
               src={photo.image_url || "/placeholder.svg"}
               alt={photo.caption || photo.name || "Photo Gallery Photo"}
-              className='size-auto cursor-pointer rounded-lg object-cover transition-transform duration-300 group-hover:scale-105'
               width={1200}
               height={800}
+              className='h-auto w-full cursor-pointer rounded-lg object-cover transition-transform duration-300 group-hover:scale-105'
             />
             <div className='absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20'></div>
             {photo.caption && (
@@ -113,11 +113,11 @@ export default function PhotoGrid({
                 alt={selectedPhoto.caption || selectedPhoto.name || "Photo"}
                 width={1200}
                 height={800}
-                className='size-auto max-h-[80vh] rounded-t-lg object-contain'
+                className='size-auto max-h-[60vh] w-full rounded-t-lg object-cover'
               />
-              <div className='p-4'>
+              <div className='px-4 pt-1 pb-4'>
                 <DialogHeader>
-                  <DialogTitle className='text-accent-foreground mb-2 truncate text-lg font-medium md:text-xl'>
+                  <DialogTitle className='text-accent-foreground mb-0.5 truncate text-start text-lg font-medium md:mb-1.5 md:text-xl'>
                     {selectedPhoto.caption || "Untitled"}
                   </DialogTitle>
                 </DialogHeader>

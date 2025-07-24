@@ -2,11 +2,11 @@
 
 import { User, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import type { Entry } from "@/lib/types";
+import type { GuestbookEntry } from "@/lib/types";
 
 interface GuestbookListProps {
-  approvedEntries: Entry[];
-  userEntries: Entry[];
+  approvedEntries: GuestbookEntry[];
+  userEntries: GuestbookEntry[];
 }
 
 export default function GuestbookList({
@@ -42,7 +42,7 @@ export default function GuestbookList({
       {allEntries.map((entry) => (
         <Card
           key={`entry-${entry.id}`}
-          className='dark:border-border/20 dark:bg-card h-full border border-white/20 bg-white shadow-lg backdrop-blur-xs hover:shadow-xl'
+          className='dark:border-border/20 dark:bg-card h-full border border-white/20 bg-white shadow-xl backdrop-blur-xs'
         >
           <CardContent className='flex h-full flex-col p-6 md:p-8'>
             <div className='flex items-start space-x-4'>

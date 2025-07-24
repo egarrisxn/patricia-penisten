@@ -119,23 +119,24 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
     src: "/farewell/gma-hugh.png",
     alt: "Pat & Hugh",
   },
+
   {
     id: 5,
     time: "Third Stop",
-    title: "Pat & Chuck",
+    title: "Pat, Jimmy, & Randi",
     description:
-      "She made a stop to see her brother-in-law Chuck, thankful for the time they had to talk and connect.",
-    src: "/farewell/gma-chuck.png",
-    alt: "Pat & Chuck",
+      "She made a stop to visited her children Jimmy and Randi for hugs, laughter, and reflection.",
+    src: "/farewell/gma-jimmy.png",
+    alt: "Pat, Jimmy, & Randi",
   },
   {
     id: 6,
     time: "Fourth Stop",
-    title: "Pat, Jimmy, & Randi",
+    title: "Pat & Chuck",
     description:
-      "A few feet further, she visited her children Jimmy and Randi for hugs, laughter, and reflection.",
-    src: "/farewell/gma-jimmy.png",
-    alt: "Pat, Jimmy, & Randi",
+      "Just a few feet over was her brother-in-law Chuck, thankful for the time they had to talk and connect.",
+    src: "/farewell/gma-chuck.png",
+    alt: "Pat & Chuck",
   },
   {
     id: 7,

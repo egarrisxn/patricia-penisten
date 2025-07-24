@@ -81,9 +81,9 @@ export default function FarewellTimeline() {
                   <Image
                     src={item.src || "/placeholder.svg"}
                     alt={item.alt || "Farewell Tour Photo"}
-                    width={600}
-                    height={400}
-                    className='h-64 w-full rounded-md object-cover md:h-80'
+                    width={800}
+                    height={800}
+                    className='h-full w-auto rounded-md object-cover'
                   />
                 </motion.div>
               </div>
@@ -127,29 +127,28 @@ export default function FarewellTimeline() {
         <DialogContent className='max-w-4xl p-0'>
           {selectedItem && (
             <>
-              <div>
-                <Image
-                  src={selectedItem.src}
-                  alt={selectedItem.alt || "Farewell Tour Photo"}
-                  width={1200}
-                  height={800}
-                  className='size-auto max-h-[65vh] w-full rounded-t-lg object-cover'
-                />
-              </div>
-              <div className='p-4'>
+              <Image
+                src={selectedItem.src}
+                alt={selectedItem.alt || "Farewell Tour Photo"}
+                width={1200}
+                height={800}
+                className='size-auto max-h-[60vh] w-full rounded-t-lg object-cover'
+              />
+
+              <div className='px-4 pt-1 pb-4'>
                 <DialogHeader>
-                  <DialogTitle className='text-accent-foreground mb-2 truncate text-lg font-medium md:text-xl'>
+                  <DialogTitle className='text-accent-foreground mb-1 truncate text-lg font-medium md:mb-2 md:text-xl'>
                     {selectedItem.title || "Farewell Tour"}
                   </DialogTitle>
                   <DialogDescription className='text-accent-foreground/90 text-sm md:text-base'>
                     {selectedItem.time}
                   </DialogDescription>
                 </DialogHeader>
-                <div className='text-accent-foreground/90 mt-2 text-sm md:text-base'>
+                <div className='text-accent-foreground/90 mt-2 line-clamp-3 text-center text-sm md:text-base'>
                   <p>{selectedItem.description || "With Patricia & Judi"}</p>
                 </div>
 
-                <div className='mt-4 flex justify-between gap-4'>
+                <div className='mt-6 flex justify-between gap-4 md:mt-4'>
                   <Button
                     onClick={() => navigateTimeline("prev")}
                     disabled={selectedItem.id === farewellTimelineItems[0].id}

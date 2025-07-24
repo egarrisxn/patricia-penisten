@@ -40,7 +40,7 @@ export default function ScrollToTopButton() {
       id='toggle-button'
       size='icon'
       variant='basic'
-      className='text-foreground/80 hover:text-foreground pointer-events-none fixed right-4 bottom-4 z-50 hidden cursor-pointer opacity-0 transition-opacity duration-300 lg:block'
+      className='text-foreground/80 hover:text-foreground pointer-events-none fixed right-4 bottom-4 z-50 hidden cursor-pointer opacity-0 transition-opacity duration-300 md:block'
       aria-label='Scroll to top'
     >
       <ChevronUp className='size-6 lg:size-8' />

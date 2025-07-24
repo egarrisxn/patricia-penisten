@@ -8,13 +8,13 @@ import StatCard from "@/components/admin/stat-card";
 import EmptyState from "@/components/admin/empty-state";
 import PendingSection from "@/components/admin/pending";
 import AllSubmissionsSection from "@/components/admin/all-submissions";
-import { Photo, Entry } from "@/lib/types";
+import { PhotoEntry, GuestbookEntry } from "@/lib/types";
 
 export default function AdminDashboard() {
-  const [pendingPhotos, setPendingPhotos] = useState<Photo[]>([]);
-  const [pendingEntries, setPendingEntries] = useState<Entry[]>([]);
-  const [allPhotos, setAllPhotos] = useState<Photo[]>([]);
-  const [allEntries, setAllEntries] = useState<Entry[]>([]);
+  const [pendingPhotos, setPendingPhotos] = useState<PhotoEntry[]>([]);
+  const [pendingEntries, setPendingEntries] = useState<GuestbookEntry[]>([]);
+  const [allPhotos, setAllPhotos] = useState<PhotoEntry[]>([]);
+  const [allEntries, setAllEntries] = useState<GuestbookEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const supabase = createClient();
 

@@ -2,10 +2,10 @@ import { Check, X, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Entry } from "@/lib/types";
+import { GuestbookEntry } from "@/lib/types";
 
-interface EntryCardProps {
-  entry: Entry;
+interface GuestbookEntryCardProps {
+  entry: GuestbookEntry;
   isPending: boolean;
   onApprove: () => void;
   onDeny: () => void;
@@ -18,7 +18,7 @@ export default function EntryCard({
   onApprove,
   onDeny,
   onDelete,
-}: EntryCardProps) {
+}: GuestbookEntryCardProps) {
   return (
     <Card>
       <CardContent className='p-4'>

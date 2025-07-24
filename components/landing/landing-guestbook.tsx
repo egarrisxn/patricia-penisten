@@ -4,11 +4,11 @@ import { useState, useEffect, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
 import GuestbookForm from "@/components/landing/guestbook-form";
 import GuestbookList from "@/components/landing/guestbook-list";
-import type { Entry } from "@/lib/types";
+import type { GuestbookEntry } from "@/lib/types";
 
 export default function LandingGuestbook() {
-  const [userEntries, setUserEntries] = useState<Entry[]>([]);
-  const [approvedEntries, setApprovedEntries] = useState<Entry[]>([]);
+  const [userEntries, setUserEntries] = useState<GuestbookEntry[]>([]);
+  const [approvedEntries, setApprovedEntries] = useState<GuestbookEntry[]>([]);
   const [userIP, setUserIP] = useState<string>("");
 
   const supabase = createClient();
@@ -68,7 +68,7 @@ export default function LandingGuestbook() {
     }
   }, [userIP, fetchUserSubmissions]);
 
-  const handleEntrySubmitted = (entry: Entry) => {
+  const handleEntrySubmitted = (entry: GuestbookEntry) => {
     setUserEntries((prev) => [entry, ...prev]);
   };
 

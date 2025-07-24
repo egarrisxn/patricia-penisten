@@ -48,15 +48,12 @@ export default function FarewellPage() {
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <FarewellNavbar />
 
-      <main className='via-background dark:via-background bg-gradient-to-b from-rose-50 to-blue-50 dark:from-slate-800 dark:to-slate-900'>
-        <section
-          id='hero'
-          className='xs:min-h-[calc(100dvh-7rem)] mx-auto grid min-h-[calc(100dvh-5rem)] w-full place-items-center md:min-h-[calc(100dvh-8rem)] lg:min-h-[calc(100dvh-10rem)]'
-        >
+      <main className='to-background bg-linear-to-t from-blue-100 dark:from-slate-800'>
+        <section id='hero' className='py-24'>
           <FarewellHero />
         </section>
 
-        <section className='5xl:pb-40 pb-32'>
+        <section className='pt-24 pb-32'>
           <FarewellTimeline />
           <FarewellQuote />
         </section>

@@ -4,8 +4,8 @@ const farewellQuoteText = [
 
 export default function FarewellQuote() {
   return (
-    <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-2.5'>
-      <p className='text-accent-foreground/90 xs:text-[1.25rem] max-w-xl text-[1.15rem] leading-relaxed italic sm:text-[1.35rem] md:mx-auto md:text-center md:text-[1.4rem] md:leading-snug xl:text-[1.45rem]'>
+    <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
+      <p className='text-accent-foreground/90 text-2xl italic md:mx-auto md:text-center md:text-2xl lg:text-3xl'>
         <q>{farewellQuoteText}</q>
       </p>
     </div>

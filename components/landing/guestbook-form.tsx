@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import type { Entry } from "@/lib/types";
+import type { GuestbookEntry } from "@/lib/types";
 
 interface GuestbookFormProps {
-  onEntrySubmitted: (entry: Entry) => void;
+  onEntrySubmitted: (entry: GuestbookEntry) => void;
 }
 
 export default function GuestbookForm({

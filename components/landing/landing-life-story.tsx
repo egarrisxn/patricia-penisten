@@ -1,5 +1,3 @@
-"use client";
-
 import * as motion from "motion/react-client";
 import { Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +7,7 @@ import { lifeStoryBlurbs, lifeStoryData } from "@/lib/data";
 export default function LandingLifeStory() {
   return (
     <motion.div
-      className='grid items-start gap-16 md:px-16 lg:grid-cols-2 lg:px-0'
+      className='grid items-start gap-16 lg:grid-cols-2'
       variants={CONTAINER_VARIANT_STAGGER}
       initial='hidden'
       whileInView='visible'
@@ -58,7 +56,7 @@ export default function LandingLifeStory() {
           {lifeStoryData.map((event, index) => (
             <motion.div
               key={index}
-              className='flex items-start space-x-3 md:space-x-3.5 lg:space-x-4'
+              className='flex items-start space-x-3 md:space-x-4'
               variants={ITEM_VARIANT}
             >
               <div className='flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 shadow-lg lg:size-20'>
@@ -70,7 +68,7 @@ export default function LandingLifeStory() {
                 <h4 className='text-accent-foreground mb-0.5 font-bold tracking-tight md:text-lg md:leading-snug md:tracking-normal lg:text-xl'>
                   {event.title}
                 </h4>
-                <p className='text-accent-foreground/90 text-[0.85rem] font-medium tracking-tight md:text-base md:leading-snug md:tracking-normal lg:text-[1.15rem]'>
+                <p className='text-accent-foreground/90 text-[0.85rem] font-medium tracking-tight md:text-base md:leading-snug md:tracking-normal lg:text-lg'>
                   {event.description}
                 </p>
               </div>

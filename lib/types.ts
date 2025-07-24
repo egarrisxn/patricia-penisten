@@ -1,4 +1,4 @@
-export interface Photo {
+export interface PhotoEntry {
   id: string;
   created_at: string;
   name?: string;
@@ -8,7 +8,7 @@ export interface Photo {
   submitted_by_ip: string;
 }
 
-export interface Entry {
+export interface GuestbookEntry {
   id: string;
   created_at: string;
   name?: string;

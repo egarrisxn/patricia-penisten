@@ -3,10 +3,10 @@ import { Check, X, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Photo } from "@/lib/types";
+import { PhotoEntry } from "@/lib/types";
 
-interface PhotoCardProps {
-  photo: Photo;
+interface PhotoEntryCardProps {
+  photo: PhotoEntry;
   isPending: boolean;
   onApprove: () => void;
   onDeny: () => void;
@@ -19,7 +19,7 @@ export default function PhotoCard({
   onApprove,
   onDeny,
   onDelete,
-}: PhotoCardProps) {
+}: PhotoEntryCardProps) {
   return (
     <Card className='overflow-hidden'>
       <div className='relative aspect-square'>

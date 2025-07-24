@@ -13,15 +13,15 @@ export default function LandingPage() {
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <LandingNavbar />
 
-      <main className='via-background dark:via-background from-slate-blue-50 bg-linear-to-b to-blue-50 dark:from-slate-900 dark:to-slate-900'>
+      <main className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
         <section id='hero'>
-          <div className='relative h-screen w-full overflow-hidden'>
+          <div className='relative min-h-screen w-full overflow-hidden'>
             <LandingHero />
           </div>
         </section>
 
-        <section id='lifestory' className='5xl:py-32 py-24'>
-          <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
+        <section id='lifestory' className='py-24 sm:py-22 lg:py-24'>
+          <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Life Story'
               subheader='A remarkable journey full of joy.'
@@ -30,8 +30,8 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id='photogallery' className='5xl:py-32 py-24'>
-          <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
+        <section id='photogallery' className='py-24 sm:py-22 lg:py-24'>
+          <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Photo Gallery'
               subheader='Share your cherished memories in photos.'
@@ -40,8 +40,8 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id='guestbook' className='5xl:py-32 py-24'>
-          <div className='5xl:max-w-[88rem] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 2xl:max-w-[84rem]'>
+        <section id='guestbook' className='py-24 sm:py-22 lg:py-24'>
+          <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Guestbook'
               subheader='Share your thoughts and stories.'
@@ -52,9 +52,9 @@ export default function LandingPage() {
 
         <section
           id='cta'
-          className='5xl:pt-40 5xl:pb-72 pt-24 pb-52 md:pt-24 md:pb-64 xl:pt-36 xl:pb-68'
+          className='pt-24 pb-52 md:pt-24 md:pb-64 xl:pt-36 xl:pb-68'
         >
-          <div className='5xl:max-w-[88rem] mx-auto max-w-md px-4 sm:px-6 md:max-w-2xl lg:max-w-3xl lg:px-8 xl:max-w-7xl 2xl:max-w-[84rem]'>
+          <div className='mx-auto max-w-md px-4 sm:px-6 md:max-w-2xl lg:max-w-3xl lg:px-8 xl:max-w-7xl 2xl:max-w-[84rem]'>
             <LandingCTA />
           </div>
         </section>

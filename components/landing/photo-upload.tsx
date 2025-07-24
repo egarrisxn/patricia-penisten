@@ -9,10 +9,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import type { Photo } from "@/lib/types";
+import type { PhotoEntry } from "@/lib/types";
 
 interface PhotoUploadProps {
-  onPhotoSubmitted: (photo: Photo) => void;
+  onPhotoSubmitted: (photo: PhotoEntry) => void;
 }
 
 export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
