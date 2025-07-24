@@ -67,13 +67,13 @@ export default function PhotoGrid({
         {allPhotos.map((photo) => (
           <div
             key={photo.id}
-            className='group bg-accent relative aspect-square cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg'
+            className='group relative m-0 aspect-square cursor-pointer overflow-hidden rounded-lg border-white bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-slate-950'
             onClick={() => setSelectedPhoto(photo)}
           >
             <Image
               src={photo.image_url || "/placeholder.svg"}
               alt={photo.caption || photo.name || "Photo Gallery Photo"}
-              className='size-auto cursor-pointer object-cover transition-transform duration-300 group-hover:scale-105'
+              className='size-auto cursor-pointer rounded-lg object-cover transition-transform duration-300 group-hover:scale-105'
               width={1200}
               height={800}
             />

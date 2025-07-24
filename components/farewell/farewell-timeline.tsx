@@ -76,14 +76,14 @@ export default function FarewellTimeline() {
               >
                 <motion.div
                   layoutId={item.src}
-                  className='dark:bg-card md:dark:border-border relative rounded-t-xl bg-white p-2 transition-shadow duration-300 group-hover:shadow-xl md:rounded-xl md:border md:border-white/20 md:p-0 md:shadow-lg'
+                  className='dark:bg-card relative rounded-t-lg border-0 bg-white p-2 transition-shadow duration-300 group-hover:shadow-xl md:rounded-lg md:p-0.5 md:shadow-lg'
                 >
                   <Image
                     src={item.src || "/placeholder.svg"}
                     alt={item.alt || "Farewell Tour Photo"}
                     width={600}
                     height={400}
-                    className='h-64 w-full rounded-lg object-cover md:h-80'
+                    className='h-64 w-full rounded-md object-cover md:h-80'
                   />
                 </motion.div>
               </div>
@@ -92,9 +92,9 @@ export default function FarewellTimeline() {
                   index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                 }`}
               >
-                <div className='text-card-foreground dark:bg-card md:dark:border-border rounded-b-xl bg-white p-6 shadow-lg backdrop-blur-xs transition-shadow duration-300 group-hover:shadow-xl md:rounded-xl md:hover:shadow-lg'>
+                <div className='text-card-foreground dark:bg-card rounded-b-lg bg-white p-6 shadow-lg backdrop-blur-xs transition-shadow duration-300 group-hover:shadow-xl md:rounded-lg md:hover:shadow-lg'>
                   <div className='mb-4 flex items-center'>
-                    <div className='mb-4 rounded-xl bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white'>
+                    <div className='mb-4 rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-md'>
                       {item.time}
                     </div>
                   </div>
@@ -133,7 +133,7 @@ export default function FarewellTimeline() {
                   alt={selectedItem.alt || "Farewell Tour Photo"}
                   width={1200}
                   height={800}
-                  className='size-auto max-h-[70vh] w-full rounded-t-lg object-contain'
+                  className='size-auto max-h-[65vh] w-full rounded-t-lg object-cover'
                 />
               </div>
               <div className='p-4'>

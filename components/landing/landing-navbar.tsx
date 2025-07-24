@@ -44,7 +44,7 @@ export default function LandingNavbar() {
               className='5xl:size-12 size-9 lg:size-11'
             />
 
-            <p className='5xl:text-3xl text-accent-foreground xs:tracking-tight font-serif leading-none font-semibold tracking-tighter lg:pb-[1px] lg:text-lg'>
+            <p className='5xl:text-3xl text-accent-foreground font-serif leading-none font-semibold tracking-tight lg:pb-[1px] lg:text-lg'>
               Patricia Penisten:
               <br />A Life Remembered
             </p>

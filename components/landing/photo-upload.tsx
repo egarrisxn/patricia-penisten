@@ -116,8 +116,8 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
 
   if (isSubmitted) {
     return (
-      <Card className='flex aspect-square w-full flex-col items-center justify-center rounded-xl bg-white py-4 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-        <CardContent className='px-4 text-center'>
+      <Card className='flex aspect-square w-full flex-col items-center justify-center rounded-lg bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+        <CardContent className='px-4 text-center lg:px-5'>
           <div className='mx-auto mb-4 flex size-12 items-center justify-center rounded-full md:size-14 xl:size-16'>
             <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
           </div>
@@ -134,7 +134,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   }
 
   return (
-    <Card className='flex aspect-square w-full flex-col rounded-xl bg-white py-4 shadow-lg backdrop-blur-sm dark:bg-slate-950'>
+    <Card className='flex aspect-square w-full flex-col rounded-lg bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
       <CardContent className='flex-1 px-4'>
         <form
           onSubmit={handleSubmit}
@@ -184,7 +184,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               </label>
             </div>
           </div>
-          <div className='flex flex-shrink-0 flex-col gap-1.5 lg:gap-2'>
+          <div className='flex flex-shrink-0 flex-col gap-2 lg:gap-3'>
             <div>
               <Label htmlFor='name' className='sr-only'>
                 Name (optional)
@@ -211,7 +211,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
             <Button
               type='submit'
               disabled={!selectedFile || isUploading}
-              className='w-full bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 shadow-lg hover:from-purple-500 hover:to-rose-500 hover:text-white'
+              className='w-full cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 hover:from-purple-500 hover:to-rose-500 hover:text-white'
             >
               {isUploading ? "Uploading..." : "Share Photo"}
             </Button>

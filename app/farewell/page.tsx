@@ -51,7 +51,7 @@ export default function FarewellPage() {
       <main className='via-background dark:via-background bg-gradient-to-b from-rose-50 to-blue-50 dark:from-slate-800 dark:to-slate-900'>
         <section
           id='hero'
-          className='mx-auto grid min-h-[calc(100dvh-10rem)] w-full place-items-center'
+          className='xs:min-h-[calc(100dvh-7rem)] mx-auto grid min-h-[calc(100dvh-5rem)] w-full place-items-center md:min-h-[calc(100dvh-8rem)] lg:min-h-[calc(100dvh-10rem)]'
         >
           <FarewellHero />
         </section>

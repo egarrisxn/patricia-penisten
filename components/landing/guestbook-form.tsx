@@ -1,20 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { Book, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import type { Entry } from "@/lib/types";
 
-interface EntryFormProps {
+interface GuestbookFormProps {
   onEntrySubmitted: (entry: Entry) => void;
 }
 
-export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
+export default function GuestbookForm({
+  onEntrySubmitted,
+}: GuestbookFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");
@@ -65,8 +67,8 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
 
   if (isSubmitted) {
     return (
-      <Card className='mx-auto w-full max-w-7xl bg-white shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-        <CardContent className='px-4 text-center'>
+      <Card className='mx-auto w-full max-w-7xl bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+        <CardContent className='px-4 text-center lg:px-5'>
           <div className='mx-auto mb-4 flex size-12 items-center justify-center rounded-full md:size-14 xl:size-16'>
             <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
           </div>
@@ -83,14 +85,8 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
   }
 
   return (
-    <Card className='mx-auto w-full max-w-7xl rounded-xl bg-white shadow-lg backdrop-blur-sm dark:bg-slate-950'>
-      <CardHeader className='lg:px-10'>
-        <CardTitle className='flex flex-row items-center text-base lg:text-lg'>
-          <Book className='mr-2.5 size-4 text-blue-400 lg:size-5' /> Sign
-          Guestbook
-        </CardTitle>
-      </CardHeader>
-      <CardContent className='lg:px-10'>
+    <Card className='mx-auto w-full max-w-7xl rounded-lg bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+      <CardContent className='px-4 lg:px-5'>
         <form onSubmit={handleSubmit} className='space-y-4'>
           <div>
             <Label htmlFor='name' className='text-muted-foreground'>
@@ -132,7 +128,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
           <Button
             type='submit'
             disabled={!message.trim() || isSubmitting}
-            className='w-full bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 shadow-lg hover:from-purple-500 hover:to-rose-500 hover:text-white'
+            className='w-full cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 hover:from-purple-500 hover:to-rose-500 hover:text-white'
           >
             {isSubmitting ? "Submitting..." : "Share Memory"}
           </Button>

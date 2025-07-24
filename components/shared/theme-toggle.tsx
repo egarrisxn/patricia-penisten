@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { MoonStarIcon, SunIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function ThemeToggle() {
@@ -18,7 +18,7 @@ export default function ThemeToggle() {
       <Button
         variant='ghost'
         size='icon'
-        className='m-0 size-fit p-0'
+        className='m-0 size-5 p-0 lg:size-5.5'
         aria-label='Toggle theme'
       />
     );
@@ -33,9 +33,9 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
     >
       {resolvedTheme === "dark" ? (
-        <SunIcon className='size-5 text-yellow-600 lg:size-5.5' />
+        <SunIcon className='size-5 fill-yellow-600 text-yellow-500 lg:size-5.5' />
       ) : (
-        <MoonIcon className='size-5 text-blue-600 lg:size-5.5' />
+        <MoonStarIcon className='size-5 fill-slate-700 text-slate-600 lg:size-5.5' />
       )}
     </Button>
   );

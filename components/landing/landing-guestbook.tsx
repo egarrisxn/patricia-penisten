@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
-import EntryForm from "@/components/landing/entry-form";
-import EntryList from "@/components/landing/entry-list";
+import GuestbookForm from "@/components/landing/guestbook-form";
+import GuestbookList from "@/components/landing/guestbook-list";
 import type { Entry } from "@/lib/types";
 
 export default function LandingGuestbook() {
@@ -74,8 +74,11 @@ export default function LandingGuestbook() {
 
   return (
     <div className='5xl:gap-12 grid grid-cols-1 gap-6 lg:gap-12'>
-      <EntryForm onEntrySubmitted={handleEntrySubmitted} />
-      <EntryList approvedEntries={approvedEntries} userEntries={userEntries} />
+      <GuestbookForm onEntrySubmitted={handleEntrySubmitted} />
+      <GuestbookList
+        approvedEntries={approvedEntries}
+        userEntries={userEntries}
+      />
     </div>
   );
 }

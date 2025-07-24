@@ -85,7 +85,7 @@ export const farewellHeroData: FarewellHeroData = {
 export const farewellTimelineItems: FarewellTimelineItems[] = [
   {
     id: 1,
-    time: "Before the trip",
+    time: "Pre Trip",
     title: "Pat & Judi",
     description:
       "Pat spent time with Judi just a few days before her final journey began together with family.",
@@ -94,7 +94,7 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
   },
   {
     id: 2,
-    time: "The beginning",
+    time: "The Beginning",
     title: "Pat Solo",
     description:
       "She settled in with Judi by her side, ready to begin her final road trip with peace and grace.",
@@ -103,7 +103,7 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
   },
   {
     id: 3,
-    time: "First stop",
+    time: "First Stop",
     title: "Pat & Ettie",
     description:
       "Her first visit was with her mother Ettie, where they shared a sweet and quiet morning moment.",
@@ -112,7 +112,7 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
   },
   {
     id: 4,
-    time: "Second stop",
+    time: "Second Stop",
     title: "Pat & Hugh",
     description:
       "Next, she visited her father Hugh, who no doubt welcomed her with pride and warmth in spirit.",
@@ -121,16 +121,16 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
   },
   {
     id: 5,
-    time: "Third stop",
+    time: "Third Stop",
     title: "Pat & Chuck",
     description:
-      "She made a stop to see her brother Chuck, thankful for the time they had to talk and connect.",
+      "She made a stop to see her brother-in-law Chuck, thankful for the time they had to talk and connect.",
     src: "/farewell/gma-chuck.png",
     alt: "Pat & Chuck",
   },
   {
     id: 6,
-    time: "Fourth stop",
+    time: "Fourth Stop",
     title: "Pat, Jimmy, & Randi",
     description:
       "A few feet further, she visited her children Jimmy and Randi for hugs, laughter, and reflection.",
@@ -139,7 +139,7 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
   },
   {
     id: 7,
-    time: "Final goodbye",
+    time: "Final Goodbye",
     title: "Pat, Chuck, Jimmy, & Randi",
     description:
       "Her final visit brought time with Chuck, Jimmy, and Randi. Her journey could now come to rest.",
@@ -148,7 +148,7 @@ export const farewellTimelineItems: FarewellTimelineItems[] = [
   },
   {
     id: 8,
-    time: "The end",
+    time: "The End",
     title: "Cheryl & Judi",
     description:
       "Cheryl could not join the trip, so Judi gave her a kiss for Pat, a final act of sisterly love.",

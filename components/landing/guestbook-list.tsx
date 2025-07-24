@@ -4,15 +4,15 @@ import { User, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Entry } from "@/lib/types";
 
-interface EntryListProps {
+interface GuestbookListProps {
   approvedEntries: Entry[];
   userEntries: Entry[];
 }
 
-export default function EntryList({
+export default function GuestbookList({
   approvedEntries,
   userEntries,
-}: EntryListProps) {
+}: GuestbookListProps) {
   const allEntries = [
     ...approvedEntries,
     ...userEntries.filter(
