@@ -20,7 +20,10 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id='lifestory' className='4xl:py-26 py-24 sm:py-22 lg:py-24'>
+        <section
+          id='lifestory'
+          className='4xl:pb-32 4xl:pt-34 py-24 sm:py-22 lg:py-24'
+        >
           <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Life Story'
@@ -32,7 +35,7 @@ export default function LandingPage() {
 
         <section
           id='photogallery'
-          className='4xl:py-26 py-24 sm:py-22 lg:py-24'
+          className='4xl:pb-32 4xl:pt-34 py-24 sm:py-22 lg:py-24'
         >
           <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
@@ -43,7 +46,10 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id='guestbook' className='4xl:py-26 py-24 sm:py-22 lg:py-24'>
+        <section
+          id='guestbook'
+          className='4xl:pb-32 4xl:pt-34 py-24 sm:py-22 lg:py-24'
+        >
           <div className='mx-auto max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <LandingHeader
               header='Guestbook'

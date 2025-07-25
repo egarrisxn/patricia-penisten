@@ -53,7 +53,7 @@ export default function FarewellPage() {
           <FarewellHero />
         </section>
 
-        <section className='pt-24 pb-32'>
+        <section className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'>
           <FarewellTimeline />
           <FarewellQuote />
         </section>

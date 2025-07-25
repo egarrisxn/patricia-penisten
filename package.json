@@ -6,19 +6,6 @@
   "author": "Ethan G. (https://egxo.dev)",
   "license": "MIT",
   "private": true,
-  "keywords": [
-    "memories",
-    "memorial",
-    "tribute",
-    "obituary",
-    "funeral",
-    "rip",
-    "grandma",
-    "mother",
-    "teacher",
-    "patricia",
-    "penisten"
-  ],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prebuild": "pnpm run lint",
@@ -53,7 +40,6 @@
     "next-themes": "^0.4.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-player": "^3.3.1",
     "sonner": "^2.0.6",
     "tailwind-merge": "^3.3.1",
     "uuid": "^11.1.0"

@@ -30,9 +30,11 @@ export interface LifeStoryData {
 }
 
 export interface FarewellHeroData {
-  pre: string;
+  pretitle: string;
   title: string;
   subtitle: string;
+  song: string;
+  artist: string;
   description: string;
 }
 

@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     "penisten",
     "rememberance",
     "Patricia Penisten",
+    "Patricia G. Penisten",
+    "A Life Remembered",
+    "The Farewell Tour",
   ],
   openGraph: {
     title: SITE_DATA.title,
@@ -72,7 +75,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning className='scroll-smooth' lang='en'>
+    <html
+      lang='en'
+      data-scroll-behavior='smooth'
+      className='scroll-smooth'
+      suppressHydrationWarning
+    >
       <head>
         <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
       </head>

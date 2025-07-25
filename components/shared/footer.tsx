@@ -4,7 +4,7 @@ import { sharedFooterData } from "@/lib/data";
 export default function SharedFooter() {
   return (
     <footer className='bg-background w-full'>
-      <div className='mx-auto px-4 pt-18 pb-14 text-center sm:px-6 sm:pt-20 sm:pb-16 lg:pt-24'>
+      <div className='mx-auto px-4 pt-18 pb-14 text-center'>
         <div className='mb-6 lg:mb-8'>
           <h3 className='tracking-snug mb-2 text-xl font-bold sm:text-2xl'>
             {sharedFooterData.text}

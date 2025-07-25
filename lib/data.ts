@@ -76,9 +76,11 @@ export const lifeStoryBlurbs = [
 //! FAREWELL PAGE
 
 export const farewellHeroData: FarewellHeroData = {
-  pre: "The",
+  pretitle: "The",
   title: "Farewell Tour",
   subtitle: "With Pat & Judi",
+  song: `"How Do I Say Goodbye"`,
+  artist: "Dean Lewis",
   description: `Join us on Patricia's final, heartwarming "Farewell Tour." Her daughter, Judi, lovingly carried her mother's ashes on a special journey to visit cherished relatives, bringing Pat to those she held dear one last time. This page is a tribute to their extraordinary bond and the enduring connections of family.`,
 };
 

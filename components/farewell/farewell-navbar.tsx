@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import AudioPlayer from "@/components/shared/audio-player";
+// import AudioPlayer from "@/components/shared/audio-player";
+import CustomAudioPlayer from "../shared/custom-audio-player";
 import ThemeToggle from "@/components/shared/theme-toggle";
 
 export default function FarewellNavbar() {
@@ -27,7 +28,8 @@ export default function FarewellNavbar() {
               The Farewell Tour
             </p>
           </Link>
-          <AudioPlayer />
+          {/* <AudioPlayer /> */}
+          <CustomAudioPlayer />
         </div>
         <nav className='flex flex-row items-center sm:gap-4 lg:gap-5 2xl:gap-6'>
           <Link
