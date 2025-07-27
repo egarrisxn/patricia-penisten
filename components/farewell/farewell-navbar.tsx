@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-// import AudioPlayer from "@/components/shared/audio-player";
-import CustomAudioPlayer from "../shared/custom-audio-player";
+import CustomAudioPlayer from "@/components/shared/custom-audio-player";
 import ThemeToggle from "@/components/shared/theme-toggle";
 
 export default function FarewellNavbar() {

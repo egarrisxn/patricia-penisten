@@ -57,8 +57,6 @@ export default function FarewellTimeline() {
               <div className='absolute left-0 -translate-x-1/2 -translate-y-2 transform md:left-1/2'>
                 <div className='size-3.5 rounded-full border-2 border-white bg-indigo-400 shadow-lg md:size-4 md:border-3'></div>
               </div>
-
-              {/* Animated block */}
               <motion.div
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -149,18 +147,6 @@ export default function FarewellTimeline() {
                 <div className='text-accent-foreground/80 mt-4 line-clamp-3 text-sm md:text-base'>
                   <p>{selectedItem.description || "With Patricia & Judi"}</p>
                 </div>
-
-                {/* <DialogHeader>
-                  <DialogTitle className='text-accent-foreground mb-1 truncate text-lg font-medium md:mb-2 md:text-xl'>
-                    {selectedItem.title || "Farewell Tour"}
-                  </DialogTitle>
-                  <DialogDescription className='text-accent-foreground/90 text-sm md:text-base'>
-                     {selectedItem.time}
-                  </DialogDescription>
-                </DialogHeader> 
-                <div className='text-accent-foreground/90 mt-2 line-clamp-3 text-center text-sm md:text-base'>
-                  <p>{selectedItem.description || "With Patricia & Judi"}</p>
-                </div> */}
 
                 <div className='mt-6 flex justify-between gap-4 md:mt-4'>
                   <Button

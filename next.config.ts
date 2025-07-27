@@ -48,12 +48,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
-// default-src 'self';
-// script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.youtube.com https://www.youtube.com/iframe_api https://s.ytimg.com;
-// frame-src https://www.youtube.com https://www.youtube-nocookie.com;
-// img-src 'self' data: https://i.ytimg.com https://s.ytimg.com;
-// media-src https://www.youtube.com https://www.youtube-nocookie.com;
-// connect-src 'self' https://www.youtube.com https://s.ytimg.com;
-// style-src 'self' 'unsafe-inline';
-// font-src 'self' data:;
