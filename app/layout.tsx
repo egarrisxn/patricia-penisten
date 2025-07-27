@@ -31,9 +31,7 @@ export const metadata: Metadata = {
   keywords: [
     "memories",
     "memorial",
-    "root",
     "tribute",
-    "memories",
     "gallery",
     "timeline",
     "teacher",

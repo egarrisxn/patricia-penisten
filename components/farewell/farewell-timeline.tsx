@@ -80,7 +80,7 @@ export default function FarewellTimeline() {
                         src={item.src || "/placeholder.svg"}
                         alt={item.alt || "Farewell Tour Photo"}
                         fill
-                        className='rounded-xl object-cover p-2 md:p-0'
+                        className='rounded-lg object-cover p-2 md:p-0'
                       />
                     </motion.div>
                   </div>
@@ -102,8 +102,8 @@ export default function FarewellTimeline() {
                         {item.description}
                       </p>
                       <Button
-                        variant='link'
-                        className='text-primary px-0 pt-2 text-sm'
+                        variant='basic'
+                        className='text-primary/90 hover:text-primary cursor-pointer px-0 pt-2 text-sm'
                       >
                         View Details
                       </Button>

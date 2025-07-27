@@ -73,12 +73,12 @@ export default function LandingGuestbook() {
   };
 
   return (
-    <div className='5xl:gap-12 grid grid-cols-1 gap-6 lg:gap-12'>
-      <GuestbookForm onEntrySubmitted={handleEntrySubmitted} />
+    <div className='4xl:gap-16 grid grid-cols-1 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-14'>
       <GuestbookList
         approvedEntries={approvedEntries}
         userEntries={userEntries}
       />
+      <GuestbookForm onEntrySubmitted={handleEntrySubmitted} />
     </div>
   );
 }

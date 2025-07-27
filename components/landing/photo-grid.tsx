@@ -50,7 +50,7 @@ export default function PhotoGrid({
   if (allPhotos.length === 0) {
     return (
       <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-800'>
+        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
           <MessageCircle className='text-foreground/80 size-12' />
         </div>
         <p className='text-foreground/80 text-lg'>No Photos Gallery photos</p>

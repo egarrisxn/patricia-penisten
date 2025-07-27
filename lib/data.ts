@@ -9,7 +9,7 @@ import type {
 //! LANDING PAGE
 
 export const landingNavigation: NavLinks[] = [
-  { name: "Life Story", href: "#lifestory" },
+  { name: "Her Story", href: "#herstory" },
   { name: "Photo Gallery", href: "#photogallery" },
   { name: "Guestbook", href: "#guestbook" },
   { name: "Farewell Tour", href: "/farewell" },

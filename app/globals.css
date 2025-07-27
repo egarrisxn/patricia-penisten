@@ -36,13 +36,31 @@
   --breakpoint-3xl: 108rem;
   --breakpoint-4xl: 120rem;
   --breakpoint-5xl: 160rem;
+
+  @keyframes scale {
+    0% {
+      transform: scale(2);
+      opacity: 0;
+      box-shadow: 0px 0px 50px rgba(255, 165, 0, 0.5);
+    }
+    50% {
+      transform: translate(0px, -5px) scale(1);
+      opacity: 1;
+      box-shadow: 0px 8px 20px rgba(255, 165, 0, 0.5);
+    }
+    100% {
+      transform: translate(0px, 5px) scale(0.1);
+      opacity: 0;
+      box-shadow: 0px 10px 20px rgba(255, 165, 0, 0);
+    }
+  }
 }
 
 :root {
   --radius: 0.625rem;
   --background: oklch(0.976 0 0);
   --foreground: oklch(0.217 0 0);
-  --card: oklch(1 0 0);
+  --card: oklch(0.989 0.004 15.765);
   --card-foreground: oklch(0.217 0 0);
   --popover: oklch(0.976 0 0);
   --popover-foreground: oklch(0.217 0 0);
@@ -61,7 +79,7 @@
 }
 
 .dark {
-  --background: oklch(0.21 0.048 262);
+  --background: oklch(0.188 0.071 269);
   --foreground: oklch(0.961 0 0);
   --card: oklch(0.167 0.045 269);
   --card-foreground: oklch(0.961 0 0);

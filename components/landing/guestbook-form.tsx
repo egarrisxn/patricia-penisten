@@ -67,7 +67,7 @@ export default function GuestbookForm({
 
   if (isSubmitted) {
     return (
-      <Card className='mx-auto w-full max-w-7xl bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+      <Card className='dark:bg-background mx-auto w-full max-w-7xl bg-white py-4 lg:py-5'>
         <CardContent className='px-4 text-center lg:px-5'>
           <div className='mx-auto mb-4 flex size-12 items-center justify-center rounded-full md:size-14 xl:size-16'>
             <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
@@ -85,7 +85,7 @@ export default function GuestbookForm({
   }
 
   return (
-    <Card className='mx-auto w-full max-w-7xl rounded-lg bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+    <Card className='dark:bg-background mx-auto w-full max-w-7xl rounded-lg bg-white py-4 lg:py-5'>
       <CardContent className='px-4 lg:px-5'>
         <form onSubmit={handleSubmit} className='space-y-4'>
           <div>

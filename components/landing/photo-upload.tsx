@@ -116,7 +116,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
 
   if (isSubmitted) {
     return (
-      <Card className='flex aspect-square w-full flex-col items-center justify-center rounded-lg bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+      <Card className='dark:bg-background flex aspect-square w-full flex-col items-center justify-center rounded-lg bg-white py-4 lg:py-5'>
         <CardContent className='px-4 text-center lg:px-5'>
           <div className='mx-auto mb-4 flex size-12 items-center justify-center rounded-full md:size-14 xl:size-16'>
             <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
@@ -134,7 +134,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   }
 
   return (
-    <Card className='flex aspect-square w-full flex-col rounded-lg bg-white py-4 lg:py-5 dark:bg-slate-950/90'>
+    <Card className='dark:bg-background flex aspect-square w-full flex-col rounded-lg bg-white py-4 lg:py-5'>
       <CardContent className='flex-1 px-4'>
         <form
           onSubmit={handleSubmit}

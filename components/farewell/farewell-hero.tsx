@@ -14,7 +14,7 @@ export default function FarewellHero() {
         <span className='xs:text-xl 4xl:text-5xl mb-1 text-lg sm:text-[1.35rem] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[2.3rem]'>
           {farewellHeroData.pretitle}
         </span>
-        <h1 className='text-foreground/90 xs:text-5xl 4xl:text-[7rem] mb-1 font-serif text-[2.7rem] leading-[1.1] font-bold text-shadow-lg/20 sm:text-[3.6rem] sm:leading-[1] md:mb-1.5 md:text-[4rem] lg:text-7xl xl:text-[5.5rem] 2xl:text-8xl'>
+        <h1 className='text-foreground/90 xs:text-5xl 4xl:text-[7rem] mb-1 font-serif text-[2.7rem] leading-[1.1] font-bold text-shadow-lg/20 sm:text-[3.6rem] sm:leading-[1] md:mb-1.5 md:text-[4rem] lg:text-7xl xl:text-[5.5rem] 2xl:text-[5.7rem]'>
           {farewellHeroData.title}
         </h1>
         <div className='mb-8 flex flex-row items-center gap-2 xl:mb-10'>
@@ -33,7 +33,7 @@ export default function FarewellHero() {
           by <span className='pl-[1px]'>{farewellHeroData.artist}</span>.
         </p>
 
-        <p className='xs:text-base 4xl:text-[2.1rem] text-[0.9rem] leading-[1.5] font-[450] sm:text-[1.175rem] md:text-xl lg:text-[1.3rem] xl:text-2xl 2xl:text-[1.7rem] 2xl:leading-[1.2]'>
+        <p className='xs:text-base 4xl:text-[2.1rem] text-[0.9rem] leading-[1.5] font-[450] sm:text-[1.175rem] md:text-xl lg:text-[1.3rem] xl:text-2xl 2xl:text-[1.6rem] 2xl:leading-[1.25]'>
           {farewellHeroData.description}
         </p>
       </header>

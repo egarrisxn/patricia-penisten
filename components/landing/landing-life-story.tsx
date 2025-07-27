@@ -15,7 +15,7 @@ export default function LandingLifeStory() {
     >
       <div className='space-y-12'>
         <motion.div variants={ITEM_VARIANT}>
-          <Card className='lg:border-border/20 lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:border lg:px-4 lg:py-8 lg:shadow-lg lg:backdrop-blur-sm'>
+          <Card className='lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-10 lg:shadow-xl lg:backdrop-blur-xs'>
             <CardContent className='px-2 lg:px-6'>
               {lifeStoryBlurbs.map((text, index) => (
                 <p key={index} className='py-2 lg:text-lg lg:leading-relaxed'>
@@ -26,7 +26,7 @@ export default function LandingLifeStory() {
           </Card>
         </motion.div>
         <motion.div variants={ITEM_VARIANT}>
-          <Card className='lg:border-border/20 lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:border lg:px-4 lg:py-8 lg:shadow-lg lg:backdrop-blur-sm'>
+          <Card className='lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-10 lg:shadow-xl lg:backdrop-blur-xs'>
             <CardHeader className='px-2 lg:px-6'>
               <CardTitle className='xs:text-lg flex items-center text-xl leading-none lg:text-2xl'>
                 <Star className='xs:size-6 mr-2.5 size-5 text-yellow-500 lg:size-7' />
