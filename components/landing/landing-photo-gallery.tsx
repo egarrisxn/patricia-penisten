@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { createClient } from "@/lib/supabase/client";
-import PhotoGrid from "@/components/landing/photo-grid";
+import PhotoCarousel from "@/components/landing/photo-carousel";
+import PhotoUpload from "@/components/landing/photo-upload";
 import type { PhotoEntry } from "@/lib/types";
 
 export default function LandingPhotoGallery() {
@@ -69,10 +70,47 @@ export default function LandingPhotoGallery() {
   };
 
   return (
-    <PhotoGrid
-      approvedPhotos={approvedPhotos}
-      userPhotos={userPhotos}
-      onPhotoSubmitted={handlePhotoSubmitted}
-    />
+    <div className='flex flex-col items-center gap-12 px-4 py-8'>
+      <PhotoCarousel
+        photos={[
+          ...userPhotos,
+          ...approvedPhotos.filter(
+            (approved) => !userPhotos.some((user) => user.id === approved.id)
+          ),
+        ]}
+      />
+      <div className='mt-8 w-full max-w-xl'>
+        <h2 className='text-foreground mb-4 text-center text-xl font-semibold'>
+          Share Your Photo
+        </h2>
+        <PhotoUpload onPhotoSubmitted={handlePhotoSubmitted} />
+      </div>
+    </div>
   );
+}
+
+// import PhotoGrid from "@/components/landing/photo-grid";
+// import PhotoSwiper from "@/components/landing/photo-Swiper";
+// import PhotoTestimonial from "@/components/landing/photo-testimonial";
+
+{
+  /* <PhotoGrid
+        approvedPhotos={approvedPhotos}
+        userPhotos={userPhotos}
+        onPhotoSubmitted={handlePhotoSubmitted}
+      /> */
+}
+{
+  /* <PhotoSwiper
+        approvedPhotos={approvedPhotos}
+        userPhotos={userPhotos}
+        onPhotoSubmitted={handlePhotoSubmitted}
+      /> */
+}
+{
+  /* <PhotoTestimonial
+        approvedPhotos={approvedPhotos}
+        userPhotos={userPhotos}
+        onPhotoSubmitted={handlePhotoSubmitted}
+      /> */
 }

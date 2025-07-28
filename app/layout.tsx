@@ -1,23 +1,20 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { Raleway, Bitter, Geist_Mono } from "next/font/google";
+import { Roboto, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "./_components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_DATA } from "@/lib/config";
 
-const fontSans = Raleway({
+//! SANS FONT
+const fontSans = Roboto({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const fontSerif = Bitter({
+//! SERIF FONT
+const fontSerif = Playfair_Display({
   variable: "--font-serif",
-  subsets: ["latin"],
-});
-
-const fontMono = Geist_Mono({
-  variable: "--font-mono",
   subsets: ["latin"],
 });
 
@@ -62,8 +59,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7f7f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#020618" },
+    { media: "(prefers-color-scheme: light)", color: "#e8ebed" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c2433" },
   ],
 };
 
@@ -83,7 +80,7 @@ export default function RootLayout({
         <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
       </head>
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} overscroll-x-contain font-sans antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} overflow-x-hidden overscroll-x-contain font-sans antialiased`}
       >
         <ThemeProvider
           attribute='class'

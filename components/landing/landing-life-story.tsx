@@ -28,9 +28,11 @@ export default function LandingLifeStory() {
         <motion.div variants={ITEM_VARIANT}>
           <Card className='lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-10 lg:shadow-xl lg:backdrop-blur-xs'>
             <CardHeader className='px-2 lg:px-6'>
-              <CardTitle className='xs:text-lg flex items-center text-xl leading-none lg:text-2xl'>
-                <Star className='xs:size-6 mr-2.5 size-5 text-yellow-500 lg:size-7' />
-                Legacy of Teaching
+              <CardTitle>
+                <h4 className='xs:text-lg flex items-center text-xl lg:text-2xl'>
+                  <Star className='xs:size-6 text-primary dark:fill-primary/70 fill-primary/30 mr-2.5 size-5 lg:size-7' />
+                  Legacy of Teaching
+                </h4>
               </CardTitle>
             </CardHeader>
             <CardContent className='px-2 lg:px-6'>
@@ -46,12 +48,12 @@ export default function LandingLifeStory() {
         </motion.div>
       </div>
       <div className='space-y-6'>
-        <motion.h3
+        <motion.h4
           variants={ITEM_VARIANT}
-          className='text-foreground/90 mb-8 text-lg font-bold md:text-2xl lg:text-3xl'
+          className='mb-8 text-lg font-bold md:text-2xl lg:text-3xl'
         >
           Timeline
-        </motion.h3>
+        </motion.h4>
         <div className='space-y-6 lg:space-y-7'>
           {lifeStoryData.map((event, index) => (
             <motion.div
@@ -59,16 +61,16 @@ export default function LandingLifeStory() {
               className='flex items-start space-x-3 md:space-x-4'
               variants={ITEM_VARIANT}
             >
-              <div className='flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-amber-500 to-amber-700 shadow-lg lg:size-20'>
+              <div className='from-primary flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br to-amber-500 shadow-lg lg:size-20'>
                 <span className='mx-auto flex text-center text-xs font-bold text-wrap text-white lg:text-sm'>
                   {event.year}
                 </span>
               </div>
               <div className='flex-1'>
-                <h4 className='text-accent-foreground mb-0.5 font-bold tracking-tight md:text-lg md:leading-snug md:tracking-normal lg:text-xl'>
+                <h5 className='text-accent-foreground text-[1rem] font-medium tracking-tight md:text-lg md:leading-snug md:tracking-normal lg:text-xl'>
                   {event.title}
-                </h4>
-                <p className='text-accent-foreground/90 text-[0.85rem] font-medium tracking-tight md:text-base md:leading-snug md:tracking-normal lg:text-lg'>
+                </h5>
+                <p className='text-[0.85rem] tracking-tight md:text-base md:leading-snug md:tracking-normal lg:text-lg'>
                   {event.description}
                 </p>
               </div>

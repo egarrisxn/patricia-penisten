@@ -1,6 +1,7 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import PhotoFlip from "@/components/ui/photo-flip";
+import { PhotoPixels } from "@/components/ui/photo-pixels";
+// import { PhotoFlip } from "@/components/ui/photo-flip";
 import ScrollDownButton from "@/components/landing/scroll-down";
 import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
 
@@ -32,20 +33,17 @@ export default function LandingHero() {
           variants={ITEM_VARIANT}
           className='flex w-fit items-center md:items-end'
         >
-          <PhotoFlip
+          <PhotoPixels
+            src='/pixel-image.png'
+            grid='6x4'
+            grayscaleAnimation={true}
+          />
+          {/* <PhotoFlip
             frontSrc='/landing/flip-1.png'
             backSrc='/landing/flip-2.png'
             width={300}
             height={300}
             quality={100}
-          />
-          {/* <Image
-            src='/landing/hero-0.png'
-            alt='Patricia G Penisten Icon'
-            height={300}
-            width={300}
-            quality={100}
-            className='size-full object-cover'
           /> */}
         </motion.aside>
         <motion.header

@@ -13,14 +13,14 @@ interface PhotoFlipProps {
   quality?: number;
 }
 
-export default function PhotoFlip({
+export const PhotoFlip = ({
   frontSrc,
   backSrc,
   alt = "Photo",
   width = 300,
   height = 300,
   quality = 100,
-}: PhotoFlipProps) {
+}: PhotoFlipProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [supportsHover, setSupportsHover] = useState(true);
 
@@ -86,4 +86,4 @@ export default function PhotoFlip({
       </div>
     </div>
   );
-}
+};
