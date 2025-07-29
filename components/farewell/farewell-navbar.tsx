@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import CustomAudioPlayer from "@/components/shared/custom-audio-player";
+import CustomAudioPlayer from "@/components/shared/audio-player";
 import ThemeToggle from "@/components/shared/theme-toggle";
 
 export default function FarewellNavbar() {
@@ -13,7 +13,7 @@ export default function FarewellNavbar() {
             href='/'
           >
             <Image
-              src='/logo.svg'
+              src='/navbar-icon.svg'
               alt='Farewell Tour Page Logo'
               width={64}
               height={64}

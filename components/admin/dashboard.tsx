@@ -10,7 +10,7 @@ import PendingSection from "@/components/admin/pending";
 import AllSubmissionsSection from "@/components/admin/all-submissions";
 import { PhotoEntry, GuestbookEntry } from "@/lib/types";
 
-export default function AdminDashboard() {
+export default function Dashboard() {
   const [pendingPhotos, setPendingPhotos] = useState<PhotoEntry[]>([]);
   const [pendingEntries, setPendingEntries] = useState<GuestbookEntry[]>([]);
   const [allPhotos, setAllPhotos] = useState<PhotoEntry[]>([]);

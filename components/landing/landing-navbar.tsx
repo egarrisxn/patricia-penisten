@@ -35,7 +35,7 @@ export default function LandingNavbar() {
           href='/'
         >
           <Image
-            src='/logo.svg'
+            src='/navbar-icon.svg'
             alt='Farewell Tour Page Logo'
             width={64}
             height={64}

@@ -23,13 +23,18 @@ export interface NavLinks {
   href: string;
 }
 
-export interface LifeStoryData {
+export interface AboutTeachingCardData {
+  title: string;
+  body: string;
+}
+
+export interface AboutTimelineData {
   year: string;
   title: string;
   description: string;
 }
 
-export interface FarewellHeroData {
+export interface FarewellHeaderData {
   pretitle: string;
   title: string;
   subtitle: string;

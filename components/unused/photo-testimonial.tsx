@@ -1,7 +1,6 @@
 // import { useState } from "react";
 // import Image from "next/image";
-// import { Clock, ImageIcon, MessageCircle } from "lucide-react";
-// import PhotoUpload from "@/components/landing/photo-upload";
+// import { Clock, User, MessageCircle } from "lucide-react";
 // import { AnimatedTestimonials } from "@/components/unused/ui/image-testimonial";
 // import {
 //   Dialog,
@@ -14,13 +13,11 @@
 // interface PhotoTestimonialProps {
 //   approvedPhotos: PhotoEntry[];
 //   userPhotos: PhotoEntry[];
-//   onPhotoSubmitted: (photo: PhotoEntry) => void;
 // }
 
 // export default function PhotoTestimonial({
 //   approvedPhotos,
 //   userPhotos,
-//   onPhotoSubmitted,
 // }: PhotoTestimonialProps) {
 //   const [selectedPhoto, setSelectedPhoto] = useState<PhotoEntry | null>(null);
 
@@ -52,20 +49,17 @@
 //       ) : (
 //         <div className='pt-20 pb-24 text-center'>
 //           <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
-//             <MessageCircle className='text-foreground/80 size-12' />
+//             <MessageCircle className='size-6 md:size-12' />
 //           </div>
-//           <p className='text-foreground/80 text-lg'>No Photo Gallery photos</p>
-//           <p className='text-foreground/70 text-sm'>
+//           <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
+//             No Photos Gallery photos
+//           </div>
+//           <div className='text-muted-foreground/90 text-sm tracking-tight'>
 //             Be the first to add a photo memory
-//           </p>
+//           </div>
 //         </div>
 //       )}
 
-//       <div className='mt-8'>
-//         <PhotoUpload onPhotoSubmitted={onPhotoSubmitted} />
-//       </div>
-
-//       {/* Modal dialog on image click */}
 //       <Dialog
 //         open={!!selectedPhoto}
 //         onOpenChange={(open) => !open && setSelectedPhoto(null)}
@@ -81,16 +75,17 @@
 //                 className='size-auto max-h-[60vh] w-full rounded-t-lg object-cover'
 //               />
 //               <div className='px-4 pt-1 pb-4'>
-//                 <DialogHeader>
-//                   <DialogTitle className='text-accent-foreground mb-0.5 truncate text-start text-lg font-medium'>
+//                 <DialogHeader className='mb-2'>
+//                   <DialogTitle className='text-foreground text-start text-base leading-[1.4] font-medium text-wrap md:mb-1.5 md:text-lg'>
 //                     {selectedPhoto.caption || "Untitled"}
 //                   </DialogTitle>
 //                 </DialogHeader>
-//                 <div className='text-accent-foreground/90 flex items-center justify-between text-sm'>
+
+//                 <div className='flex flex-col gap-1 text-sm'>
 //                   {selectedPhoto.name && (
 //                     <div className='flex items-center gap-1'>
-//                       <ImageIcon className='size-4' />
-//                       <span>{selectedPhoto.name}</span>
+//                       <User className='size-4' />
+//                       <p className='w-[80%] text-wrap'>{selectedPhoto.name}</p>
 //                     </div>
 //                   )}
 //                   <div className='flex items-center gap-1'>
@@ -106,13 +101,15 @@
 //                       )}
 //                     </span>
 //                   </div>
-//                   {selectedPhoto.status === "pending" && (
-//                     <div className='rounded-full bg-amber-400 px-2 py-1 text-xs text-slate-950'>
-//                       <Clock className='mr-[1px] mb-[1px] inline-block size-3' />
+//                 </div>
+//                 {selectedPhoto.status === "pending" && (
+//                   <div className='absolute right-3 bottom-3 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
+//                     <div className='bg-primary mb-[1.5px] size-2 animate-pulse rounded-full md:size-[8.5px] 2xl:size-2.5'></div>{" "}
+//                     <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
 //                       Pending
 //                     </div>
-//                   )}
-//                 </div>
+//                   </div>
+//                 )}
 //               </div>
 //             </>
 //           )}

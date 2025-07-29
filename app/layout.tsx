@@ -1,4 +1,5 @@
 import "./globals.css";
+import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -6,13 +7,11 @@ import { ThemeProvider } from "./_components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_DATA } from "@/lib/config";
 
-//! SANS FONT
 const fontSans = Roboto({
   variable: "--font-sans",
   subsets: ["latin"],
 });
 
-//! SERIF FONT
 const fontSerif = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
@@ -59,16 +58,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#e8ebed" },
+    { media: "(prefers-color-scheme: light)", color: "#ebeff0" },
     { media: "(prefers-color-scheme: dark)", color: "#1c2433" },
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang='en'

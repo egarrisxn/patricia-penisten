@@ -4,22 +4,23 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Upload, Check } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
 import type { PhotoEntry } from "@/lib/types";
 
-interface PhotoUploadProps {
+interface ImageUploadProps {
   onPhotoSubmitted: (photo: PhotoEntry) => void;
 }
 
-export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
+export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
   const [isUploading, setIsUploading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [caption, setCaption] = useState("");
+
   const [dragActive, setDragActive] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
@@ -107,7 +108,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
         setSelectedFile(null);
       }, 3000);
     } catch (error) {
-      console.error("Upload failed:", error);
+      console.error("Error submitting photo:", error);
       toast.error("Error uploading photo. Please try again.");
     } finally {
       setIsUploading(false);
@@ -116,26 +117,24 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
 
   if (isSubmitted) {
     return (
-      <Card className='dark:bg-background flex aspect-square w-full flex-col items-center justify-center rounded-lg bg-white py-4 lg:py-5'>
-        <CardContent className='px-4 text-center lg:px-5'>
-          <div className='mx-auto mb-4 flex size-12 items-center justify-center rounded-full md:size-14 xl:size-16'>
-            <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
-          </div>
-          <h3 className='text-muted-foreground mb-2 font-semibold'>
-            Photo Submitted!
-          </h3>
-          <p className='text-muted-foreground/90 text-sm tracking-tight'>
-            Your photo is pending approval and will be visible to others once
-            reviewed.
-          </p>
-        </CardContent>
-      </Card>
+      <div className='pt-20 pb-24 text-center'>
+        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
+          <Check className='size-6 text-green-600 md:size-12' />
+        </div>
+        <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
+          Photo Submitted!
+        </div>
+        <div className='text-muted-foreground/90 text-sm tracking-tight'>
+          Your image is pending approval and will be visible to others once
+          reviewed.
+        </div>
+      </div>
     );
   }
 
   return (
-    <Card className='dark:bg-background flex aspect-square w-full flex-col rounded-lg bg-white py-4 lg:py-5'>
-      <CardContent className='flex-1 px-4'>
+    <Card className='dark:bg-background aspect-square bg-white py-2 lg:py-4'>
+      <CardContent className='flex-1 px-2 lg:px-4'>
         <form
           onSubmit={handleSubmit}
           className='flex h-full flex-col gap-2 lg:gap-4'
@@ -184,7 +183,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               </label>
             </div>
           </div>
-          <div className='flex flex-shrink-0 flex-col gap-2 lg:gap-3'>
+          <div className='flex flex-shrink-0 flex-col gap-2 lg:gap-4'>
             <div>
               <Label htmlFor='name' className='sr-only'>
                 Name (optional)
@@ -193,6 +192,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 id='name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                maxLength={50}
                 placeholder='Name (optional)'
               />
             </div>
@@ -204,18 +204,19 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 id='caption'
                 value={caption}
                 onChange={(e) => setCaption(e.target.value)}
-                className='min-h-14'
+                maxLength={100}
+                className='min-h-20'
                 placeholder='Caption (optional)'
               />
             </div>
-            <Button
-              type='submit'
-              disabled={!selectedFile || isUploading}
-              className='w-full cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 hover:from-purple-500 hover:to-rose-500 hover:text-white'
-            >
-              {isUploading ? "Uploading..." : "Share Photo"}
-            </Button>
           </div>
+          <Button
+            type='submit'
+            disabled={!selectedFile || isUploading}
+            className='w-full cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 hover:from-purple-500 hover:to-rose-500 hover:text-white'
+          >
+            {isUploading ? "Uploading..." : "Share Photo"}
+          </Button>
         </form>
       </CardContent>
     </Card>

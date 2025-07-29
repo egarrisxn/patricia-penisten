@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { SITE_DATA } from "@/lib/config";
 import FarewellNavbar from "@/components/farewell/farewell-navbar";
-import FarewellHero from "@/components/farewell/farewell-hero";
-import FarewellTimeline from "@/components/farewell/farewell-timeline";
-import FarewellQuote from "@/components/farewell/farewell-quote";
+import FarewellHeader from "@/components/farewell/farewell-header";
+import Timeline from "@/components/farewell/timeline";
 import SharedFooter from "@/components/shared/footer";
 import ScrollToTopButton from "@/components/shared/scroll-to-top";
-import { SITE_DATA } from "@/lib/config";
+import { farewellQuoteText } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: SITE_DATA.farewellTitle,
@@ -50,12 +50,16 @@ export default function FarewellPage() {
 
       <main className='to-background bg-linear-to-t from-blue-100 dark:from-slate-800'>
         <section id='hero' className='py-24'>
-          <FarewellHero />
+          <FarewellHeader />
         </section>
 
         <section className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'>
-          <FarewellTimeline />
-          <FarewellQuote />
+          <Timeline />
+          <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
+            <p className='text-2xl font-[450] italic md:mx-auto md:text-center lg:text-3xl'>
+              <q>{farewellQuoteText}</q>
+            </p>
+          </div>
         </section>
       </main>
 

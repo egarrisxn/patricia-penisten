@@ -1,11 +1,11 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { PhotoPixels } from "@/components/ui/photo-pixels";
-// import { PhotoFlip } from "@/components/ui/photo-flip";
+// import { PhotoPixels } from "@/components/ui/photo-pixels";
+import { PhotoFlip } from "@/components/ui/photo-flip";
 import ScrollDownButton from "@/components/landing/scroll-down";
 import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
 
-export default function LandingHero() {
+export default function Hero() {
   return (
     <>
       <motion.div
@@ -33,18 +33,18 @@ export default function LandingHero() {
           variants={ITEM_VARIANT}
           className='flex w-fit items-center md:items-end'
         >
-          <PhotoPixels
-            src='/pixel-image.png'
+          {/* <PhotoPixels
+            src='/landing/pixel-1.png'
             grid='6x4'
             grayscaleAnimation={true}
-          />
-          {/* <PhotoFlip
+          /> */}
+          <PhotoFlip
             frontSrc='/landing/flip-1.png'
             backSrc='/landing/flip-2.png'
             width={300}
             height={300}
             quality={100}
-          /> */}
+          />
         </motion.aside>
         <motion.header
           variants={ITEM_VARIANT}

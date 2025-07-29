@@ -91,7 +91,7 @@ export const PhotoPixels = ({
   }, [rows, cols, maxAnimationDelay]);
 
   return (
-    <div className='relative h-72 w-72 select-none md:h-96 md:w-96'>
+    <div className='relative size-60 select-none md:size-56 lg:size-75'>
       {pieces.map((piece, index) => (
         <div
           key={index}

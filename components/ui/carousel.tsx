@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useId } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "motion/react";
-import { Clock, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface SlideData {
   src: string;
@@ -31,7 +31,7 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
         transformOrigin: "bottom",
       }}
     >
-      <div className='absolute top-0 left-0 h-full w-full overflow-hidden rounded-[1%] bg-[#1D1F2F] transition-all duration-150 ease-out'>
+      <div className='absolute top-0 left-0 size-full overflow-hidden rounded-[1%] bg-[#1D1F2F] transition-all duration-150 ease-out'>
         <Image
           src={slide.src}
           alt={slide.title}
@@ -44,8 +44,11 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
           priority={current === index}
         />
         {current === index && slide.status === "pending" && (
-          <div className='absolute top-2 right-2 z-20 rounded-full bg-amber-400 px-2 py-1 text-xs text-slate-950'>
-            <Clock className='mr-1 inline-block size-3' /> Pending
+          <div className='absolute top-3 left-3 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
+            <div className='bg-primary mb-[1.5px] size-2 animate-pulse rounded-full md:size-[8.5px] 2xl:size-2.5'></div>{" "}
+            <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
+              Pending
+            </div>
           </div>
         )}
       </div>

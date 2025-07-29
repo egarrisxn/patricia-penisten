@@ -1,17 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import LogoutButton from "@/components/admin/logout";
 import ThemeToggle from "@/components/shared/theme-toggle";
 import { adminNavigation } from "@/lib/data";
 
 export default function AdminNavbar() {
   return (
-    <header className='absolute top-0 z-50 w-full bg-transparent text-black dark:text-white'>
+    <header className='w-full bg-transparent text-black dark:text-white'>
       <div className='mx-auto flex flex-row items-center justify-between p-4'>
         <div className='flex flex-row items-center gap-1'>
           <Link className='cursor-pointer' href='/'>
             <Image
-              src='/logo.svg'
+              src='/navbar-icon.svg'
               alt='Farewell Tour Page Logo'
               width={64}
               height={64}
@@ -38,10 +37,8 @@ export default function AdminNavbar() {
               </Link>
             ))}
           </nav>
-          <div className='flex flex-row items-center gap-2 sm:gap-4 lg:gap-6'>
-            <LogoutButton />
-            <ThemeToggle />
-          </div>
+
+          <ThemeToggle />
         </div>
       </div>
     </header>

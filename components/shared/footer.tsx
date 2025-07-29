@@ -3,7 +3,7 @@ import { sharedFooterData } from "@/lib/data";
 
 export default function SharedFooter() {
   return (
-    <footer className='bg-background border-border/30 w-full border-t-2'>
+    <footer className='dark:bg-background border-border/30 w-full border-t-2 bg-white/90'>
       <div className='mx-auto px-4 pt-20 pb-14 text-center'>
         <div className='mb-6 lg:mb-8'>
           <h3 className='tracking-snug xs:text-xl mb-2 text-lg font-bold sm:text-2xl'>

@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import AdminNavbar from "@/components/admin/admin-navbar";
-import AdminDashboard from "@/components/admin/admin-dashboard";
-import AdminFooter from "@/components/admin/admin-footer";
+import Dashboard from "@/components/admin/dashboard";
+import LogoutButton from "@/components/admin/logout";
 
 export default async function AdminPage() {
   const supabase = await createClient();
@@ -18,17 +18,12 @@ export default async function AdminPage() {
   return (
     <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
       <AdminNavbar />
-
-      <main>
-        <section
-          id='dashboard'
-          className='5xl:py-32 container mx-auto px-4 py-24'
-        >
-          <AdminDashboard />
-        </section>
+      <main className='p-4'>
+        <Dashboard />
       </main>
-
-      <AdminFooter />
+      <footer className='mx-auto flex w-full items-center justify-center p-4 md:items-end md:justify-end'>
+        <LogoutButton />
+      </footer>
     </div>
   );
 }

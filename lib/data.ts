@@ -1,7 +1,8 @@
 import type {
   NavLinks,
-  LifeStoryData,
-  FarewellHeroData,
+  AboutTeachingCardData,
+  AboutTimelineData,
+  FarewellHeaderData,
   FarewellTimelineItems,
   SharedFooterData,
 } from "@/lib/types";
@@ -15,7 +16,19 @@ export const landingNavigation: NavLinks[] = [
   { name: "Farewell Tour", href: "/farewell" },
 ];
 
-export const lifeStoryData: LifeStoryData[] = [
+export const aboutTextBlurbs = [
+  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
+  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
+  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
+  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
+];
+
+export const aboutTeachingCardData: AboutTeachingCardData = {
+  title: "Legacy of Teaching",
+  body: " For 34 years, Pat dedicated her life to teaching at Douglas Elementary School. She touched the lives of hundreds of students, always believing in their potential and inspiring them to achieve their dreams. Her classroom was a place of wonder, learning, and unconditional support.",
+};
+
+export const aboutTimelineData: AboutTimelineData[] = [
   {
     year: "1935",
     title: "Born in Oklahoma",
@@ -66,16 +79,9 @@ export const lifeStoryData: LifeStoryData[] = [
   },
 ];
 
-export const lifeStoryBlurbs = [
-  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
-  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
-  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
-  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
-];
-
 //! FAREWELL PAGE
 
-export const farewellHeroData: FarewellHeroData = {
+export const farewellHeaderData: FarewellHeaderData = {
   pretitle: "The",
   title: "Farewell Tour",
   subtitle: "With Pat & Judi",
@@ -166,7 +172,7 @@ export const farewellQuoteText =
 //! ADMIN PAGE
 
 export const adminNavigation: NavLinks[] = [
-  { name: "Home", href: "/" },
+  { name: "Home Page", href: "/" },
   { name: "Farewell Tour", href: "/farewell" },
 ];
 
