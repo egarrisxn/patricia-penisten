@@ -1,8 +1,8 @@
 "use client";
 
-import { useUserContent } from "@/hooks/use-user-content";
 import ImageCarousel from "@/components/landing/image-carousel";
 import ImageUpload from "@/components/landing/image-upload";
+import { useUserContent } from "@/hooks/use-user-content";
 import type { PhotoEntry } from "@/lib/types";
 
 export default function PhotoGallery() {
@@ -21,22 +21,4 @@ export default function PhotoGallery() {
       </div>
     </div>
   );
-}
-
-// import PhotoSwiper from "@/components/unused/photo-swiper";
-// import PhotoTestimonial from "@/components/unused/photo-testimonial";
-// import PhotoGrid from "@/components/unused/photo-grid";
-
-{
-  /* <PhotoSwiper approvedPhotos={approvedItems} userPhotos={userItems} /> */
-}
-{
-  /* <PhotoTestimonial approvedPhotos={approvedItems} userPhotos={userItems} /> */
-}
-{
-  /* <PhotoGrid
-  approvedPhotos={approvedItems}
-  userPhotos={userItems}
-  onPhotoSubmitted={handlePhotoSubmitted}
-/> */
 }

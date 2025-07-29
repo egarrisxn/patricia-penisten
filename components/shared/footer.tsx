@@ -3,17 +3,17 @@ import { sharedFooterData } from "@/lib/data";
 
 export default function SharedFooter() {
   return (
-    <footer className='dark:bg-background border-border/30 w-full border-t-2 bg-white/90'>
-      <div className='mx-auto px-4 pt-20 pb-14 text-center'>
+    <footer className='bg-card/80 bakdrop-blur-lg border-border/30 w-full border-t-2'>
+      <div className='mx-auto px-4 pt-18 pb-14 text-center md:pt-20 md:pb-16'>
         <div className='mb-6 lg:mb-8'>
-          <h3 className='tracking-snug xs:text-xl mb-2 text-lg font-bold sm:text-2xl'>
+          <h3 className='xs:text-xl mb-2 text-lg font-bold tracking-tight sm:text-2xl'>
             {sharedFooterData.text}
           </h3>
-          <p className='tracking-snug text-sm sm:text-base'>
+          <p className='text-foreground/90 text-sm font-medium tracking-tight sm:text-base'>
             {sharedFooterData.date}
           </p>
         </div>
-        <div className='tracking-snug group flex items-center justify-center space-x-1 text-sm font-semibold text-black sm:text-base dark:text-white'>
+        <div className='group flex items-center justify-center space-x-1 text-sm font-semibold tracking-tight text-black sm:text-base dark:text-white'>
           <span>Made with</span>
           <Heart className='size-4 text-rose-400/90 group-hover:fill-rose-400 group-hover:text-rose-400' />
           <span>by</span>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-// import { PhotoPixels } from "@/components/ui/photo-pixels";
 import { PhotoFlip } from "@/components/ui/photo-flip";
 import ScrollDownButton from "@/components/landing/scroll-down";
 import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
@@ -24,7 +23,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className='5xl:max-w-7xl xs:px-4 absolute inset-0 z-30 mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center gap-4 px-2 pt-8 pb-48 md:flex-row md:pb-24 lg:pb-16'
+        className='5xl:max-w-7xl xs:px-4 xs:pt-8 absolute inset-0 z-30 mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center gap-4 px-2 pb-48 md:flex-row md:pb-24 lg:pb-16'
         variants={CONTAINER_VARIANT_SCALE}
         initial='hidden'
         animate='visible'
@@ -33,11 +32,6 @@ export default function Hero() {
           variants={ITEM_VARIANT}
           className='flex w-fit items-center md:items-end'
         >
-          {/* <PhotoPixels
-            src='/landing/pixel-1.png'
-            grid='6x4'
-            grayscaleAnimation={true}
-          /> */}
           <PhotoFlip
             frontSrc='/landing/flip-1.png'
             backSrc='/landing/flip-2.png'
