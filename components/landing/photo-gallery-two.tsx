@@ -66,8 +66,8 @@ function PhotoGrid({
 
   return (
     <>
-      <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'>
-        <PhotoUpload onPhotoSubmitted={onPhotoSubmitted} />
+      {/* <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'> */}
+      <div className='columns-1 gap-6 space-y-6 md:columns-2'>
         {allPhotos.map((photo) => (
           <div
             key={`photo-${photo.id}`}
@@ -97,6 +97,7 @@ function PhotoGrid({
             )}
           </div>
         ))}
+        <PhotoUpload onPhotoSubmitted={onPhotoSubmitted} />
       </div>
 
       <Dialog

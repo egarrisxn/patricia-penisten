@@ -40,7 +40,8 @@ export default function EntryList({
   const isPending = (status: string) => status === "pending";
 
   return (
-    <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'>
+    // <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'>
+    <div className='columns-1 gap-6 space-y-6 md:columns-2'>
       {allEntries.map((entry) => (
         <div key={`entry-${entry.id}`} className='break-inside-avoid'>
           <Card className='bg-card w-full border-none shadow-xl backdrop-blur-xs'>

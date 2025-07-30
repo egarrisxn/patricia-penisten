@@ -126,18 +126,18 @@ export default function CustomAudioPlayer() {
   };
 
   return (
-    <div className='sm:dark:bg-card mx-auto w-29 p-0.5 sm:rounded-lg sm:bg-white sm:shadow-sm'>
-      <div className='flex items-center gap-1 sm:gap-1'>
+    <div className='sm:dark:bg-card/50 xs:w-30 mx-auto w-22 sm:rounded-lg sm:bg-white sm:p-0.5 sm:shadow-sm'>
+      <div className='flex items-center gap-1'>
         <Button
-          className='size-8'
           variant='basic'
           size='icon'
           onClick={handleToggleMute}
+          className='text-accent-foreground xs:size-9 m-0 size-7 p-0'
         >
           {isMuted || volume === 0 ? (
-            <VolumeX className='size-5 sm:size-4' />
+            <VolumeX className='size-5' />
           ) : (
-            <Volume2 className='size-5 sm:size-4' />
+            <Volume2 className='size-5' />
           )}
         </Button>
         <Slider
@@ -146,7 +146,7 @@ export default function CustomAudioPlayer() {
           step={0.01}
           value={[isMuted ? 0 : volume]}
           onValueChange={handleVolumeChange}
-          className='w-full max-w-16 flex-1'
+          className='xs:max-w-16 w-full max-w-14 flex-1'
         />
       </div>
 

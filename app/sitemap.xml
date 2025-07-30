@@ -11,4 +11,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://memories-of-patricia.vercel.app/test</loc>
+    <lastmod>2025-07-07T15:02:24.021Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

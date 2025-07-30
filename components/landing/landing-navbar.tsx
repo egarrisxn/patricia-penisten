@@ -49,16 +49,25 @@ export default function LandingNavbar() {
           </p>
         </Link>
 
-        <div className='flex flex-row items-center sm:gap-4 lg:gap-5 2xl:gap-6'>
-          <nav className='hidden flex-row items-center sm:flex sm:gap-3.5 md:gap-6 lg:gap-8'>
+        <div className='flex flex-row items-center gap-4 lg:gap-5 2xl:gap-6'>
+          <nav className='flex items-center sm:hidden'>
+            <Link
+              href='/farewell'
+              className='group hover:text-primary relative mb-0.5 flex cursor-pointer text-sm font-medium transition-colors sm:hidden'
+            >
+              Farewell Tour
+              <span className='bg-primary absolute -bottom-0.5 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full sm:hidden'></span>
+            </Link>
+          </nav>
+          <nav className='hidden sm:flex sm:flex-row sm:items-center sm:gap-3.5 md:gap-6 lg:gap-8'>
             {landingNavigation.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className='group hover:text-primary relative mb-0.5 hidden cursor-pointer text-sm font-medium transition-colors sm:flex lg:text-base'
+                className='group hover:text-primary hidden cursor-pointer font-medium transition-colors sm:relative sm:mb-0.5 sm:flex sm:text-sm lg:text-base'
               >
                 {link.name}
-                <span className='bg-primary absolute -bottom-0.5 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
+                <span className='sm:bg-primary -bottom-0.5 left-0 hidden h-0.5 w-0 transition-all duration-300 group-hover:w-full sm:absolute sm:block'></span>
               </Link>
             ))}
           </nav>

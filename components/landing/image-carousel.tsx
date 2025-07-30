@@ -71,8 +71,8 @@ export default function ImageCarousel({
                 src={selectedPhoto.image_url}
                 alt={selectedPhoto.caption || selectedPhoto.name || "Photo"}
                 width={1200}
-                height={800}
-                className='size-auto max-h-[60vh] w-full rounded-t-lg object-cover'
+                height={1200}
+                className='size-auto w-full max-w-[50vw] rounded-t-lg object-contain'
               />
               <div className='px-4 pt-1 pb-4'>
                 <DialogHeader className='mb-2'>

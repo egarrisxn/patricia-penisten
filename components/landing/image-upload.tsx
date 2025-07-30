@@ -192,7 +192,7 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
                 id='name'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                maxLength={50}
+                maxLength={40}
                 placeholder='Name (optional)'
               />
             </div>
@@ -204,7 +204,7 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
                 id='caption'
                 value={caption}
                 onChange={(e) => setCaption(e.target.value)}
-                maxLength={100}
+                maxLength={80}
                 className='min-h-20'
                 placeholder='Caption (optional)'
               />

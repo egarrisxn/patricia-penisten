@@ -59,12 +59,12 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
         }`}
         style={{ pointerEvents: "auto" }}
       >
-        <h2 className='relative text-lg font-semibold md:text-2xl lg:text-4xl'>
+        <h2 className='relative font-semibold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl'>
           {slide.title}
         </h2>
         <div className='flex justify-center'>
           <button
-            className='mx-auto mt-6 flex h-12 w-fit items-center justify-center rounded-2xl border border-transparent bg-white px-4 py-2 text-xs text-black shadow-md transition duration-200 hover:shadow-lg sm:text-sm'
+            className='mx-auto mt-6 flex h-8 w-fit cursor-pointer items-center justify-center rounded-2xl border border-transparent bg-white px-3 py-1.5 text-xs text-black shadow-md transition duration-200 hover:shadow-lg sm:h-10 sm:px-4 sm:py-2 sm:text-sm'
             onClick={(e) => {
               e.stopPropagation();
               onButtonClick(index);

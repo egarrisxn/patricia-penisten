@@ -18,7 +18,7 @@ export default function ThemeToggle() {
       <Button
         variant='ghost'
         size='icon'
-        className='m-0 size-5 p-0 lg:size-5.5'
+        className='m-0 size-fit p-0'
         aria-label='Toggle theme'
       />
     );
@@ -33,9 +33,9 @@ export default function ThemeToggle() {
       aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} theme`}
     >
       {resolvedTheme === "dark" ? (
-        <SunIcon className='size-5 fill-yellow-600 text-yellow-500 lg:size-5.5' />
+        <SunIcon className='fill-primary/50 text-primary size-5 lg:size-5.5' />
       ) : (
-        <MoonStarIcon className='size-5 fill-slate-700 text-slate-600 lg:size-5.5' />
+        <MoonStarIcon className='fill-accent-foreground/70 text-accent-foreground size-5 lg:size-5.5' />
       )}
     </Button>
   );
