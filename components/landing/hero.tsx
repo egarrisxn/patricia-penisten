@@ -14,7 +14,7 @@ export default function Hero() {
         transition={{ duration: 1.5 }}
       >
         <Image
-          src='/bg/3.avif'
+          src='/bg/2.avif'
           alt='Beuatiful flower background'
           fill
           priority
