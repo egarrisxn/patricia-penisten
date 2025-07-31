@@ -1,11 +1,11 @@
 import LandingNavbar from "@/components/landing/landing-navbar";
 import LandingHero from "@/components/landing/landing-hero";
 import LandingAbout from "@/components/landing/landing-about";
-import Header from "@/components/shared/header";
 import LandingTimeline from "@/components/landing/landing-timeline";
-import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
-import LandingGuestbook from "@/components/landing/landing-guestbook";
+// import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
+// import LandingGuestbook from "@/components/landing/landing-guestbook";
 import LandingCTA from "@/components/landing/landing-cta";
+import Header from "@/components/shared/header";
 import ScrollUp from "@/components/shared/scroll-up";
 import Footer from "@/components/shared/footer";
 
@@ -21,15 +21,22 @@ export default function LandingPage() {
         </section>
         <section
           id='landing-about'
-          className='4xl:py-32 border-b-border/10 py-24 shadow-md xl:py-28'
+          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
         >
           <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
+            <Header
+              title={"About Patricia"}
+              heading={"Her Life, Her Love, Her Legacy"}
+              description={
+                "A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched."
+              }
+            />
             <LandingAbout />
           </div>
         </section>
         <section
           id='landing-timeline'
-          className='4xl:py-32 border-b-border/10 py-24 shadow-md xl:py-28'
+          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
         >
           <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <Header
@@ -44,7 +51,7 @@ export default function LandingPage() {
         </section>
         <section
           id='landing-photogallery'
-          className='4xl:py-32 border-b-border/10 py-24 shadow-md xl:py-28'
+          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
         >
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
             <Header
@@ -54,10 +61,13 @@ export default function LandingPage() {
                 "A space for you to post one, or many of your favorite photos you have of or with Patricia. She was not one for photos, so any that you have would be amazing."
               }
             />
-            <LandingPhotoGallery />
+            {/* <LandingPhotoGallery /> */}
           </div>
         </section>
-        <section id='landing-guestbook' className='4xl:py-32 py-24 xl:py-28'>
+        <section
+          id='landing-guestbook'
+          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
+        >
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
             <Header
               title={"Guestbook"}
@@ -66,10 +76,13 @@ export default function LandingPage() {
                 "As you would at an in-person gathering to celebrate the life of a loved one, a guestbook is avaiable for you to sign and leave a nugget of joy for us to read."
               }
             />
-            <LandingGuestbook />
+            {/* <LandingGuestbook /> */}
           </div>
         </section>
-        <section id='landing-cta' className='4xl:py-16 py-8 xl:py-12'>
+        <section
+          id='landing-cta'
+          className='4xl:py-32 min-h-screen py-24 shadow-md xl:py-28'
+        >
           <div className='mx-auto w-full max-w-4xl px-4 sm:px-6 md:px-8 2xl:max-w-[74rem]'>
             <LandingCTA />
           </div>

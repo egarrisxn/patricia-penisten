@@ -2,17 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { Button } from "@/components/ui/button";
-import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
+import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 
 export default function LandingCTA() {
   return (
     <motion.div
-      variants={CONTAINER_VARIANT_SCALE}
+      variants={CONTAINER_FADE_SCALE_N_STAGGER}
       initial='hidden'
       whileInView='visible'
+      viewport={{ once: true, amount: 0.4 }}
     >
-      <div className='mx-auto flex flex-col items-center justify-center gap-8 px-4 pt-20 pb-20 text-center md:flex-row md:gap-10 md:pt-32 md:pb-32 2xl:px-8'>
-        <motion.aside variants={ITEM_VARIANT}>
+      <div className='4xl:mb-16 mx-auto mb-8 flex flex-col items-center justify-center gap-8 text-center md:flex-row md:gap-10 xl:mb-12'>
+        <motion.aside variants={ITEM_FADE}>
           <div className='4xl:max-w-125 flex w-full max-w-80 px-4 md:px-0 lg:max-w-110 lg:min-w-96'>
             <div className='relative'>
               <Image
@@ -29,7 +30,7 @@ export default function LandingCTA() {
           </div>
         </motion.aside>
 
-        <motion.article variants={ITEM_VARIANT}>
+        <motion.article variants={ITEM_FADE}>
           <div className='flex w-full max-w-100 flex-1 flex-col gap-4 px-6 md:max-w-xl md:px-0 md:pb-8 md:text-start 2xl:max-w-none'>
             <h6 className='px-2 font-serif text-[1.95rem] leading-[1.2] font-black text-shadow-lg/10 sm:px-0 sm:text-[2.5rem] md:text-4xl lg:text-5xl xl:text-6xl'>
               She did get the chance to go out for one final road trip..

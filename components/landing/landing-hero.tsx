@@ -2,7 +2,7 @@ import Image from "next/image";
 import * as motion from "motion/react-client";
 import { PhotoFlip } from "@/components/ui/photo-flip";
 import { ScrollDownHero } from "@/components/shared/scroll-down";
-import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
+import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 
 export default function LandingHero() {
   return (
@@ -24,12 +24,12 @@ export default function LandingHero() {
 
       <motion.div
         className='5xl:max-w-7xl xs:px-4 xs:pt-8 absolute inset-0 z-30 mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center gap-4 px-2 pb-48 md:flex-row md:pb-24 lg:pb-16'
-        variants={CONTAINER_VARIANT_SCALE}
+        variants={CONTAINER_FADE_SCALE_N_STAGGER}
         initial='hidden'
         animate='visible'
       >
         <motion.aside
-          variants={ITEM_VARIANT}
+          variants={ITEM_FADE}
           className='flex w-fit items-center md:items-end'
         >
           <PhotoFlip
@@ -41,7 +41,7 @@ export default function LandingHero() {
           />
         </motion.aside>
         <motion.header
-          variants={ITEM_VARIANT}
+          variants={ITEM_FADE}
           className='xs:max-w-md flex w-fit max-w-xs flex-col items-center text-center sm:max-w-lg md:items-start md:text-start lg:max-w-none'
         >
           <h1 className='5xl:text-[4.8rem] 4xl:text-[4.6rem] xs:text-[2.4rem] mb-2.5 font-serif text-[2.3rem] leading-none font-bold tracking-tight text-[#25c9f9] text-shadow-lg/20 sm:text-[2.65rem] md:mb-1.5 md:text-[2.6rem] lg:text-[3.45rem] lg:leading-[1.1] xl:text-[3.9rem] xl:leading-none xl:tracking-normal 2xl:text-[4.45rem]'>
@@ -71,7 +71,7 @@ export default function LandingHero() {
           </h3>
         </motion.header>
         <motion.span
-          variants={ITEM_VARIANT}
+          variants={ITEM_FADE}
           className='absolute bottom-30 z-30 flex w-full justify-center md:bottom-3 lg:bottom-7.5'
         >
           <ScrollDownHero />

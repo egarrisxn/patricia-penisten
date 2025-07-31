@@ -1,26 +1,23 @@
 import * as motion from "motion/react-client";
-import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
+import { ITEM_FADE } from "@/lib/motion";
 import { landingAboutTextBlurb } from "@/lib/data";
 
 export default function LandingAbout() {
   return (
-    <motion.div
-      variants={CONTAINER_VARIANT_SCALE}
+    <motion.article
+      variants={ITEM_FADE}
       initial='hidden'
       whileInView='visible'
+      viewport={{ once: true, amount: 0.5 }}
+      className='xs:px-4 px-2 py-8'
     >
-      <motion.aside variants={ITEM_VARIANT}>
-        <div className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl xl:py-10'>
-          <div className='px-2 lg:px-4 xl:px-6'>
-            <h4 className='xs:text-lg flex items-center text-xl leading-none font-semibold md:text-2xl'>
-              {landingAboutTextBlurb.title}
-            </h4>
-          </div>
-          <div className='px-2 lg:px-4 xl:px-6'>
-            <p className='text-base md:text-lg'>{landingAboutTextBlurb.body}</p>
-          </div>
+      <div className='mx-auto w-full max-w-4xl sm:px-6 md:px-8 lg:px-4 xl:py-10 2xl:max-w-[74rem]'>
+        <div className='xs:px-4 px-2 xl:px-6'>
+          <p className='text-base md:text-lg 2xl:text-xl'>
+            {landingAboutTextBlurb}
+          </p>
         </div>
-      </motion.aside>
-    </motion.div>
+      </div>
+    </motion.article>
   );
 }

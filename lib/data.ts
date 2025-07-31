@@ -18,44 +18,9 @@ export const landingNavigation: NavLinks[] = [
   { name: "Farewell Page", href: "/farewell" },
 ];
 
-export const landingAboutTextBlurb: LandingAboutTextBlurb = {
-  title: "About Patricia",
-  body: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae
-    nisi id eros lobortis faucibus eget sed massa. In hac habitasse
-    platea dictumst. Vestibulum ante ipsum primis in faucibus orci
-    luctus et ultrices posuere cubilia curae; Etiam quis magna quam.
-    Sed orci ipsum, molestie et libero ut, eleifend gravida odio. In
-    interdum, metus a viverra aliquet, arcu metus imperdiet enim, ac
-    pulvinar velit tellus ac velit. Duis luctus rutrum elit eu
-    fermentum. Aliquam auctor eget nisi vel porttitor. Cras pulvinar
-    massa non felis accumsan pellentesque. Sed ac lectus tortor. Morbi
-    quis commodo elit, vel aliquam justo. In porta mauris quis sapien
-    rhoncus, non aliquet nibh convallis. Mauris et iaculis odio, vel
-    placerat massa. Nulla elementum malesuada lectus a accumsan. Nunc
-    dui urna, gravida et lorem in, tincidunt vestibulum dui. Nulla
-    nibh turpis, laoreet a eleifend nec, sollicitudin vel neque.
-    Praesent sit amet mollis odio, sed facilisis enim. Ut eu convallis
-    libero. Quisque condimentum imperdiet nunc, sit amet placerat nibh
-    vehicula vel. Mauris elit sapien, varius vel ultricies ac,
-    faucibus eget enim. Maecenas viverra nibh quis nisl dignissim
-    porta. Proin condimentum eros enim, accumsan eleifend eros
-    eleifend dignissim. Nulla in elit rhoncus, aliquam sapien eget,
-    viverra erat. Ut magna justo, scelerisque sit amet sem eu,
-    fringilla lacinia ipsum. Cras tellus lectus, rutrum sit amet felis
-    a, molestie ornare nulla. Aenean finibus malesuada ipsum vel
-    consequat. Vivamus porta leo a lacus elementum, a pulvinar libero
-    pulvinar. Proin non tincidunt odio. Sed a justo lobortis nibh
-    pellentesque porttitor. Vivamus ultrices non risus nec elementum.
-    Vestibulum id leo vitae velit mollis scelerisque in rhoncus
-    libero.`,
-};
+export const landingAboutTextBlurb = `Nullam non vulputate arcu. Suspendisse potenti. Etiam sit amet magna nibh. Aliquam consectetur, velit at auctor feugiat, mauris libero congue orci, id aliquam massa elit quis arcu. Integer fringilla ornare feugiat. Sed fermentum tortor nisl, posuere tempus libero venenatis nec. Duis faucibus dapibus ornare. Fusce fermentum arcu eu malesuada condimentum. Vestibulum consectetur porta arcu et dignissim. Fusce pharetra fringilla diam, eget eleifend diam feugiat eget. Duis nisi ante, faucibus vitae aliquam sed, bibendum vel nisl. Donec venenatis auctor velit eu tempor. Curabitur blandit molestie vestibulum. Aliquam quis auctor diam, at dignissim massa. Cras id vehicula felis. Vestibulum finibus enim mauris, id condimentum orci tempor ut.`;
 
-export const landingTimelineTextBlurbs = [
-  `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
-  `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
-  `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
-  `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
-];
+export const landingTimelineTextBlurbs = `Born in Oklahoma, Patricia spent her early life on the family farm, where she learned the values of hard work and love. After marrying John Penisten, they built a life together, eventually settling in Lawton, Oklahoma, where she earned her Bachelor's Degree in Elementary Education from Cameron University. For 34 years, Pat dedicated her life to teaching at Douglas Elementary School, touching the lives of hundreds of students. Her legacy is one of unwavering dedication, unconditional support, and a profound love for her family, especially her grandchildren, with whom she cherished every moment.`;
 
 export const landingTimelineTeacherCard: LandingTimelineTeacherCard = {
   title: "Legacy of Teaching",
