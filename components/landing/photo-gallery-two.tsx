@@ -71,7 +71,7 @@ function PhotoGrid({
         {allPhotos.map((photo) => (
           <div
             key={`photo-${photo.id}`}
-            className='group relative mx-auto w-full cursor-pointer break-inside-avoid overflow-hidden rounded-lg shadow-lg backdrop-blur-xs transition-all duration-300 hover:shadow-xl'
+            className='group relative mx-auto w-full cursor-pointer break-inside-avoid overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl'
             onClick={() => setSelectedPhoto(photo)}
           >
             <Image

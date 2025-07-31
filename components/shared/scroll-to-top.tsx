@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTopButton() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -34,16 +33,14 @@ export default function ScrollToTopButton() {
   };
 
   return (
-    <Button
+    <button
       ref={buttonRef}
       onClick={scrollToTop}
       id='toggle-button'
-      size='icon'
-      variant='basic'
-      className='text-foreground/80 hover:text-foreground pointer-events-none fixed right-4 bottom-4 z-50 hidden cursor-pointer opacity-0 transition-opacity duration-300 lg:block'
+      className='dark:bg-input/30 dark:hover:bg-input/50 text-accent-foreground/90 hover:text-accent-foreground xs:size-10 pointer-events-none fixed right-4 bottom-4 z-50 mx-auto hidden size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-white/95 opacity-0 shadow-lg transition-opacity duration-300 hover:bg-white hover:shadow-xl lg:flex'
       aria-label='Scroll to top'
     >
-      <ChevronUp className='size-6 lg:size-8' />
-    </Button>
+      <ArrowUp className='xs:size-6 size-5' />
+    </button>
   );
 }

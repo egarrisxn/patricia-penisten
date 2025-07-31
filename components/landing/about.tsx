@@ -20,7 +20,7 @@ export default function About() {
       >
         <div className='space-y-12'>
           <motion.div variants={ITEM_VARIANT}>
-            <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl lg:backdrop-blur-xs xl:py-10'>
+            <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl xl:py-10'>
               <CardContent className='px-2 lg:px-4 xl:px-6'>
                 {aboutTextBlurbs.map((text, index) => (
                   <p key={index} className='py-2 md:text-lg'>
@@ -31,7 +31,7 @@ export default function About() {
             </Card>
           </motion.div>
           <motion.div variants={ITEM_VARIANT}>
-            <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl lg:backdrop-blur-xs xl:py-10'>
+            <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl xl:py-10'>
               <div className='px-2 lg:px-4 xl:px-6'>
                 <h4 className='xs:text-lg flex items-center text-xl leading-none font-semibold md:text-2xl'>
                   <Star className='xs:size-6 text-primary fill-primary/50 mr-2.5 size-5 md:size-7' />

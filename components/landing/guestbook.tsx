@@ -48,7 +48,7 @@ function EntryList({
       <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'>
         {allEntries.map((entry) => (
           <div key={`entry-${entry.id}`} className='break-inside-avoid'>
-            <Card className='bg-card/90 w-full border-none shadow-xl backdrop-blur-xs'>
+            <Card className='bg-card/90 w-full border-none shadow-xl'>
               <CardContent className='flex flex-col px-6 pt-4 pb-4'>
                 <div className='flex items-start space-x-4'>
                   <div className='min-w-0 flex-1 flex-col'>

@@ -87,7 +87,7 @@ export default function Timeline() {
                   <div
                     className={`mt-0 ${isEven ? "md:order-1" : "md:order-2"}`}
                   >
-                    <div className='text-card-foreground dark:bg-card rounded-b-lg bg-white p-6 shadow-lg backdrop-blur-xs transition-shadow duration-300 group-hover:shadow-xl md:rounded-lg md:hover:shadow-lg'>
+                    <div className='text-card-foreground dark:bg-card rounded-b-lg bg-white p-6 shadow-lg transition-shadow duration-300 group-hover:shadow-xl md:rounded-lg md:hover:shadow-lg'>
                       <div className='mb-4 flex items-center'>
                         <div className='rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-md'>
                           {item.time}
