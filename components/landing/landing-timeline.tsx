@@ -3,12 +3,12 @@ import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { CONTAINER_VARIANT_STAGGER, ITEM_VARIANT } from "@/lib/motion";
 import {
-  aboutTextBlurbs,
-  aboutTeachingCardData,
-  aboutTimelineData,
+  landingTimelineTextBlurbs,
+  landingTimelineTeacherCard,
+  landingTimelineData,
 } from "@/lib/data";
 
-export default function About() {
+export default function LandingTimeline() {
   return (
     <div className='pt-6 pb-8 md:px-4 md:pt-8'>
       <motion.div
@@ -22,7 +22,7 @@ export default function About() {
           <motion.div variants={ITEM_VARIANT}>
             <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl xl:py-10'>
               <CardContent className='px-2 lg:px-4 xl:px-6'>
-                {aboutTextBlurbs.map((text, index) => (
+                {landingTimelineTextBlurbs.map((text, index) => (
                   <p key={index} className='py-2 md:text-lg'>
                     {text}
                   </p>
@@ -35,12 +35,12 @@ export default function About() {
               <div className='px-2 lg:px-4 xl:px-6'>
                 <h4 className='xs:text-lg flex items-center text-xl leading-none font-semibold md:text-2xl'>
                   <Star className='xs:size-6 text-primary fill-primary/50 mr-2.5 size-5 md:size-7' />
-                  {aboutTeachingCardData.title}
+                  {landingTimelineTeacherCard.title}
                 </h4>
               </div>
               <CardContent className='px-2 lg:px-4 xl:px-6'>
                 <p className='text-base md:text-lg'>
-                  {aboutTeachingCardData.body}
+                  {landingTimelineTeacherCard.body}
                 </p>
               </CardContent>
             </Card>
@@ -54,7 +54,7 @@ export default function About() {
             Timeline
           </motion.h4>
           <div className='space-y-6 lg:space-y-7'>
-            {aboutTimelineData.map((event, index) => (
+            {landingTimelineData.map((event, index) => (
               <motion.div
                 key={index}
                 className='flex items-start space-x-3 md:space-x-4'

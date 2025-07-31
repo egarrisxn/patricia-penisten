@@ -183,6 +183,6 @@
 }
 
 /* Landing navbar */
-#landing-header.scrolled {
+#landing-navbar.scrolled {
   @apply bg-card/80 pointer-events-auto opacity-100 shadow-sm backdrop-blur-lg;
 }

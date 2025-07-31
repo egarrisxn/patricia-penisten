@@ -4,7 +4,7 @@ import { PhotoFlip } from "@/components/ui/photo-flip";
 import { ScrollDownHero } from "@/components/shared/scroll-down";
 import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
 
-export default function Hero() {
+export default function LandingHero() {
   return (
     <>
       <motion.div
@@ -44,7 +44,7 @@ export default function Hero() {
           variants={ITEM_VARIANT}
           className='xs:max-w-md flex w-fit max-w-xs flex-col items-center text-center sm:max-w-lg md:items-start md:text-start lg:max-w-none'
         >
-          <h1 className='5xl:text-[4.8rem] 4xl:text-[4.6rem] xs:text-[2.4rem] mb-2.5 font-serif text-[2.3rem] leading-none font-bold tracking-tight text-blue-300/90 text-shadow-lg/20 sm:text-[2.65rem] md:mb-1.5 md:text-[2.6rem] lg:text-[3.45rem] lg:leading-[1.1] xl:text-[3.9rem] xl:leading-none xl:tracking-normal 2xl:text-[4.45rem]'>
+          <h1 className='5xl:text-[4.8rem] 4xl:text-[4.6rem] xs:text-[2.4rem] mb-2.5 font-serif text-[2.3rem] leading-none font-bold tracking-tight text-[#25c9f9] text-shadow-lg/20 sm:text-[2.65rem] md:mb-1.5 md:text-[2.6rem] lg:text-[3.45rem] lg:leading-[1.1] xl:text-[3.9rem] xl:leading-none xl:tracking-normal 2xl:text-[4.45rem]'>
             Patricia G. Penisten
           </h1>
           <h2 className='5xl:text-[1.85rem] 4xl:text-[1.65rem] xs:text-[0.95rem] mb-10 text-[0.9rem] leading-none tracking-tight text-white/95 sm:text-[1.1rem] md:mb-6 md:ml-0.5 md:text-[1.2rem] md:leading-snug lg:mb-8.5 lg:text-[1.5rem] xl:text-[1.6rem] xl:leading-tight xl:tracking-normal 2xl:mb-8.5 2xl:text-[1.8rem]'>

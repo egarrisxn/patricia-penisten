@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import NavLogo from "@/components/shared/nav-logo";
 import ThemeToggle from "@/components/shared/theme-toggle";
 import { landingNavigation } from "@/lib/data";
 
@@ -26,28 +26,15 @@ export default function LandingNavbar() {
   return (
     <header
       ref={navRef}
-      id='landing-header'
+      id='landing-navbar'
       className='pointer-events-none fixed top-0 z-50 w-full opacity-0 transition-all'
     >
       <div className='mx-auto flex flex-row items-center justify-between p-4'>
-        <Link
-          className='flex cursor-pointer flex-row items-center gap-1'
+        <NavLogo
+          primary='Patricia Penisten:'
+          secondary='A Life Remembered'
           href='/'
-        >
-          <Image
-            src='/navbar-icon.svg'
-            alt='Farewell Tour Page Logo'
-            width={64}
-            height={64}
-            quality={100}
-            className='size-9 lg:size-11'
-          />
-
-          <p className='text-accent-foreground font-serif leading-none font-semibold lg:text-lg'>
-            Patricia Penisten:
-            <br />A Life Remembered
-          </p>
-        </Link>
+        />
 
         <div className='flex flex-row items-center gap-4 lg:gap-5 2xl:gap-6'>
           <nav className='flex items-center sm:hidden'>

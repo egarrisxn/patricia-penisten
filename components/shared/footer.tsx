@@ -1,16 +1,16 @@
 import { Heart } from "lucide-react";
-import { sharedFooterData } from "@/lib/data";
+import { footerData } from "@/lib/data";
 
-export default function SharedFooter() {
+export default function Footer() {
   return (
     <footer className='bg-card/80 border-border/30 w-full border-t-2'>
       <div className='mx-auto px-4 pt-18 pb-14 text-center md:pt-20 md:pb-16'>
         <div className='mb-6 lg:mb-8'>
           <h3 className='xs:text-xl mb-2 text-lg font-bold tracking-tight sm:text-2xl'>
-            {sharedFooterData.text}
+            {footerData.text}
           </h3>
           <p className='text-foreground/90 text-sm font-medium tracking-tight sm:text-base'>
-            {sharedFooterData.date}
+            {footerData.date}
           </p>
         </div>
         <div className='group flex items-center justify-center space-x-1 text-sm font-semibold tracking-tight text-black sm:text-base dark:text-white'>

@@ -1,34 +1,68 @@
 import type {
   NavLinks,
-  AboutTeachingCardData,
-  AboutTimelineData,
-  FarewellHeaderData,
+  LandingAboutTextBlurb,
+  LandingTimelineTeacherCard,
+  LandingTimelineData,
+  FarewellHeroData,
   FarewellTimelineItems,
-  SharedFooterData,
+  FooterData,
 } from "@/lib/types";
 
 //! LANDING PAGE
 
 export const landingNavigation: NavLinks[] = [
-  { name: "Her Story", href: "#herstory" },
-  { name: "Photo Gallery", href: "#photogallery" },
-  { name: "Guestbook", href: "#guestbook" },
-  { name: "Farewell Tour", href: "/farewell" },
+  { name: "About", href: "#landing-about" },
+  { name: "Timeline", href: "#landing-timeline" },
+  { name: "Photo Gallery", href: "#landing-photogallery" },
+  { name: "Guestbook", href: "#landing-guestbook" },
+  { name: "Farewell Page", href: "/farewell" },
 ];
 
-export const aboutTextBlurbs = [
+export const landingAboutTextBlurb: LandingAboutTextBlurb = {
+  title: "About Patricia",
+  body: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae
+    nisi id eros lobortis faucibus eget sed massa. In hac habitasse
+    platea dictumst. Vestibulum ante ipsum primis in faucibus orci
+    luctus et ultrices posuere cubilia curae; Etiam quis magna quam.
+    Sed orci ipsum, molestie et libero ut, eleifend gravida odio. In
+    interdum, metus a viverra aliquet, arcu metus imperdiet enim, ac
+    pulvinar velit tellus ac velit. Duis luctus rutrum elit eu
+    fermentum. Aliquam auctor eget nisi vel porttitor. Cras pulvinar
+    massa non felis accumsan pellentesque. Sed ac lectus tortor. Morbi
+    quis commodo elit, vel aliquam justo. In porta mauris quis sapien
+    rhoncus, non aliquet nibh convallis. Mauris et iaculis odio, vel
+    placerat massa. Nulla elementum malesuada lectus a accumsan. Nunc
+    dui urna, gravida et lorem in, tincidunt vestibulum dui. Nulla
+    nibh turpis, laoreet a eleifend nec, sollicitudin vel neque.
+    Praesent sit amet mollis odio, sed facilisis enim. Ut eu convallis
+    libero. Quisque condimentum imperdiet nunc, sit amet placerat nibh
+    vehicula vel. Mauris elit sapien, varius vel ultricies ac,
+    faucibus eget enim. Maecenas viverra nibh quis nisl dignissim
+    porta. Proin condimentum eros enim, accumsan eleifend eros
+    eleifend dignissim. Nulla in elit rhoncus, aliquam sapien eget,
+    viverra erat. Ut magna justo, scelerisque sit amet sem eu,
+    fringilla lacinia ipsum. Cras tellus lectus, rutrum sit amet felis
+    a, molestie ornare nulla. Aenean finibus malesuada ipsum vel
+    consequat. Vivamus porta leo a lacus elementum, a pulvinar libero
+    pulvinar. Proin non tincidunt odio. Sed a justo lobortis nibh
+    pellentesque porttitor. Vivamus ultrices non risus nec elementum.
+    Vestibulum id leo vitae velit mollis scelerisque in rhoncus
+    libero.`,
+};
+
+export const landingTimelineTextBlurbs = [
   `Patricia was born on the family farm between Connerville and Mills Creek, Oklahoma on December 22nd, 1935 to Hugh and Ettie Irene (Tisdale) Blevins. She grew up in Connerville and attended Tishomingo Schools.`,
   `She married John Penisten on November 26, 1956 in Ada, Oklahoma where they lived, later moving to Douglas, Wyoming and returning to Oklahoma, living in Bray until 1967 when they moved to Lawton.`,
   `Patricia finished her education with a Bachelors Degree in Elementary Education from Cameron University and worked at Douglas Elementary for 34 years before retiring.`,
   `She enjoyed shopping and loved being with her family and taking care of the grandchildren.`,
 ];
 
-export const aboutTeachingCardData: AboutTeachingCardData = {
+export const landingTimelineTeacherCard: LandingTimelineTeacherCard = {
   title: "Legacy of Teaching",
   body: " For 34 years, Pat dedicated her life to teaching at Douglas Elementary School. She touched the lives of hundreds of students, always believing in their potential and inspiring them to achieve their dreams. Her classroom was a place of wonder, learning, and unconditional support.",
 };
 
-export const aboutTimelineData: AboutTimelineData[] = [
+export const landingTimelineData: LandingTimelineData[] = [
   {
     year: "1935",
     title: "Born in Oklahoma",
@@ -81,10 +115,15 @@ export const aboutTimelineData: AboutTimelineData[] = [
 
 //! FAREWELL PAGE
 
-export const farewellHeaderData: FarewellHeaderData = {
+export const farewellNavigation: NavLinks = {
+  name: "Memorial Page",
+  href: "/",
+};
+
+export const farewellHeroData: FarewellHeroData = {
   pretitle: "The",
   title: "Farewell Tour",
-  subtitle: "With Judi & Grandma",
+  subtitle: "With Pat & Judi",
   song: `"How Do I Say Goodbye"`,
   artist: "Dean Lewis",
   description: `Join us on Patricia's heartfelt “Farewell Tour,” a final journey filled with love and remembrance. Her daughter, Judi, carried her ashes to visit cherished family members, honoring Pat's deep connections one last time. As you browse the photos, tap the speaker icon above to play a handpicked song and enrich the experience.`,
@@ -178,7 +217,7 @@ export const adminNavigation: NavLinks[] = [
 
 //! SHARED PAGES
 
-export const sharedFooterData: SharedFooterData = {
+export const footerData: FooterData = {
   text: "In Loving Memory of Patricia G. Penisten",
   date: "December 22nd, 1935 - June 5th, 2025",
 };

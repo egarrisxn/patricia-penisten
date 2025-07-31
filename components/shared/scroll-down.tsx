@@ -4,7 +4,9 @@ import { ArrowDown } from "lucide-react";
 
 export function ScrollDownHero() {
   const scrollDownHero = () => {
-    document.querySelector("#herstory")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .querySelector("#landing-about")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -20,7 +22,9 @@ export function ScrollDownHero() {
 
 export function ScrollDownFarewell() {
   const scrollDownFarewell = () => {
-    document.querySelector("#timeline")?.scrollIntoView({ behavior: "smooth" });
+    document
+      .querySelector("#farewell-timeline")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

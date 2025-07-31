@@ -1,11 +1,10 @@
 "use client";
 
 import EntryList from "@/components/landing/entry-list";
-import EntryForm from "@/components/landing/entry-form";
 import { useUserContent } from "@/hooks/use-user-content";
 import type { GuestbookEntry } from "@/lib/types";
 
-export default function GuestbookTwo() {
+export default function LandingGuestbook() {
   const { userItems, approvedItems, setUserItems } =
     useUserContent<GuestbookEntry>("entries");
 
@@ -14,11 +13,12 @@ export default function GuestbookTwo() {
   };
 
   return (
-    <div className='grid grid-cols-1 gap-12 px-4 py-8'>
-      <EntryList userEntries={userItems} approvedEntries={approvedItems} />
-      <div className='mx-auto mt-8 w-full max-w-xl'>
-        <EntryForm onEntrySubmitted={handleEntrySubmitted} />
-      </div>
+    <div className='mx-auto grid px-4 py-8'>
+      <EntryList
+        userEntries={userItems}
+        approvedEntries={approvedItems}
+        onEntrySubmitted={handleEntrySubmitted}
+      />
     </div>
   );
 }

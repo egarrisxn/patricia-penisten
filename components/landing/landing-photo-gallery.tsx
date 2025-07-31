@@ -5,7 +5,7 @@ import ImageUpload from "@/components/landing/image-upload";
 import { useUserContent } from "@/hooks/use-user-content";
 import type { PhotoEntry } from "@/lib/types";
 
-export default function PhotoGallery() {
+export default function LandingPhotoGallery() {
   const { userItems, approvedItems, setUserItems } =
     useUserContent<PhotoEntry>("photos");
 

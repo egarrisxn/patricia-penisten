@@ -23,18 +23,23 @@ export interface NavLinks {
   href: string;
 }
 
-export interface AboutTeachingCardData {
+export interface LandingAboutTextBlurb {
   title: string;
   body: string;
 }
 
-export interface AboutTimelineData {
+export interface LandingTimelineTeacherCard {
+  title: string;
+  body: string;
+}
+
+export interface LandingTimelineData {
   year: string;
   title: string;
   description: string;
 }
 
-export interface FarewellHeaderData {
+export interface FarewellHeroData {
   pretitle: string;
   title: string;
   subtitle: string;
@@ -52,7 +57,7 @@ export interface FarewellTimelineItems {
   alt: string;
 }
 
-export interface SharedFooterData {
+export interface FooterData {
   text: string;
   date: string;
 }

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { ArrowUp } from "lucide-react";
 
-export default function ScrollToTopButton() {
+export default function ScrollUp() {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {

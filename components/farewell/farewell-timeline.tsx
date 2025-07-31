@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { farewellTimelineItems } from "@/lib/data";
 import type { FarewellTimelineItems } from "@/lib/types";
 
-export default function Timeline() {
+export default function FarewellTimeline() {
   const [selectedItem, setSelectedItem] =
     useState<FarewellTimelineItems | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);

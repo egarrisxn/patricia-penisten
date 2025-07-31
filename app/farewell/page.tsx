@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { SITE_DATA } from "@/lib/config";
 import FarewellNavbar from "@/components/farewell/farewell-navbar";
-import FarewellHeader from "@/components/farewell/farewell-header";
-import Timeline from "@/components/farewell/timeline";
-import SharedFooter from "@/components/shared/footer";
-import ScrollToTopButton from "@/components/shared/scroll-to-top";
+import FarewellHero from "@/components/farewell/farewell-hero";
+import FarewellTimeline from "@/components/farewell/farewell-timeline";
+import ScrollUp from "@/components/shared/scroll-up";
+import Footer from "@/components/shared/footer";
 import { farewellQuoteText } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -47,16 +47,17 @@ export default function FarewellPage() {
   return (
     <div className='mx-auto grid w-full'>
       <FarewellNavbar />
-
       <main className='to-background bg-linear-to-t from-blue-100 dark:from-slate-800'>
-        <section id='hero'>
+        <section id='farewell-hero'>
           <div className='relative min-h-screen w-full overflow-hidden'>
-            <FarewellHeader />
+            <FarewellHero />
           </div>
         </section>
-
-        <section id='timeline' className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'>
-          <Timeline />
+        <section
+          id='farewell-timeline'
+          className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'
+        >
+          <FarewellTimeline />
           <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
             <p className='text-2xl font-[450] italic md:mx-auto md:text-center lg:text-3xl'>
               <q>{farewellQuoteText}</q>
@@ -64,9 +65,8 @@ export default function FarewellPage() {
           </div>
         </section>
       </main>
-
-      <SharedFooter />
-      <ScrollToTopButton />
+      <ScrollUp />
+      <Footer />
     </div>
   );
 }

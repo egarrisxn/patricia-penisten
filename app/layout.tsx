@@ -75,7 +75,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
       </head>
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} overflow-x-hidden overscroll-x-contain font-sans antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute='class'

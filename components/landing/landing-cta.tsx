@@ -4,7 +4,7 @@ import * as motion from "motion/react-client";
 import { Button } from "@/components/ui/button";
 import { CONTAINER_VARIANT_SCALE, ITEM_VARIANT } from "@/lib/motion";
 
-export default function CTATwo() {
+export default function LandingCTA() {
   return (
     <motion.div
       variants={CONTAINER_VARIANT_SCALE}
@@ -13,16 +13,16 @@ export default function CTATwo() {
     >
       <div className='mx-auto flex flex-col items-center justify-center gap-8 px-4 pt-20 pb-20 text-center md:flex-row md:gap-10 md:pt-32 md:pb-32 2xl:px-8'>
         <motion.aside variants={ITEM_VARIANT}>
-          <div className='4xl:max-w-125 flex w-full max-w-80 border-red-500 px-4 md:px-0 lg:max-w-110 lg:min-w-96'>
+          <div className='4xl:max-w-125 flex w-full max-w-80 px-4 md:px-0 lg:max-w-110 lg:min-w-96'>
             <div className='relative'>
               <Image
-                src='/landing/pixel-1.png'
+                src='/landing/map-1.png'
                 alt='placeholder'
                 width={500}
                 height={500}
-                className='border-foreground aspect-square rounded-2xl border-2 object-cover md:border-4'
+                className='bg-foreground border-accent-foreground aspect-square rounded-lg border-2 object-cover shadow-lg dark:border-4'
               />
-              <div className='bg-foreground text-background absolute -top-4 -left-4 -rotate-3 transform rounded-lg px-4 py-2 text-sm font-bold uppercase'>
+              <div className='bg-accent border-accent-foreground text-accent-foreground absolute -right-4 -bottom-4 -rotate-4 transform rounded-lg border-2 px-4 py-2 text-[0.9rem] leading-[1.4] font-semibold tracking-wide uppercase shadow-lg'>
                 1935-2025
               </div>
             </div>
