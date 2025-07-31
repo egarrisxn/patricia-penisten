@@ -77,32 +77,3 @@ export default function LandingPage() {
     </div>
   );
 }
-
-// import PhotoGallery from "@/components/landing/photo-gallery";
-// import CTA from "@/components/landing/cta";
-
-{
-  /* <section
-  id='photogallery'
-  className='4xl:py-32 border-b-border/10 py-24 shadow-md xl:py-28'
->
-  <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
-    <Header
-      title={"Photo Gallery"}
-      heading={"Submit Your Memorable Photos"}
-      description={
-        "A space for you to post one, or many of your favorite photos you have of or with Patricia. She was not one for photos, so any that you have would be amazing."
-      }
-    />
-    <PhotoGallery />
-  </div>
-</section>  */
-}
-
-{
-  /* <section id='cta' className='4xl:pt-16 pt-8 xl:pt-12'>
-  <div className='px-2 backdrop-blur-3xl sm:px-4 md:px-6'>
-    <CTA />
-  </div>
-</section>  */
-}

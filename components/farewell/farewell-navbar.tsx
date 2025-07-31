@@ -6,7 +6,7 @@ import ThemeToggle from "@/components/shared/theme-toggle";
 
 export default function FarewellNavbar() {
   return (
-    <header className='w-full text-black dark:text-white'>
+    <header className='absolute top-0 z-50 w-full text-black dark:text-white'>
       <div className='mx-auto flex flex-row items-center justify-between p-4'>
         <div className='flex flex-row items-center gap-3 md:gap-4 lg:gap-6'>
           <Link
@@ -35,7 +35,7 @@ export default function FarewellNavbar() {
             href='/'
             className='hover:text-primary relative flex cursor-pointer transition-colors sm:hidden'
           >
-            <Home className='size-4 sm:hidden' />
+            <Home className='text-accent-foreground size-4 sm:hidden' />
           </Link>
           <Link
             href='/'

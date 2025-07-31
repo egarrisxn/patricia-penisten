@@ -126,7 +126,7 @@ export default function CustomAudioPlayer() {
   };
 
   return (
-    <div className='sm:dark:bg-card/50 xs:w-30 mx-auto w-22 sm:rounded-lg sm:bg-white sm:p-0.5 sm:shadow-sm'>
+    <div className='sm:dark:bg-card/50 xs:w-30 mx-auto w-22 border sm:rounded-lg sm:bg-white sm:p-0.5 sm:shadow-sm lg:w-34'>
       <div className='flex items-center gap-1'>
         <Button
           variant='basic'
@@ -146,7 +146,7 @@ export default function CustomAudioPlayer() {
           step={0.01}
           value={[isMuted ? 0 : volume]}
           onValueChange={handleVolumeChange}
-          className='xs:max-w-16 w-full max-w-14 flex-1'
+          className='xs:max-w-16 w-full max-w-14 flex-1 lg:max-w-20'
         />
       </div>
 

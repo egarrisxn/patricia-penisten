@@ -45,15 +45,17 @@ export const metadata: Metadata = {
 
 export default function FarewellPage() {
   return (
-    <div className='grid min-h-dvh w-full grid-rows-[auto_1fr_auto]'>
+    <div className='mx-auto grid w-full'>
       <FarewellNavbar />
 
       <main className='to-background bg-linear-to-t from-blue-100 dark:from-slate-800'>
-        <section id='hero' className='py-24'>
-          <FarewellHeader />
+        <section id='hero'>
+          <div className='relative min-h-screen w-full overflow-hidden'>
+            <FarewellHeader />
+          </div>
         </section>
 
-        <section className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'>
+        <section id='timeline' className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'>
           <Timeline />
           <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
             <p className='text-2xl font-[450] italic md:mx-auto md:text-center lg:text-3xl'>

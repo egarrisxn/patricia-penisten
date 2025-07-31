@@ -84,10 +84,10 @@ export const aboutTimelineData: AboutTimelineData[] = [
 export const farewellHeaderData: FarewellHeaderData = {
   pretitle: "The",
   title: "Farewell Tour",
-  subtitle: "With Pat & Judi",
+  subtitle: "With Judi & Grandma",
   song: `"How Do I Say Goodbye"`,
   artist: "Dean Lewis",
-  description: `Join us on Patricia's final, heartwarming "Farewell Tour." Her daughter, Judi, lovingly carried her mother's ashes on a special journey to visit cherished relatives, bringing Pat to those she held dear one last time. This page is a tribute to their extraordinary bond and the enduring connections of family.`,
+  description: `Join us on Patricia's heartfelt “Farewell Tour,” a final journey filled with love and remembrance. Her daughter, Judi, carried her ashes to visit cherished family members, honoring Pat's deep connections one last time. As you browse the photos, tap the speaker icon above to play a handpicked song and enrich the experience.`,
 };
 
 export const farewellTimelineItems: FarewellTimelineItems[] = [
