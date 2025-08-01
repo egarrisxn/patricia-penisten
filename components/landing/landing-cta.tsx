@@ -17,13 +17,13 @@ export default function LandingCTA() {
           <div className='4xl:max-w-125 flex w-full max-w-80 px-4 md:px-0 lg:max-w-110 lg:min-w-96'>
             <div className='relative'>
               <Image
-                src='/landing/map-1.png'
+                src='/landing/map.png'
                 alt='placeholder'
                 width={500}
                 height={500}
-                className='bg-foreground border-accent-foreground aspect-square rounded-lg border-2 object-cover shadow-lg dark:border-4'
+                className='bg-foreground border-accent-foreground aspect-square rounded-lg border-4 object-cover shadow-lg'
               />
-              <div className='bg-accent border-accent-foreground text-accent-foreground absolute -right-4 -bottom-4 -rotate-4 transform rounded-lg border-2 px-4 py-2 text-[0.9rem] leading-[1.4] font-semibold tracking-wide uppercase shadow-lg'>
+              <div className='bg-accent border-accent-foreground text-accent-foreground absolute -right-4 -bottom-4 -rotate-4 transform rounded-lg border-3 px-4 py-2 text-[0.9rem] leading-[1.4] font-semibold tracking-wide uppercase shadow-lg'>
                 1935-2025
               </div>
             </div>

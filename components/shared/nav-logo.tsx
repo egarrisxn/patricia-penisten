@@ -1,22 +1,14 @@
 // components/shared/nav-logo.tsx
 import Link from "next/link";
 import Image from "next/image";
-import { PropsWithChildren } from "react";
 
 export interface NavLogoProps {
-  /** First line / primary title (e.g., “Patricia Penisten:”) */
   primary: string;
-  /** Second line / descriptor (e.g., “A Life Remembered” or “The Farewell Tour”) */
   secondary: string;
-  /** Where the logo links to */
   href?: string;
-  /** Image src (defaults to your existing icon) */
   iconSrc?: string;
-  /** Alt text for the image */
   imgAlt?: string;
-  /** Whether to pass priority to Next/Image */
   priority?: boolean;
-  /** Optional className override for the container */
   className?: string;
 }
 

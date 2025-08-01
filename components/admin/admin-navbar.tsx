@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "@/components/shared/theme-toggle";
-import { adminNavigation } from "@/lib/data";
+import { adminNavigation } from "@/lib/data/admin";
 
 export default function AdminNavbar() {
   return (

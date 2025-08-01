@@ -50,7 +50,7 @@ export default function LandingHero() {
           <h2 className='5xl:text-[1.85rem] 4xl:text-[1.65rem] xs:text-[0.95rem] mb-10 text-[0.9rem] leading-none tracking-tight text-white/95 sm:text-[1.1rem] md:mb-6 md:ml-0.5 md:text-[1.2rem] md:leading-snug lg:mb-8.5 lg:text-[1.5rem] xl:text-[1.6rem] xl:leading-tight xl:tracking-normal 2xl:mb-8.5 2xl:text-[1.8rem]'>
             December 22nd, 1935 - June 5th, 2025
           </h2>
-          <h3 className='5xl:text-[3rem] 4xl:text-[2.65rem] max-w-sm text-2xl leading-snug tracking-tight text-white sm:text-[1.7rem] md:ml-0.5 md:text-[1.8rem] lg:text-[2.1rem] lg:leading-[1.4] lg:tracking-normal xl:max-w-xl xl:text-[2.5rem] xl:leading-snug 2xl:text-[2.95rem] 2xl:leading-tight'>
+          <p className='5xl:text-[3rem] 4xl:text-[2.65rem] max-w-sm text-2xl leading-snug tracking-tight text-white sm:text-[1.7rem] md:ml-0.5 md:text-[1.8rem] lg:text-[2.1rem] lg:leading-[1.4] lg:tracking-normal xl:max-w-xl xl:text-[2.5rem] xl:leading-snug 2xl:text-[2.95rem] 2xl:leading-tight'>
             Beloved{" "}
             <span className='font-semibold text-amber-500 text-shadow-lg/20'>
               Teacher
@@ -68,7 +68,7 @@ export default function LandingHero() {
               Wife
             </span>
             .
-          </h3>
+          </p>
         </motion.header>
         <motion.span
           variants={ITEM_FADE}

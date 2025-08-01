@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { farewellTimelineItems } from "@/lib/data";
+import { farewellTimelineItems } from "@/lib/data/farewell";
 import type { FarewellTimelineItems } from "@/lib/types";
 
 export default function FarewellTimeline() {

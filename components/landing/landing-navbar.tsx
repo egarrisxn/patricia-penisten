@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import NavLogo from "@/components/shared/nav-logo";
 import ThemeToggle from "@/components/shared/theme-toggle";
-import { landingNavigation } from "@/lib/data";
+import { landingNavigation } from "@/lib/data/landing";
 
 export default function LandingNavbar() {
   const navRef = useRef<HTMLElement>(null);

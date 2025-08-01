@@ -5,7 +5,7 @@ import FarewellHero from "@/components/farewell/farewell-hero";
 import FarewellTimeline from "@/components/farewell/farewell-timeline";
 import ScrollUp from "@/components/shared/scroll-up";
 import Footer from "@/components/shared/footer";
-import { farewellQuoteText } from "@/lib/data";
+import { farewellQuoteText } from "@/lib/data/farewell";
 
 export const metadata: Metadata = {
   title: SITE_DATA.farewellTitle,

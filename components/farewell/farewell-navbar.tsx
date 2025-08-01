@@ -3,7 +3,7 @@ import NavLogo from "@/components/shared/nav-logo";
 import { Home } from "lucide-react";
 import CustomAudioPlayer from "@/components/shared/audio-player";
 import ThemeToggle from "@/components/shared/theme-toggle";
-import { farewellNavigation } from "@/lib/data";
+import { farewellNavigation } from "@/lib/data/farewell";
 
 export default function FarewellNavbar() {
   return (

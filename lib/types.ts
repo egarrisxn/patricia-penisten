@@ -1,36 +1,39 @@
-export interface PhotoEntry {
-  id: string;
-  created_at: string;
-  name?: string;
-  caption?: string;
-  image_url: string;
-  status: "pending" | "approved" | "denied";
-  submitted_by_ip: string;
-}
+import { BookMarked, Star, HeartHandshake } from "lucide-react";
 
-export interface GuestbookEntry {
-  id: string;
-  created_at: string;
-  name?: string;
-  relationship?: string;
-  message: string;
-  status: "pending" | "approved" | "denied";
-  submitted_by_ip: string;
-}
+// Icon Map
+export const iconMap = {
+  BookMarked: BookMarked,
+  Star: Star,
+  HeartHandshake: HeartHandshake,
+};
 
+export type IconName = keyof typeof iconMap;
+
+// General Purpose Interfaces
 export interface NavLinks {
   name: string;
   href: string;
 }
 
-export interface LandingAboutTextBlurb {
+export interface CardData {
   title: string;
   body: string;
+  textOne?: string;
+  textTwo?: string;
 }
 
-export interface LandingTimelineTeacherCard {
+// Landing Page Interfaces
+export interface LandingAboutCard {
   title: string;
-  body: string;
+  blurbs: string[];
+}
+
+export interface LandingTimelineCards extends CardData {
+  icon?: IconName;
+  link?: {
+    href: string;
+    name: string;
+  };
 }
 
 export interface LandingTimelineData {
@@ -39,6 +42,7 @@ export interface LandingTimelineData {
   description: string;
 }
 
+// Farewell Page Interfaces
 export interface FarewellHeroData {
   pretitle: string;
   title: string;
@@ -57,7 +61,32 @@ export interface FarewellTimelineItems {
   alt: string;
 }
 
-export interface FooterData {
-  text: string;
-  date: string;
+// Shared Interfaces
+export interface FooterCard extends CardData {
+  link: {
+    href: string;
+    name: string;
+  };
+}
+
+// Photo Gallery
+export interface PhotoEntry {
+  id: string;
+  created_at: string;
+  name?: string;
+  caption?: string;
+  image_url: string;
+  status: "pending" | "approved" | "denied";
+  submitted_by_ip: string;
+}
+
+// Guestbook
+export interface GuestbookEntry {
+  id: string;
+  created_at: string;
+  name?: string;
+  relationship?: string;
+  message: string;
+  status: "pending" | "approved" | "denied";
+  submitted_by_ip: string;
 }

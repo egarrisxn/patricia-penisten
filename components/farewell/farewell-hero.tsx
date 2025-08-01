@@ -1,7 +1,7 @@
 import * as motion from "motion/react-client";
 import { Heart } from "lucide-react";
 import { ScrollDownFarewell } from "@/components/shared/scroll-down";
-import { farewellHeroData } from "@/lib/data";
+import { farewellHeroData } from "@/lib/data/farewell";
 
 export default function FarewellHer0() {
   return (

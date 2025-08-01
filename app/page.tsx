@@ -2,8 +2,8 @@ import LandingNavbar from "@/components/landing/landing-navbar";
 import LandingHero from "@/components/landing/landing-hero";
 import LandingAbout from "@/components/landing/landing-about";
 import LandingTimeline from "@/components/landing/landing-timeline";
-// import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
-// import LandingGuestbook from "@/components/landing/landing-guestbook";
+import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
+import LandingGuestbook from "@/components/landing/landing-guestbook";
 import LandingCTA from "@/components/landing/landing-cta";
 import Header from "@/components/shared/header";
 import ScrollUp from "@/components/shared/scroll-up";
@@ -26,7 +26,7 @@ export default function LandingPage() {
           <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <Header
               title={"About Patricia"}
-              heading={"Her Life, Her Love, Her Legacy"}
+              heading={"Her Life, Love, & Legacy"}
               description={
                 "A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched."
               }
@@ -56,12 +56,12 @@ export default function LandingPage() {
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
             <Header
               title={"Photo Gallery"}
-              heading={"Submit Your Memorable Photos"}
+              heading={"Your Memories in Pictures"}
               description={
-                "A space for you to post one, or many of your favorite photos you have of or with Patricia. She was not one for photos, so any that you have would be amazing."
+                "A place to share your treasured photos of Patricia. Even a single picture is a cherished memory, and your contribution would mean the world to us."
               }
             />
-            {/* <LandingPhotoGallery /> */}
+            <LandingPhotoGallery />
           </div>
         </section>
         <section
@@ -71,12 +71,12 @@ export default function LandingPage() {
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
             <Header
               title={"Guestbook"}
-              heading={"Share Your Favorite Stories"}
+              heading={"Share a Story or Memory"}
               description={
-                "As you would at an in-person gathering to celebrate the life of a loved one, a guestbook is avaiable for you to sign and leave a nugget of joy for us to read."
+                "Please sign the guestbook below to share a favorite story, a message of remembrance, or a special memory you have of Patricia. Your words are a comfort to us."
               }
             />
-            {/* <LandingGuestbook /> */}
+            <LandingGuestbook />
           </div>
         </section>
         <section
