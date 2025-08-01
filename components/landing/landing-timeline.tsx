@@ -36,7 +36,7 @@ export default function LandingTimeline() {
                           href={card.link.href}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='group hover:text-primary relative cursor-pointer font-medium whitespace-nowrap transition-colors'
+                          className='group hover:text-primary relative mx-1 cursor-pointer px-1 font-medium whitespace-nowrap transition-colors'
                         >
                           {card.link.name}
                           <span className='bg-primary absolute -bottom-0.5 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>

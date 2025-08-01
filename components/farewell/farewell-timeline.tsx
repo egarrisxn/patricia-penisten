@@ -137,18 +137,18 @@ export default function FarewellTimeline() {
 
               <div className='px-4 pt-1 pb-4'>
                 <DialogHeader>
-                  <DialogTitle className='text-accent-foreground truncate text-lg font-medium md:text-xl'>
+                  <DialogTitle className='text-accent-foreground truncate text-start text-lg leading-none font-medium tracking-wide md:text-2xl'>
                     {selectedItem.title || "Farewell Tour"}
                   </DialogTitle>
-                  <DialogDescription className='text-accent-foreground/90 text-sm md:text-base'>
+                  <DialogDescription className='text-accent-foreground/80 ml-[1px] text-start text-sm leading-tight tracking-wide md:text-lg'>
                     {selectedItem.time}
                   </DialogDescription>
                 </DialogHeader>
-                <div className='text-accent-foreground/80 mt-4 line-clamp-3 text-sm md:text-base'>
+                <div className='text-accent-foreground/90 mt-4 ml-[1px] line-clamp-3 pr-4 text-base leading-snug md:mt-5 md:text-lg md:leading-normal'>
                   <p>{selectedItem.description || "With Patricia & Judi"}</p>
                 </div>
 
-                <div className='mt-6 flex justify-between gap-4 md:mt-4'>
+                <div className='mt-6 flex justify-between gap-4 md:mt-5'>
                   <Button
                     onClick={() => navigateTimeline("prev")}
                     disabled={selectedItem.id === farewellTimelineItems[0].id}

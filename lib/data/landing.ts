@@ -51,7 +51,7 @@ export const landingTimelineData: LandingTimelineData[] = [
     year: "1935",
     title: "Born in Oklahoma",
     description:
-      "Born on December 22nd to Hugh and Ettie Irene (Tisdale) Blevins on the family farm near Connerville and Mills Creek.",
+      "Born on December 22nd to Hugh and Ettie Irene (Tisdale) Blevins on the family farm near Connerville and Mill Creek.",
   },
   {
     year: "1940s",

@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import { Clock, MessageCircle, User } from "lucide-react";
@@ -63,58 +61,57 @@ export default function ImageCarousel({
     <>
       <Carousel slides={slides} onSlideClick={openDialogAt} />
 
-      <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
-        <DialogContent className='max-w-4xl p-0'>
-          {selectedPhoto && (
-            <>
+      {selectedPhoto && (
+        <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
+          <DialogContent className='max-w-4xl p-0'>
+            <div className='relative flex max-h-[85vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg md:max-h-[80vh]'>
               <Image
                 src={selectedPhoto.image_url}
                 alt={selectedPhoto.caption || selectedPhoto.name || "Photo"}
-                width={1200}
-                height={1200}
-                className='size-auto w-full max-w-[50vw] rounded-t-lg object-contain'
+                fill
+                className='rounded-t-lg object-contain'
               />
-              <div className='px-4 pt-1 pb-4'>
-                <DialogHeader className='mb-2'>
-                  <DialogTitle className='text-foreground text-start text-base leading-[1.4] font-medium text-wrap md:mb-1.5 md:text-lg'>
-                    {selectedPhoto.caption || "Untitled"}
-                  </DialogTitle>
-                </DialogHeader>
+            </div>
+            <div className='max-h-[15vh] overflow-y-auto px-4 pt-1 pb-4'>
+              <DialogHeader className='mb-2'>
+                <DialogTitle className='text-foreground text-start text-base leading-[1.4] font-medium text-wrap md:mb-1.5 md:text-lg'>
+                  {selectedPhoto.caption || "Untitled"}
+                </DialogTitle>
+              </DialogHeader>
 
-                <div className='flex flex-col gap-1 text-sm'>
-                  {selectedPhoto.name && (
-                    <div className='flex items-center gap-1'>
-                      <User className='size-4' />
-                      <p className='w-[80%] text-wrap'>{selectedPhoto.name}</p>
-                    </div>
-                  )}
+              <div className='flex flex-col gap-1 text-sm'>
+                {selectedPhoto.name && (
                   <div className='flex items-center gap-1'>
-                    <Clock className='size-4' />
-                    <span>
-                      {new Date(selectedPhoto.created_at).toLocaleDateString(
-                        "en-US",
-                        {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        }
-                      )}
-                    </span>
-                  </div>
-                </div>
-                {selectedPhoto.status === "pending" && (
-                  <div className='absolute right-3 bottom-3 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
-                    <div className='bg-primary mb-[1.5px] size-2 animate-pulse rounded-full md:size-[8.5px] 2xl:size-2.5'></div>{" "}
-                    <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
-                      Pending
-                    </div>
+                    <User className='size-4' />
+                    <p className='w-[80%] text-wrap'>{selectedPhoto.name}</p>
                   </div>
                 )}
+                <div className='flex items-center gap-1'>
+                  <Clock className='size-4' />
+                  <span>
+                    {new Date(selectedPhoto.created_at).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )}
+                  </span>
+                </div>
               </div>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
+              {selectedPhoto.status === "pending" && (
+                <div className='absolute right-3 bottom-3 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
+                  <div className='bg-primary mb-[1.5px] size-2 animate-pulse rounded-full md:size-[8.5px] 2xl:size-2.5'></div>{" "}
+                  <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
+                    Pending
+                  </div>
+                </div>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 }

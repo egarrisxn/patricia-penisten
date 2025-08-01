@@ -56,6 +56,10 @@ export const metadata: Metadata = {
   },
 };
 
+//! UPDATE VIEWPORT WITH FINAL BACKGROUND COLORS
+//$ UPDATE VIEWPORT WITH FINAL BACKGROUND COLORS
+//? UPDATE VIEWPORT WITH FINAL BACKGROUND COLORS
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ebeff0" },
@@ -75,7 +79,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
       </head>
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} font-sans antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} overflow-x-contain font-sans antialiased`}
       >
         <ThemeProvider
           attribute='class'
