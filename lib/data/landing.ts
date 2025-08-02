@@ -15,7 +15,7 @@ export const landingNavigation: NavLinks[] = [
 
 export const landingSingleNavigation: NavLinks = {
   name: "Farewell Tour",
-  href: "/",
+  href: "/farewell",
 };
 
 export const landingAboutCard: LandingAboutCard = {
