@@ -36,7 +36,7 @@ export default function LandingTimeline() {
                           href={card.link.href}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='group hover:text-primary relative mx-1 cursor-pointer px-1 font-medium whitespace-nowrap transition-colors'
+                          className='group hover:text-primary relative mx-1 cursor-pointer font-medium whitespace-nowrap transition-colors'
                         >
                           {card.link.name}
                           <span className='bg-primary absolute -bottom-0.5 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
@@ -71,7 +71,7 @@ export default function LandingTimeline() {
                 </span>
               </div>
               <div className='flex-1'>
-                <h5 className='text-accent-foreground text-[1rem] font-medium tracking-tight md:text-xl md:leading-snug md:tracking-normal'>
+                <h5 className='text-card-foreground text-[1rem] font-medium tracking-tight md:text-xl md:leading-snug md:tracking-normal'>
                   {event.title}
                 </h5>
                 <p className='text-[0.85rem] tracking-tight md:text-lg md:leading-snug md:tracking-normal'>

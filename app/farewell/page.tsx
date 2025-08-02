@@ -49,7 +49,7 @@ export default function FarewellPage() {
       <FarewellNavbar />
       <main className='to-background bg-linear-to-t from-blue-100 dark:from-slate-800'>
         <section id='farewell-hero'>
-          <div className='relative min-h-screen w-full overflow-hidden'>
+          <div className='relative min-h-screen w-full'>
             <FarewellHero />
           </div>
         </section>
@@ -59,7 +59,7 @@ export default function FarewellPage() {
         >
           <FarewellTimeline />
           <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
-            <p className='text-2xl font-[450] italic md:mx-auto md:text-center lg:text-3xl'>
+            <p className='text-2xl italic md:mx-auto md:text-center lg:text-3xl'>
               <q>{farewellQuoteText}</q>
             </p>
           </div>

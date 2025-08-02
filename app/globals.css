@@ -115,22 +115,10 @@
 
 @theme {
   --breakpoint-xs: 30rem;
+  --breakpoint-btw: 56rem;
   --breakpoint-3xl: 108rem;
   --breakpoint-4xl: 120rem;
   --breakpoint-5xl: 160rem;
-  --animate-slow-bounce: slow-bounce 1.2s infinite;
-
-  @keyframes slow-bounce {
-    0%,
-    100% {
-      transform: translateY(-15%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: none;
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
 
   @keyframes scale {
     0% {
@@ -180,9 +168,4 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--background);
-}
-
-/* Landing navbar */
-#landing-navbar.scrolled {
-  @apply bg-card/80 pointer-events-auto opacity-100 shadow-sm backdrop-blur-lg;
 }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
-import { Upload, Check } from "lucide-react";
+import { Upload, Check, HardDrive } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -173,11 +173,17 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
                     </p>
                   </div>
                 ) : (
-                  <div className='flex flex-col items-center justify-center gap-1 pt-5 pb-6 md:gap-1.5'>
+                  <div className='flex flex-col items-center justify-center gap-1 pt-5 pb-6 text-center md:gap-1.5'>
                     <Upload className='text-muted-foreground size-6 md:size-7 xl:size-8' />
-                    <p className='text-muted-foreground/90 text-sm font-medium tracking-tight'>
-                      Click or drag to upload photo
+                    <p className='text-muted-foreground/95 text-sm font-medium tracking-tight'>
+                      <span className='font-extrabold'>Click to upload</span> or
+                      drag and drop
                     </p>
+
+                    <div className='text-muted-foreground/90 flex items-center gap-1 text-xs tracking-tight'>
+                      <HardDrive className='size-3' />
+                      <span>Max file size: 5MB</span>
+                    </div>
                   </div>
                 )}
               </label>

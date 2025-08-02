@@ -2,36 +2,28 @@
 
 import { ArrowDown } from "lucide-react";
 
-export function ScrollDownHero() {
-  const scrollDownHero = () => {
-    document
-      .querySelector("#landing-about")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  return (
-    <button
-      className='animate-slow-bounce xs:size-10 z-50 mx-auto flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-[#3d435450] text-[#bfdbfe] shadow-lg hover:bg-[#3d435485] hover:text-[#bfdbfe] hover:shadow-xl dark:bg-[#3d435450] dark:text-[#bfdbfe] dark:hover:bg-[#3d435485] dark:hover:text-[#bfdbfe]'
-      onClick={scrollDownHero}
-      aria-label='Scroll down'
-    >
-      <ArrowDown className='xs:size-6 size-5' />
-    </button>
-  );
+interface ScrollDownProps {
+  targetId: string;
+  className?: string;
+  ariaLabel?: string;
 }
 
-export function ScrollDownFarewell() {
-  const scrollDownFarewell = () => {
+export function ScrollDown({
+  targetId,
+  className = "",
+  ariaLabel = "Scroll Down",
+}: ScrollDownProps) {
+  const handleClick = () => {
     document
-      .querySelector("#farewell-timeline")
+      .querySelector(`#${targetId}`)
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <button
-      className='dark:bg-input/30 animate-slow-bounce dark:hover:bg-input/50 text-accent-foreground/90 hover:text-accent-foreground xs:size-10 z-50 mx-auto flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-white/95 shadow-lg transition-all hover:bg-white hover:shadow-xl'
-      onClick={scrollDownFarewell}
-      aria-label='Scroll down'
+      className={`dark:bg-input/90 dark:hover:bg-input text-accent-foreground/90 hover:text-accent-foreground xs:size-10 z-50 mx-auto flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-white/90 shadow-lg transition-all hover:bg-white hover:shadow-xl ${className}`}
+      onClick={handleClick}
+      aria-label={ariaLabel}
     >
       <ArrowDown className='xs:size-6 size-5' />
     </button>

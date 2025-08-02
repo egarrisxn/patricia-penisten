@@ -26,6 +26,7 @@ export interface CardData {
 export interface LandingAboutCard {
   title: string;
   blurbs: string[];
+  callout: string;
 }
 
 export interface LandingTimelineCards extends CardData {

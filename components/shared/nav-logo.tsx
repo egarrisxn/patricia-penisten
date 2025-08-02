@@ -1,4 +1,3 @@
-// components/shared/nav-logo.tsx
 import Link from "next/link";
 import Image from "next/image";
 
@@ -16,7 +15,7 @@ export default function NavLogo({
   primary,
   secondary,
   href = "/",
-  iconSrc = "/nav-icon.svg",
+  iconSrc = "/shared/nav-icon.svg",
   imgAlt = "Logo",
   priority = false,
   className = "",
@@ -24,7 +23,7 @@ export default function NavLogo({
   return (
     <Link
       href={href}
-      className={`flex cursor-pointer flex-row items-center gap-1.5 ${className}`}
+      className={`flex cursor-pointer flex-row items-center gap-1.5 pl-[1.5px] ${className}`}
     >
       <Image
         src={iconSrc}
@@ -35,7 +34,7 @@ export default function NavLogo({
         priority={priority}
         className='size-9 lg:size-11'
       />
-      <p className='text-accent-foreground font-serif leading-none font-semibold lg:text-lg'>
+      <p className='text-accent-foreground font-serif leading-none font-semibold tracking-[-0.005em] lg:text-lg'>
         {primary}
         <br />
         {secondary}

@@ -37,7 +37,7 @@ export default function ScrollUp() {
       ref={buttonRef}
       onClick={scrollToTop}
       id='toggle-button'
-      className='dark:bg-input/30 dark:hover:bg-input/50 text-accent-foreground/90 hover:text-accent-foreground xs:size-10 pointer-events-none fixed right-4 bottom-4 z-50 mx-auto hidden size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-white/95 opacity-0 shadow-lg transition-opacity duration-300 hover:bg-white hover:shadow-xl lg:flex'
+      className='dark:bg-input/90 dark:hover:bg-input text-accent-foreground/90 hover:text-accent-foreground xs:size-10 pointer-events-none fixed right-4 bottom-4 z-50 mx-auto hidden size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-white/90 opacity-0 shadow-lg transition-opacity duration-300 hover:bg-white hover:shadow-xl lg:flex'
       aria-label='Scroll to top'
     >
       <ArrowUp className='xs:size-6 size-5' />

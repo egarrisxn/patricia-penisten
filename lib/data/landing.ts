@@ -13,21 +13,26 @@ export const landingNavigation: NavLinks[] = [
   { name: "Farewell Page", href: "/farewell" },
 ];
 
+export const landingSingleNavigation: NavLinks = {
+  name: "Farewell Tour",
+  href: "/",
+};
+
 export const landingAboutCard: LandingAboutCard = {
   title: "Born in the heart of Oklahoma,",
   blurbs: [
-    `Patricia lived a life defined by unwavering love, gentle wisdom, and quiet strength.`,
-    ` While she dedicated 34 years to shaping young minds as a beloved elementary school teacher, her truest passion was her family.`,
-    ` She found immense joy in the simple moments, whether it was doting on her grandchildren or spending a day of shopping.`,
-    `Her legacy is not just in the lessons she taught, but in the unconditional love she gave, leaving a warmth that will forever remain in the hearts of all who knew her.`,
+    `Patricia lived a life defined by unwavering love, gentle wisdom, and quiet strength. For 34 years, she shaped young minds as a beloved elementary school teacher, yet her greatest joy was always her family.`,
+    `She cherished life's simple pleasures, such as completing the daily crossword, playing Yahtzee with her husband and grandchildren, tending the garden, or catching up on her favorite daytime soap operas.`,
+    `Her legacy lives on not only in the lessons she taught, but in the unconditional love she shared, leaving a lasting warmth in the hearts of all who knew her.`,
   ],
+  callout: "In loving memory",
 };
 
 export const landingTimelineCards: LandingTimelineCards[] = [
   {
     icon: "Star",
     title: "Legacy of a Teacher",
-    body: `For one-third of her life, Pat dedicated her life to teaching at Douglas Elementary School. She touched the lives of hundreds of students, always believing in their potential and inspiring them to achieve their dreams. Her classroom was a place of wonder, learning, and unconditional support.`,
+    body: `For one-third of her life, Pat dedicated her life to teaching at Douglass Elementary School. She touched the lives of hundreds of students, always believing in their potential and inspiring them to achieve their dreams. Her classroom was a place of wonder, learning, and unconditional support.`,
   },
   {
     icon: "HeartHandshake",
@@ -69,7 +74,7 @@ export const landingTimelineData: LandingTimelineData[] = [
     year: "1950s - 1970s",
     title: "Early Family Life",
     description:
-      "Lived in Ada, moved to Douglas, Wyoming, and eventually settled in Lawton, Oklahoma by 1967.",
+      "Lived in Ada, moved to Douglass, Wyoming, and eventually settled in Lawton, Oklahoma by 1967.",
   },
   {
     year: "1970s",
@@ -79,7 +84,7 @@ export const landingTimelineData: LandingTimelineData[] = [
   },
   {
     year: "1970s - 2000s",
-    title: "Teaching Career at Douglas Elementary",
+    title: "Teaching Career at Douglass Elementary",
     description:
       "Devoted 34 years to educating young minds with love, patience, and dedication.",
   },
