@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import { ThemeProvider } from "./_components/theme-provider";
+import { ThemeProvider } from "./_providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { SITE_DATA } from "@/lib/config";
 
@@ -55,10 +55,6 @@ export const metadata: Metadata = {
     site: SITE_DATA.socialHandle,
   },
 };
-
-//! UPDATE VIEWPORT WITH FINAL BACKGROUND COLORS
-//$ UPDATE VIEWPORT WITH FINAL BACKGROUND COLORS
-//? UPDATE VIEWPORT WITH FINAL BACKGROUND COLORS
 
 export const viewport: Viewport = {
   themeColor: [

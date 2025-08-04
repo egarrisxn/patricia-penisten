@@ -8,7 +8,7 @@ import { farewellNavigation } from "@/lib/data/farewell";
 
 export default function FarewellNavbar() {
   return (
-    <header className='absolute top-0 z-50 w-full text-black dark:text-white'>
+    <header className='w-full text-black dark:text-white'>
       <div className='mx-auto flex items-center justify-between px-3 py-4 sm:px-2.5 md:px-4'>
         <div className='flex items-center gap-2.5 lg:gap-4 2xl:gap-6'>
           <NavLogo

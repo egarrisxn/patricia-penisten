@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { themeIcons, themeConfigs } from "@/lib/data/themes";
 import { Theme, ThemeToggleSize } from "@/lib/types";
@@ -53,7 +53,7 @@ export default function ThemeButton({
       onClick={() => setTheme(nextTheme)}
       className={cn(
         "inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border transition-all duration-200",
-        "border-border bg-card text-foreground",
+        "border-border bg-card text-primary dark:text-accent-foreground",
         "hover:bg-muted hover:scale-105 active:scale-95",
         sizeClasses[size],
         className
@@ -61,15 +61,17 @@ export default function ThemeButton({
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <motion.div
-        key={safeTheme}
-        initial={{ rotate: -180, opacity: 0 }}
-        animate={{ rotate: 0, opacity: 1 }}
-        exit={{ rotate: 180, opacity: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Icon size={iconSizes[size]} />
-      </motion.div>
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={safeTheme}
+          initial={{ rotate: -180, opacity: 0 }}
+          animate={{ rotate: 0, opacity: 1 }}
+          exit={{ rotate: 180, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Icon size={iconSizes[size]} />
+        </motion.div>
+      </AnimatePresence>
       {showLabel && (
         <span className='font-medium'>{themeConfigs[safeTheme].label}</span>
       )}

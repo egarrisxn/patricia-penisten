@@ -1,5 +1,5 @@
+import { type AnchorHTMLAttributes, forwardRef } from "react";
 import Link from "next/link";
-import { AnchorHTMLAttributes, forwardRef } from "react";
 
 export interface NavLinkProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
