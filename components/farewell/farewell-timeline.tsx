@@ -72,7 +72,7 @@ export default function FarewellTimeline() {
                   <div className={`${isEven ? "md:order-2" : "md:order-1"}`}>
                     <motion.div
                       layoutId={item.src}
-                      className='dark:bg-card relative aspect-[4/3] w-full overflow-hidden rounded-t-lg bg-white transition-shadow duration-300 group-hover:shadow-xl md:rounded-lg md:shadow-lg'
+                      className='dark:bg-card relative aspect-[4/3] w-full overflow-hidden rounded-t-lg bg-white transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:shadow-lg'
                     >
                       <Image
                         src={item.src || "/placeholder.svg"}
@@ -87,9 +87,9 @@ export default function FarewellTimeline() {
                   <div
                     className={`mt-0 ${isEven ? "md:order-1" : "md:order-2"}`}
                   >
-                    <div className='text-card-foreground dark:bg-card rounded-b-lg bg-white p-6 shadow-lg transition-shadow duration-300 group-hover:shadow-xl md:rounded-lg md:hover:shadow-lg'>
+                    <div className='text-card-foreground dark:bg-card rounded-b-lg bg-white p-6 shadow-lg transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:hover:shadow-lg'>
                       <div className='mb-4 flex items-center'>
-                        <div className='rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-md'>
+                        <div className='rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-lg'>
                           {item.time}
                         </div>
                       </div>

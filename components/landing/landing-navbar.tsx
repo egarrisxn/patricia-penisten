@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import NavLogo from "@/components/shared/nav-logo";
 import NavLink from "@/components/shared/nav-link";
-import ThemeToggle from "@/components/shared/theme-toggle";
+import ThemeButton from "@/components/shared/theme-button";
 import { landingNavigation, landingSingleNavigation } from "@/lib/data/landing";
 
 const SCROLL_THRESHOLD = 120;
@@ -43,7 +43,7 @@ export default function LandingNavbar() {
       id='landing-navbar'
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-card/90 pointer-events-auto opacity-100 shadow-sm backdrop-blur-lg"
+          ? "bg-card/90 pointer-events-auto opacity-100 shadow-lg backdrop-blur-lg"
           : "pointer-events-none opacity-0"
       }`}
       aria-hidden={!scrolled}
@@ -67,7 +67,7 @@ export default function LandingNavbar() {
               href={landingSingleNavigation.href}
             />
           </nav>
-          <ThemeToggle />
+          <ThemeButton />
         </div>
       </div>
     </header>

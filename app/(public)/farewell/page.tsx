@@ -3,9 +3,7 @@ import { SITE_DATA } from "@/lib/config";
 import FarewellNavbar from "@/components/farewell/farewell-navbar";
 import FarewellHero from "@/components/farewell/farewell-hero";
 import FarewellTimeline from "@/components/farewell/farewell-timeline";
-import ScrollUp from "@/components/shared/scroll-up";
-import Footer from "@/components/shared/footer";
-import { farewellQuoteText } from "@/lib/data/farewell";
+import FarewellQuote from "@/components/farewell/farewell-quote";
 
 export const metadata: Metadata = {
   title: SITE_DATA.farewellTitle,
@@ -45,28 +43,20 @@ export const metadata: Metadata = {
 
 export default function FarewellPage() {
   return (
-    <div className='mx-auto grid w-full'>
+    <>
       <FarewellNavbar />
-      <main className='to-background bg-linear-to-t from-blue-100 dark:from-slate-800'>
+      <div className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
         <section id='farewell-hero'>
-          <div className='relative min-h-screen w-full'>
-            <FarewellHero />
-          </div>
+          <FarewellHero />
         </section>
         <section
           id='farewell-timeline'
           className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'
         >
           <FarewellTimeline />
-          <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
-            <p className='text-2xl italic md:mx-auto md:text-center lg:text-3xl'>
-              <q>{farewellQuoteText}</q>
-            </p>
-          </div>
+          <FarewellQuote />
         </section>
-      </main>
-      <ScrollUp />
-      <Footer />
-    </div>
+      </div>
+    </>
   );
 }

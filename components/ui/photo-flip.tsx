@@ -95,7 +95,7 @@ export const PhotoFlip = ({
           height={height}
           quality={quality}
           className={cn(
-            "absolute inset-0 mx-auto mt-14 size-[75%] object-cover md:mt-9.5 md:mr-1 lg:mt-0 lg:mr-0 lg:size-full",
+            "absolute inset-0 mx-auto mt-10 size-[85%] object-cover md:mt-5 lg:mt-0 lg:size-full",
             "[backface-visibility:hidden]"
           )}
         />
@@ -107,7 +107,7 @@ export const PhotoFlip = ({
           width={width}
           height={height}
           className={cn(
-            "absolute inset-0 mx-auto mt-14 size-[75%] object-cover md:mt-9.5 md:ml-1 lg:mt-0 lg:ml-0 lg:size-full",
+            "absolute inset-0 mx-auto mt-10 size-[85%] object-cover md:mt-5 lg:mt-0 lg:size-full",
             "[transform:rotateY(180deg)] [backface-visibility:hidden]"
           )}
         />

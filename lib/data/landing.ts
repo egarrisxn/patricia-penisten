@@ -1,4 +1,5 @@
 import {
+  LandingHeroData,
   LandingAboutCard,
   LandingTimelineCards,
   LandingTimelineData,
@@ -16,6 +17,14 @@ export const landingNavigation: NavLinks[] = [
 export const landingSingleNavigation: NavLinks = {
   name: "Farewell Tour",
   href: "/farewell",
+};
+
+export const landingHeroData: LandingHeroData = {
+  name: "Patricia G. Penisten",
+  lifespan: "December 22nd, 1935 - June 5th, 2025",
+  frontSrc: "/landing/flip-1.png",
+  backSrc: "/landing/flip-2.png",
+  backgroundSrc: "/bg/1.avif",
 };
 
 export const landingAboutCard: LandingAboutCard = {

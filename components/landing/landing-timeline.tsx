@@ -18,9 +18,9 @@ export default function LandingTimeline() {
           const IconComponent = card.icon ? iconMap[card.icon] : null;
           return (
             <motion.div variants={ITEM_FADE} key={index}>
-              <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-xl xl:py-12'>
+              <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-lg xl:py-12'>
                 <div className='xs:px-4 px-2 xl:px-6'>
-                  <h3 className='flex items-center text-lg leading-none font-semibold md:text-xl 2xl:text-2xl'>
+                  <h3 className='flex items-center text-lg leading-none font-extrabold md:text-xl 2xl:text-2xl'>
                     {IconComponent && (
                       <IconComponent className='xs:size-6 text-primary fill-primary/50 mr-2.5 size-5 md:size-7' />
                     )}
@@ -54,7 +54,7 @@ export default function LandingTimeline() {
       <div className='space-y-6 px-2 lg:px-0'>
         <motion.h4
           variants={ITEM_FADE}
-          className='mb-6 text-lg font-bold md:text-3xl'
+          className='mb-6 text-lg font-extrabold md:text-3xl'
         >
           Timeline
         </motion.h4>

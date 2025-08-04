@@ -21,7 +21,7 @@ export function ScrollDown({
 
   return (
     <button
-      className={`dark:bg-input/90 dark:hover:bg-input text-accent-foreground/90 hover:text-accent-foreground xs:size-10 z-50 mx-auto flex size-9 cursor-pointer flex-col items-center justify-center rounded-full border-0 bg-white/90 shadow-lg transition-all hover:bg-white hover:shadow-xl ${className}`}
+      className={`text-foreground xs:size-10 bg-card hover:bg-muted border-border z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 ${className}`}
       onClick={handleClick}
       aria-label={ariaLabel}
     >

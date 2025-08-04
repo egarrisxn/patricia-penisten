@@ -140,7 +140,7 @@ export default function Dashboard() {
   }
 
   return (
-    <>
+    <div className='p-4'>
       <div className='mb-6 grid grid-cols-2 gap-4 md:mb-8 md:grid-cols-4 md:gap-6'>
         <StatCard
           icon={<Clock />}
@@ -198,6 +198,6 @@ export default function Dashboard() {
           />
         </TabsContent>
       </Tabs>
-    </>
+    </div>
   );
 }

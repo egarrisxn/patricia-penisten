@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { MoonStarIcon, SunIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function ThemeToggle() {
+export default function ThemeToggler() {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 

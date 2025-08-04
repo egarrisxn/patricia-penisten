@@ -1,5 +1,9 @@
 import { BookMarked, Star, HeartHandshake } from "lucide-react";
 
+// Themes
+export type Theme = "light" | "dark" | "system";
+export type ThemeToggleSize = "sm" | "md" | "lg";
+
 // Icon Map
 export const iconMap = {
   BookMarked: BookMarked,
@@ -23,6 +27,13 @@ export interface CardData {
 }
 
 // Landing Page Interfaces
+export interface LandingHeroData {
+  name: string;
+  lifespan: string;
+  frontSrc: string;
+  backSrc: string;
+  backgroundSrc: string;
+}
 export interface LandingAboutCard {
   title: string;
   blurbs: string[];

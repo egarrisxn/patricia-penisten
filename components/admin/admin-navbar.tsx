@@ -1,15 +1,15 @@
 import NavLogo from "@/components/shared/nav-logo";
 import NavLink from "@/components/shared/nav-link";
-import ThemeToggle from "@/components/shared/theme-toggle";
+import ThemeButton from "@/components/shared/theme-button";
 import { adminNavigation } from "@/lib/data/admin";
 
 export default function AdminNavbar() {
   return (
-    <header className='w-full bg-transparent text-black dark:text-white'>
+    <header className='w-full text-black dark:text-white'>
       <div className='mx-auto flex flex-row items-center justify-between px-3 py-4 sm:px-2.5 md:px-4'>
         <NavLogo
           primary='Patricia Penisten:'
-          secondary='A Life Remembered'
+          secondary='Admin Page'
           href='/'
           priority
         />
@@ -19,7 +19,7 @@ export default function AdminNavbar() {
               <NavLink key={link.name} name={link.name} href={link.href} />
             ))}
           </nav>
-          <ThemeToggle />
+          <ThemeButton />
         </div>
       </div>
     </header>

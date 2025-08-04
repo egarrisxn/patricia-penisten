@@ -6,22 +6,18 @@ import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
 import LandingGuestbook from "@/components/landing/landing-guestbook";
 import LandingCTA from "@/components/landing/landing-cta";
 import Header from "@/components/shared/header";
-import ScrollUp from "@/components/shared/scroll-up";
-import Footer from "@/components/shared/footer";
 
 export default function LandingPage() {
   return (
-    <div className='mx-auto grid w-full overflow-x-hidden'>
+    <>
       <LandingNavbar />
-      <main className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
+      <div className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
         <section id='landing-hero' className='rounded-b-lg'>
-          <div className='relative min-h-screen w-full overflow-hidden'>
-            <LandingHero />
-          </div>
+          <LandingHero />
         </section>
         <section
           id='landing-about'
-          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
+          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
           <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <Header
@@ -36,7 +32,7 @@ export default function LandingPage() {
         </section>
         <section
           id='landing-timeline'
-          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
+          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
           <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <Header
@@ -51,7 +47,7 @@ export default function LandingPage() {
         </section>
         <section
           id='landing-photogallery'
-          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
+          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
             <Header
@@ -66,7 +62,7 @@ export default function LandingPage() {
         </section>
         <section
           id='landing-guestbook'
-          className='4xl:py-32 border-b-border/10 min-h-screen py-24 shadow-md xl:py-28'
+          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
             <Header
@@ -81,15 +77,13 @@ export default function LandingPage() {
         </section>
         <section
           id='landing-cta'
-          className='4xl:py-32 min-h-screen py-24 shadow-md xl:py-28'
+          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
           <div className='mx-auto w-full max-w-4xl px-4 sm:px-6 md:px-8 2xl:max-w-[74rem]'>
             <LandingCTA />
           </div>
         </section>
-      </main>
-      <ScrollUp />
-      <Footer />
-    </div>
+      </div>
+    </>
   );
 }
