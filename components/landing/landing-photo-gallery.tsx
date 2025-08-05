@@ -1,5 +1,6 @@
 "use client";
 
+// import ImageGrid from "@/components/landing/image-grid";
 import ImageCarousel from "@/components/landing/image-carousel";
 import ImageUpload from "@/components/landing/image-upload";
 import { useUserContent } from "@/hooks/use-user-content";
@@ -15,6 +16,7 @@ export default function LandingPhotoGallery() {
 
   return (
     <div className='flex flex-col items-center gap-12 px-4 py-8'>
+      {/* <ImageGrid userPhotos={userItems} approvedPhotos={approvedItems} /> */}
       <ImageCarousel userPhotos={userItems} approvedPhotos={approvedItems} />
       <div className='mt-10 w-full max-w-xl'>
         <ImageUpload onPhotoSubmitted={handlePhotoSubmitted} />

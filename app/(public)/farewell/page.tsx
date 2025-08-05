@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_DATA } from "@/lib/config";
+import ScrollProgress from "@/components/shared/scroll-progress";
 import FarewellNavbar from "@/components/farewell/farewell-navbar";
 import FarewellHero from "@/components/farewell/farewell-hero";
 import FarewellTimeline from "@/components/farewell/farewell-timeline";
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
 export default function FarewellPage() {
   return (
     <>
+      <ScrollProgress className='top-0' />
       <FarewellNavbar />
       <div className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
         <section id='farewell-hero'>

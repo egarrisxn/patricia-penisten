@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useId } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface SlideData {
   src: string;
@@ -59,12 +60,14 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
         }`}
         style={{ pointerEvents: "auto" }}
       >
-        <h2 className='relative font-semibold sm:text-lg md:text-xl lg:text-2xl xl:text-3xl'>
+        <h2 className='relative line-clamp-3 text-sm font-semibold sm:text-base md:text-lg lg:text-xl xl:text-2xl'>
           {slide.title}
         </h2>
-        <div className='flex justify-center'>
-          <button
-            className='mx-auto mt-6 flex h-8 w-fit cursor-pointer items-center justify-center rounded-2xl border border-transparent bg-white px-3 py-1.5 text-xs text-black shadow-lg transition duration-200 hover:shadow-lg sm:h-10 sm:px-4 sm:py-2 sm:text-sm'
+        <div className='mt-2 flex justify-center'>
+          <Button
+            className='bg-foreground/90 text-background/90 hover:text-background hover:bg-foreground cursor-pointer'
+            size='lg'
+            variant='default'
             onClick={(e) => {
               e.stopPropagation();
               onButtonClick(index);
@@ -72,7 +75,7 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
             aria-label={`Open photo: ${slide.title}`}
           >
             {slide.button}
-          </button>
+          </Button>
         </div>
       </article>
     </li>

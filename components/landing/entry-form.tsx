@@ -83,12 +83,9 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
 
   return (
     <Card className='dark:bg-background aspect-quare bg-white py-4 lg:py-8'>
-      <CardContent className='flex-1 px-4 lg:px-6'>
-        <form
-          onSubmit={handleSubmit}
-          className='flex h-full flex-col gap-2 lg:gap-4'
-        >
-          <div className='flex flex-shrink-0 flex-col gap-2 lg:gap-4'>
+      <CardContent className='flex-1'>
+        <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
+          <div className='flex flex-shrink-0 flex-col gap-2'>
             <div>
               <Label htmlFor='name' className='text-muted-foreground'>
                 Name (Optional)
@@ -138,7 +135,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
           <Button
             type='submit'
             disabled={!message.trim() || isSubmitting}
-            className='w-full cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 hover:from-purple-500 hover:to-rose-500 hover:text-white'
+            className='w-full cursor-pointer'
           >
             {isSubmitting ? "Submitting..." : "Share Memory"}
           </Button>

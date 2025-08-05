@@ -135,10 +135,7 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
   return (
     <Card className='dark:bg-background aspect-square bg-white py-2 lg:py-4'>
       <CardContent className='flex-1 px-2 lg:px-4'>
-        <form
-          onSubmit={handleSubmit}
-          className='flex h-full flex-col gap-2 lg:gap-4'
-        >
+        <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
           <div className='flex-1'>
             <Label htmlFor='photo-upload' className='sr-only'>
               Choose Photo *
@@ -219,7 +216,7 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
           <Button
             type='submit'
             disabled={!selectedFile || isUploading}
-            className='w-full cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 hover:from-purple-500 hover:to-rose-500 hover:text-white'
+            className='w-full cursor-pointer'
           >
             {isUploading ? "Uploading..." : "Share Photo"}
           </Button>

@@ -24,11 +24,12 @@ export default function ScrollUp() {
   }, []);
 
   const scrollToTop = () => {
-    const heroElement = document.getElementById("hero");
+    const heroElement = document.getElementById("landing-hero");
     if (heroElement) {
       heroElement.scrollIntoView({ behavior: "smooth" });
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const navbarHeight = 76;
+      window.scrollTo({ top: navbarHeight * -1, behavior: "smooth" });
     }
   };
 
@@ -37,10 +38,10 @@ export default function ScrollUp() {
       ref={buttonRef}
       onClick={scrollToTop}
       id='toggle-button'
-      className='text-foreground xs:size-10 bg-card hover:bg-muted border-border pointer-events-none fixed right-4 bottom-4 z-50 mx-auto hidden size-9 cursor-pointer items-center justify-center rounded-lg border opacity-0 shadow-lg transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 lg:flex'
+      className='text-foreground bg-card hover:bg-muted border-border pointer-events-none fixed right-4 bottom-4 z-50 inline-flex size-8 cursor-pointer items-center justify-center rounded-lg border opacity-0 transition-all duration-200 hover:scale-105 active:scale-95 sm:size-10'
       aria-label='Scroll to top'
     >
-      <ArrowUp className='xs:size-6 size-5' />
+      <ArrowUp className='size-4 sm:size-5' />
     </button>
   );
 }

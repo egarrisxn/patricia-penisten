@@ -52,9 +52,7 @@ export default function ThemeButton({
     <motion.button
       onClick={() => setTheme(nextTheme)}
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border transition-all duration-200",
-        "border-border bg-card text-primary dark:text-accent-foreground",
-        "hover:bg-muted hover:scale-105 active:scale-95",
+        "border-border bg-card text-foreground hover:bg-muted inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95",
         sizeClasses[size],
         className
       )}
