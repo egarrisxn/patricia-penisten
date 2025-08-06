@@ -1,7 +1,6 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { Badge } from "@/components/ui/badge";
-import TextRotate from "@/components/landing/text-rotate";
+import { WordRotate } from "@/components/shared/word-rotate";
 import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 import { landingAboutCard } from "@/lib/data/landing";
 
@@ -18,27 +17,38 @@ export default function LandingAboutCard() {
         variants={ITEM_FADE}
         className='xs:px-4 w-full max-w-[32rem] flex-1 space-y-4 px-2 sm:ml-2 sm:px-0 md:mx-auto md:max-w-112 md:pt-2 lg:ml-0 lg:max-w-none lg:px-4 xl:space-y-6 xl:pt-8'
       >
-        <div>
-          <h3 className='text-foreground btw:text-[1.6rem] xs:text-[1.6rem] text-[1.35rem] leading-none font-extrabold tracking-tight sm:text-[1.85rem] sm:leading-[1.1] md:text-[1.25rem] md:tracking-[-0.03em] lg:text-[1.7rem] lg:leading-[1.1] xl:text-[2.45rem] xl:leading-[1.05] xl:tracking-tight 2xl:text-[2.6rem] 2xl:leading-none'>
-            {landingAboutCard.title}
-          </h3>
-
-          <div className='xs:text-[1rem] flex text-[0.9rem] leading-none font-medium tracking-tight whitespace-pre sm:text-[1.15rem] sm:leading-[1.1] md:text-[0.85rem] md:tracking-[-0.03em] lg:text-[1.1rem] xl:text-[1.3rem] 2xl:text-[1.5rem]'>
-            <TextRotate />
+        {/* <h3 className='text-foreground btw:text-[1.6rem] xs:text-[1.6rem] text-[1.35rem] leading-none font-extrabold tracking-tight sm:text-[1.85rem] sm:leading-[1.1] md:text-[1.25rem] md:tracking-[-0.03em] lg:text-[1.7rem] lg:leading-[1.1] xl:text-[2.45rem] xl:leading-[1.05] xl:tracking-tight 2xl:text-[2.6rem] 2xl:leading-none'>
+          {landingAboutCard.title}
+        </h3> */}
+        <h3 className='text-foreground btw:text-[1.2rem] xs:text-[1.1rem] py-1 text-[1rem] leading-none font-bold tracking-tight sm:text-[1.25rem] sm:leading-[1.1] md:text-[0.85rem] md:tracking-[-0.03em] lg:text-[1.3rem] lg:leading-[1.1] xl:text-[1.45rem] xl:leading-[1.05] xl:tracking-tight 2xl:text-[1.9rem] 2xl:leading-none'>
+          <div className='flex flex-row'>
+            <span>Pat, or commonly known by </span>
+            <div className='text-accent-foreground justify-center overflow-hidden pl-2 font-medium'>
+              <WordRotate
+                words={[
+                  "Patricia",
+                  "Mrs Penisten",
+                  "Patsy",
+                  "Patsy Geraldine",
+                  "Grandma",
+                  "Grandma Pat",
+                ]}
+              />
+            </div>
           </div>
-        </div>
+        </h3>
 
-        <div className='text-foreground/90 btw:text-[1.1rem] btw:leading-[1.4] space-y-4 text-[1.05rem] leading-normal sm:space-y-5 sm:text-lg md:space-y-2 md:text-[0.95rem] md:leading-[1.25] md:tracking-[-0.02em] lg:space-y-4 lg:text-[1.1rem] lg:leading-[1.45] lg:tracking-normal xl:text-[1.35rem] xl:leading-[1.3] 2xl:space-y-5 2xl:text-[1.4em] 2xl:leading-[1.35]'>
+        <div className='text-foreground/90 btw:text-[1.15rem] btw:leading-[1.4] xs:text-[1rem] space-y-4 text-[0.9rem] leading-snug tracking-tight sm:space-y-5 sm:text-lg md:space-y-2 md:text-[1rem] md:leading-[1.25] md:tracking-[-0.025em] lg:space-y-4 lg:text-[1.2rem] lg:leading-[1.4] lg:tracking-normal xl:text-[1.2rem] xl:leading-[1.3] 2xl:space-y-6 2xl:text-[1.45em] 2xl:leading-[1.35]'>
           {landingAboutCard.blurbs.map((blurb, i) => (
             <p key={i}>{blurb}</p>
           ))}
         </div>
 
-        <div className='flex pt-3'>
+        {/* <div className='flex pt-3'>
           <Badge className='"border-border bg-card text-foreground border shadow-lg lg:text-[0.825rem] xl:text-[0.85rem] xl:leading-normal 2xl:text-base'>
             {landingAboutCard.callout}
           </Badge>
-        </div>
+        </div> */}
       </motion.article>
 
       <motion.aside

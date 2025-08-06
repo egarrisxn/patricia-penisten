@@ -33,7 +33,7 @@ export default function FarewellHero() {
             <Heart className='xs:size-4 size-3 fill-rose-400 text-rose-400 md:size-4 lg:size-5' />
           </div>
 
-          <p className='text-foreground/95 xs:text-lg xs:max-w-[32rem] mx-auto w-full text-[1.15rem] leading-normal text-pretty sm:max-w-lg sm:text-[1.2rem] md:text-[1.1rem] md:leading-[1.2] lg:text-xl xl:max-w-4xl xl:px-24 xl:pb-8 xl:text-[1.3rem] xl:leading-[1.3] 2xl:px-12 2xl:text-[1.5rem]'>
+          <p className='text-foreground/95 xs:text-lg xs:max-w-[32rem] mx-auto w-full text-[1.15rem] leading-normal text-pretty sm:max-w-lg sm:text-[1.2rem] md:text-[1.1rem] md:leading-[1.2] lg:text-xl xl:max-w-4xl xl:px-24 xl:pb-8 xl:text-[1.3rem] xl:leading-[1.3] 2xl:px-12 2xl:pb-0 2xl:text-[1.5rem] 2xl:leading-[1.5]'>
             {farewellHeroData.description} The song{" "}
             <span className='text-primary px-[1px]'>
               {farewellHeroData.song}

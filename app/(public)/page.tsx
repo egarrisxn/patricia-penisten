@@ -32,6 +32,9 @@ export default function LandingPage() {
             <LandingAbout />
           </div>
         </section>
+
+        <hr />
+
         <section
           id='landing-timeline'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
@@ -47,6 +50,9 @@ export default function LandingPage() {
             <LandingTimeline />
           </div>
         </section>
+
+        <hr />
+
         <section
           id='landing-photogallery'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
@@ -62,6 +68,9 @@ export default function LandingPage() {
             <LandingPhotoGallery />
           </div>
         </section>
+
+        <hr />
+
         <section
           id='landing-guestbook'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
@@ -78,6 +87,9 @@ export default function LandingPage() {
             <LandingGuestbook />
           </div>
         </section>
+
+        <hr />
+
         <section
           id='landing-cta'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'

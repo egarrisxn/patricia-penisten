@@ -35,14 +35,14 @@ export default function LandingCTA() {
         variants={ITEM_FADE}
         className='flex w-full max-w-100 flex-1 flex-col gap-3.5 px-6 md:max-w-xl md:px-0 md:pb-8 md:text-start lg:max-w-4xl lg:pb-4 2xl:max-w-none 2xl:pb-8'
       >
-        <h6 className='px-2 font-serif text-[1.95rem] leading-[1.2] font-black text-shadow-lg/10 sm:px-0 sm:text-[2.5rem] md:text-4xl lg:text-5xl xl:text-[2.85rem] 2xl:text-6xl'>
+        <h6 className='px-2 font-serif text-[1.95rem] leading-[1.2] font-black text-shadow-lg/10 sm:px-0 sm:text-[2.5rem] md:text-4xl lg:text-[2.65rem] xl:text-[2.7rem] 2xl:text-[3.85rem]'>
           She did get the chance to go out for one final road trip..
         </h6>
-        <p className='text-foreground/90 mb-4 text-sm italic md:mb-8 md:ml-0.5 md:text-base lg:mb-2 lg:text-lg xl:text-[1.1rem] 2xl:mb-8 2xl:text-xl'>
+        <p className='text-foreground/90 mb-4 text-sm italic md:mb-6 md:ml-0.5 md:text-base lg:mb-2 lg:text-lg xl:text-[1.1rem] 2xl:mb-6 2xl:text-xl'>
           Go ahead and see for yourself!
         </p>
         <Link href='/farewell'>
-          <Button className='2xl:text[1.1rem] group h-9 cursor-pointer bg-gradient-to-r from-purple-500/90 to-rose-500/90 px-6 text-sm transition-all hover:from-purple-500 hover:to-rose-500 lg:h-10 lg:text-base 2xl:h-11'>
+          <Button className='2xl:text[1.1rem] group h-9 cursor-pointer px-6 text-sm transition-all lg:h-10 lg:text-base 2xl:h-11'>
             The Farewell Tour{" "}
             <ArrowRight className='size-4 transition-all duration-200 ease-in-out group-hover:translate-x-0.5' />
           </Button>

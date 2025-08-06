@@ -2,8 +2,10 @@ import { WordRotate } from "@/components/shared/word-rotate";
 
 export default function TextRotate() {
   return (
-    <>
-      <span className='text-foreground/70 pt-2'>*commonly referred to as:</span>
+    <div className='flex flex-row'>
+      <span className='text-foreground/70 pt-2'>
+        Patricia, or you may know her as
+      </span>
       <div className='text-accent-foreground justify-center overflow-hidden px-1.5'>
         <WordRotate
           words={[
@@ -18,6 +20,6 @@ export default function TextRotate() {
           ]}
         />
       </div>
-    </>
+    </div>
   );
 }
