@@ -28,13 +28,11 @@ export const landingHeroData: LandingHeroData = {
 };
 
 export const landingAboutCard: LandingAboutCard = {
-  title: "Born in the heart of Oklahoma,",
   blurbs: [
     `Was born in the heart of Oklahoma and lived a life defined by unwavering love, gentle wisdom, and quiet strength. For 34 years, she shaped young minds as a beloved elementary school teacher, yet her greatest joy was always her family.`,
     `She cherished life's simple pleasures, such as completing the daily crossword, playing Yahtzee with her husband and grandchildren, tending the garden, or catching up on her favorite daytime soap operas.`,
     `Her legacy lives on not only in the lessons she taught, but in the unconditional love she shared, leaving a lasting warmth in the hearts of all who knew her.`,
   ],
-  callout: "In loving memory",
 };
 
 export const landingTimelineCards: LandingTimelineCards[] = [

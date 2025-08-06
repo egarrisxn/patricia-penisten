@@ -35,9 +35,7 @@ export interface LandingHeroData {
   backgroundSrc: string;
 }
 export interface LandingAboutCard {
-  title: string;
   blurbs: string[];
-  callout: string;
 }
 
 export interface LandingTimelineCards extends CardData {
