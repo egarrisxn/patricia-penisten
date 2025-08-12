@@ -33,8 +33,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <hr />
-
         <section
           id='landing-timeline'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
@@ -42,16 +40,14 @@ export default function LandingPage() {
           <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
             <Header
               title={"Her Story"}
-              heading={"A Little Bit About The Journey"}
+              heading={"A Little About The Journey"}
               description={
-                "A timeline walking you through the life of Patricia Penisten. From the beginning of her schooling, the life lessons learned in the mix, and so much more."
+                "A timeline walking you through the life of Patricia. From the beginning of her schooling, the life lessons learned in the mix, and so much more."
               }
             />
             <LandingTimeline />
           </div>
         </section>
-
-        <hr />
 
         <section
           id='landing-photogallery'
@@ -69,32 +65,27 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <hr />
-
         <section
           id='landing-guestbook'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
           <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
-            {/* <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>  */}
             <Header
               title={"Guestbook"}
               heading={"Share a Story or Memory"}
               description={
-                "Please sign the guestbook below to share a favorite story, a message of remembrance, or a special memory you have of Patricia. Your words are a comfort to us."
+                "Please sign the guestbook below. Share a favorite story, a message of remembrance, or a special memory you have of Patricia."
               }
             />
             <LandingGuestbook />
           </div>
         </section>
 
-        <hr />
-
         <section
           id='landing-cta'
           className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
         >
-          <div className='mx-auto w-full max-w-4xl px-4 sm:px-6 md:px-8 2xl:max-w-[74rem]'>
+          <div className='mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 2xl:max-w-[80rem]'>
             <LandingCTA />
           </div>
         </section>

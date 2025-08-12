@@ -133,7 +133,7 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
   }
 
   return (
-    <Card className='dark:bg-background aspect-square bg-white py-2 lg:py-4'>
+    <Card className='dark:bg-background xs:aspect-square bg-white py-2 lg:py-4'>
       <CardContent className='flex-1 px-2 lg:px-4'>
         <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
           <div className='flex-1'>

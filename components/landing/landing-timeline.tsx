@@ -11,7 +11,7 @@ export default function LandingTimeline() {
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: "some" }}
-      className='xs:px-4 grid items-start gap-16 px-2 py-8 lg:grid-cols-2 lg:gap-12 xl:gap-16'
+      className='xs:px-4 mx-auto grid w-full max-w-[36rem] items-start gap-16 px-2 py-8 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16'
     >
       <div className='space-y-12'>
         {landingTimelineCards.map((card, index) => {
@@ -19,7 +19,7 @@ export default function LandingTimeline() {
           return (
             <motion.div variants={ITEM_FADE} key={index}>
               <Card className='lg:bg-card/90 rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-lg xl:py-12'>
-                <div className='xs:px-4 px-2 xl:px-6'>
+                <div className='px-2 lg:px-4 xl:px-6'>
                   <h3 className='flex items-center text-lg leading-none font-extrabold md:text-xl 2xl:text-2xl'>
                     {IconComponent && (
                       <IconComponent className='xs:size-6 text-primary fill-primary/50 mr-2.5 size-5 md:size-7' />
@@ -27,8 +27,8 @@ export default function LandingTimeline() {
                     {card.title}
                   </h3>
                 </div>
-                <CardContent className='xs:px-4 space-y-6 px-2 xl:px-6'>
-                  <p className='text-base md:text-[1.1rem] 2xl:text-lg'>
+                <CardContent className='space-y-6 px-2 lg:px-4 xl:px-6'>
+                  <p className='xs:text-base text-[0.95rem] md:text-[1.1rem] 2xl:text-lg'>
                     {card.body}
                     {card.link && (
                       <>
@@ -71,7 +71,7 @@ export default function LandingTimeline() {
                 </span>
               </div>
               <div className='flex-1'>
-                <h5 className='text-card-foreground text-[1rem] font-medium tracking-tight md:text-xl md:leading-snug md:tracking-normal'>
+                <h5 className='text-card-foreground text-[0.95rem] leading-snug font-medium tracking-tight md:text-xl md:tracking-normal'>
                   {event.title}
                 </h5>
                 <p className='text-[0.85rem] tracking-tight md:text-lg md:leading-snug md:tracking-normal'>

@@ -5,6 +5,12 @@ import * as motion from "motion/react-client";
 import { Button } from "@/components/ui/button";
 import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 
+export const landingCTAData = {
+  title: "Pat got out there for one final road trip!",
+  subtitle: `They're calling it "The Farewell Tour".`,
+  button: "Check It Out",
+};
+
 export default function LandingCTA() {
   return (
     <motion.div
@@ -12,11 +18,11 @@ export default function LandingCTA() {
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.4 }}
-      className='4xl:mb-16 mx-auto mb-8 flex flex-col items-center justify-center gap-8.5 text-center md:flex-row md:gap-10 xl:mb-12'
+      className='lg:bg-card mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-8 px-4 py-8 text-center md:gap-10 lg:flex-row lg:rounded-lg lg:shadow-lg xl:mb-12 xl:max-w-none xl:px-12 xl:py-16'
     >
       <motion.aside
         variants={ITEM_FADE}
-        className='4xl:max-w-125 flex w-full max-w-80 px-4 md:px-0 lg:max-w-96 lg:min-w-80 2xl:max-w-110 2xl:min-w-96'
+        className='xs:px-4 flex px-2 md:px-4 lg:mx-auto'
       >
         <div className='relative'>
           <Image
@@ -24,27 +30,27 @@ export default function LandingCTA() {
             alt='Map'
             width={500}
             height={500}
-            className='bg-foreground border-accent-foreground aspect-square rounded-lg border-4 object-cover shadow-lg'
+            className='bg-foreground border-accent-foreground aspect-square rounded-lg border-2 object-cover shadow-lg'
           />
-          <div className='bg-accent border-accent-foreground text-accent-foreground absolute -right-4 -bottom-4 -rotate-4 transform rounded-lg border-3 px-4 py-2 text-[0.9rem] leading-[1.4] font-semibold tracking-wide uppercase shadow-lg'>
+          <div className='bg-accent border-accent-foreground text-accent-foreground absolute -right-4 -bottom-4 -rotate-4 transform rounded-lg border-2 px-4 py-2 text-[0.9rem] leading-[1.4] font-semibold tracking-wide uppercase shadow-lg'>
             1935-2025
           </div>
         </div>
       </motion.aside>
       <motion.article
         variants={ITEM_FADE}
-        className='flex w-full max-w-100 flex-1 flex-col gap-3.5 px-6 md:max-w-xl md:px-0 md:pb-8 md:text-start lg:max-w-4xl lg:pb-4 2xl:max-w-none 2xl:pb-8'
+        className='xs:max-w-100 flex w-full flex-1 flex-col gap-4 md:max-w-md md:pb-8 lg:max-w-none lg:pb-4 lg:text-start xl:gap-6 2xl:pb-8'
       >
-        <h6 className='px-2 font-serif text-[1.95rem] leading-[1.2] font-black text-shadow-lg/10 sm:px-0 sm:text-[2.5rem] md:text-4xl lg:text-[2.75rem] xl:text-[2.8rem] 2xl:text-[3.85rem]'>
-          Pat got the chance to go on one final road trip..
+        <h6 className='xs:text-[1.95rem] px-4 font-serif text-[1.65rem] leading-[1.2] font-black text-shadow-lg/10 sm:px-0 sm:text-[2.5rem] md:text-[2.35rem] md:leading-[1.15] lg:text-[2.75rem] xl:text-[3.4rem] 2xl:text-[3.85rem]'>
+          {landingCTAData.title}
         </h6>
-        <p className='text-foreground/90 mb-4 text-sm md:mb-6 md:ml-0.5 md:text-base lg:mb-3.5 lg:text-lg xl:text-[1.1rem] 2xl:mb-6 2xl:text-xl'>
-          Go take a look for yourself!
+        <p className='text-foreground/80 xs:text-base mb-4 px-4 text-[0.925rem] leading-normal font-medium sm:px-0 sm:text-[1.05rem] md:text-[1.2rem] lg:ml-0.5 lg:text-lg xl:text-[1.35rem] 2xl:mb-6 2xl:text-xl'>
+          {landingCTAData.subtitle}
         </p>
         <Link href='/farewell'>
-          <Button className='2xl:text[1.1rem] group h-9 cursor-pointer px-6 text-sm transition-all lg:h-10 lg:text-base 2xl:h-11'>
-            The Farewell Tour{" "}
-            <ArrowRight className='size-4 transition-all duration-200 ease-in-out group-hover:translate-x-0.5' />
+          <Button className='2xl:text[1.1rem] group h-9 cursor-pointer px-6 text-sm transition-all lg:h-10 lg:text-base xl:h-10.5 xl:text-[1.05rem]'>
+            {landingCTAData.button}
+            <ArrowRight className='size-4 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 xl:size-4.5' />
           </Button>
         </Link>
       </motion.article>

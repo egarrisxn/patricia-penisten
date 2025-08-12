@@ -82,7 +82,7 @@ export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
   }
 
   return (
-    <Card className='dark:bg-background aspect-quare bg-white py-4 lg:py-8'>
+    <Card className='dark:bg-background xs:aspect-quare xs:py-4 bg-white lg:py-8'>
       <CardContent className='flex-1'>
         <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
           <div className='flex flex-shrink-0 flex-col gap-2'>

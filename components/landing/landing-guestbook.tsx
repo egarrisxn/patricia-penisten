@@ -13,7 +13,7 @@ export default function LandingGuestbook() {
   };
 
   return (
-    <div className='mx-auto grid px-4 py-8'>
+    <div className='xs:px-4 mx-auto grid px-2 py-8'>
       <EntryList
         userEntries={userItems}
         approvedEntries={approvedItems}
