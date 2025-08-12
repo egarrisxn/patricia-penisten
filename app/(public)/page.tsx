@@ -57,9 +57,10 @@ export default function LandingPage() {
           <LandingGuestbook />
         </PageSection>
 
-        <PageSection id='landing-cta'>
+        <section id='landing-cta'>
           <LandingCTA />
-        </PageSection>
+        </section>
+        <br />
       </main>
     </>
   );
