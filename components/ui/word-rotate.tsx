@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, MotionProps } from "motion/react";
-import { cn } from "@/lib/utils";
 
 interface WordRotateProps {
   words: string[];
@@ -37,7 +36,7 @@ export function WordRotate({
       <AnimatePresence mode='wait'>
         <motion.h1
           key={words[index]}
-          className={cn(className)}
+          className={`${className}`}
           {...motionProps}
         >
           {words[index]}

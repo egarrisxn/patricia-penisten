@@ -1,9 +1,10 @@
 import {
+  NavLinks,
   LandingHeroData,
   LandingAboutCard,
   LandingTimelineCards,
   LandingTimelineData,
-  NavLinks,
+  LandingCTAData,
 } from "@/lib/types";
 
 export const landingNavigation: NavLinks[] = [
@@ -108,3 +109,9 @@ export const landingTimelineData: LandingTimelineData[] = [
       "Loved shopping, spending time with family, and especially doting on her grandchildren.",
   },
 ];
+
+export const landingCTAData: LandingCTAData = {
+  title: "Pat got out there for one final road trip!",
+  body: `They're calling it "The Farewell Tour".`,
+  button: "Check It Out",
+};

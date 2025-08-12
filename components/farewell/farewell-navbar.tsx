@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Home } from "lucide-react";
 import NavLogo from "@/components/shared/nav-logo";
-import NavLink from "@/components/shared/nav-link";
+import NavLink from "@/components/ui/nav-link";
 import CustomAudioPlayer from "@/components/shared/audio-player";
 import ThemeButton from "@/components/shared/theme-button";
 import { farewellNavigation } from "@/lib/data/farewell";

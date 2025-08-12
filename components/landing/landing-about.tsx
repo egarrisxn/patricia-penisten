@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { WordRotate } from "@/components/shared/word-rotate";
+import TextRotate from "@/components/shared/text-rotate";
 import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 import { landingAboutCard } from "@/lib/data/landing";
 
@@ -17,22 +17,8 @@ export default function LandingAboutCard() {
         variants={ITEM_FADE}
         className='w-full max-w-[32rem] px-2 lg:mx-auto lg:max-w-none lg:px-4'
       >
-        <h3 className='text-foreground xs:text-[1.25rem] xs:tracking-tight text-[1.05rem] font-bold tracking-tighter sm:text-[1.45rem] lg:text-[1.35rem] xl:text-[1.65rem] 2xl:text-[1.95rem]'>
-          <div className='flex flex-row'>
-            <span>Pat, or commonly known as </span>
-            <div className='text-accent-foreground justify-center overflow-hidden pl-1 font-medium lg:pl-2'>
-              <WordRotate
-                words={[
-                  "Patricia",
-                  "Mrs Penisten",
-                  "Patsy",
-                  "Patsy Geraldine",
-                  "Grandma",
-                  "Grandma Pat",
-                ]}
-              />
-            </div>
-          </div>
+        <h3 className='text-foreground xs:text-[1.25rem] xs:tracking-tight text-[1.05rem] font-bold tracking-tighter sm:text-[1.45rem] lg:text-[1.35rem] xl:text-[1.65rem] 2xl:text-[1.75rem]'>
+          <TextRotate />
         </h3>
       </motion.div>
 
@@ -53,7 +39,7 @@ export default function LandingAboutCard() {
         variants={ITEM_FADE}
         className='w-full max-w-[32rem] px-2 lg:mx-auto lg:max-w-none lg:px-4 lg:pt-4 xl:pt-0'
       >
-        <div className='text-foreground/90 xs:text-lg xs:text-[1.1rem] space-y-4 text-[0.95rem] tracking-tight sm:text-xl lg:space-y-3 lg:text-[1.15rem] xl:space-y-4 xl:text-[1.35rem] 2xl:text-[1.4rem]'>
+        <div className='text-foreground/90 xs:text-lg xs:text-[1.1rem] space-y-4 text-[0.95rem] tracking-tight sm:text-xl lg:space-y-3 lg:text-[1.15rem] xl:space-y-4 xl:text-[1.35rem] 2xl:text-[1.45rem]'>
           {landingAboutCard.blurbs.map((blurb, i) => (
             <p key={i}>{blurb}</p>
           ))}

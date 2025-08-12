@@ -1,4 +1,6 @@
 import ScrollProgress from "@/components/shared/scroll-progress";
+import PageSection from "@/components/shared/page-section";
+
 import LandingNavbar from "@/components/landing/landing-navbar";
 import LandingHero from "@/components/landing/landing-hero";
 import LandingAbout from "@/components/landing/landing-about";
@@ -6,90 +8,59 @@ import LandingTimeline from "@/components/landing/landing-timeline";
 import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
 import LandingGuestbook from "@/components/landing/landing-guestbook";
 import LandingCTA from "@/components/landing/landing-cta";
-import Header from "@/components/shared/header";
 
 export default function LandingPage() {
   return (
     <>
       <ScrollProgress className='top-0' />
       <LandingNavbar />
-      <div className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
+      <main className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
         <section id='landing-hero' className='rounded-b-lg'>
           <LandingHero />
         </section>
-        <section
+
+        <PageSection
           id='landing-about'
-          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
+          title='About Patricia'
+          heading='Her Life, Love, & Legacy'
+          description={`A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched.`}
         >
-          <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
-            <Header
-              title={"About Patricia"}
-              heading={"Her Life, Love, & Legacy"}
-              description={
-                "A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched."
-              }
-            />
-            <LandingAbout />
-          </div>
-        </section>
+          <LandingAbout />
+        </PageSection>
 
-        <section
+        <PageSection
           id='landing-timeline'
-          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
+          title='Her Story'
+          heading='A Little About The Journey'
+          description={`A timeline walking you through the life of Patricia. From the beginning of her schooling, the life lessons learned in the mix, and so much more.`}
         >
-          <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 2xl:max-w-[84rem]'>
-            <Header
-              title={"Her Story"}
-              heading={"A Little About The Journey"}
-              description={
-                "A timeline walking you through the life of Patricia. From the beginning of her schooling, the life lessons learned in the mix, and so much more."
-              }
-            />
-            <LandingTimeline />
-          </div>
-        </section>
+          <LandingTimeline />
+        </PageSection>
 
-        <section
+        <PageSection
           id='landing-photogallery'
-          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
+          title='Photo Gallery'
+          heading='Your Memories in Pictures'
+          description={`A place to share your treasured photos of Patricia. Whether it's a candid moment, a celebration, or a simple smile, your photos help us remember her.`}
+          className='lg:max-w-[92rem]'
         >
-          <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
-            <Header
-              title={"Photo Gallery"}
-              heading={"Your Memories in Pictures"}
-              description={
-                "A place to share your treasured photos of Patricia. Even a single picture is a cherished memory, and your contribution would mean the world to us."
-              }
-            />
-            <LandingPhotoGallery />
-          </div>
-        </section>
+          <LandingPhotoGallery />
+        </PageSection>
 
-        <section
+        <PageSection
           id='landing-guestbook'
-          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
+          title='Guestbook'
+          heading='Share a Story or Memory'
+          description={`Please sign the guestbook below. Share a favorite story, a message of remembrance, or a moment that stands out in your memory of Patricia.`}
+          className='lg:max-w-[92rem]'
         >
-          <div className='mx-auto w-full max-w-[92rem] px-4 sm:px-6 md:px-8 2xl:max-w-[96rem]'>
-            <Header
-              title={"Guestbook"}
-              heading={"Share a Story or Memory"}
-              description={
-                "Please sign the guestbook below. Share a favorite story, a message of remembrance, or a special memory you have of Patricia."
-              }
-            />
-            <LandingGuestbook />
-          </div>
-        </section>
+          <LandingGuestbook />
+        </PageSection>
 
-        <section
-          id='landing-cta'
-          className='4xl:py-32 mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
-        >
-          <div className='mx-auto w-full max-w-6xl px-4 sm:px-6 md:px-8 2xl:max-w-[80rem]'>
-            <LandingCTA />
-          </div>
-        </section>
-      </div>
+        <PageSection id='landing-cta'>
+          <LandingCTA />
+        </PageSection>
+      </main>
     </>
   );
 }

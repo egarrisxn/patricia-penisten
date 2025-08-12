@@ -1,5 +1,5 @@
 import NavLogo from "@/components/shared/nav-logo";
-import NavLink from "@/components/shared/nav-link";
+import NavLink from "@/components/ui/nav-link";
 import ThemeButton from "@/components/shared/theme-button";
 import { adminNavigation } from "@/lib/data/admin";
 

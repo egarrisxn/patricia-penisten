@@ -52,6 +52,10 @@ export interface LandingTimelineData {
   description: string;
 }
 
+export interface LandingCTAData extends CardData {
+  button: string;
+}
+
 // Farewell Page Interfaces
 export interface FarewellHeroData {
   pretitle: string;

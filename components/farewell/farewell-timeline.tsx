@@ -11,7 +11,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { farewellTimelineItems } from "@/lib/data/farewell";
+import { farewellTimelineItems, farewellQuoteText } from "@/lib/data/farewell";
 import type { FarewellTimelineItems } from "@/lib/types";
 
 export default function FarewellTimeline() {
@@ -44,8 +44,8 @@ export default function FarewellTimeline() {
   };
 
   return (
-    <>
-      <div className='relative mx-auto max-w-6xl px-4 lg:px-8'>
+    <div className='mx-auto px-4 pb-4 xl:px-12 xl:pb-12'>
+      <div className='relative'>
         {/* Timeline line */}
         <div className='absolute left-4 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2' />
 
@@ -121,6 +121,13 @@ export default function FarewellTimeline() {
         </div>
       </div>
 
+      {/* Farewell Quote */}
+      <div className='w-full px-8 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
+        <p className='text-2xl italic md:mx-auto md:text-center lg:text-3xl'>
+          <q>{farewellQuoteText}</q>
+        </p>
+      </div>
+
       {/* Dialog Modal */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className='max-w-4xl p-0'>
@@ -174,6 +181,6 @@ export default function FarewellTimeline() {
           )}
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 }

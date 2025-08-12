@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { SITE_DATA } from "@/lib/config";
 import ScrollProgress from "@/components/shared/scroll-progress";
+import PageSection from "@/components/shared/page-section";
+
 import FarewellNavbar from "@/components/farewell/farewell-navbar";
 import FarewellHero from "@/components/farewell/farewell-hero";
 import FarewellTimeline from "@/components/farewell/farewell-timeline";
-import FarewellQuote from "@/components/farewell/farewell-quote";
 
 export const metadata: Metadata = {
   title: SITE_DATA.farewellTitle,
@@ -47,18 +48,15 @@ export default function FarewellPage() {
     <>
       <ScrollProgress className='top-0' />
       <FarewellNavbar />
-      <div className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
+      <main className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
         <section id='farewell-hero'>
           <FarewellHero />
         </section>
-        <section
-          id='farewell-timeline'
-          className='4xl:pt-36 4xl:pb-40 pt-24 pb-32'
-        >
+
+        <PageSection id='farewell-timeline'>
           <FarewellTimeline />
-          <FarewellQuote />
-        </section>
-      </div>
+        </PageSection>
+      </main>
     </>
   );
 }
