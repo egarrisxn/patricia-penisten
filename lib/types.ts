@@ -1,84 +1,17 @@
 import { BookMarked, Star, HeartHandshake } from "lucide-react";
 
-// Themes
-export type Theme = "light" | "dark" | "system";
-export type ThemeToggleSize = "sm" | "md" | "lg";
-
-// Icon Map
-export const iconMap = {
-  BookMarked: BookMarked,
-  Star: Star,
-  HeartHandshake: HeartHandshake,
-};
-
-export type IconName = keyof typeof iconMap;
-
-// General Purpose Interfaces
+// Shared
+export interface HeadingData {
+  title: string;
+  body: string;
+}
 export interface NavLinks {
   name: string;
   href: string;
 }
-
-export interface CardData {
-  title: string;
-  body: string;
-  textOne?: string;
-  textTwo?: string;
-}
-
-// Landing Page Interfaces
-export interface LandingHeroData {
-  name: string;
-  lifespan: string;
-  backgroundSrc: string;
-}
-export interface LandingAboutCardData {
-  blurbs: string[];
-}
-
-export interface LandingTimelineCards extends CardData {
-  icon?: IconName;
-  link?: {
-    href: string;
-    name: string;
-  };
-}
-
-export interface LandingTimelineData {
-  year: string;
-  title: string;
-  description: string;
-}
-
-export interface LandingCTAData extends CardData {
-  button: string;
-}
-
-// Farewell Page Interfaces
-export interface FarewellHeroData {
-  pretitle: string;
-  title: string;
-  subtitle: string;
-  song: string;
-  artist: string;
-  description: string;
-}
-
-export interface FarewellTimelineItems {
-  id: number;
-  time: string;
-  title: string;
-  description: string;
-  src: string;
-  alt: string;
-}
-
-// Shared Interfaces
-export interface FooterCard extends CardData {
-  link: {
-    href: string;
-    name: string;
-  };
+export interface AppError {
+  error: Error;
+  reset: () => void;
 }
 
 // Photo Gallery
@@ -101,4 +34,48 @@ export interface GuestbookEntry {
   message: string;
   status: "pending" | "approved" | "denied";
   submitted_by_ip: string;
+}
+
+// Icon Map
+export const iconMap = {
+  BookMarked: BookMarked,
+  Star: Star,
+  HeartHandshake: HeartHandshake,
+};
+export type IconName = keyof typeof iconMap;
+
+// Landing Page
+export interface LandingHeroData extends HeadingData {
+  src: string;
+}
+export interface LandingAboutCardData {
+  blurbs: string[];
+}
+export interface LandingTimelineCards extends HeadingData {
+  icon: IconName;
+  text?: string;
+  link?: {
+    href: string;
+    name: string;
+  };
+}
+export interface LandingTimelineData extends HeadingData {
+  year: string;
+}
+export interface LandingCTAData extends HeadingData {
+  button: string;
+}
+
+// Farewell Page
+export interface FarewellHeroData extends HeadingData {
+  pretitle: string;
+  subtitle: string;
+  song: string;
+  artist: string;
+}
+export interface FarewellTimelineItems extends HeadingData {
+  id: number;
+  time: string;
+  src: string;
+  alt: string;
 }

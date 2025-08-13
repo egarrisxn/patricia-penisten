@@ -7,37 +7,21 @@ import FarewellTimeline from "@/components/farewell/farewell-timeline";
 
 export const metadata: Metadata = {
   title: SITE_DATA.farewellTitle,
-  description: SITE_DATA.description,
+  description: SITE_DATA.farewellDescription,
   openGraph: {
-    title: SITE_DATA.farewellTitle,
-    description: SITE_DATA.description,
-    url: SITE_DATA.farewellUrl,
-    siteName: SITE_DATA.farewellTitle,
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: SITE_DATA.farewellOG,
-        alt: SITE_DATA.altText,
-        width: 1200,
-        height: 630,
-      },
-    ],
+    title: SITE_DATA.farewellTitle,
+    description: SITE_DATA.farewellDescription,
+    url: SITE_DATA.farewellUrl,
+    siteName: SITE_DATA.farewellTitle,
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_DATA.farewellTitle,
-    description: SITE_DATA.description,
+    description: SITE_DATA.farewellDescription,
     creator: SITE_DATA.socialHandle,
     site: SITE_DATA.socialHandle,
-    images: [
-      {
-        url: SITE_DATA.farewellOG,
-        alt: SITE_DATA.altText,
-        width: 1200,
-        height: 630,
-      },
-    ],
   },
 };
 

@@ -4,8 +4,8 @@ import type { Metadata, Viewport } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SITE_DATA } from "@/lib/config";
-import { ThemeProvider } from "./_providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/app/_components/theme-provider";
 
 const fontSans = Roboto({
   variable: "--font-sans",
@@ -31,21 +31,26 @@ export const metadata: Metadata = {
     "gallery",
     "timeline",
     "teacher",
+    "life",
+    "remembered",
+    "farewell",
+    "tour",
     "patricia",
     "penisten",
-    "rememberance",
-    "Patricia Penisten",
-    "Patricia G. Penisten",
-    "A Life Remembered",
-    "The Farewell Tour",
+    "pat penisten",
+    "patricia penisten",
+    "patricia g penisten",
+    "patsy geraldine",
+    "a life remembered",
+    "the farewell tour",
   ],
   openGraph: {
+    type: "website",
+    locale: "en_US",
     title: SITE_DATA.title,
     description: SITE_DATA.description,
     url: SITE_DATA.url,
     siteName: SITE_DATA.title,
-    type: "website",
-    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",

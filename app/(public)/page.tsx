@@ -1,8 +1,7 @@
 import ScrollProgress from "@/components/shared/scroll-progress";
-import PageSection from "@/components/shared/page-section";
-
 import LandingNavbar from "@/components/landing/landing-navbar";
 import LandingHero from "@/components/landing/landing-hero";
+import Section from "@/components/ui/section";
 import LandingAbout from "@/components/landing/landing-about";
 import LandingTimeline from "@/components/landing/landing-timeline";
 import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
@@ -19,25 +18,25 @@ export default function LandingPage() {
         <LandingHero />
       </section>
 
-      <PageSection
+      <Section
         id='landing-about'
         title='About Patricia'
         heading='Her Life, Love, & Legacy'
         description={`A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched.`}
       >
         <LandingAbout />
-      </PageSection>
+      </Section>
 
-      <PageSection
+      <Section
         id='landing-timeline'
         title='Her Story'
         heading='A Little About The Journey'
         description={`A timeline walking you through the life of Patricia. From the beginning of her schooling, the life lessons learned in the mix, and so much more.`}
       >
         <LandingTimeline />
-      </PageSection>
+      </Section>
 
-      <PageSection
+      <Section
         id='landing-photogallery'
         title='Photo Gallery'
         heading='Your Memories in Pictures'
@@ -45,9 +44,9 @@ export default function LandingPage() {
         className='lg:max-w-[92rem]'
       >
         <LandingPhotoGallery />
-      </PageSection>
+      </Section>
 
-      <PageSection
+      <Section
         id='landing-guestbook'
         title='Guestbook'
         heading='Share a Story or Memory'
@@ -55,7 +54,7 @@ export default function LandingPage() {
         className='lg:max-w-[92rem]'
       >
         <LandingGuestbook />
-      </PageSection>
+      </Section>
 
       <section id='landing-cta'>
         <LandingCTA />

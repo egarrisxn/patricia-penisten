@@ -19,8 +19,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 1,
     time: "Pre Trip",
     title: "Pat & Judi",
-    description:
-      "Pat spent time with Judi just a few days before her final journey began together with family.",
+    body: "Pat spent time with Judi just a few days before her final journey began together with family.",
     src: "/farewell/gma-judi.png",
     alt: "Pat & Judi",
   },
@@ -28,8 +27,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 2,
     time: "The Beginning",
     title: "Pat Solo",
-    description:
-      "She settled in with Judi by her side, ready to begin her final road trip with peace and grace.",
+    body: "She settled in with Judi by her side, ready to begin her final road trip with peace and grace.",
     src: "/farewell/gma-solo.png",
     alt: "Pat Solo",
   },
@@ -37,8 +35,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 3,
     time: "First Stop",
     title: "Pat & Ettie",
-    description:
-      "Her first visit was with her mother Ettie, where they shared a sweet and quiet morning moment.",
+    body: "Her first visit was with her mother Ettie, where they shared a sweet and quiet morning moment.",
     src: "/farewell/gma-ettie.png",
     alt: "Pat & Ettie",
   },
@@ -46,8 +43,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 4,
     time: "Second Stop",
     title: "Pat & Hugh",
-    description:
-      "Next, she visited her father Hugh, who no doubt welcomed her with pride and warmth in spirit.",
+    body: "Next, she visited her father Hugh, who no doubt welcomed her with pride and warmth in spirit.",
     src: "/farewell/gma-hugh.png",
     alt: "Pat & Hugh",
   },
@@ -56,8 +52,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 5,
     time: "Third Stop",
     title: "Pat, Jimmy, & Randi",
-    description:
-      "She made a stop to visited her children Jimmy and Randi for hugs, laughter, and reflection.",
+    body: "She made a stop to visited her children Jimmy and Randi for hugs, laughter, and reflection.",
     src: "/farewell/gma-jimmy.png",
     alt: "Pat, Jimmy, & Randi",
   },
@@ -65,8 +60,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 6,
     time: "Fourth Stop",
     title: "Pat & Chuck",
-    description:
-      "Just a few feet over was her brother-in-law Chuck, thankful for the time they had to talk and connect.",
+    body: "Just a few feet over was her brother-in-law Chuck, thankful for the time they had to talk and connect.",
     src: "/farewell/gma-chuck.png",
     alt: "Pat & Chuck",
   },
@@ -74,8 +68,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 7,
     time: "Final Goodbye",
     title: "Pat, Chuck, Jimmy, & Randi",
-    description:
-      "Her final visit brought time with Chuck, Jimmy, and Randi. Her journey could now come to rest.",
+    body: "Her final visit brought time with Chuck, Jimmy, and Randi. Her journey could now come to rest.",
     src: "/farewell/gma-jimmy-chuck.png",
     alt: "Pat, Chuck, Jimmy, & Randi",
   },
@@ -83,8 +76,7 @@ const farewellTimelineItems: FarewellTimelineItems[] = [
     id: 8,
     time: "The End",
     title: "Cheryl & Judi",
-    description:
-      "Cheryl could not join the trip, so Judi gave her a kiss for Pat, a final act of sisterly love.",
+    body: "Cheryl could not join the trip, so Judi gave her a kiss for Pat, a final act of sisterly love.",
     src: "/farewell/gma-judi-cheryl.png",
     alt: "Cheryl & Judi",
   },
@@ -176,7 +168,7 @@ export default function FarewellTimeline() {
                         {item.title}
                       </h3>
                       <p className='text-accent-foreground/90 xs:pr-12 mb-3 line-clamp-2 w-full pt-2 pr-4 text-base sm:pr-24 md:pr-0 md:text-sm lg:text-lg'>
-                        {item.description}
+                        {item.body}
                       </p>
                       <Button
                         variant='basic'
@@ -232,7 +224,7 @@ export default function FarewellTimeline() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className='text-foreground mt-4 ml-[1px] line-clamp-3 pr-4 text-start text-sm leading-[1.4] font-medium text-wrap md:text-base'>
-                  <p>{selectedItem.description || "with Patricia & Judi"}</p>
+                  <p>{selectedItem.body || "with Patricia & Judi"}</p>
                 </div>
 
                 <div className='mt-6 flex justify-between gap-4 md:mt-5'>

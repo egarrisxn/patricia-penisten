@@ -8,9 +8,9 @@ import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 import { LandingCTAData } from "@/lib/types";
 
 const landingCTAData: LandingCTAData = {
+  button: "Check It Out",
   title: "Pat got out there for one final road trip!",
   body: `They're calling it "The Farewell Tour".`,
-  button: "Check It Out",
 };
 
 export default function LandingCTA() {

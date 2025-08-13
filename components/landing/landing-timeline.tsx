@@ -23,7 +23,7 @@ const landingTimelineCards: LandingTimelineCards[] = [
     icon: "BookMarked",
     title: "A Life Remembered",
     body: "The timeline here is a year-by-year look at the milestones that defined Patricia's journey. For more details on her life, you can view her",
-    textOne: "courtesy of the Lawton Ritter Gray Funeral Home.",
+    text: "courtesy of the Lawton Ritter Gray Funeral Home.",
     link: {
       href: "https://www.grayfuneral.com/obituaries/Patricia-G-Penisten?obId=42802528",
       name: "Official Obituary",
@@ -35,50 +35,42 @@ const landingTimelineData: LandingTimelineData[] = [
   {
     year: "1935",
     title: "Born in Oklahoma",
-    description:
-      "Born on December 22nd to Hugh and Ettie Irene (Tisdale) Blevins on the family farm near Connerville and Mill Creek.",
+    body: "Born on December 22nd to Hugh and Ettie Irene (Tisdale) Blevins on the family farm near Connerville and Mill Creek.",
   },
   {
     year: "1940s",
     title: "Childhood in Connerville",
-    description:
-      "Grew up in Connerville, attending Tishomingo Schools and helping on the family farm.",
+    body: "Grew up in Connerville, attending Tishomingo Schools and helping on the family farm.",
   },
   {
     year: "1956",
     title: "Married John Penisten",
-    description:
-      "Married in Ada, Oklahoma and began a life together that would span decades and states.",
+    body: "Married in Ada, Oklahoma and began a life together that would span decades and states.",
   },
   {
     year: "1950s - 1970s",
     title: "Early Family Life",
-    description:
-      "Lived in Ada, moved to Douglass, Wyoming, and eventually settled in Lawton, Oklahoma by 1967.",
+    body: "Lived in Ada, moved to Douglass, Wyoming, and eventually settled in Lawton, Oklahoma by 1967.",
   },
   {
     year: "1970s",
     title: "Pursued Higher Education",
-    description:
-      "Earned her Bachelor's Degree in Elementary Education from Cameron University while raising her family.",
+    body: "Earned her Bachelor's Degree in Elementary Education from Cameron University while raising her family.",
   },
   {
     year: "1970s - 2000s",
     title: "Teaching Career at Douglass Elementary",
-    description:
-      "Devoted 34 years to educating young minds with love, patience, and dedication.",
+    body: "Devoted 34 years to educating young minds with love, patience, and dedication.",
   },
   {
     year: "2000s",
     title: "Retirement",
-    description:
-      "Retired after decades of service, leaving behind a lasting legacy of learning and care.",
+    body: "Retired after decades of service, leaving behind a lasting legacy of learning and care.",
   },
   {
     year: "2000s - 2020s",
     title: "Time with Family",
-    description:
-      "Loved shopping, spending time with family, and especially doting on her grandchildren.",
+    body: "Loved shopping, spending time with family, and especially doting on her grandchildren.",
   },
 ];
 
@@ -119,7 +111,7 @@ export default function LandingTimeline() {
                           {card.link.name}
                           <span className='bg-primary absolute -bottom-0.5 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
                         </a>{" "}
-                        {card.textOne}
+                        {card.text}
                       </>
                     )}
                   </p>
@@ -153,7 +145,7 @@ export default function LandingTimeline() {
                   {event.title}
                 </h5>
                 <p className='text-[0.85rem] tracking-tight md:text-lg md:leading-snug md:tracking-normal'>
-                  {event.description}
+                  {event.body}
                 </p>
               </div>
             </motion.div>

@@ -12,11 +12,11 @@ import { Label } from "@/components/ui/label";
 
 import type { PhotoEntry } from "@/lib/types";
 
-interface ImageUploadProps {
+interface PhotoUploadProps {
   onPhotoSubmitted: (photo: PhotoEntry) => void;
 }
 
-export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
+export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   const [isUploading, setIsUploading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");

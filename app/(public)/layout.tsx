@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import ScrollUp from "@/components/shared/scroll-up";
-import Footer from "@/components/shared/footer";
+import Footer from "@/components/ui/footer";
 
 export default function PubliclLayout({ children }: { children: ReactNode }) {
   return (
@@ -9,7 +9,10 @@ export default function PubliclLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <ScrollUp />
-      <Footer />
+      <Footer
+        className='bg-card/90 border-border/30 w-full border-t-2'
+        isMemorial={true}
+      />
     </div>
   );
 }

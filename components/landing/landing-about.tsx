@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import TextRotate from "@/components/shared/text-rotate";
+import { WordRotate } from "@/components/ui/word-rotate";
 import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
 
 import { LandingAboutCardData } from "@/lib/types";
@@ -27,7 +27,21 @@ export default function LandingAboutCard() {
         className='w-full max-w-[32rem] px-2 lg:mx-auto lg:max-w-none lg:px-4'
       >
         <h3 className='text-foreground xs:text-[1.25rem] xs:tracking-tight text-[1.05rem] font-bold tracking-tighter sm:text-[1.45rem] lg:text-[1.35rem] xl:text-[1.65rem] 2xl:text-[1.75rem]'>
-          <TextRotate />
+          <div className='flex flex-row'>
+            <span>Pat, or commonly known as </span>
+            <div className='text-accent-foreground justify-center overflow-hidden pl-1 font-medium lg:pl-2'>
+              <WordRotate
+                words={[
+                  "Patricia",
+                  "Mrs Penisten",
+                  "Patsy",
+                  "Patsy Geraldine",
+                  "Grandma",
+                  "Grandma Pat",
+                ]}
+              />
+            </div>
+          </div>
         </h3>
       </motion.div>
 

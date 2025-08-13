@@ -11,7 +11,7 @@ const farewellHeroData: FarewellHeroData = {
   subtitle: "with Pat & Judi",
   song: `"How Do I Say Goodbye"`,
   artist: "Dean Lewis",
-  description: `Join us on Patricia's heartfelt “Farewell Tour,” a final journey filled with love and remembrance. Her daughter, Judi, carried her ashes to visit cherished family members, honoring Pat's deep connections one last time. As you browse the photos, tap the speaker icon above to play a handpicked song and enrich the experience.`,
+  body: `Join us on Patricia's heartfelt “Farewell Tour,” a final journey filled with love and remembrance. Her daughter, Judi, carried her ashes to visit cherished family members, honoring Pat's deep connections one last time. As you browse the photos, tap the speaker icon above to play a handpicked song and enrich the experience.`,
 };
 
 export default function FarewellHero() {
@@ -44,7 +44,7 @@ export default function FarewellHero() {
           </h2>
 
           <p className='text-foreground/95 xs:text-[1.2rem] xs:max-w-[32rem] mx-auto w-full px-4 text-[1.1rem] leading-[1.4] tracking-normal text-pretty sm:max-w-lg sm:px-2 sm:text-[1.35rem] sm:leading-[1.4] md:px-0 md:text-[1.4rem] lg:text-[1.45rem] xl:max-w-3xl xl:px-12 xl:text-[1.5rem] xl:leading-[1.3] 2xl:px-2 2xl:text-[1.55rem] 2xl:leading-[1.35]'>
-            {farewellHeroData.description} The song{" "}
+            {farewellHeroData.body} The song{" "}
             <span className='text-primary px-[1px]'>
               {farewellHeroData.song}
             </span>{" "}

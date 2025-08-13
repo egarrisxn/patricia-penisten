@@ -12,11 +12,13 @@ import { Label } from "@/components/ui/label";
 
 import type { GuestbookEntry } from "@/lib/types";
 
-interface EntryFormProps {
+interface GuestbookFormProps {
   onEntrySubmitted: (entry: GuestbookEntry) => void;
 }
 
-export default function EntryForm({ onEntrySubmitted }: EntryFormProps) {
+export default function GuestbookForm({
+  onEntrySubmitted,
+}: GuestbookFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");

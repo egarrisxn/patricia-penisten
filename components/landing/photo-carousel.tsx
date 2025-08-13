@@ -13,15 +13,15 @@ import {
 
 import type { PhotoEntry } from "@/lib/types";
 
-interface ImageCarouselProps {
+interface PhotoCarouselProps {
   userPhotos: PhotoEntry[];
   approvedPhotos: PhotoEntry[];
 }
 
-export default function ImageCarousel({
+export default function PhotoCarousel({
   userPhotos,
   approvedPhotos,
-}: ImageCarouselProps) {
+}: PhotoCarouselProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const allPhotos = [

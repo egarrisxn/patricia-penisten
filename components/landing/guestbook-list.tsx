@@ -1,20 +1,20 @@
 import { MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import EntryForm from "@/components/landing/entry-form";
+import GuestbookForm from "@/components/landing/guestbook-form";
 
 import type { GuestbookEntry } from "@/lib/types";
 
-interface EntryListProps {
+interface GuestbookListProps {
   approvedEntries: GuestbookEntry[];
   userEntries: GuestbookEntry[];
   onEntrySubmitted: (entry: GuestbookEntry) => void;
 }
 
-export default function EntryList({
+export default function GuestbookList({
   approvedEntries,
   userEntries,
   onEntrySubmitted,
-}: EntryListProps) {
+}: GuestbookListProps) {
   const allEntries = [
     ...approvedEntries,
     ...userEntries.filter(
@@ -87,7 +87,7 @@ export default function EntryList({
             </Card>
           </div>
         ))}
-        <EntryForm onEntrySubmitted={onEntrySubmitted} />
+        <GuestbookForm onEntrySubmitted={onEntrySubmitted} />
       </div>
     </>
   );

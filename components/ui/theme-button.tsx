@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import * as React from "react";
 import { useTheme } from "next-themes";
 import { AnimatePresence, motion } from "motion/react";
 import { Sun, Moon, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-import { Theme, ThemeToggleSize } from "@/lib/types";
+type Theme = "light" | "dark" | "system";
+type ThemeToggleSize = "sm" | "md" | "lg";
 
 interface ThemeToggleProps {
   size?: ThemeToggleSize;
@@ -22,11 +23,7 @@ export default function ThemeButton({
   className,
 }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const [isMounted, setIsMounted] = React.useState(false);
 
   const sizeClasses = {
     sm: "h-8 px-2 text-xs",
@@ -39,18 +36,6 @@ export default function ThemeButton({
     md: 16,
     lg: 20,
   };
-
-  if (!isMounted) {
-    return (
-      <div
-        className={cn(
-          "border-border bg-card inline-flex animate-pulse items-center justify-center rounded-lg border",
-          sizeClasses[size],
-          className
-        )}
-      />
-    );
-  }
 
   const themeIcons = {
     light: Sun,
@@ -68,7 +53,24 @@ export default function ThemeButton({
     theme && themes.includes(theme as Theme) ? (theme as Theme) : "light";
 
   const nextTheme = themes[(themes.indexOf(safeTheme) + 1) % themes.length];
+
   const Icon = themeIcons[safeTheme];
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div
+        className={cn(
+          "border-border bg-card inline-flex animate-pulse items-center justify-center rounded-lg border",
+          sizeClasses[size],
+          className
+        )}
+      />
+    );
+  }
 
   return (
     <motion.button

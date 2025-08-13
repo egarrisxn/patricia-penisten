@@ -7,12 +7,11 @@ export const SITE_URL =
 
 export const SITE_DATA: {
   title: string;
-  farewellTitle: string;
   description: string;
   url: string;
+  farewellTitle: string;
+  farewellDescription: string;
   farewellUrl: string;
-  farewellOG: string;
-  altText: string;
   socialHandle: string;
   website: string;
 } = {
@@ -20,10 +19,9 @@ export const SITE_DATA: {
   farewellTitle: "P. Penisten: The Farewell Tour",
   description:
     "Celebrating the life and legacy of Patricia G. Penisten (1935-2025).",
+  farewellDescription: `Follow along for the "Final Tour" with Patricia Penisten (1935-2025).`,
   url: SITE_URL,
   farewellUrl: `${SITE_URL}/farewell`,
-  farewellOG: `${SITE_URL}/og.png`,
-  altText: "A beautiful image commemorating Patricia G. Penisten's life.",
   socialHandle: "@eg__xo",
   website: "https://egxo.dev",
 };

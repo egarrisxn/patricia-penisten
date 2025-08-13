@@ -1,18 +1,8 @@
-"use client";
+interface ErrorProps {
+  onClick: () => void;
+}
 
-import { useEffect } from "react";
-
-export default function GlobalErrorPage({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  useEffect(() => {
-    console.error(error);
-  }, [error]);
-
+export default function ErrorSection({ onClick }: ErrorProps) {
   return (
     <section className='grid min-h-screen w-full place-items-center'>
       <div className='flex flex-auto flex-col items-center justify-center px-4 text-center sm:flex-row'>
@@ -23,7 +13,7 @@ export default function GlobalErrorPage({
           Seems there is a problem.
         </p>
         <button
-          onClick={() => reset()}
+          onClick={onClick}
           className='text-primary mt-0.5 inline-flex h-8 shrink-0 items-center justify-center px-3 text-lg font-medium whitespace-nowrap underline-offset-4 transition-all hover:underline sm:mt-0 sm:pl-1.5 sm:text-base'
         >
           Try Again

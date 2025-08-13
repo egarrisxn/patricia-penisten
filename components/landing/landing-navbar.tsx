@@ -1,10 +1,18 @@
-import MainNavbar from "@/components/shared/main-navbar";
-import NavLink from "@/components/shared/nav-link";
-import NavLogo from "@/components/shared/nav-logo";
+import { Navbar, NavLink, NavLogo } from "@/components/ui/navbar";
+
+import { NavLinks } from "@/lib/types";
+
+const landingNavigation: NavLinks[] = [
+  { name: "About", href: "#landing-about" },
+  { name: "Timeline", href: "#landing-timeline" },
+  { name: "Photo Gallery", href: "#landing-photogallery" },
+  { name: "Guestbook", href: "#landing-guestbook" },
+  { name: "Farewell Tour", href: "/farewell" },
+];
 
 export default function LandingNavbar() {
   return (
-    <MainNavbar
+    <Navbar
       logo={
         <NavLogo
           primary='Patricia Penisten:'
@@ -13,13 +21,7 @@ export default function LandingNavbar() {
         />
       }
       extraRight={<NavLink href='/farewell' name='Farewell Tour' />}
-      navLinks={[
-        { name: "About", href: "#landing-about" },
-        { name: "Timeline", href: "#landing-timeline" },
-        { name: "Photo Gallery", href: "#landing-photogallery" },
-        { name: "Guestbook", href: "#landing-guestbook" },
-        { name: "Farewell Tour", href: "/farewell" },
-      ]}
+      navLinks={landingNavigation}
       transparentClasses='bg-transparent text-white'
       scrolledClasses='bg-card/90 text-foreground pointer-events-auto shadow-lg backdrop-blur-lg'
     />

@@ -1,6 +1,6 @@
 "use client";
 
-import EntryList from "@/components/landing/entry-list";
+import GuestbookList from "@/components/landing/guestbook-list";
 import { useUserContent } from "@/hooks/use-user-content";
 
 import type { GuestbookEntry } from "@/lib/types";
@@ -15,7 +15,7 @@ export default function LandingGuestbook() {
 
   return (
     <div className='xs:px-4 mx-auto grid px-2 py-8'>
-      <EntryList
+      <GuestbookList
         userEntries={userItems}
         approvedEntries={approvedItems}
         onEntrySubmitted={handleEntrySubmitted}
