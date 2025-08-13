@@ -15,7 +15,7 @@ export default function MainNavbar({
   const scrolled = useScrolled();
   return (
     <header
-      className={`fixed top-0 z-100 w-full transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled ? scrolledClasses : transparentClasses
       }`}
     >

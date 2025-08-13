@@ -156,6 +156,7 @@ export default function FarewellTimeline() {
                         src={item.src || "/placeholder.svg"}
                         alt={item.alt || "Farewell Tour Photo"}
                         fill
+                        sizes='(max-width: 768px) 100vw, 50vw'
                         className='rounded-lg object-cover p-2 md:p-0'
                       />
                     </motion.div>
@@ -208,7 +209,7 @@ export default function FarewellTimeline() {
 
       {/* Dialog Modal */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className='max-w-4xl p-0'>
+        <DialogContent className='bg-card max-w-4xl p-0'>
           {selectedItem && (
             <>
               <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
@@ -216,6 +217,7 @@ export default function FarewellTimeline() {
                   src={selectedItem.src}
                   alt={selectedItem.alt || "Farewell Tour Photo"}
                   fill
+                  sizes='(max-width: 768px) 100vw, 75vw'
                   className='rounded-t-lg object-cover'
                 />
               </div>

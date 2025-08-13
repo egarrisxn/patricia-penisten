@@ -211,18 +211,18 @@ export function Carousel({ slides, onSlideClick }: CarouselProps) {
       {/* Controls */}
       <div className='absolute top-[calc(100%+1rem)] flex w-full justify-center'>
         <button
-          className='mx-2 flex h-10 w-10 rotate-180 items-center justify-center rounded-full border-3 border-transparent bg-neutral-200 transition duration-200 hover:-translate-y-0.5 focus:border-[#6D64F7] focus:outline-none active:translate-y-0.5 dark:bg-neutral-800'
+          className='bg-card focus:border-primary mx-2 flex size-10 rotate-180 items-center justify-center rounded-full border-3 border-transparent transition duration-200 hover:-translate-y-0.5 focus:outline-none active:translate-y-0.5'
           title='Previous Slide'
           onClick={handlePreviousClick}
         >
-          <ArrowRight className='text-neutral-600 dark:text-neutral-200' />
+          <ArrowRight className='tex-foreground' />
         </button>
         <button
-          className='mx-2 flex h-10 w-10 items-center justify-center rounded-full border-3 border-transparent bg-neutral-200 transition duration-200 hover:-translate-y-0.5 focus:border-[#6D64F7] focus:outline-none active:translate-y-0.5 dark:bg-neutral-800'
+          className='bg-card focus:border-primary mx-2 flex size-10 items-center justify-center rounded-full border-3 border-transparent transition duration-200 hover:-translate-y-0.5 focus:outline-none active:translate-y-0.5'
           title='Next Slide'
           onClick={handleNextClick}
         >
-          <ArrowRight className='text-neutral-600 dark:text-neutral-200' />
+          <ArrowRight className='text-foreground' />
         </button>
       </div>
     </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Image from "next/image";
 import { Clock, MessageCircle, User } from "lucide-react";
@@ -64,7 +66,7 @@ export default function ImageCarousel({
 
       {selectedPhoto && (
         <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
-          <DialogContent className='max-w-4xl p-0'>
+          <DialogContent className='bg-card max-w-4xl p-0'>
             <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
               <Image
                 src={selectedPhoto.image_url}
@@ -74,6 +76,7 @@ export default function ImageCarousel({
                   "Uploaded Photo"
                 }
                 fill
+                sizes='(max-width: 768px) 100vw, 75vw'
                 className='rounded-t-lg object-cover'
               />
             </div>
