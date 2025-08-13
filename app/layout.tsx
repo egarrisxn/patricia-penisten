@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { SITE_DATA } from "@/lib/config";
 import { ThemeProvider } from "./_providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { SITE_DATA } from "@/lib/config";
 
 const fontSans = Roboto({
   variable: "--font-sans",

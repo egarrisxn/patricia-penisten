@@ -3,7 +3,7 @@ export const SITE_URL =
     ? "http://localhost:3000"
     : (process?.env?.NEXT_PUBLIC_SITE_URL ??
       process?.env?.NEXT_PUBLIC_VERCEL_URL ??
-      "https://memories-of-patricia.vercel.app");
+      "https://patricia-penisten.com");
 
 export const SITE_DATA: {
   title: string;
@@ -16,8 +16,8 @@ export const SITE_DATA: {
   socialHandle: string;
   website: string;
 } = {
-  title: "Patricia Penisten: A Life Remembered",
-  farewellTitle: "Patricia Penisten: The Farewell Tour",
+  title: "P. Penisten: A Life Remembered",
+  farewellTitle: "P. Penisten: The Farewell Tour",
   description:
     "Celebrating the life and legacy of Patricia G. Penisten (1935-2025).",
   url: SITE_URL,
