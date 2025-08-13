@@ -8,7 +8,7 @@ interface ScrollDownProps {
   ariaLabel?: string;
 }
 
-export function ScrollDown({
+export default function ScrollDown({
   targetId,
   className = "",
   ariaLabel = "Scroll Down",
