@@ -1,11 +1,13 @@
+"use client";
+
 import { type AnchorHTMLAttributes, forwardRef } from "react";
 import Link from "next/link";
 
 export interface NavLinkProps
   extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
-  name: string;
   href: string;
   className?: string;
+  name: string;
 }
 
 const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
@@ -13,12 +15,12 @@ const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
     return (
       <Link
         href={href}
-        className={`group hover:text-primary relative cursor-pointer font-medium tracking-[-0.005em] transition-colors sm:text-sm lg:text-base ${className}`}
+        className={`${className} group hover:text-primary relative cursor-pointer text-sm font-medium tracking-[-0.005em] transition-colors lg:text-base`}
         ref={ref as any}
         {...rest}
       >
         {name}
-        <span className='sm:bg-primary absolute -bottom-0.5 left-0 hidden h-0.5 w-0 transition-all duration-300 group-hover:w-full sm:block'></span>
+        <span className='bg-primary absolute -bottom-0.5 left-0 block h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
       </Link>
     );
   }

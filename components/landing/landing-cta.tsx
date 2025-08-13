@@ -1,10 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import * as motion from "motion/react-client";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
-import { landingCTAData } from "@/lib/data/landing";
+
+import { LandingCTAData } from "@/lib/types";
+
+const landingCTAData: LandingCTAData = {
+  title: "Pat got out there for one final road trip!",
+  body: `They're calling it "The Farewell Tour".`,
+  button: "Check It Out",
+};
 
 export default function LandingCTA() {
   return (
@@ -15,7 +22,7 @@ export default function LandingCTA() {
           initial='hidden'
           whileInView='visible'
           viewport={{ once: true, amount: 0.4 }}
-          className='lg:bg-card mx-auto flex flex-col items-center justify-center gap-8 px-4 py-8 text-center md:gap-10 lg:flex-row lg:rounded-lg lg:shadow-lg xl:max-w-none xl:px-12 xl:py-16'
+          className='lg:bg-card mx-auto flex flex-col items-center justify-center gap-8 px-4 py-8 text-center md:gap-10 lg:flex-row lg:rounded-lg lg:shadow-lg xl:max-w-none xl:px-12 xl:py-16 lg:dark:border'
         >
           <motion.aside
             variants={ITEM_FADE}

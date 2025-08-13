@@ -30,11 +30,9 @@ export interface CardData {
 export interface LandingHeroData {
   name: string;
   lifespan: string;
-  frontSrc: string;
-  backSrc: string;
   backgroundSrc: string;
 }
-export interface LandingAboutCard {
+export interface LandingAboutCardData {
   blurbs: string[];
 }
 

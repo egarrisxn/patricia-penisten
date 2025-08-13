@@ -2,6 +2,7 @@
 
 import EntryList from "@/components/landing/entry-list";
 import { useUserContent } from "@/hooks/use-user-content";
+
 import type { GuestbookEntry } from "@/lib/types";
 
 export default function LandingGuestbook() {

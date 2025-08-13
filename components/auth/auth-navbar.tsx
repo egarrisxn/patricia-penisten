@@ -1,4 +1,5 @@
 import ThemeButton from "@/components/shared/theme-button";
+
 export default function AuthNavbar() {
   return (
     <header className='w-full'>

@@ -8,6 +8,7 @@ import StatCard from "@/components/admin/stat-card";
 import EmptyState from "@/components/admin/empty-state";
 import PendingSection from "@/components/admin/pending";
 import AllSubmissionsSection from "@/components/admin/all-submissions";
+
 import { PhotoEntry, GuestbookEntry } from "@/lib/types";
 
 export default function Dashboard() {

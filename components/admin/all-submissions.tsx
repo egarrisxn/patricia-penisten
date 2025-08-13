@@ -1,5 +1,6 @@
 import PhotoCard from "@/components/admin/photo-card";
 import EntryCard from "@/components/admin/entry-card";
+
 import type { PhotoEntry, GuestbookEntry } from "@/lib/types";
 
 interface AllSubmissionsSectionProps {

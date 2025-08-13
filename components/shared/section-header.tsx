@@ -1,12 +1,16 @@
 import * as motion from "motion/react-client";
 
-interface HeaderProps {
+interface SectionHeaderProps {
   title: string;
   heading: string;
   description: string;
 }
 
-export default function Header({ title, heading, description }: HeaderProps) {
+export default function SectionHeader({
+  title,
+  heading,
+  description,
+}: SectionHeaderProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20, filter: "blur(20px)" }}
@@ -22,9 +26,11 @@ export default function Header({ title, heading, description }: HeaderProps) {
           {heading}
         </h2>
 
-        <p className='xs:text-[0.925rem] text-foreground/80 xs:max-w-md mx-auto mt-7 w-full max-w-sm px-4 text-[0.85rem] leading-normal font-medium italic sm:max-w-lg sm:text-[0.965rem] md:mt-8.5 md:max-w-xl md:text-lg lg:max-w-2xl'>
+        <p className='xs:text-[0.925rem] text-foreground/80 xs:max-w-md mx-auto mt-7 mb-9 w-full max-w-sm px-4 text-[0.85rem] leading-normal font-medium italic sm:max-w-lg sm:text-[0.965rem] md:mt-8.5 md:max-w-xl md:text-lg lg:max-w-2xl'>
           {description}
         </p>
+
+        <hr className='bg-border mx-auto h-0.5 w-1/3' />
       </header>
     </motion.div>
   );

@@ -3,7 +3,15 @@
 import { useEffect, useRef } from "react";
 import { ArrowUp } from "lucide-react";
 
-export default function ScrollUp() {
+interface ScrollUpProps {
+  className?: string;
+  ariaLabel?: string;
+}
+
+export default function ScrollUp({
+  className = "",
+  ariaLabel = "Scroll Up",
+}: ScrollUpProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -36,12 +44,12 @@ export default function ScrollUp() {
   return (
     <button
       ref={buttonRef}
-      onClick={scrollToTop}
       id='toggle-button'
-      className='text-foreground bg-card hover:bg-muted border-border pointer-events-none fixed right-4 bottom-4 z-50 inline-flex size-8 cursor-pointer items-center justify-center rounded-lg border opacity-0 transition-all duration-200 hover:scale-105 active:scale-95 sm:size-10'
-      aria-label='Scroll To Top'
+      onClick={scrollToTop}
+      aria-label={ariaLabel}
+      className={`${className} text-foreground bg-card hover:bg-muted border-border pointer-events-none fixed right-4 bottom-4 z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border opacity-0 transition-all duration-200 hover:scale-105 active:scale-95 md:size-10`}
     >
-      <ArrowUp className='size-4 sm:size-5' />
+      <ArrowUp size={20} />
     </button>
   );
 }

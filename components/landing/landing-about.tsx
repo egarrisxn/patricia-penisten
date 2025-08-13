@@ -2,7 +2,16 @@ import Image from "next/image";
 import * as motion from "motion/react-client";
 import TextRotate from "@/components/shared/text-rotate";
 import { CONTAINER_FADE_SCALE_N_STAGGER, ITEM_FADE } from "@/lib/motion";
-import { landingAboutCard } from "@/lib/data/landing";
+
+import { LandingAboutCardData } from "@/lib/types";
+
+const landingAboutCard: LandingAboutCardData = {
+  blurbs: [
+    `Was born in the heart of Oklahoma and lived a life defined by unwavering love, gentle wisdom, and quiet strength. For 34 years, she shaped young minds as a beloved elementary school teacher, yet her greatest joy was always her family.`,
+    `She cherished life's simple pleasures, such as completing the daily crossword, playing Yahtzee with her husband and grandchildren, tending the garden, or catching up on her favorite daytime soap operas.`,
+    `Her legacy lives on not only in the lessons she taught, but in the unconditional love she shared, leaving a lasting warmth in the hearts of all who knew her.`,
+  ],
+};
 
 export default function LandingAboutCard() {
   return (
@@ -11,7 +20,7 @@ export default function LandingAboutCard() {
       initial='hidden'
       whileInView='visible'
       viewport={{ once: true, amount: 0.2 }}
-      className='lg:bg-card xs:px-4 mx-auto flex w-fit max-w-7xl flex-col gap-y-8 px-2 py-8 lg:grid lg:w-full lg:max-w-5xl lg:grid-cols-[1fr_auto] lg:items-start lg:gap-x-8 lg:gap-y-0 lg:rounded-lg lg:shadow-lg xl:max-w-none xl:px-12 xl:py-16'
+      className='lg:bg-card xs:px-4 mx-auto flex w-fit max-w-7xl flex-col gap-y-8 px-2 py-8 lg:grid lg:w-full lg:max-w-5xl lg:grid-cols-[1fr_auto] lg:items-start lg:gap-x-8 lg:gap-y-0 lg:rounded-lg lg:shadow-lg xl:max-w-none xl:px-12 xl:py-16 lg:dark:border'
     >
       <motion.div
         variants={ITEM_FADE}

@@ -1,7 +1,13 @@
 import NavLogo from "@/components/shared/nav-logo";
-import NavLink from "@/components/ui/nav-link";
+import NavLink from "@/components/shared/nav-link";
 import ThemeButton from "@/components/shared/theme-button";
-import { adminNavigation } from "@/lib/data/admin";
+
+import { NavLinks } from "@/lib/types";
+
+const adminNavigation: NavLinks[] = [
+  { name: "Home Page", href: "/" },
+  { name: "Farewell Tour", href: "/farewell" },
+];
 
 export default function AdminNavbar() {
   return (

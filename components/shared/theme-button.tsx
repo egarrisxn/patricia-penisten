@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { AnimatePresence, motion } from "motion/react";
+import { Sun, Moon, Monitor } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { themeIcons, themeConfigs } from "@/lib/data/themes";
+
 import { Theme, ThemeToggleSize } from "@/lib/types";
 
 interface ThemeToggleProps {
@@ -29,7 +30,7 @@ export default function ThemeButton({
 
   const sizeClasses = {
     sm: "h-8 px-2 text-xs",
-    md: "h-10 px-3 text-sm",
+    md: "size-9 md:size-10",
     lg: "h-12 px-4 text-base",
   };
 
@@ -39,20 +40,41 @@ export default function ThemeButton({
     lg: 20,
   };
 
-  if (!isMounted) return null;
+  if (!isMounted) {
+    return (
+      <div
+        className={cn(
+          "border-border bg-card inline-flex animate-pulse items-center justify-center rounded-lg border",
+          sizeClasses[size],
+          className
+        )}
+      />
+    );
+  }
+
+  const themeIcons = {
+    light: Sun,
+    dark: Moon,
+    system: Monitor,
+  };
+
+  const themeConfigs = {
+    light: { label: "Light", icon: Sun },
+    dark: { label: "Dark", icon: Moon },
+    system: { label: "System", icon: Monitor },
+  };
 
   const safeTheme: Theme =
     theme && themes.includes(theme as Theme) ? (theme as Theme) : "light";
 
   const nextTheme = themes[(themes.indexOf(safeTheme) + 1) % themes.length];
-
   const Icon = themeIcons[safeTheme];
 
   return (
     <motion.button
       onClick={() => setTheme(nextTheme)}
       className={cn(
-        "border-border bg-card text-foreground hover:bg-muted inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95",
+        "border-border bg-card text-foreground hover:bg-muted inline-flex cursor-pointer items-center justify-center rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95",
         sizeClasses[size],
         className
       )}

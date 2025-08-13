@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+
 import type { PhotoEntry } from "@/lib/types";
 
 interface ImageUploadProps {
@@ -118,13 +119,13 @@ export default function ImageUpload({ onPhotoSubmitted }: ImageUploadProps) {
   if (isSubmitted) {
     return (
       <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
+        <div className='bg-card/50 mx-auto mb-4 flex size-24 items-center justify-center rounded-full shadow-lg dark:border'>
           <Check className='size-6 text-green-600 md:size-12' />
         </div>
         <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
           Photo Submitted!
         </div>
-        <div className='text-muted-foreground/90 text-sm tracking-tight'>
+        <div className='text-muted-foreground/90 text-sm tracking-tight md:text-base'>
           Your image is pending approval and will be visible to others once
           reviewed.
         </div>

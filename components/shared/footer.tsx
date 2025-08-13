@@ -1,5 +1,17 @@
 import { Heart } from "lucide-react";
-import { footerData } from "@/lib/data/shared";
+
+import { FooterCard } from "@/lib/types";
+
+const footerData: FooterCard = {
+  title: "In Loving Memory of Patricia G. Penisten",
+  body: "December 22nd, 1935 - June 5th, 2025",
+  textOne: "Made with",
+  textTwo: "by",
+  link: {
+    href: "https://egxo.dev",
+    name: " egxo.dev",
+  },
+};
 
 export default function Footer() {
   return (
@@ -15,7 +27,7 @@ export default function Footer() {
         </div>
         <div className='group flex items-center justify-center space-x-1 text-sm font-semibold tracking-tight text-black sm:text-base dark:text-white'>
           <span>{footerData.textOne}</span>
-          <Heart className='size-4 text-rose-400/90 group-hover:fill-rose-400 group-hover:text-rose-400' />
+          <Heart className='text-primary group-hover:fill-primary/50 group-hover:text-primary size-4' />
           <span>{footerData.textTwo}</span>
           <a
             href={footerData.link.href}

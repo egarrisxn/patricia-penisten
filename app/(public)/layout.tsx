@@ -5,7 +5,9 @@ import Footer from "@/components/shared/footer";
 export default function PubliclLayout({ children }: { children: ReactNode }) {
   return (
     <div className='mx-auto grid w-full overflow-x-hidden'>
-      <main>{children}</main>
+      <main className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
+        {children}
+      </main>
       <ScrollUp />
       <Footer />
     </div>

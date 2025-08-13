@@ -7,21 +7,25 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface PhotoFlipProps {
-  frontSrc: string;
-  backSrc: string;
+  frontSrc?: string;
+  backSrc?: string;
   alt?: string;
   width?: number;
   height?: number;
   quality?: number;
+  priority?: boolean;
+  className?: string;
 }
 
 export const PhotoFlip = ({
-  frontSrc,
-  backSrc,
-  alt = "Photo",
+  frontSrc = "/landing/flip-1.png",
+  backSrc = "/landing/flip-2.png",
+  alt = "Photo Flip",
   width = 300,
   height = 300,
   quality = 100,
+  priority = false,
+  className = "",
 }: PhotoFlipProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [supportsHover, setSupportsHover] = useState(true);
@@ -94,9 +98,10 @@ export const PhotoFlip = ({
           width={width}
           height={height}
           quality={quality}
+          priority={priority}
           className={cn(
-            "absolute inset-0 mx-auto mt-10 size-[85%] object-cover md:mt-5 lg:mt-0 lg:size-full",
-            "[backface-visibility:hidden]"
+            "absolute inset-0 mx-auto object-cover [backface-visibility:hidden]",
+            className
           )}
         />
 
@@ -106,9 +111,10 @@ export const PhotoFlip = ({
           alt={alt}
           width={width}
           height={height}
+          quality={quality}
           className={cn(
-            "absolute inset-0 mx-auto mt-10 size-[85%] object-cover md:mt-5 lg:mt-0 lg:size-full",
-            "[transform:rotateY(180deg)] [backface-visibility:hidden]"
+            "absolute inset-0 mx-auto [transform:rotateY(180deg)] object-cover [backface-visibility:hidden]",
+            className
           )}
         />
       </div>
@@ -220,7 +226,7 @@ export const PhotoFlip = ({
 //           height={height}
 //           quality={quality}
 //           className={cn(
-//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:mr-1 md:size-[75%] lg:mt-0 lg:mr-0 lg:size-full",
+//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:mr-1 md:size-[75%] lg:mt-0 lg:mr-0 ",
 //             "[backface-visibility:hidden]"
 //           )}
 //         />
@@ -232,7 +238,7 @@ export const PhotoFlip = ({
 //           width={width}
 //           height={height}
 //           className={cn(
-//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:ml-1 md:size-[75%] lg:mt-0 lg:ml-0 lg:size-full",
+//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:ml-1 md:size-[75%] lg:mt-0 lg:ml-0 ",
 //             "[transform:rotateY(180deg)] [backface-visibility:hidden]"
 //           )}
 //         />
@@ -311,7 +317,7 @@ export const PhotoFlip = ({
 //           height={height}
 //           quality={quality}
 //           className={cn(
-//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:mr-1 md:size-[75%] lg:mt-0 lg:mr-0 lg:size-full",
+//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:mr-1 md:size-[75%] lg:mt-0 lg:mr-0 ",
 //             "[backface-visibility:hidden]"
 //           )}
 //         />
@@ -323,7 +329,7 @@ export const PhotoFlip = ({
 //           width={width}
 //           height={height}
 //           className={cn(
-//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:ml-1 md:size-[75%] lg:mt-0 lg:ml-0 lg:size-full",
+//             "absolute inset-0 mx-auto mt-14 size-[80%] object-cover md:mt-9.5 md:ml-1 md:size-[75%] lg:mt-0 lg:ml-0 ",
 //             "[transform:rotateY(180deg)] [backface-visibility:hidden]"
 //           )}
 //         />

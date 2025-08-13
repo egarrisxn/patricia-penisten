@@ -30,7 +30,7 @@ export const CONTAINER_FADE_SCALE_N_STAGGER = {
     transition: {
       duration: 0.6,
       staggerChildren: 0.2,
-      delayChildren: 0.4,
+      delayChildren: 0.3,
     },
   },
 };

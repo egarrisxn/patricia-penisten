@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import AuthNavbar from "@/components/auth/auth-navbar";
 
 export default async function AuthLayout({
   children,
@@ -17,5 +18,10 @@ export default async function AuthLayout({
     redirect("/admin");
   }
 
-  return <>{children}</>;
+  return (
+    <div className='grid min-h-dvh w-full grid-rows-[auto_1fr]'>
+      <AuthNavbar />
+      <main>{children}</main>
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-import Header from "@/components/shared/header";
+import SectionHeader from "@/components/shared/section-header";
 
 export default function PageSection({
   id,
@@ -23,7 +23,7 @@ export default function PageSection({
       <div
         className={`${className} mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8`}
       >
-        <Header
+        <SectionHeader
           title={title || ""}
           heading={heading || ""}
           description={description || ""}

@@ -14,54 +14,52 @@ export default function LandingPage() {
     <>
       <ScrollProgress className='top-0' />
       <LandingNavbar />
-      <main className='to-background bg-radial from-blue-100 from-40% dark:from-slate-800'>
-        <section id='landing-hero' className='rounded-b-lg'>
-          <LandingHero />
-        </section>
 
-        <PageSection
-          id='landing-about'
-          title='About Patricia'
-          heading='Her Life, Love, & Legacy'
-          description={`A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched.`}
-        >
-          <LandingAbout />
-        </PageSection>
+      <section id='landing-hero' className='rounded-b-lg'>
+        <LandingHero />
+      </section>
 
-        <PageSection
-          id='landing-timeline'
-          title='Her Story'
-          heading='A Little About The Journey'
-          description={`A timeline walking you through the life of Patricia. From the beginning of her schooling, the life lessons learned in the mix, and so much more.`}
-        >
-          <LandingTimeline />
-        </PageSection>
+      <PageSection
+        id='landing-about'
+        title='About Patricia'
+        heading='Her Life, Love, & Legacy'
+        description={`A tribute to a life beautifully lived, filled with family, faith, and a passion for teaching. We remember the warmth she brought to every life she touched.`}
+      >
+        <LandingAbout />
+      </PageSection>
 
-        <PageSection
-          id='landing-photogallery'
-          title='Photo Gallery'
-          heading='Your Memories in Pictures'
-          description={`A place to share your treasured photos of Patricia. Whether it's a candid moment, a celebration, or a simple smile, your photos help us remember her.`}
-          className='lg:max-w-[92rem]'
-        >
-          <LandingPhotoGallery />
-        </PageSection>
+      <PageSection
+        id='landing-timeline'
+        title='Her Story'
+        heading='A Little About The Journey'
+        description={`A timeline walking you through the life of Patricia. From the beginning of her schooling, the life lessons learned in the mix, and so much more.`}
+      >
+        <LandingTimeline />
+      </PageSection>
 
-        <PageSection
-          id='landing-guestbook'
-          title='Guestbook'
-          heading='Share a Story or Memory'
-          description={`Please sign the guestbook below. Share a favorite story, a message of remembrance, or a moment that stands out in your memory of Patricia.`}
-          className='lg:max-w-[92rem]'
-        >
-          <LandingGuestbook />
-        </PageSection>
+      <PageSection
+        id='landing-photogallery'
+        title='Photo Gallery'
+        heading='Your Memories in Pictures'
+        description={`A place to share your treasured photos of Patricia. Whether it's a candid moment, a celebration, or a simple smile, your photos help us remember her.`}
+        className='lg:max-w-[92rem]'
+      >
+        <LandingPhotoGallery />
+      </PageSection>
 
-        <section id='landing-cta'>
-          <LandingCTA />
-        </section>
-        <br />
-      </main>
+      <PageSection
+        id='landing-guestbook'
+        title='Guestbook'
+        heading='Share a Story or Memory'
+        description={`Please sign the guestbook below. Share a favorite story, a message of remembrance, or a moment that stands out in your memory of Patricia.`}
+        className='lg:max-w-[92rem]'
+      >
+        <LandingGuestbook />
+      </PageSection>
+
+      <section id='landing-cta'>
+        <LandingCTA />
+      </section>
     </>
   );
 }

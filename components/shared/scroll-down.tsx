@@ -21,11 +21,11 @@ export function ScrollDown({
 
   return (
     <button
-      className={`text-foreground bg-card hover:bg-muted border-border z-50 inline-flex size-8 cursor-pointer items-center justify-center rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95 sm:size-10 ${className}`}
       onClick={handleClick}
       aria-label={ariaLabel}
+      className={`${className} text-foreground bg-card hover:bg-muted border-border z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95 md:size-10`}
     >
-      <ArrowDown className='size-4 sm:size-5' />
+      <ArrowDown size={20} />
     </button>
   );
 }

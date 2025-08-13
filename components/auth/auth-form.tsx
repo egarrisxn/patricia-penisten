@@ -116,7 +116,7 @@ export default function AuthForm() {
             <Button
               type='submit'
               disabled={isLoading || !email || !password}
-              className='w-full bg-gradient-to-r from-purple-500/90 to-rose-500/90 text-white/90 shadow-lg hover:from-purple-500 hover:to-rose-500 hover:text-white'
+              className='w-full'
             >
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>

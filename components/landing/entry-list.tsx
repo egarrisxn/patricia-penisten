@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import EntryForm from "@/components/landing/entry-form";
+
 import type { GuestbookEntry } from "@/lib/types";
 
 interface EntryListProps {
@@ -27,13 +28,13 @@ export default function EntryList({
   if (allEntries.length === 0) {
     return (
       <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
+        <div className='bg-card/50 mx-auto mb-4 flex size-24 items-center justify-center rounded-full shadow-lg dark:border'>
           <MessageCircle className='size-6 md:size-12' />
         </div>
         <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
           No Guestbook entries
         </div>
-        <div className='text-muted-foreground/90 text-sm tracking-tight'>
+        <div className='text-muted-foreground/90 text-sm tracking-tight md:text-base'>
           Be the first to add to our guestbook
         </div>
       </div>
@@ -45,7 +46,7 @@ export default function EntryList({
       <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'>
         {allEntries.map((entry) => (
           <div key={`entry-${entry.id}`} className='break-inside-avoid'>
-            <Card className='bg-card/90 w-full border-none shadow-lg'>
+            <Card className='bg-card/90 w-full border-none dark:border'>
               <CardContent className='flex flex-col px-6 pt-4 pb-4'>
                 <div className='flex items-start space-x-4'>
                   <div className='min-w-0 flex-1 flex-col'>

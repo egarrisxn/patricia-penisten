@@ -3,6 +3,7 @@
 import ImageCarousel from "@/components/landing/image-carousel";
 import ImageUpload from "@/components/landing/image-upload";
 import { useUserContent } from "@/hooks/use-user-content";
+
 import type { PhotoEntry } from "@/lib/types";
 
 export default function LandingPhotoGallery() {

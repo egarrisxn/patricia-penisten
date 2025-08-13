@@ -126,7 +126,7 @@ export default function CustomAudioPlayer() {
   };
 
   return (
-    <div className='sm:dark:bg-card/50 xs:w-30 mx-auto w-22 sm:rounded-lg sm:bg-white sm:p-0.5 sm:shadow-lg lg:w-34'>
+    <div className='sm:bg-card xs:w-30 mx-auto w-22 sm:rounded-lg sm:p-0.5 sm:shadow-lg lg:w-34 sm:dark:border'>
       <div className='flex items-center gap-1'>
         <Button
           variant='basic'

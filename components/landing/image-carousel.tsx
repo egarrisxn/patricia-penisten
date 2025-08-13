@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Clock, MessageCircle, User } from "lucide-react";
+import { Carousel } from "@/components/ui/carousel";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Carousel } from "@/components/ui/carousel";
+
 import type { PhotoEntry } from "@/lib/types";
 
 interface ImageCarouselProps {
@@ -44,13 +45,13 @@ export default function ImageCarousel({
   if (allPhotos.length === 0) {
     return (
       <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
-          <MessageCircle className='size-6 md:size-12' />
+        <div className='bg-card/50 mx-auto mb-4 flex size-24 items-center justify-center rounded-full shadow-lg dark:border'>
+          <MessageCircle className='bg-card text-foreground size-6 md:size-12' />
         </div>
         <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
           No Photos Gallery photos
         </div>
-        <div className='text-muted-foreground/90 text-sm tracking-tight'>
+        <div className='text-muted-foreground/90 text-sm tracking-tight md:text-base'>
           Be the first to add a photo memory
         </div>
       </div>
@@ -64,30 +65,35 @@ export default function ImageCarousel({
       {selectedPhoto && (
         <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
           <DialogContent className='max-w-4xl p-0'>
-            <div className='relative flex max-h-[85vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg md:max-h-[80vh]'>
+            <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
               <Image
                 src={selectedPhoto.image_url}
-                alt={selectedPhoto.caption || selectedPhoto.name || "Photo"}
+                alt={
+                  selectedPhoto.caption ||
+                  selectedPhoto.name ||
+                  "Uploaded Photo"
+                }
                 fill
-                className='rounded-t-lg object-contain'
+                className='rounded-t-lg object-cover'
               />
             </div>
+
             <div className='max-h-[15vh] overflow-y-auto px-4 pt-1 pb-4'>
-              <DialogHeader className='mb-2'>
-                <DialogTitle className='text-foreground text-start text-base leading-[1.4] font-medium text-wrap md:mb-1.5 md:text-lg'>
+              <DialogHeader className='mb-3'>
+                <DialogTitle className='text-foreground text-start text-base leading-[1.4] font-medium text-wrap md:text-lg'>
                   {selectedPhoto.caption || "Untitled"}
                 </DialogTitle>
               </DialogHeader>
 
               <div className='flex flex-col gap-1 text-sm'>
                 {selectedPhoto.name && (
-                  <div className='flex items-center gap-1'>
-                    <User className='size-4' />
+                  <div className='flex items-center gap-1.5'>
+                    <User size={16} className='text-accent-foreground' />
                     <p className='w-[80%] text-wrap'>{selectedPhoto.name}</p>
                   </div>
                 )}
-                <div className='flex items-center gap-1'>
-                  <Clock className='size-4' />
+                <div className='flex items-center gap-1.5'>
+                  <Clock size={16} className='text-accent-foreground' />
                   <span>
                     {new Date(selectedPhoto.created_at).toLocaleDateString(
                       "en-US",
