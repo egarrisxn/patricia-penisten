@@ -50,10 +50,10 @@ export default function Section({
   return (
     <section
       id={id}
-      className='mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
+      className='mx-auto grid min-h-screen w-full place-items-center py-16 xl:py-24'
     >
       <div
-        className={`${className} mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8`}
+        className={`${className} mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 xl:px-12`}
       >
         <SectionHeader
           title={title || ""}

@@ -85,10 +85,13 @@ export default function GuestbookForm({
   }
 
   return (
-    <Card className='dark:bg-background xs:aspect-quare xs:py-4 bg-white lg:py-8'>
+    <Card className='xs:aspect-quare xs:py-4 lg:py-8'>
       <CardContent className='flex-1'>
-        <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
-          <div className='flex flex-shrink-0 flex-col gap-2'>
+        <form
+          onSubmit={handleSubmit}
+          className='flex h-full flex-col gap-2 xl:gap-4'
+        >
+          <div className='flex flex-shrink-0 flex-col gap-2 xl:gap-4'>
             <div>
               <Label htmlFor='name' className='text-muted-foreground'>
                 Name (Optional)

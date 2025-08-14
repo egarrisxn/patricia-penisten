@@ -1,19 +1,16 @@
 import { MessageCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import GuestbookForm from "@/components/landing/guestbook-form";
 
 import type { GuestbookEntry } from "@/lib/types";
 
 interface GuestbookListProps {
   approvedEntries: GuestbookEntry[];
   userEntries: GuestbookEntry[];
-  onEntrySubmitted: (entry: GuestbookEntry) => void;
 }
 
 export default function GuestbookList({
   approvedEntries,
   userEntries,
-  onEntrySubmitted,
 }: GuestbookListProps) {
   const allEntries = [
     ...approvedEntries,
@@ -43,10 +40,10 @@ export default function GuestbookList({
 
   return (
     <>
-      <div className='columns-1 gap-6 space-y-6 sm:columns-2 2xl:columns-3'>
+      <div className='w-full columns-1 gap-6 space-y-6 xl:columns-2 xl:gap-8 xl:space-y-8 2xl:columns-3'>
         {allEntries.map((entry) => (
           <div key={`entry-${entry.id}`} className='break-inside-avoid'>
-            <Card className='bg-card/90 w-full border-none dark:border'>
+            <Card className='bg-card xs:max-w-md w-full max-w-sm border-none md:max-w-xl xl:max-w-lg 2xl:max-w-md dark:border'>
               <CardContent className='flex flex-col px-6 pt-4 pb-4'>
                 <div className='flex items-start space-x-4'>
                   <div className='min-w-0 flex-1 flex-col'>
@@ -78,7 +75,7 @@ export default function GuestbookList({
                         </p>
                       </div>
                     </div>
-                    <p className='grow pt-4 font-serif text-[0.925rem] leading-[1.45] text-black italic md:text-base md:leading-normal 2xl:text-lg 2xl:tracking-[-0.005em] dark:text-white'>
+                    <p className='grow pt-4 font-serif text-[0.925rem] leading-[1.45] break-words text-black italic md:text-base md:leading-normal 2xl:text-lg 2xl:tracking-[-0.005em] dark:text-white'>
                       <q>{entry.message}</q>
                     </p>
                   </div>
@@ -87,7 +84,6 @@ export default function GuestbookList({
             </Card>
           </div>
         ))}
-        <GuestbookForm onEntrySubmitted={onEntrySubmitted} />
       </div>
     </>
   );

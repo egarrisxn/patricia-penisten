@@ -15,7 +15,7 @@ export default function LandingPhotoGallery() {
   };
 
   return (
-    <div className='xs:px-4 flex flex-col items-center gap-12 px-2 py-8'>
+    <div className='xs:px-4 flex flex-col items-center gap-12 px-2 pt-8'>
       <PhotoCarousel userPhotos={userItems} approvedPhotos={approvedItems} />
       <div className='mt-10 w-full max-w-xl'>
         <PhotoUpload onPhotoSubmitted={handlePhotoSubmitted} />

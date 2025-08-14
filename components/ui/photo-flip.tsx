@@ -18,8 +18,8 @@ interface PhotoFlipProps {
 }
 
 export const PhotoFlip = ({
-  frontSrc = "/landing/flip-1.png",
-  backSrc = "/landing/flip-2.png",
+  frontSrc = "/landing/flip-front.png",
+  backSrc = "/landing/flip-back.png",
   alt = "Photo Flip",
   width = 300,
   height = 300,

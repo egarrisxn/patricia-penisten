@@ -33,7 +33,7 @@ interface NavbarProps {
 
 const NavLogo = ({
   href = "/",
-  iconSrc = "/nav-icon.svg",
+  iconSrc = "/nav-icon.png",
   imgAlt = "Navbar Logo",
   primary,
   secondary,
