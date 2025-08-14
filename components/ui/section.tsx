@@ -15,18 +15,18 @@ const SectionHeader = ({ title, heading, description }: SectionHeaderProps) => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <header className='mx-auto max-w-3xl pb-12 text-center md:pb-16 2xl:pb-20'>
-        <h1 className='text-primary xs:text-base text-[0.9rem] leading-normal font-bold tracking-[0.015em] uppercase md:text-xl'>
+        <h1 className='text-[0.9rem] leading-normal font-bold tracking-[0.015em] text-primary uppercase xs:text-base md:text-xl'>
           {title}
         </h1>
-        <h2 className='xs:text-[1.7rem] mt-5.5 px-4 font-serif text-[1.5rem] leading-[1.3] font-bold tracking-tight sm:text-[2rem] md:mt-8 md:text-4xl md:tracking-normal lg:text-5xl lg:leading-10'>
+        <h2 className='mt-5.5 px-4 font-serif text-[1.5rem] leading-[1.3] font-bold tracking-tight xs:text-[1.7rem] sm:text-[2rem] md:mt-8 md:text-4xl md:tracking-normal lg:text-5xl lg:leading-10'>
           {heading}
         </h2>
 
-        <p className='xs:text-[0.925rem] text-foreground/80 xs:max-w-md mx-auto mt-7 mb-9 w-full max-w-sm px-4 text-[0.85rem] leading-normal font-medium italic sm:max-w-lg sm:text-[0.965rem] md:mt-8.5 md:max-w-xl md:text-lg lg:max-w-2xl'>
+        <p className='mx-auto mt-7 mb-9 w-full max-w-sm px-4 text-[0.85rem] leading-normal font-medium text-foreground/80 italic xs:max-w-md xs:text-[0.925rem] sm:max-w-lg sm:text-[0.965rem] md:mt-8.5 md:max-w-xl md:text-lg lg:max-w-2xl'>
           {description}
         </p>
 
-        <hr className='bg-border mx-auto h-0.5 w-1/3' />
+        <hr className='mx-auto h-0.5 w-1/3 bg-border' />
       </header>
     </motion.div>
   );

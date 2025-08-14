@@ -64,7 +64,7 @@ export default function ThemeButton({
     return (
       <div
         className={cn(
-          "border-border bg-card inline-flex animate-pulse items-center justify-center rounded-lg border",
+          "inline-flex animate-pulse items-center justify-center rounded-lg border border-border bg-card",
           sizeClasses[size],
           className
         )}
@@ -76,7 +76,7 @@ export default function ThemeButton({
     <motion.button
       onClick={() => setTheme(nextTheme)}
       className={cn(
-        "border-border bg-card text-foreground hover:bg-muted inline-flex cursor-pointer items-center justify-center rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95",
+        "inline-flex cursor-pointer items-center justify-center rounded-lg border border-border bg-card text-foreground transition-all duration-200 hover:scale-105 hover:bg-muted active:scale-95",
         sizeClasses[size],
         className
       )}

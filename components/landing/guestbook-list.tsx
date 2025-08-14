@@ -1,37 +1,53 @@
+"use client";
+
+import { useState } from "react";
 import { MessageCircle } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import GuestbookCard from "@/components/landing/guestbook-card";
+import FlagAdmin from "@/components/shared/flag-admin";
 
 import type { GuestbookEntry } from "@/lib/types";
 
 interface GuestbookListProps {
-  approvedEntries: GuestbookEntry[];
   userEntries: GuestbookEntry[];
+  approvedEntries: GuestbookEntry[];
 }
 
 export default function GuestbookList({
-  approvedEntries,
   userEntries,
+  approvedEntries,
 }: GuestbookListProps) {
   const allEntries = [
-    ...approvedEntries,
-    ...userEntries.filter(
-      (e) =>
-        e.status === "pending" && !approvedEntries.some((ae) => ae.id === e.id)
+    ...userEntries.filter((entry) => entry.status !== "denied"),
+    ...approvedEntries.filter(
+      (entry) =>
+        entry.status === "approved" &&
+        !userEntries.some((userEntry) => userEntry.id === entry.id)
     ),
   ];
 
-  const isPending = (status: string) => status === "pending";
+  const [selectedEntry, setSelectedEntry] = useState<GuestbookEntry | null>(
+    null
+  );
+
+  const openDialog = (entry: GuestbookEntry) => setSelectedEntry(entry);
+  const closeDialog = () => setSelectedEntry(null);
 
   if (allEntries.length === 0) {
     return (
       <div className='pt-20 pb-24 text-center'>
-        <div className='bg-card/50 mx-auto mb-4 flex size-24 items-center justify-center rounded-full shadow-lg dark:border'>
+        <div className='mx-auto mb-4 flex items-center justify-center'>
           <MessageCircle className='size-6 md:size-12' />
         </div>
-        <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
           No Guestbook entries
         </div>
-        <div className='text-muted-foreground/90 text-sm tracking-tight md:text-base'>
+        <div className='text-sm tracking-tight text-muted-foreground/90 md:text-base'>
           Be the first to add to our guestbook
         </div>
       </div>
@@ -43,48 +59,61 @@ export default function GuestbookList({
       <div className='w-full columns-1 gap-6 space-y-6 xl:columns-2 xl:gap-8 xl:space-y-8 2xl:columns-3'>
         {allEntries.map((entry) => (
           <div key={`entry-${entry.id}`} className='break-inside-avoid'>
-            <Card className='bg-card xs:max-w-md w-full max-w-sm border-none md:max-w-xl xl:max-w-lg 2xl:max-w-md dark:border'>
-              <CardContent className='flex flex-col px-6 pt-4 pb-4'>
-                <div className='flex items-start space-x-4'>
-                  <div className='min-w-0 flex-1 flex-col'>
-                    <div className='mb-1 flex items-start justify-between'>
-                      {isPending(entry.status) && (
-                        <div className='absolute top-3 left-3 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
-                          <div className='bg-primary mb-[1.5px] size-2 animate-pulse rounded-full md:size-[8.5px] 2xl:size-2.5'></div>{" "}
-                          <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
-                            Pending
-                          </div>
-                        </div>
-                      )}
-                      <time className='text-muted-foreground absolute top-3 right-3 text-xs font-medium md:text-[0.825rem] 2xl:text-sm'>
-                        {new Date(entry.created_at).toLocaleDateString(
-                          "en-US",
-                          {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          }
-                        )}
-                      </time>
-                      <div>
-                        <h4 className='mb-1.5 text-base leading-none font-medium md:text-lg 2xl:mb-2 2xl:text-[1.2rem] 2xl:tracking-[-0.0275em]'>
-                          {entry.name || "Anonymous"}
-                        </h4>
-                        <p className='text-primary text-[0.825rem] leading-none md:text-sm 2xl:text-base 2xl:tracking-[-0.0275em]'>
-                          {entry.relationship || "Unknown"}
-                        </p>
-                      </div>
-                    </div>
-                    <p className='grow pt-4 font-serif text-[0.925rem] leading-[1.45] break-words text-black italic md:text-base md:leading-normal 2xl:text-lg 2xl:tracking-[-0.005em] dark:text-white'>
-                      <q>{entry.message}</q>
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <GuestbookCard entry={entry} onClick={() => openDialog(entry)} />
           </div>
         ))}
       </div>
+
+      {selectedEntry && (
+        <Dialog open={selectedEntry !== null} onOpenChange={closeDialog}>
+          <DialogContent className='max-w-2xl bg-card p-0'>
+            <div className='relative flex flex-col py-4 pr-5 pl-6'>
+              <time className='text-xs text-muted-foreground'>
+                {new Date(selectedEntry.created_at).toLocaleDateString(
+                  "en-US",
+                  {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }
+                )}
+              </time>
+              <DialogHeader className='gap-0 pt-2 pr-1 pb-2.5 text-start'>
+                <DialogTitle className='pb-1.5 text-lg leading-none font-medium'>
+                  {selectedEntry.name || "Anonymous"}
+                </DialogTitle>
+                {selectedEntry.relationship && (
+                  <p className='text-xs leading-none text-primary'>
+                    {selectedEntry.relationship}
+                  </p>
+                )}
+              </DialogHeader>
+
+              <p className='pr-1 pb-2 font-serif text-base text-black italic dark:text-white'>
+                <q>{selectedEntry.message}</q>
+              </p>
+
+              {selectedEntry.status === "pending" && (
+                <div className='flex flex-row items-center justify-end gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
+                  <div className='mb-[1.5px] size-2 animate-pulse rounded-full bg-primary md:size-[8.5px] 2xl:size-2.5'></div>
+                  <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
+                    Pending
+                  </div>
+                </div>
+              )}
+              {selectedEntry.status === "approved" && (
+                <div className='flex justify-end'>
+                  <FlagAdmin
+                    itemId={selectedEntry.id}
+                    table='entries'
+                    initiallyFlagged={selectedEntry.flagged}
+                  />
+                </div>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 }

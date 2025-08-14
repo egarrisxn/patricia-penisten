@@ -23,7 +23,7 @@ export default function ScrollDown({
     <button
       onClick={handleClick}
       aria-label={ariaLabel}
-      className={`${className} text-foreground bg-card hover:bg-muted border-border z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border transition-all duration-200 hover:scale-105 active:scale-95 md:size-10`}
+      className={`${className} z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border border-border bg-card text-foreground transition-all duration-200 hover:scale-105 hover:bg-muted active:scale-95 md:size-10`}
     >
       <ArrowDown size={20} />
     </button>

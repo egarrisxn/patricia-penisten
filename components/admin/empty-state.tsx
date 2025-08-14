@@ -3,8 +3,8 @@ import { Users } from "lucide-react";
 export default function EmptyState() {
   return (
     <div className='py-12 text-center'>
-      <Users className='text-muted-foreground/70 mx-auto mb-4 size-16' />
-      <h3 className='text-accent-foreground mb-2 text-lg font-semibold'>
+      <Users className='mx-auto mb-4 size-16 text-muted-foreground/70' />
+      <h3 className='mb-2 text-lg font-semibold text-accent-foreground'>
         No pending submissions
       </h3>
       <p className='text-muted-foreground/90'>

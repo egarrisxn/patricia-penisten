@@ -65,12 +65,12 @@ const NavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
     return (
       <Link
         href={href}
-        className={`group hover:text-primary relative cursor-pointer text-sm font-medium tracking-[-0.005em] transition-colors lg:text-base ${className || ""}`}
+        className={`group relative cursor-pointer text-sm font-medium tracking-[-0.005em] transition-colors hover:text-primary lg:text-base ${className || ""}`}
         ref={ref}
         {...rest}
       >
         {name}
-        <span className='bg-primary absolute -bottom-0.5 left-0 block h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
+        <span className='absolute -bottom-0.5 left-0 block h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full'></span>
       </Link>
     );
   }

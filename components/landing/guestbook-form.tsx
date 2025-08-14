@@ -73,10 +73,10 @@ export default function GuestbookForm({
         <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
           <Check className='size-6 text-green-600 md:size-12' />
         </div>
-        <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
           Entry Submitted!
         </div>
-        <div className='text-muted-foreground/90 text-sm tracking-tight'>
+        <div className='text-sm tracking-tight text-muted-foreground/90'>
           Your message is pending approval and will be visible to others once
           reviewed.
         </div>
@@ -85,7 +85,7 @@ export default function GuestbookForm({
   }
 
   return (
-    <Card className='xs:aspect-quare xs:py-4 lg:py-8'>
+    <Card className='xs:py-4 lg:py-8'>
       <CardContent className='flex-1'>
         <form
           onSubmit={handleSubmit}
@@ -133,7 +133,7 @@ export default function GuestbookForm({
                 placeholder='You and your light will be missed.'
                 required
               />
-              <div className='text-muted-foreground text-right text-xs'>
+              <div className='text-right text-xs text-muted-foreground'>
                 {message.length}/500
               </div>
             </div>

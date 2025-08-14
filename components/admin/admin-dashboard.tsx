@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Clock, Heart, Image as ImageIcon } from "lucide-react";
+import { Clock, FileWarning, Heart, Image as ImageIcon } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import StatCard from "@/components/admin/stat-card";
 import EmptyState from "@/components/admin/empty-state";
 import PendingSection from "@/components/admin/pending";
 import AllSubmissionsSection from "@/components/admin/all-submissions";
+import FlaggedSection from "@/components/admin/flagged";
 
 import { PhotoEntry, GuestbookEntry } from "@/lib/types";
 
@@ -16,6 +17,8 @@ export default function Dashboard() {
   const [pendingEntries, setPendingEntries] = useState<GuestbookEntry[]>([]);
   const [allPhotos, setAllPhotos] = useState<PhotoEntry[]>([]);
   const [allEntries, setAllEntries] = useState<GuestbookEntry[]>([]);
+  const [flaggedPhotos, setFlaggedPhotos] = useState<PhotoEntry[]>([]);
+  const [flaggedEntries, setFlaggedEntries] = useState<GuestbookEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const supabase = createClient();
 
@@ -26,6 +29,8 @@ export default function Dashboard() {
         pendingEntriesResult,
         allPhotosResult,
         allEntriesResult,
+        flaggedPhotosResult,
+        flaggedEntriesResult,
       ] = await Promise.all([
         supabase
           .from("photos")
@@ -45,6 +50,16 @@ export default function Dashboard() {
           .from("entries")
           .select("*")
           .order("created_at", { ascending: false }),
+        supabase
+          .from("photos")
+          .select("*")
+          .eq("flagged", true)
+          .order("created_at", { ascending: false }),
+        supabase
+          .from("entries")
+          .select("*")
+          .eq("flagged", true)
+          .order("created_at", { ascending: false }),
       ]);
 
       if (pendingPhotosResult.data) setPendingPhotos(pendingPhotosResult.data);
@@ -52,6 +67,9 @@ export default function Dashboard() {
         setPendingEntries(pendingEntriesResult.data);
       if (allPhotosResult.data) setAllPhotos(allPhotosResult.data);
       if (allEntriesResult.data) setAllEntries(allEntriesResult.data);
+      if (flaggedPhotosResult.data) setFlaggedPhotos(flaggedPhotosResult.data);
+      if (flaggedEntriesResult.data)
+        setFlaggedEntries(flaggedEntriesResult.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     } finally {
@@ -142,7 +160,7 @@ export default function Dashboard() {
 
   return (
     <div className='p-4'>
-      <div className='mb-6 grid grid-cols-2 gap-4 md:mb-8 md:grid-cols-4 md:gap-6'>
+      <div className='mb-6 grid grid-cols-2 gap-4 md:mb-8 md:grid-cols-3 md:gap-6 xl:grid-cols-6'>
         <StatCard
           icon={<Clock />}
           className='text-yellow-500'
@@ -156,6 +174,18 @@ export default function Dashboard() {
           count={pendingEntries.length}
         />
         <StatCard
+          icon={<FileWarning />}
+          className='text-red-500'
+          label='Flagged Photos'
+          count={flaggedPhotos.length}
+        />
+        <StatCard
+          icon={<FileWarning />}
+          className='text-red-500'
+          label='Flagged Entries'
+          count={flaggedEntries.length}
+        />
+        <StatCard
           icon={<ImageIcon />}
           className='text-blue-500'
           label='Total Photos'
@@ -163,18 +193,23 @@ export default function Dashboard() {
         />
         <StatCard
           icon={<Heart />}
-          className='text-red-500'
+          className='text-blue-500'
           label='Total Entries'
           count={allEntries.length}
         />
       </div>
 
       <Tabs defaultValue='pending' className='w-full'>
-        <TabsList className='mb-8 grid w-full grid-cols-2'>
+        <TabsList className='mb-8 grid w-full grid-cols-3'>
           <TabsTrigger value='pending'>
-            Pending Approval ({pendingPhotos.length + pendingEntries.length})
+            Pending ({pendingPhotos.length + pendingEntries.length})
           </TabsTrigger>
-          <TabsTrigger value='all'>All Submissions</TabsTrigger>
+          <TabsTrigger value='flagged'>
+            Flagged ({flaggedPhotos.length + flaggedEntries.length})
+          </TabsTrigger>
+          <TabsTrigger value='all'>
+            All ({allPhotos.length + allEntries.length})
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value='pending'>
@@ -188,6 +223,15 @@ export default function Dashboard() {
               onEntryAction={handleEntryAction}
             />
           )}
+        </TabsContent>
+
+        <TabsContent value='flagged'>
+          <FlaggedSection
+            flaggedPhotos={flaggedPhotos}
+            flaggedEntries={flaggedEntries}
+            onPhotoAction={handlePhotoAction}
+            onEntryAction={handleEntryAction}
+          />
         </TabsContent>
 
         <TabsContent value='all'>

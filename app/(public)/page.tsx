@@ -56,7 +56,7 @@ export default function LandingPage() {
         <LandingGuestbook />
       </Section>
 
-      <section id='landing-cta' className='pb-32'>
+      <section id='landing-cta' className='mt-24 bg-accent dark:bg-background'>
         <LandingCTA />
       </section>
     </>

@@ -47,7 +47,7 @@ export default function ScrollUp({
       id='toggle-button'
       onClick={scrollToTop}
       aria-label={ariaLabel}
-      className={`${className} text-foreground bg-card hover:bg-muted border-border pointer-events-none fixed right-4 bottom-4 z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border opacity-0 transition-all duration-200 hover:scale-105 active:scale-95 md:size-10`}
+      className={`${className} pointer-events-none fixed right-4 bottom-4 z-50 inline-flex size-9 cursor-pointer items-center justify-center rounded-lg border border-border bg-card text-foreground opacity-0 transition-all duration-200 hover:scale-105 hover:bg-muted active:scale-95 md:size-10`}
     >
       <ArrowUp size={20} />
     </button>

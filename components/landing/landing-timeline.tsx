@@ -1,81 +1,12 @@
 import * as motion from "motion/react-client";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  iconMap,
-  LandingTimelineCards,
-  LandingTimelineData,
-} from "@/lib/types";
+import { landingTimelineCards, landingTimelineData } from "@/lib/data/landing";
 
-const landingTimelineCards: LandingTimelineCards[] = [
-  {
-    icon: "Star",
-    title: "Legacy of a Teacher",
-    body: `For one-third of her life, Pat dedicated her life to teaching at Douglass Elementary School. She touched the lives of hundreds of students, always believing in their potential and inspiring them to achieve their dreams. Her classroom was a place of wonder, learning, and unconditional support.`,
-  },
-  {
-    icon: "HeartHandshake",
-    title: "Grandma to All",
-    body: "She lived to be a grandma in every sense of the word. With an open-door policy and a heart full of love, she raised countless children and was a beloved figure to friends, relatives, and even her own kids. While she was a great mother, she truly excelled at being a grandma, and her memory lives on as the most amazing woman to so many.",
-  },
-  {
-    icon: "BookMarked",
-    title: "A Life Remembered",
-    body: "The timeline here is a year-by-year look at the milestones that defined Patricia's journey. For more details on her life, you can view her",
-    text: "courtesy of the Lawton Ritter Gray Funeral Home.",
-    link: {
-      href: "https://www.grayfuneral.com/obituaries/Patricia-G-Penisten?obId=42802528",
-      name: "Official Obituary",
-    },
-  },
-];
-
-const landingTimelineData: LandingTimelineData[] = [
-  {
-    year: "1935",
-    title: "Born in Oklahoma",
-    body: "Born on December 22nd to Hugh and Ettie Irene (Tisdale) Blevins on the family farm near Connerville and Mill Creek.",
-  },
-  {
-    year: "1940s",
-    title: "Childhood in Connerville",
-    body: "Grew up in Connerville, attending Tishomingo Schools and helping on the family farm.",
-  },
-  {
-    year: "1956",
-    title: "Married John Penisten",
-    body: "Married in Ada, Oklahoma and began a life together that would span decades and states.",
-  },
-  {
-    year: "1950s - 1970s",
-    title: "Early Family Life",
-    body: "Lived in Ada, moved to Douglass, Wyoming, and eventually settled in Lawton, Oklahoma by 1967.",
-  },
-  {
-    year: "1970s",
-    title: "Pursued Higher Education",
-    body: "Earned her Bachelor's Degree in Elementary Education from Cameron University while raising her family.",
-  },
-  {
-    year: "1970s - 2000s",
-    title: "Teaching Career at Douglass Elementary",
-    body: "Devoted 34 years to educating young minds with love, patience, and dedication.",
-  },
-  {
-    year: "2000s",
-    title: "Retirement",
-    body: "Retired after decades of service, leaving behind a lasting legacy of learning and care.",
-  },
-  {
-    year: "2000s - 2020s",
-    title: "Time with Family",
-    body: "Loved shopping, spending time with family, and especially doting on her grandchildren.",
-  },
-];
+import { iconMap } from "@/lib/types";
 
 export default function LandingTimeline() {
   return (
-    <div className='mx-auto grid w-full max-w-[36rem] items-start gap-16 pt-8 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16'>
-      {/* Left Column: Timeline Cards */}
+    <div className='mx-auto grid w-full max-w-[36rem] items-start gap-16 pt-8 pb-2 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16'>
       <div className='space-y-12'>
         {landingTimelineCards.map((card, i) => {
           const IconComponent = card.icon ? iconMap[card.icon] : null;
@@ -87,17 +18,17 @@ export default function LandingTimeline() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15 * i }}
             >
-              <Card className='lg:bg-card rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:px-4 lg:py-8 lg:shadow-lg xl:py-12 lg:dark:border'>
+              <Card className='rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:bg-card lg:px-4 lg:py-8 lg:shadow-lg xl:py-12 lg:dark:border'>
                 <div className='px-2 lg:px-4 xl:px-6'>
                   <h3 className='flex items-center text-lg leading-none font-extrabold md:text-xl 2xl:text-2xl'>
                     {IconComponent && (
-                      <IconComponent className='xs:size-6 text-primary fill-primary/50 mr-2.5 size-5 md:size-7' />
+                      <IconComponent className='mr-2.5 size-5 fill-primary/50 text-primary xs:size-6 md:size-7' />
                     )}
                     {card.title}
                   </h3>
                 </div>
                 <CardContent className='space-y-6 px-2 lg:px-4 xl:px-6'>
-                  <p className='xs:text-base text-[0.95rem] md:text-[1.1rem] 2xl:text-lg'>
+                  <p className='text-[0.95rem] xs:text-base md:text-[1.1rem] 2xl:text-lg'>
                     {card.body}
                     {card.link && (
                       <>
@@ -105,10 +36,10 @@ export default function LandingTimeline() {
                           href={card.link.href}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='group text-accent-foreground relative mr-0.5 ml-1 cursor-pointer font-medium whitespace-nowrap transition-colors'
+                          className='group relative mr-0.5 ml-1 cursor-pointer font-medium whitespace-nowrap text-accent-foreground transition-colors'
                         >
                           {card.link.name}
-                          <span className='bg-accent-foreground absolute -bottom-0.5 left-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full'></span>
+                          <span className='absolute -bottom-0.5 left-0 h-0.5 w-0 bg-accent-foreground transition-all duration-300 group-hover:w-full'></span>
                         </a>{" "}
                         {card.text}
                       </>
@@ -121,7 +52,6 @@ export default function LandingTimeline() {
         })}
       </div>
 
-      {/* Right Column: Year-by-Year Timeline */}
       <div className='space-y-6 px-2 lg:px-0'>
         <motion.h4
           initial={{ opacity: 0, y: 20 }}
@@ -143,13 +73,13 @@ export default function LandingTimeline() {
               transition={{ duration: 0.6, delay: 0.1 * i }}
               className='flex items-start space-x-3 md:space-x-4'
             >
-              <div className='from-primary flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br to-amber-500 shadow-lg md:size-20'>
+              <div className='flex size-16 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-amber-500 shadow-lg md:size-20'>
                 <span className='mx-auto flex text-center text-xs font-bold text-white md:text-sm'>
                   {event.year}
                 </span>
               </div>
               <div className='flex-1'>
-                <h5 className='text-card-foreground text-[0.95rem] leading-snug font-medium tracking-tight md:text-xl md:tracking-normal'>
+                <h5 className='text-[0.95rem] leading-snug font-medium tracking-tight text-card-foreground md:text-xl md:tracking-normal'>
                   {event.title}
                 </h5>
                 <p className='text-[0.85rem] tracking-tight md:text-lg md:leading-snug md:tracking-normal'>

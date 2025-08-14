@@ -8,15 +8,17 @@ import { PhotoEntry } from "@/lib/types";
 
 interface PhotoEntryCardProps {
   photo: PhotoEntry;
-  isPending: boolean;
-  onApprove: () => void;
-  onDeny: () => void;
+  isPending?: boolean;
+  flagged?: boolean;
+  onApprove?: () => void;
+  onDeny?: () => void;
   onDelete: () => void;
 }
 
 export default function PhotoCard({
   photo,
-  isPending,
+  isPending = false,
+  flagged = false,
   onApprove,
   onDeny,
   onDelete,
@@ -34,29 +36,32 @@ export default function PhotoCard({
       </div>
       <CardContent className='p-3'>
         {photo.name && (
-          <p className='text-accent-foreground mb-1 font-medium'>
+          <p className='mb-1 font-medium text-accent-foreground'>
             By {photo.name}
           </p>
         )}
         {photo.caption && (
-          <p className='text-accent-foreground/90 mb-3 text-sm'>
+          <p className='mb-3 text-sm text-accent-foreground/90'>
             {photo.caption}
           </p>
         )}
-        <p className='text-muted-foreground mb-3 text-xs'>
+        <p className='mb-3 text-xs text-muted-foreground'>
           {new Date(photo.created_at).toLocaleDateString()} • IP:{" "}
           {photo.submitted_by_ip}
         </p>
 
-        {isPending ? (
+        {flagged ? (
+          <Button size='sm' variant='destructive' onClick={onDelete}>
+            <Trash2 className='size-4' /> Delete
+          </Button>
+        ) : isPending ? (
           <div className='flex gap-2'>
             <Button
               size='sm'
               onClick={onApprove}
               className='flex-1 bg-green-600 text-white hover:bg-green-700'
             >
-              <Check className='mr-1 size-4' />
-              Approve
+              <Check className='mr-1 size-4' /> Approve
             </Button>
             <Button
               size='sm'
@@ -64,8 +69,7 @@ export default function PhotoCard({
               onClick={onDeny}
               className='flex-1'
             >
-              <X className='mr-1 size-4' />
-              Deny
+              <X className='mr-1 size-4' /> Deny
             </Button>
             <Button size='sm' variant='destructive' onClick={onDelete}>
               <Trash2 className='size-4' />

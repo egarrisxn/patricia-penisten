@@ -46,11 +46,11 @@ export default function AuthForm() {
       <Card className='w-full max-w-md'>
         <CardHeader className='text-center'>
           <div className='mb-4 flex justify-center'>
-            <div className='bg-accent flex size-16 items-center justify-center rounded-full'>
+            <div className='flex size-16 items-center justify-center rounded-full bg-accent'>
               <Shield className='size-8 text-blue-500' />
             </div>
           </div>
-          <CardTitle className='text-accent-foreground text-2xl font-bold'>
+          <CardTitle className='text-2xl font-bold text-accent-foreground'>
             Admin Login
           </CardTitle>
           <p className='text-accent-foreground/90'>
@@ -101,7 +101,7 @@ export default function AuthForm() {
                 <button
                   type='button'
                   onClick={() => setShowPassword(!showPassword)}
-                  className='text-accent-foreground/70 hover:text-accent-foreground/90 absolute top-1/2 right-3 -translate-y-1/2 transform'
+                  className='absolute top-1/2 right-3 -translate-y-1/2 transform text-accent-foreground/70 hover:text-accent-foreground/90'
                   disabled={isLoading}
                 >
                   {showPassword ? (

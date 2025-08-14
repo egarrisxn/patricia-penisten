@@ -1,10 +1,5 @@
 import { Navbar, NavLogo } from "@/components/ui/navbar";
-import { NavLinks } from "@/lib/types";
-
-const adminNavigation: NavLinks[] = [
-  { name: "Home Page", href: "/" },
-  { name: "Farewell Tour", href: "/farewell" },
-];
+import { adminNavigation } from "@/lib/data/admin";
 
 export default function AdminNavbar() {
   return (

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,78 +10,10 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { farewellTimelineItems, farewellQuote } from "@/lib/data/farewell";
 
 import { FarewellTimelineItems } from "@/lib/types";
-
-const farewellTimelineItems: FarewellTimelineItems[] = [
-  {
-    id: 1,
-    time: "Pre Trip",
-    title: "Pat & Judi",
-    body: "Pat spent time with Judi just a few days before her final journey began together with family.",
-    src: "/farewell/gma-judi.png",
-    alt: "Pat & Judi",
-  },
-  {
-    id: 2,
-    time: "The Beginning",
-    title: "Pat Solo",
-    body: "She settled in with Judi by her side, ready to begin her final road trip with peace and grace.",
-    src: "/farewell/gma-solo.png",
-    alt: "Pat Solo",
-  },
-  {
-    id: 3,
-    time: "First Stop",
-    title: "Pat & Ettie",
-    body: "Her first visit was with her mother Ettie, where they shared a sweet and quiet morning moment.",
-    src: "/farewell/gma-ettie.png",
-    alt: "Pat & Ettie",
-  },
-  {
-    id: 4,
-    time: "Second Stop",
-    title: "Pat & Hugh",
-    body: "Next, she visited her father Hugh, who no doubt welcomed her with pride and warmth in spirit.",
-    src: "/farewell/gma-hugh.png",
-    alt: "Pat & Hugh",
-  },
-
-  {
-    id: 5,
-    time: "Third Stop",
-    title: "Pat, Jimmy, & Randi",
-    body: "She made a stop to visited her children Jimmy and Randi for hugs, laughter, and reflection.",
-    src: "/farewell/gma-jimmy.png",
-    alt: "Pat, Jimmy, & Randi",
-  },
-  {
-    id: 6,
-    time: "Fourth Stop",
-    title: "Pat & Chuck",
-    body: "Just a few feet over was her brother-in-law Chuck, thankful for the time they had to talk and connect.",
-    src: "/farewell/gma-chuck.png",
-    alt: "Pat & Chuck",
-  },
-  {
-    id: 7,
-    time: "Final Goodbye",
-    title: "Pat, Chuck, Jimmy, & Randi",
-    body: "Her final visit brought time with Chuck, Jimmy, and Randi. Her journey could now come to rest.",
-    src: "/farewell/gma-jimmy-chuck.png",
-    alt: "Pat, Chuck, Jimmy, & Randi",
-  },
-  {
-    id: 8,
-    time: "The End",
-    title: "Cheryl & Judi",
-    body: "Cheryl could not join the trip, so Judi gave her a kiss for Pat, a final act of sisterly love.",
-    src: "/farewell/gma-judi-cheryl.png",
-    alt: "Cheryl & Judi",
-  },
-];
-
-const farewellQuote = `"A life beautifully lived, and a legacy of love that will forever remain in our hearts."`;
 
 export default function FarewellTimeline() {
   const [selectedItem, setSelectedItem] =
@@ -142,7 +73,7 @@ export default function FarewellTimeline() {
                   <div className={`${isEven ? "md:order-2" : "md:order-1"}`}>
                     <motion.div
                       layoutId={item.src}
-                      className='dark:bg-card relative aspect-[4/3] w-full overflow-hidden rounded-t-lg transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:shadow-lg'
+                      className='relative aspect-[4/3] w-full overflow-hidden rounded-t-lg transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:shadow-lg dark:bg-card'
                     >
                       <Image
                         src={item.src || "/placeholder.svg"}
@@ -158,21 +89,21 @@ export default function FarewellTimeline() {
                   <div
                     className={`mt-0 ${isEven ? "md:order-1" : "md:order-2"}`}
                   >
-                    <div className='bg-card rounded-b-lg p-6 shadow-lg transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:hover:shadow-lg lg:dark:border'>
+                    <div className='rounded-b-lg bg-card p-6 shadow-lg transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:hover:shadow-lg lg:dark:border'>
                       <div className='mb-4 flex items-center'>
                         <div className='rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-lg md:px-2 md:py-1 lg:px-2.5 lg:py-1.5'>
                           {item.time}
                         </div>
                       </div>
-                      <h3 className='text-accent-foreground text-xl font-medium md:text-lg lg:text-2xl'>
+                      <h3 className='text-xl font-medium text-accent-foreground md:text-lg lg:text-2xl'>
                         {item.title}
                       </h3>
-                      <p className='text-accent-foreground/90 xs:pr-12 mb-3 line-clamp-2 w-full pt-2 pr-4 text-base sm:pr-24 md:pr-0 md:text-sm lg:text-lg'>
+                      <p className='mb-3 line-clamp-2 w-full pt-2 pr-4 text-base text-accent-foreground/90 xs:pr-12 sm:pr-24 md:pr-0 md:text-sm lg:text-lg'>
                         {item.body}
                       </p>
                       <Button
                         variant='basic'
-                        className='text-primary/90 hover:text-primary cursor-pointer px-0 pt-2 text-sm md:pt-0 lg:pt-2'
+                        className='cursor-pointer px-0 pt-2 text-sm text-primary/90 hover:text-primary md:pt-0 lg:pt-2'
                       >
                         View Details
                       </Button>
@@ -201,7 +132,7 @@ export default function FarewellTimeline() {
 
       {/* Dialog Modal */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className='bg-card max-w-4xl p-0'>
+        <DialogContent className='max-w-4xl bg-card p-0'>
           {selectedItem && (
             <>
               <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
@@ -216,14 +147,14 @@ export default function FarewellTimeline() {
 
               <div className='px-4 pt-1 pb-4'>
                 <DialogHeader className='mb-3'>
-                  <DialogTitle className='text-foreground text-start text-base leading-[1.4] font-medium text-wrap md:text-lg'>
+                  <DialogTitle className='text-start text-base leading-[1.4] font-medium text-wrap text-foreground md:text-lg'>
                     {selectedItem.title || "Farewell Tour"}
                   </DialogTitle>
-                  <DialogDescription className='text-accent-foreground ml-[1px] text-start text-xs leading-tight md:text-sm'>
+                  <DialogDescription className='ml-[1px] text-start text-xs leading-tight text-accent-foreground md:text-sm'>
                     {selectedItem.time}
                   </DialogDescription>
                 </DialogHeader>
-                <div className='text-foreground mt-4 ml-[1px] line-clamp-3 pr-4 text-start text-sm leading-[1.4] font-medium text-wrap md:text-base'>
+                <div className='mt-4 ml-[1px] line-clamp-3 pr-4 text-start text-sm leading-[1.4] font-medium text-wrap text-foreground md:text-base'>
                   <p>{selectedItem.body || "with Patricia & Judi"}</p>
                 </div>
 

@@ -119,13 +119,13 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   if (isSubmitted) {
     return (
       <div className='pt-20 pb-24 text-center'>
-        <div className='bg-card/50 mx-auto mb-4 flex size-24 items-center justify-center rounded-full shadow-lg dark:border'>
+        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-card/50 shadow-lg dark:border'>
           <Check className='size-6 text-green-600 md:size-12' />
         </div>
-        <div className='text-foreground/90 mb-2 text-base font-semibold md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
           Photo Submitted!
         </div>
-        <div className='text-muted-foreground/90 text-sm tracking-tight md:text-base'>
+        <div className='text-sm tracking-tight text-muted-foreground/90 md:text-base'>
           Your image is pending approval and will be visible to others once
           reviewed.
         </div>
@@ -134,7 +134,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   }
 
   return (
-    <Card className='dark:bg-background xs:aspect-square bg-white py-2 lg:py-4'>
+    <Card className='bg-white py-2 xs:aspect-square lg:py-4 dark:bg-background'>
       <CardContent className='flex-1 px-2 lg:px-4'>
         <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
           <div className='flex-1'>
@@ -156,7 +156,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 onDragLeave={handleDrag}
                 onDragOver={handleDrag}
                 onDrop={handleDrop}
-                className={`hover:border-ring hover:ring-ring/50 border-input flex size-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed transition-all hover:bg-purple-50/20 hover:ring-1 dark:hover:bg-purple-950/5 ${
+                className={`flex size-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-input transition-all hover:border-ring hover:bg-purple-50/20 hover:ring-1 hover:ring-ring/50 dark:hover:bg-purple-950/5 ${
                   dragActive ? "bg-purple-100/30 dark:bg-purple-950/10" : ""
                 }`}
               >
@@ -166,19 +166,19 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                     <p className='text-sm font-medium tracking-tight text-green-700'>
                       Photo ready to upload
                     </p>
-                    <p className='text-muted-foreground text-xs'>
+                    <p className='text-xs text-muted-foreground'>
                       {selectedFile.name}
                     </p>
                   </div>
                 ) : (
                   <div className='flex flex-col items-center justify-center gap-1 pt-5 pb-6 text-center md:gap-1.5'>
-                    <Upload className='text-muted-foreground size-6 md:size-7 xl:size-8' />
-                    <p className='text-muted-foreground/95 text-sm font-medium tracking-tight'>
+                    <Upload className='size-6 text-muted-foreground md:size-7 xl:size-8' />
+                    <p className='text-sm font-medium tracking-tight text-muted-foreground/95'>
                       <span className='font-extrabold'>Click to upload</span> or
                       drag and drop
                     </p>
 
-                    <div className='text-muted-foreground/90 flex items-center gap-1 text-xs tracking-tight'>
+                    <div className='flex items-center gap-1 text-xs tracking-tight text-muted-foreground/90'>
                       <HardDrive className='size-3' />
                       <span>Max file size: 5MB</span>
                     </div>

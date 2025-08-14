@@ -1,14 +1,5 @@
 import { Navbar, NavLink, NavLogo } from "@/components/ui/navbar";
-
-import { NavLinks } from "@/lib/types";
-
-const landingNavigation: NavLinks[] = [
-  { name: "About", href: "#landing-about" },
-  { name: "Timeline", href: "#landing-timeline" },
-  { name: "Photo Gallery", href: "#landing-photogallery" },
-  { name: "Guestbook", href: "#landing-guestbook" },
-  { name: "Farewell Tour", href: "/farewell" },
-];
+import { landingNavigation } from "@/lib/data/landing";
 
 export default function LandingNavbar() {
   return (

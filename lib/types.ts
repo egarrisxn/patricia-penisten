@@ -13,27 +13,33 @@ export interface AppError {
   error: Error;
   reset: () => void;
 }
-
-// Photo Gallery
-export interface PhotoEntry {
+export interface EntryData {
   id: string;
   created_at: string;
   name?: string;
-  caption?: string;
-  image_url: string;
+  flagged?: boolean;
   status: "pending" | "approved" | "denied";
   submitted_by_ip: string;
 }
 
 // Guestbook
-export interface GuestbookEntry {
-  id: string;
-  created_at: string;
-  name?: string;
+
+export interface GuestbookEntry extends EntryData {
   relationship?: string;
   message: string;
+}
+
+// Photo Gallery
+
+export interface PhotoEntry extends EntryData {
+  caption?: string;
+  image_url: string;
+}
+export interface PhotoSlideData {
+  title: string;
+  button: string;
+  src: string;
   status: "pending" | "approved" | "denied";
-  submitted_by_ip: string;
 }
 
 // Icon Map

@@ -7,15 +7,17 @@ import { GuestbookEntry } from "@/lib/types";
 
 interface GuestbookEntryCardProps {
   entry: GuestbookEntry;
-  isPending: boolean;
-  onApprove: () => void;
-  onDeny: () => void;
+  isPending?: boolean;
+  flagged?: boolean;
+  onApprove?: () => void;
+  onDeny?: () => void;
   onDelete: () => void;
 }
 
 export default function EntryCard({
   entry,
-  isPending,
+  isPending = false,
+  flagged = false,
   onApprove,
   onDeny,
   onDelete,
@@ -23,21 +25,24 @@ export default function EntryCard({
   return (
     <Card>
       <CardContent className='p-4'>
-        {isPending ? (
+        {flagged ? (
+          <Button size='sm' variant='destructive' onClick={onDelete}>
+            <Trash2 className='size-4' /> Delete
+          </Button>
+        ) : isPending ? (
           <>
             {entry.name && (
-              <p className='text-accent-foreground mb-1 font-medium'>
-                {entry.name}
+              <p className='mb-1 font-medium text-accent-foreground'>
+                {entry.name}{" "}
                 {entry.relationship && (
-                  <span className='text-muted-foreground font-normal'>
-                    {" "}
+                  <span className='font-normal text-muted-foreground'>
                     ({entry.relationship})
                   </span>
                 )}
               </p>
             )}
-            <p className='text-accent-foreground/90 mb-3'>{entry.message}</p>
-            <p className='text-muted-foreground/80 mb-3 text-xs'>
+            <p className='mb-3 text-accent-foreground/90'>{entry.message}</p>
+            <p className='mb-3 text-xs text-muted-foreground/80'>
               {new Date(entry.created_at).toLocaleDateString()} • IP:{" "}
               {entry.submitted_by_ip}
             </p>
@@ -47,8 +52,7 @@ export default function EntryCard({
                 onClick={onApprove}
                 className='flex-1 bg-green-600 text-white hover:bg-green-700'
               >
-                <Check className='mr-1 size-4' />
-                Approve
+                <Check className='mr-1 size-4' /> Approve
               </Button>
               <Button
                 size='sm'
@@ -56,8 +60,7 @@ export default function EntryCard({
                 onClick={onDeny}
                 className='flex-1'
               >
-                <X className='mr-1 size-4' />
-                Deny
+                <X className='mr-1 size-4' /> Deny
               </Button>
               <Button size='sm' variant='destructive' onClick={onDelete}>
                 <Trash2 className='size-4' />
@@ -88,14 +91,14 @@ export default function EntryCard({
               </Button>
             </div>
             {entry.name && (
-              <p className='text-accent-foreground mb-1 text-sm font-medium'>
+              <p className='mb-1 text-sm font-medium text-accent-foreground'>
                 {entry.name}
               </p>
             )}
-            <p className='text-accent-foreground/90 mb-2 line-clamp-3 text-sm'>
+            <p className='mb-2 line-clamp-3 text-sm text-accent-foreground/90'>
               {entry.message}
             </p>
-            <p className='text-muted-foreground text-xs'>
+            <p className='text-xs text-muted-foreground'>
               {new Date(entry.created_at).toLocaleDateString()}
             </p>
           </>
