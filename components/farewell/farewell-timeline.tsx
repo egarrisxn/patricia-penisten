@@ -136,13 +136,20 @@ export default function FarewellTimeline() {
           {selectedItem && (
             <>
               <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
-                <Image
-                  src={selectedItem.src}
-                  alt={selectedItem.alt || "Farewell Tour Photo"}
-                  fill
-                  sizes='(max-width: 768px) 100vw, 75vw'
-                  className='rounded-t-lg object-cover'
-                />
+                <a
+                  href={selectedItem.src}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='relative block size-full'
+                >
+                  <Image
+                    src={selectedItem.src}
+                    alt={selectedItem.alt || "Farewell Tour Photo"}
+                    fill
+                    sizes='(max-width: 768px) 100vw, 75vw'
+                    className='rounded-t-lg object-cover'
+                  />
+                </a>
               </div>
 
               <div className='px-4 pt-1 pb-4'>
