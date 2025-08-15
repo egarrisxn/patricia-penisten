@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
+import { Download } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -69,7 +70,6 @@ export default function FarewellTimeline() {
                   onClick={() => handleItemClick(item)}
                   className='group cursor-pointer pl-3 md:grid md:grid-cols-2 md:gap-12 md:pl-0'
                 >
-                  {/* Image */}
                   <div className={`${isEven ? "md:order-2" : "md:order-1"}`}>
                     <motion.div
                       layoutId={item.src}
@@ -85,7 +85,6 @@ export default function FarewellTimeline() {
                     </motion.div>
                   </div>
 
-                  {/* Text */}
                   <div
                     className={`mt-0 ${isEven ? "md:order-1" : "md:order-2"}`}
                   >
@@ -123,25 +122,18 @@ export default function FarewellTimeline() {
         </div>
       </div>
 
-      {/* Farewell Quote */}
       <div className='w-full px-4 md:mx-auto md:max-w-xs md:pt-4 lg:max-w-sm'>
         <p className='text-2xl italic md:mx-auto md:text-center lg:text-3xl'>
           {farewellQuote}
         </p>
       </div>
 
-      {/* Dialog Modal */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className='max-w-4xl bg-card p-0'>
           {selectedItem && (
             <>
               <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
-                <a
-                  href={selectedItem.src}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='relative block size-full'
-                >
+                <div className='relative block size-full'>
                   <Image
                     src={selectedItem.src}
                     alt={selectedItem.alt || "Farewell Tour Photo"}
@@ -149,7 +141,7 @@ export default function FarewellTimeline() {
                     sizes='(max-width: 768px) 100vw, 75vw'
                     className='rounded-t-lg object-cover'
                   />
-                </a>
+                </div>
               </div>
 
               <div className='px-4 pt-1 pb-4'>
@@ -161,11 +153,22 @@ export default function FarewellTimeline() {
                     {selectedItem.time}
                   </DialogDescription>
                 </DialogHeader>
-                <div className='mt-4 ml-[1px] line-clamp-3 pr-4 text-start text-sm leading-[1.4] font-medium text-wrap text-foreground md:text-base'>
+                <div className='mt-4 ml-[1px] line-clamp-3 pr-4 pb-0.5 text-start text-sm leading-[1.4] font-medium text-wrap text-foreground md:text-base'>
                   <p>{selectedItem.body || "with Patricia & Judi"}</p>
                 </div>
 
-                <div className='mt-6 flex justify-between gap-4 md:mt-5'>
+                <div className='mt-4 flex justify-end md:hidden'>
+                  <a
+                    href={selectedItem.src}
+                    download={selectedItem.alt || "Farewell Tour Photo"}
+                  >
+                    <button className='cursor-pointer font-semibold text-foreground/90 hover:text-black md:hidden dark:hover:text-white'>
+                      <Download size={14} />
+                    </button>
+                  </a>
+                </div>
+
+                <div className='mt-4 hidden justify-between gap-4 md:flex'>
                   <Button
                     onClick={() => navigateTimeline("prev")}
                     disabled={selectedItem.id === farewellTimelineItems[0].id}

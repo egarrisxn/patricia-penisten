@@ -7,7 +7,7 @@ import { landingCTAData } from "@/lib/data/landing";
 
 export default function LandingCTA() {
   return (
-    <div className='mx-auto grid min-h-screen w-full place-items-center py-16 xl:py-24'>
+    <div className='mx-auto grid min-h-screen w-full place-items-center pt-6 pb-12 xl:pt-16 xl:pb-24'>
       <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 xl:px-12'>
         <div className='mx-auto flex w-full max-w-[64rem] flex-col items-center justify-center gap-10 px-2 text-center xs:gap-8 xs:px-4 lg:flex-row lg:gap-4 2xl:max-w-none'>
           <motion.aside
@@ -23,7 +23,7 @@ export default function LandingCTA() {
                 alt='Map'
                 width={500}
                 height={500}
-                className='aspect-square size-76 rounded-lg border-2 border-accent-foreground bg-foreground object-cover shadow-lg xs:size-96 2xl:size-full'
+                className='aspect-square size-80 rounded-lg border-2 border-accent-foreground bg-foreground object-cover shadow-lg xs:size-96 2xl:size-full'
               />
               <div className='absolute -right-4 -bottom-4 -rotate-4 transform rounded-lg border-2 border-accent-foreground bg-accent px-3 py-1.5 text-[0.85rem] leading-[1.4] font-semibold tracking-wide text-accent-foreground uppercase shadow-lg xs:px-4 xs:py-2 xs:text-[0.9rem]'>
                 1935-2025

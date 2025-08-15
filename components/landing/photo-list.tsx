@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Clock, MessageCircle, User } from "lucide-react";
+import { Clock, MessageCircle, User, Download } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -69,7 +69,7 @@ export default function PhotoList({
 
       {selectedPhoto && (
         <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
-          <DialogContent className='max-w-4xl gap-2 bg-accent/95 dark:bg-accent/70'>
+          <DialogContent className='max-w-4xl gap-2 bg-accent/90'>
             <div className='mx-auto flex items-center justify-center gap-1 pt-2 text-sm text-foreground'>
               <Clock size={16} className='text-accent-foreground' />
               <span>
@@ -84,12 +84,7 @@ export default function PhotoList({
               </span>
             </div>
             <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center'>
-              <a
-                href={selectedPhoto.image_url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='relative block size-full'
-              >
+              <div className='relative block size-full'>
                 <Image
                   src={selectedPhoto.image_url}
                   alt={
@@ -102,7 +97,7 @@ export default function PhotoList({
                   className='object-contain'
                   style={{ objectPosition: "center" }}
                 />
-              </a>
+              </div>
             </div>
             <div className='pb-4 text-foreground'>
               <DialogHeader className='mb-2'>
@@ -117,6 +112,24 @@ export default function PhotoList({
                   <p className='text-wrap'>{selectedPhoto.name}</p>
                 </div>
               )}
+
+              <div className='absolute bottom-2 left-4'>
+                <button
+                  onClick={() => window.open(selectedPhoto.image_url, "_blank")}
+                  aria-label={`Open photo: ${selectedPhoto.caption || selectedPhoto.name || "photo"}`}
+                  className='hidden cursor-pointer font-semibold text-foreground/90 hover:text-black md:block dark:hover:text-white'
+                >
+                  <Download size={14} />
+                </button>
+                <a
+                  href={selectedPhoto.image_url}
+                  download={selectedPhoto.caption || "Uploaded Photo"}
+                >
+                  <button className='cursor-pointer font-semibold text-foreground/90 hover:text-black md:hidden dark:hover:text-white'>
+                    <Download size={14} />
+                  </button>
+                </a>
+              </div>
 
               {selectedPhoto.status === "pending" && (
                 <div className='absolute right-4 bottom-2 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>

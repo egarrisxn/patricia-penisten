@@ -72,9 +72,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang='en'
-      data-scroll-behavior='smooth'
-      className='scroll-smooth'
       suppressHydrationWarning
+      // data-scroll-behavior='smooth'
+      // className='scroll-smooth'
     >
       <head>
         <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />

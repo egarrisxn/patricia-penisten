@@ -6,7 +6,7 @@ import { iconMap } from "@/lib/types";
 
 export default function LandingTimeline() {
   return (
-    <div className='mx-auto grid w-full max-w-[36rem] items-start gap-16 pt-8 pb-2 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16'>
+    <div className='mx-auto grid w-full max-w-[36rem] items-start gap-16 pt-12 pb-2 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16'>
       <div className='space-y-12'>
         {landingTimelineCards.map((card, i) => {
           const IconComponent = card.icon ? iconMap[card.icon] : null;
@@ -18,11 +18,11 @@ export default function LandingTimeline() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.15 * i }}
             >
-              <Card className='rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:bg-card lg:px-4 lg:py-8 lg:shadow-lg xl:py-12 lg:dark:border'>
+              <Card className='group rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:bg-card lg:px-4 lg:py-8 lg:shadow-lg xl:py-12 lg:dark:border'>
                 <div className='px-2 lg:px-4 xl:px-6'>
                   <h3 className='flex items-center text-lg leading-none font-extrabold md:text-xl 2xl:text-2xl'>
                     {IconComponent && (
-                      <IconComponent className='mr-2.5 size-5 fill-primary/50 text-primary xs:size-6 md:size-7' />
+                      <IconComponent className='mr-2.5 size-5 fill-primary/50 text-primary group-hover:fill-primary/80 xs:size-6 md:size-7' />
                     )}
                     {card.title}
                   </h3>
@@ -36,10 +36,10 @@ export default function LandingTimeline() {
                           href={card.link.href}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='group relative mr-0.5 ml-1 cursor-pointer font-medium whitespace-nowrap text-accent-foreground transition-colors'
+                          className='group relative mr-0.5 ml-1 cursor-pointer font-medium whitespace-nowrap transition-colors group-hover:text-primary'
                         >
                           {card.link.name}
-                          <span className='absolute -bottom-0.5 left-0 h-0.5 w-0 bg-accent-foreground transition-all duration-300 group-hover:w-full'></span>
+                          <span className='absolute -bottom-0.5 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full'></span>
                         </a>{" "}
                         {card.text}
                       </>

@@ -14,7 +14,7 @@ const SectionHeader = ({ title, heading, description }: SectionHeaderProps) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <header className='mx-auto max-w-3xl pb-12 text-center md:pb-16 2xl:pb-20'>
+      <header className='mx-auto max-w-3xl pb-8 text-center md:pb-14 2xl:pb-20'>
         <h1 className='text-[0.9rem] leading-normal font-bold tracking-[0.015em] text-primary uppercase xs:text-base md:text-xl'>
           {title}
         </h1>
@@ -50,7 +50,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className='mx-auto grid min-h-screen w-full place-items-center py-16 xl:py-24'
+      className='mx-auto grid min-h-screen w-full place-items-center pt-16 pb-12 xl:pt-28 xl:pb-20'
     >
       <div
         className={`${className} mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 xl:px-12`}

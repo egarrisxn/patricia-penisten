@@ -10,7 +10,10 @@ interface FooterProps {
 const DeveloperCredit = () => (
   <div className='group flex items-center justify-center space-x-1 text-sm font-semibold tracking-tight text-black sm:text-base dark:text-white'>
     <span>Made with</span>
-    <Heart className='size-4 text-primary group-hover:fill-primary/50 group-hover:text-primary' />
+    <Heart
+      size={16}
+      className='fill-primary/50 text-primary group-hover:fill-primary/80'
+    />
     <span>by</span>
     <a
       href='https://egxo.dev'

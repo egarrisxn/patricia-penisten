@@ -56,7 +56,7 @@ export default function GuestbookList({
 
   return (
     <>
-      <div className='w-full columns-1 gap-6 space-y-6 xl:columns-2 xl:gap-8 xl:space-y-8 2xl:columns-3'>
+      <div className='w-full columns-1 gap-6 space-y-6 md:columns-2 2xl:columns-3 2xl:gap-8 2xl:space-y-8'>
         {allEntries.map((entry) => (
           <div key={`entry-${entry.id}`} className='break-inside-avoid'>
             <GuestbookCard entry={entry} onClick={() => openDialog(entry)} />
