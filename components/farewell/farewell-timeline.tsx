@@ -45,7 +45,7 @@ export default function FarewellTimeline() {
   };
 
   return (
-    <div className='mx-auto px-4 pb-4 xl:px-12 xl:pb-12'>
+    <div className='mx-auto pb-4 pl-2 xs:px-4 xl:px-12 xl:pb-12'>
       <div className='relative'>
         {/* Timeline line */}
         <div className='absolute left-0 h-full w-0.5 bg-gradient-to-b from-rose-200 via-blue-200 to-rose-200 md:left-1/2 md:-translate-x-1/2' />
@@ -90,20 +90,20 @@ export default function FarewellTimeline() {
                     className={`mt-0 ${isEven ? "md:order-1" : "md:order-2"}`}
                   >
                     <div className='rounded-b-lg bg-card p-6 shadow-lg transition-shadow duration-300 group-hover:shadow-lg md:rounded-lg md:hover:shadow-lg lg:dark:border'>
-                      <div className='mb-4 flex items-center'>
-                        <div className='rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1.5 text-xs font-medium text-white shadow-lg md:px-2 md:py-1 lg:px-2.5 lg:py-1.5'>
+                      <div className='mb-6 flex items-center'>
+                        <div className='rounded-md bg-gradient-to-br from-blue-500/80 to-purple-700/80 px-2.5 py-1 text-xs font-medium text-white shadow-lg'>
                           {item.time}
                         </div>
                       </div>
-                      <h3 className='text-xl font-medium text-accent-foreground md:text-lg lg:text-2xl'>
+                      <h3 className='text-2xl font-medium text-foreground/90 md:text-[1.05rem] lg:text-2xl dark:text-white'>
                         {item.title}
                       </h3>
-                      <p className='mb-3 line-clamp-2 w-full pt-2 pr-4 text-base text-accent-foreground/90 xs:pr-12 sm:pr-24 md:pr-0 md:text-sm lg:text-lg'>
+                      <p className='line-clamp-2 w-full pt-2 pr-4 text-base text-foreground/80 xs:pr-12 sm:pr-24 md:pr-0 md:text-[0.85rem] lg:text-lg dark:text-foreground/95'>
                         {item.body}
                       </p>
                       <Button
                         variant='basic'
-                        className='cursor-pointer px-0 pt-2 text-sm text-primary/90 hover:text-primary md:pt-0 lg:pt-2'
+                        className='cursor-pointer px-0 pt-6 text-sm text-primary/90 hover:text-primary md:text-[0.85rem]'
                       >
                         View Details
                       </Button>

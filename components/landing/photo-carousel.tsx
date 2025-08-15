@@ -60,8 +60,7 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
         </h2>
         <div className='mt-2 flex justify-center'>
           <Button
-            className='cursor-pointer bg-foreground/90 text-background/90 hover:bg-foreground hover:text-background'
-            size='lg'
+            className='h-9 cursor-pointer rounded-md bg-foreground/90 px-4 py-2 text-sm text-background/90 hover:bg-foreground hover:text-background md:h-10 md:px-6 md:py-0'
             variant='default'
             onClick={(e) => {
               e.stopPropagation();

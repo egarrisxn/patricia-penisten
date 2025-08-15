@@ -141,7 +141,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
             <Label htmlFor='photo-upload' className='sr-only'>
               Choose Photo *
             </Label>
-            <div className='h-full'>
+            <div className='h-full min-h-52'>
               <input
                 id='photo-upload'
                 type='file'
@@ -156,7 +156,7 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 onDragLeave={handleDrag}
                 onDragOver={handleDrag}
                 onDrop={handleDrop}
-                className={`flex size-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-input transition-all hover:border-ring hover:bg-purple-50/20 hover:ring-1 hover:ring-ring/50 dark:hover:bg-purple-950/5 ${
+                className={`flex size-full min-h-52 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-input transition-all hover:border-ring hover:bg-purple-50/20 hover:ring-1 hover:ring-ring/50 dark:hover:bg-purple-950/5 ${
                   dragActive ? "bg-purple-100/30 dark:bg-purple-950/10" : ""
                 }`}
               >

@@ -69,51 +69,57 @@ export default function PhotoList({
 
       {selectedPhoto && (
         <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
-          <DialogContent className='max-w-4xl bg-card p-0'>
-            <div className='relative flex max-h-[70vh] min-h-[50vh] w-full items-center justify-center rounded-t-lg'>
-              <Image
-                src={selectedPhoto.image_url}
-                alt={
-                  selectedPhoto.caption ||
-                  selectedPhoto.name ||
-                  "Uploaded Photo"
-                }
-                fill
-                sizes='(max-width: 768px) 100vw, 75vw'
-                className='rounded-t-lg object-cover'
-              />
+          <DialogContent className='max-w-4xl gap-2 bg-accent/95 dark:bg-accent/70'>
+            <div className='mx-auto flex items-center justify-center gap-1 pt-2 text-sm text-foreground'>
+              <Clock size={16} className='text-accent-foreground' />
+              <span>
+                {new Date(selectedPhoto.created_at).toLocaleDateString(
+                  "en-US",
+                  {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }
+                )}
+              </span>
             </div>
-
-            <div className='max-h-[20vh] overflow-y-auto px-4 pt-0.5 pb-4'>
-              <DialogHeader className='mb-3.5'>
-                <DialogTitle className='text-start text-base leading-[1.4] font-medium text-wrap text-foreground'>
+            <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center'>
+              <a
+                href={selectedPhoto.image_url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='relative block size-full'
+              >
+                <Image
+                  src={selectedPhoto.image_url}
+                  alt={
+                    selectedPhoto.caption ||
+                    selectedPhoto.name ||
+                    "Uploaded Photo"
+                  }
+                  fill
+                  sizes='(max-width: 768px) 100vw, 75vw'
+                  className='object-contain'
+                  style={{ objectPosition: "center" }}
+                />
+              </a>
+            </div>
+            <div className='pb-4 text-foreground'>
+              <DialogHeader className='mb-2'>
+                <DialogTitle className='text-center text-base leading-[1.4] font-medium text-wrap'>
                   {selectedPhoto.caption || "In loving memory."}
                 </DialogTitle>
               </DialogHeader>
 
-              <div className='flex flex-col gap-1 text-sm'>
-                {selectedPhoto.name && (
-                  <div className='flex items-center gap-1'>
-                    <User size={16} className='text-accent-foreground' />
-                    <p className='w-[80%] text-wrap'>{selectedPhoto.name}</p>
-                  </div>
-                )}
-                <div className='flex items-center gap-1'>
-                  <Clock size={16} className='text-accent-foreground' />
-                  <span>
-                    {new Date(selectedPhoto.created_at).toLocaleDateString(
-                      "en-US",
-                      {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      }
-                    )}
-                  </span>
+              {selectedPhoto.name && (
+                <div className='mx-auto flex items-center justify-center gap-1'>
+                  <User size={16} className='text-accent-foreground' />
+                  <p className='text-wrap'>{selectedPhoto.name}</p>
                 </div>
-              </div>
+              )}
+
               {selectedPhoto.status === "pending" && (
-                <div className='absolute right-3 bottom-3 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
+                <div className='absolute right-4 bottom-2 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
                   <div className='mb-[1.5px] size-2 animate-pulse rounded-full bg-primary md:size-[8.5px] 2xl:size-2.5'></div>{" "}
                   <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
                     Pending
@@ -121,7 +127,7 @@ export default function PhotoList({
                 </div>
               )}
               {selectedPhoto.status === "approved" && (
-                <div className='absolute right-3 bottom-3'>
+                <div className='absolute right-4 bottom-2'>
                   <FlagAdmin
                     itemId={selectedPhoto.id}
                     table='photos'

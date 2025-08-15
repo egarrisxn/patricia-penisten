@@ -17,7 +17,7 @@ export default function LandingPhotoGallery() {
   return (
     <div className='flex flex-col items-center gap-12 px-2 pt-8 pb-2 xs:px-4'>
       <PhotoList userPhotos={userItems} approvedPhotos={approvedItems} />
-      <div className='mt-10 w-full max-w-lg 2xl:max-w-2xl'>
+      <div className='mt-10 w-full max-w-lg 2xl:max-w-xl'>
         <PhotoUpload onPhotoSubmitted={handlePhotoSubmitted} />
       </div>
     </div>
