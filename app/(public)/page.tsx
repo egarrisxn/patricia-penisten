@@ -41,7 +41,6 @@ export default function LandingPage() {
         title='Photo Gallery'
         heading='Your Memories in Pictures'
         description={`A place to share your treasured photos of Patricia. Whether it's a candid moment, a celebration, or a simple smile, your photos help us remember her.`}
-        className='lg:max-w-[92rem]'
       >
         <LandingPhotoGallery />
       </Section>
@@ -51,7 +50,7 @@ export default function LandingPage() {
         title='Guestbook'
         heading='Share a Story or Memory'
         description={`Please sign the guestbook below. Share a favorite story, a message of remembrance, or a moment that stands out in your memory of Patricia.`}
-        className='lg:max-w-[92rem]'
+        className='lg:max-w-[92rem] 3xl:max-w-[104rem]'
       >
         <LandingGuestbook />
       </Section>

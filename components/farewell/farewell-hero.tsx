@@ -36,14 +36,9 @@ export default function FarewellHero() {
         </p>
       </motion.article>
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className='mx-auto md:pb-8'
-      >
+      <div className='mx-auto md:pb-8'>
         <ScrollDown targetId='farewell-timeline' />
-      </motion.div>
+      </div>
     </div>
   );
 }

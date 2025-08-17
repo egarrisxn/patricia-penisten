@@ -11,13 +11,7 @@ export default function LandingTimeline() {
         {landingTimelineCards.map((card, i) => {
           const IconComponent = card.icon ? iconMap[card.icon] : null;
           return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.15 * i }}
-            >
+            <div key={i}>
               <Card className='group rounded-none border-none bg-transparent p-0 shadow-none lg:rounded-lg lg:bg-card lg:px-4 lg:py-8 lg:shadow-lg xl:py-12 lg:dark:border'>
                 <div className='px-2 lg:px-4 xl:px-6'>
                   <h3 className='flex items-center text-lg leading-none font-extrabold md:text-xl 2xl:text-2xl'>
@@ -47,21 +41,13 @@ export default function LandingTimeline() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           );
         })}
       </div>
 
       <div className='space-y-6 px-2 lg:px-0'>
-        <motion.h4
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className='mb-6 text-lg font-extrabold md:text-3xl'
-        >
-          Timeline
-        </motion.h4>
+        <h4 className='mb-6 text-lg font-extrabold md:text-3xl'>Timeline</h4>
 
         <div className='space-y-6 lg:space-y-7'>
           {landingTimelineData.map((event, i) => (

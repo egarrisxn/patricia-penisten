@@ -26,14 +26,14 @@ export default function GuestbookCard({ entry, onClick }: GuestbookCardProps) {
           })}
         </time>
 
-        <h5 className='pt-2 pb-1.5 text-lg leading-none font-medium'>
+        <h5 className='pt-2 pb-1.5 text-lg leading-none font-medium 3xl:text-xl'>
           {entry.name || "Anonymous"}
         </h5>
-        <p className='text-xs leading-none text-primary'>
+        <p className='text-xs leading-none text-primary 3xl:text-sm'>
           {entry.relationship || "Unknown"}
         </p>
 
-        <p className='grow pt-3.5 pb-1 font-serif text-base break-words text-black italic dark:text-white'>
+        <p className='grow pt-3.5 pb-1 font-serif text-base break-words text-black italic 3xl:text-lg dark:text-white'>
           <q>{entry.message}</q>
         </p>
 

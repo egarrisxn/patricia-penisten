@@ -15,9 +15,9 @@ export default function LandingGuestbook() {
   };
 
   return (
-    <div className='mx-auto grid w-full items-center justify-center gap-12 px-4 pt-8 pb-2 lg:gap-24'>
+    <div className='mx-auto grid w-full items-center justify-center gap-12 px-2 pt-8 pb-2 lg:gap-24'>
       <GuestbookList userEntries={userItems} approvedEntries={approvedItems} />
-      <div className='mx-auto w-full max-w-sm px-2 xs:max-w-md md:max-w-xl lg:max-w-2xl'>
+      <div className='mx-auto w-full max-w-sm xs:max-w-md md:max-w-xl lg:max-w-2xl 3xl:max-w-3xl'>
         <GuestbookForm onEntrySubmitted={handleEntrySubmitted} />
       </div>
     </div>

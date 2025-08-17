@@ -14,7 +14,7 @@ export default function LandingCTA() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5 }}
             className='flex px-2 xs:px-4 md:px-4 lg:mx-auto'
           >
             <div className='relative'>
@@ -49,7 +49,7 @@ export default function LandingCTA() {
             <Link href='/farewell'>
               <Button className='2xl:text[1.1rem] group h-9 cursor-pointer px-4 text-[0.9rem] transition-all xs:px-6 xs:text-sm lg:h-10 lg:text-base xl:h-10.5 xl:text-[1.05rem] 2xl:h-11 2xl:text-[1.1rem]'>
                 {landingCTAData.button}
-                <ArrowRight className='size-3.5 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 xs:size-4 xl:size-4.5 2xl:size-5' />
+                <ArrowRight className='hidden size-3.5 transition-all duration-200 ease-in-out group-hover:translate-x-0.5 xs:flex xs:size-4 xl:size-4.5 2xl:size-5' />
               </Button>
             </Link>
           </motion.article>

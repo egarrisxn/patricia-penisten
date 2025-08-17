@@ -7,17 +7,11 @@ export default function LandingAboutCard() {
   return (
     <div className='mx-auto flex w-fit flex-col gap-y-8 px-2 py-8 xs:w-112 xs:px-4 sm:w-full lg:grid lg:grid-cols-[1fr_auto] lg:items-start lg:gap-x-8 lg:gap-y-0 lg:rounded-lg lg:bg-card lg:px-2 lg:shadow-lg xl:px-12 xl:py-16 lg:dark:border'>
       {/* Title */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6 }}
-        className='w-full max-w-[32rem] px-2 sm:mx-auto lg:max-w-none lg:space-y-4 lg:pt-2 lg:pl-4 xl:pr-4'
-      >
-        <h3 className='text-base font-bold tracking-tighter text-foreground xs:text-lg sm:text-2xl lg:text-xl xl:text-[1.6rem] 2xl:text-[1.65rem]'>
+      <div className='w-full max-w-[32rem] px-2 sm:mx-auto lg:max-w-none lg:space-y-4 lg:pt-2 lg:pl-4 xl:pr-4'>
+        <h3 className='text-base font-medium tracking-tighter text-foreground xs:text-lg sm:text-2xl lg:text-xl xl:text-[1.55rem] 2xl:text-[1.6rem]'>
           <div className='flex flex-row flex-wrap items-baseline'>
             <span>Pat, or maybe you know her as&nbsp;</span>
-            <div className='justify-center overflow-hidden font-medium text-accent-foreground'>
+            <div className='justify-center overflow-hidden text-accent-foreground'>
               <WordRotate
                 words={[
                   "Patricia",
@@ -44,14 +38,14 @@ export default function LandingAboutCard() {
             </motion.p>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* Image */}
       <motion.aside
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5 }}
         className='flex px-2 sm:mx-auto lg:row-span-2 lg:pr-4 xl:pl-4'
       >
         <Image

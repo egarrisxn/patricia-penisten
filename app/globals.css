@@ -117,6 +117,7 @@
 @theme {
   --breakpoint-xs: 30rem;
   --breakpoint-xsmd: 37.5rem;
+  --breakpoint-3xl: 120rem;
 
   @keyframes scale {
     0% {

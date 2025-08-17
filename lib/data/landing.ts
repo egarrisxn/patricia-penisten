@@ -96,7 +96,7 @@ export const landingTimelineData: LandingTimelineData[] = [
 ];
 
 export const landingCTAData: LandingCTAData = {
-  button: "Check It Out",
   title: "Pat got out there for one final road trip!",
-  body: `They're calling it "The Farewell Tour".`,
+  body: `I think they're calling it "The Farewell Tour"`,
+  button: "Check It Out!",
 };
