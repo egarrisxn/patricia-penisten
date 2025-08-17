@@ -31,7 +31,7 @@ export default function LandingAboutCard() {
             </div>
           </div>
         </h3>
-        <div className='hidden space-y-3 pt-2 tracking-tight text-foreground/90 lg:block lg:text-[1.125rem] lg:leading-[1.4] xl:space-y-4 xl:pt-0 xl:text-[1.3rem] xl:leading-normal'>
+        <div className='hidden space-y-3 pt-2 tracking-tight text-foreground lg:block lg:text-[1.125rem] lg:leading-[1.4] xl:space-y-4 xl:pt-0 xl:text-[1.3rem] xl:leading-normal'>
           {landingAboutCard.blurbs.map((blurb, i) => (
             <motion.p
               key={i}
@@ -71,7 +71,7 @@ export default function LandingAboutCard() {
         transition={{ duration: 0.7, delay: 0.4 }}
         className='w-full max-w-[32rem] px-2 sm:mx-auto lg:hidden'
       >
-        <div className='space-y-4 text-[0.95rem] tracking-tight text-foreground/90 sm:text-[1.15rem]'>
+        <div className='space-y-4 text-[0.95rem] tracking-tight text-foreground sm:text-[1.15rem]'>
           {landingAboutCard.blurbs.map((blurb, i) => (
             <motion.p
               key={i}

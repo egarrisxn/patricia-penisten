@@ -53,10 +53,10 @@ export default function PhotoList({
         <div className='mx-auto mb-4 flex items-center justify-center'>
           <MessageCircle className='size-6 md:size-12' />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
           No Photos Gallery photos
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground/90 md:text-base'>
+        <div className='text-sm tracking-tight text-muted-foreground md:text-base'>
           Be the first to add a photo memory
         </div>
       </div>
@@ -69,7 +69,7 @@ export default function PhotoList({
 
       {selectedPhoto && (
         <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
-          <DialogContent className='max-w-4xl gap-2 bg-accent/90'>
+          <DialogContent className='max-w-4xl gap-2 bg-accent'>
             <div className='mx-auto flex items-center justify-center gap-1 pt-2 text-sm text-foreground'>
               <Clock size={16} className='text-accent-foreground' />
               <span>
@@ -117,7 +117,7 @@ export default function PhotoList({
                 <button
                   onClick={() => window.open(selectedPhoto.image_url, "_blank")}
                   aria-label={`Open photo: ${selectedPhoto.caption || selectedPhoto.name || "photo"}`}
-                  className='hidden cursor-pointer font-semibold text-foreground/90 hover:text-black md:block dark:hover:text-white'
+                  className='hidden cursor-pointer font-semibold text-foreground hover:text-black md:block dark:hover:text-white'
                 >
                   <Download size={14} />
                 </button>
@@ -125,7 +125,7 @@ export default function PhotoList({
                   href={selectedPhoto.image_url}
                   download={selectedPhoto.caption || "Uploaded Photo"}
                 >
-                  <button className='cursor-pointer font-semibold text-foreground/90 hover:text-black md:hidden dark:hover:text-white'>
+                  <button className='cursor-pointer font-semibold text-accent-foreground hover:text-black md:hidden dark:hover:text-white'>
                     <Download size={14} />
                   </button>
                 </a>

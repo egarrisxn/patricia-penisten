@@ -152,7 +152,7 @@ export default function Dashboard() {
       <div className='flex min-h-screen items-center justify-center'>
         <div className='text-center'>
           <Clock className='mx-auto mb-4 size-8 animate-spin text-blue-600' />
-          <p className='text-muted-foreground/90'>Loading dashboard...</p>
+          <p className='text-muted-foreground'>Loading dashboard...</p>
         </div>
       </div>
     );

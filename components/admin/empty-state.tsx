@@ -7,7 +7,7 @@ export default function EmptyState() {
       <h3 className='mb-2 text-lg font-semibold text-accent-foreground'>
         No pending submissions
       </h3>
-      <p className='text-muted-foreground/90'>
+      <p className='text-muted-foreground'>
         All submissions have been reviewed!
       </p>
     </div>

@@ -22,7 +22,7 @@ const SectionHeader = ({ title, heading, description }: SectionHeaderProps) => {
           {heading}
         </h2>
 
-        <p className='mx-auto mt-7 mb-9 w-full max-w-sm px-4 text-[0.85rem] leading-normal font-medium text-foreground/80 italic xs:max-w-md xs:text-[0.925rem] sm:max-w-lg sm:text-[0.965rem] md:mt-8.5 md:max-w-xl md:text-lg lg:max-w-2xl'>
+        <p className='mx-auto mt-7 mb-9 w-full max-w-sm px-4 text-[0.85rem] leading-normal font-medium text-muted-foreground italic xs:max-w-md xs:text-[0.925rem] sm:max-w-lg sm:text-[0.965rem] md:mt-8.5 md:max-w-xl md:text-lg lg:max-w-2xl'>
           {description}
         </p>
 

@@ -44,10 +44,10 @@ export default function GuestbookList({
         <div className='mx-auto mb-4 flex items-center justify-center'>
           <MessageCircle className='size-6 md:size-12' />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
           No Guestbook entries
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground/90 md:text-base'>
+        <div className='text-sm tracking-tight text-muted-foreground md:text-base'>
           Be the first to add to our guestbook
         </div>
       </div>

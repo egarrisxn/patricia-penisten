@@ -10,7 +10,7 @@ export default function PubliclLayout({ children }: { children: ReactNode }) {
       </main>
       <ScrollUp />
       <Footer
-        className='w-full border-t-2 border-border/30 bg-card/90'
+        className='w-full border-t-2 border-border/30 bg-card'
         isMemorial={true}
       />
     </div>

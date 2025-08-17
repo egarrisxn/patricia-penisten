@@ -68,6 +68,8 @@ export default function ThemeButton({
           sizeClasses[size],
           className
         )}
+        role='button'
+        aria-label='Loading theme toggle'
       />
     );
   }
@@ -82,6 +84,7 @@ export default function ThemeButton({
       )}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
+      aria-label={`Switch to ${themeConfigs[nextTheme].label} theme`}
     >
       <AnimatePresence mode='wait'>
         <motion.div

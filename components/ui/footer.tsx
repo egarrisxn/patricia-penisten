@@ -41,7 +41,7 @@ export default function Footer({
             <h3 className='mb-2 text-lg font-bold tracking-tight xs:text-xl sm:text-2xl'>
               In Loving Memory of Patricia G. Penisten
             </h3>
-            <p className='text-sm font-medium tracking-tight text-foreground/90 sm:text-base'>
+            <p className='text-sm font-medium tracking-tight text-muted-foreground sm:text-base'>
               December 22nd, 1935 - June 5th, 2025
             </p>
           </div>

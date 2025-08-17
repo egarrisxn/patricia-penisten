@@ -14,7 +14,7 @@ export default function FarewellNavbar() {
       extraLeft={<CustomAudioPlayer />}
       navLinks={[{ name: "Memorial Page", href: "/" }]}
       transparentClasses='bg-transparent'
-      scrolledClasses='bg-card/90 text-foreground pointer-events-auto shadow-lg backdrop-blur-lg'
+      scrolledClasses='bg-card text-foreground pointer-events-auto shadow-lg backdrop-blur-lg'
     />
   );
 }

@@ -41,8 +41,8 @@ export default function EntryCard({
                 )}
               </p>
             )}
-            <p className='mb-3 text-accent-foreground/90'>{entry.message}</p>
-            <p className='mb-3 text-xs text-muted-foreground/80'>
+            <p className='mb-3 text-accent-foreground'>{entry.message}</p>
+            <p className='mb-3 text-xs text-muted-foreground'>
               {new Date(entry.created_at).toLocaleDateString()} • IP:{" "}
               {entry.submitted_by_ip}
             </p>
@@ -91,11 +91,11 @@ export default function EntryCard({
               </Button>
             </div>
             {entry.name && (
-              <p className='mb-1 text-sm font-medium text-accent-foreground'>
+              <p className='mb-1 text-sm font-medium text-foreground'>
                 {entry.name}
               </p>
             )}
-            <p className='mb-2 line-clamp-3 text-sm text-accent-foreground/90'>
+            <p className='mb-2 line-clamp-3 text-sm text-accent-foreground'>
               {entry.message}
             </p>
             <p className='text-xs text-muted-foreground'>

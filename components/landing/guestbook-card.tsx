@@ -26,9 +26,9 @@ export default function GuestbookCard({ entry, onClick }: GuestbookCardProps) {
           })}
         </time>
 
-        <h4 className='pt-2 pb-1.5 text-lg leading-none font-medium'>
+        <h5 className='pt-2 pb-1.5 text-lg leading-none font-medium'>
           {entry.name || "Anonymous"}
-        </h4>
+        </h5>
         <p className='text-xs leading-none text-primary'>
           {entry.relationship || "Unknown"}
         </p>

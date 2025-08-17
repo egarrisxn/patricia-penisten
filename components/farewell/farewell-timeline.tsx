@@ -94,15 +94,15 @@ export default function FarewellTimeline() {
                           {item.time}
                         </div>
                       </div>
-                      <h3 className='text-2xl font-medium text-foreground/90 md:text-[1.05rem] lg:text-2xl dark:text-white'>
+                      <h3 className='text-2xl font-medium text-black md:text-[1.05rem] lg:text-2xl dark:text-white'>
                         {item.title}
                       </h3>
-                      <p className='line-clamp-2 w-full pt-2 pr-4 text-base text-foreground/80 xs:pr-12 sm:pr-24 md:pr-0 md:text-[0.85rem] lg:text-lg dark:text-foreground/95'>
+                      <p className='line-clamp-2 w-full pt-2 pr-4 text-base text-foreground xs:pr-12 sm:pr-24 md:pr-0 md:text-[0.85rem] lg:text-lg'>
                         {item.body}
                       </p>
                       <Button
                         variant='basic'
-                        className='cursor-pointer px-0 pt-6 text-sm text-primary/90 hover:text-primary md:text-[0.85rem]'
+                        className='cursor-pointer px-0 pt-6 text-sm text-primary hover:text-primary md:text-[0.85rem]'
                       >
                         View Details
                       </Button>
@@ -162,7 +162,7 @@ export default function FarewellTimeline() {
                     href={selectedItem.src}
                     download={selectedItem.alt || "Farewell Tour Photo"}
                   >
-                    <button className='cursor-pointer font-semibold text-foreground/90 hover:text-black md:hidden dark:hover:text-white'>
+                    <button className='cursor-pointer font-semibold text-foreground hover:text-black md:hidden dark:hover:text-white'>
                       <Download size={14} />
                     </button>
                   </a>

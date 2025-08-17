@@ -42,7 +42,7 @@ export default function LandingCTA() {
               {landingCTAData.title}
             </h6>
 
-            <p className='mb-4 text-[0.975rem] leading-normal font-medium text-foreground/90 xs:text-base sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.25rem]'>
+            <p className='mb-4 text-[0.975rem] leading-normal font-medium text-foreground xs:text-base sm:text-[1.05rem] md:text-[1.2rem] lg:text-[1.2rem] xl:text-[1.25rem]'>
               {landingCTAData.body}
             </p>
 

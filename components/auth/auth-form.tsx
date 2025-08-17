@@ -53,7 +53,7 @@ export default function AuthForm() {
           <CardTitle className='text-2xl font-bold text-accent-foreground'>
             Admin Login
           </CardTitle>
-          <p className='text-accent-foreground/90'>
+          <p className='text-muted-foreground'>
             Access the admin dashboard to manage submissions
           </p>
         </CardHeader>
@@ -101,7 +101,7 @@ export default function AuthForm() {
                 <button
                   type='button'
                   onClick={() => setShowPassword(!showPassword)}
-                  className='absolute top-1/2 right-3 -translate-y-1/2 transform text-accent-foreground/70 hover:text-accent-foreground/90'
+                  className='absolute top-1/2 right-3 -translate-y-1/2 transform text-muted-foreground hover:text-accent-foreground'
                   disabled={isLoading}
                 >
                   {showPassword ? (

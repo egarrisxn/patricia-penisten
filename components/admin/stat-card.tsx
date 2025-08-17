@@ -19,9 +19,7 @@ export default function StatCard({
         <div className='flex items-center gap-2 md:gap-3'>
           <div className={`${className} size-6 md:size-8`}>{icon}</div>
           <div>
-            <p className='text-xs text-muted-foreground/90 md:text-sm'>
-              {label}
-            </p>
+            <p className='text-xs text-muted-foreground md:text-sm'>{label}</p>
             <p className='text-xl font-bold text-accent-foreground md:text-2xl'>
               {count}
             </p>

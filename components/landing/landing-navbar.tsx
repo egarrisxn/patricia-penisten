@@ -14,7 +14,7 @@ export default function LandingNavbar() {
       extraRight={<NavLink href='/farewell' name='Farewell Tour' />}
       navLinks={landingNavigation}
       transparentClasses='bg-transparent text-white'
-      scrolledClasses='bg-card/90 text-foreground pointer-events-auto shadow-lg backdrop-blur-lg'
+      scrolledClasses='bg-card text-foreground pointer-events-auto shadow-lg backdrop-blur-lg'
     />
   );
 }

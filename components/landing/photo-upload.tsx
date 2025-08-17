@@ -122,10 +122,10 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
         <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-card/50 shadow-lg dark:border'>
           <Check className='size-6 text-green-600 md:size-12' />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
           Photo Submitted!
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground/90 md:text-base'>
+        <div className='text-sm tracking-tight text-muted-foreground md:text-base'>
           Your image is pending approval and will be visible to others once
           reviewed.
         </div>
@@ -156,8 +156,8 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 onDragLeave={handleDrag}
                 onDragOver={handleDrag}
                 onDrop={handleDrop}
-                className={`flex size-full min-h-52 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-input transition-all hover:border-ring hover:bg-purple-50/20 hover:ring-1 hover:ring-ring/50 dark:hover:bg-purple-950/5 ${
-                  dragActive ? "bg-purple-100/30 dark:bg-purple-950/10" : ""
+                className={`flex size-full min-h-52 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-input transition-all hover:border-ring hover:bg-slate-50 hover:ring-1 hover:ring-ring dark:hover:bg-card ${
+                  dragActive ? "bg-slate-50 dark:bg-card" : ""
                 }`}
               >
                 {selectedFile ? (
@@ -166,19 +166,19 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                     <p className='text-sm font-medium tracking-tight text-green-700'>
                       Photo ready to upload
                     </p>
-                    <p className='text-xs text-muted-foreground'>
+                    <p className='text-xs text-foreground'>
                       {selectedFile.name}
                     </p>
                   </div>
                 ) : (
                   <div className='flex flex-col items-center justify-center gap-1 pt-5 pb-6 text-center md:gap-1.5'>
                     <Upload className='size-6 text-muted-foreground md:size-7 xl:size-8' />
-                    <p className='text-sm font-medium tracking-tight text-muted-foreground/95'>
+                    <p className='text-sm font-medium tracking-tight text-foreground'>
                       <span className='font-extrabold'>Click to upload</span> or
                       drag and drop
                     </p>
 
-                    <div className='flex items-center gap-1 text-xs tracking-tight text-muted-foreground/90'>
+                    <div className='flex items-center gap-1 text-xs tracking-tight text-muted-foreground'>
                       <HardDrive className='size-3' />
                       <span>Max file size: 5MB</span>
                     </div>

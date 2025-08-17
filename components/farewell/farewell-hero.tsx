@@ -15,7 +15,7 @@ export default function FarewellHero() {
         <span className='mt-6 text-[1rem] leading-none font-medium xs:mt-4 xs:text-[1.1rem] sm:text-[1.25rem] md:mt-0 md:text-[1.35rem] lg:text-[1.4rem] 2xl:text-[1.65rem] [@media(min-width:600px)_and_(max-height:540px)]:mt-0 [@media(min-width:600px)_and_(max-height:540px)]:text-sm'>
           {farewellHeroData.pretitle}
         </span>
-        <h1 className='font-serif text-[3rem] leading-none font-extrabold text-foreground/90 text-shadow-lg/20 xs:text-[3.65rem] sm:text-[4.2rem] md:text-[4.5rem] lg:text-[4.75rem] xl:text-[5.2rem] 2xl:text-[6.2rem] [@media(min-width:600px)_and_(max-height:540px)]:text-[2.5rem]'>
+        <h1 className='font-serif text-[3rem] leading-none font-extrabold text-foreground text-shadow-lg/20 xs:text-[3.65rem] sm:text-[4.2rem] md:text-[4.5rem] lg:text-[4.75rem] xl:text-[5.2rem] 2xl:text-[6.2rem] [@media(min-width:600px)_and_(max-height:540px)]:text-[2.5rem]'>
           {farewellHeroData.title}
         </h1>
         <h2 className='mt-1.5 mb-8 flex items-center gap-2 xl:mb-10 2xl:mb-12 [@media(min-width:600px)_and_(max-height:540px)]:mb-4'>
@@ -25,7 +25,7 @@ export default function FarewellHero() {
           </span>
           <Heart className='size-3 fill-primary/50 text-primary lg:size-4 [@media(min-width:600px)_and_(max-height:540px)]:size-2.5' />
         </h2>
-        <p className='mx-auto mt-4 w-full px-4 text-[1rem] leading-[1.5] tracking-normal text-pretty text-foreground/95 xs:mt-2 xs:max-w-[32rem] xs:text-[1.2rem] sm:max-w-lg sm:px-2 sm:text-[1.35rem] sm:leading-[1.4] md:mt-0 md:px-0 md:text-[1.4rem] lg:text-[1.45rem] xl:max-w-3xl xl:px-12 xl:text-[1.5rem] xl:leading-[1.3] 2xl:px-2 2xl:text-[1.55rem] 2xl:leading-[1.35] [@media(min-width:600px)_and_(max-height:540px)]:text-[1.1rem]'>
+        <p className='mx-auto mt-4 w-full px-4 text-[1rem] leading-[1.5] tracking-normal text-pretty text-foreground xs:mt-2 xs:max-w-[32rem] xs:text-[1.2rem] sm:max-w-lg sm:px-2 sm:text-[1.35rem] sm:leading-[1.4] md:mt-0 md:px-0 md:text-[1.4rem] lg:text-[1.45rem] xl:max-w-3xl xl:px-12 xl:text-[1.5rem] xl:leading-[1.3] 2xl:px-2 2xl:text-[1.55rem] 2xl:leading-[1.35] [@media(min-width:600px)_and_(max-height:540px)]:text-[1.1rem]'>
           {farewellHeroData.body} The song{" "}
           <span className='px-[1px] text-primary'>{farewellHeroData.song}</span>{" "}
           by{" "}

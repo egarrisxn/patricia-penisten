@@ -9,7 +9,7 @@ export default function ErrorSection({ onClick }: ErrorProps) {
         <h1 className='text-5xl font-bold sm:mr-5 sm:border-r-2 sm:border-foreground sm:pr-5 sm:text-2xl'>
           Error
         </h1>
-        <p className='mt-3 text-lg text-accent-foreground/90 sm:mt-0 sm:text-base'>
+        <p className='mt-3 text-lg text-accent-foreground sm:mt-0 sm:text-base'>
           Seems there is a problem.
         </p>
         <button

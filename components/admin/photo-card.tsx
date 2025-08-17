@@ -41,9 +41,7 @@ export default function PhotoCard({
           </p>
         )}
         {photo.caption && (
-          <p className='mb-3 text-sm text-accent-foreground/90'>
-            {photo.caption}
-          </p>
+          <p className='mb-3 text-sm text-accent-foreground'>{photo.caption}</p>
         )}
         <p className='mb-3 text-xs text-muted-foreground'>
           {new Date(photo.created_at).toLocaleDateString()} • IP:{" "}

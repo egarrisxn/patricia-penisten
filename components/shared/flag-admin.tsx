@@ -43,7 +43,7 @@ export default function FlagAdmin({
     <button
       onClick={handleFlag}
       disabled={isFlagged || isLoading}
-      className={`text-xs font-semibold text-foreground/90 ${
+      className={`text-xs font-semibold text-foreground ${
         isFlagged
           ? "cursor-not-allowed opacity-50"
           : "cursor-pointer hover:text-black dark:hover:text-white"

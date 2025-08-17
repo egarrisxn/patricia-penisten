@@ -73,10 +73,10 @@ export default function GuestbookForm({
         <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
           <Check className='size-6 text-green-600 md:size-12' />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground/90 md:text-lg'>
+        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
           Entry Submitted!
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground/90'>
+        <div className='text-sm tracking-tight text-muted-foreground'>
           Your message is pending approval and will be visible to others once
           reviewed.
         </div>
