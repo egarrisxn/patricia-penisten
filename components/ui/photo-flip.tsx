@@ -12,7 +12,6 @@ interface PhotoFlipProps {
   alt?: string;
   width?: number;
   height?: number;
-  quality?: number;
   priority?: boolean;
   className?: string;
 }
@@ -23,7 +22,6 @@ export const PhotoFlip = ({
   alt = "Photo Flip",
   width = 300,
   height = 300,
-  quality = 100,
   priority = false,
   className = "",
 }: PhotoFlipProps) => {
@@ -97,7 +95,6 @@ export const PhotoFlip = ({
           alt={alt}
           width={width}
           height={height}
-          quality={quality}
           priority={priority}
           className={cn(
             "absolute inset-0 mx-auto object-cover [backface-visibility:hidden]",
@@ -111,7 +108,6 @@ export const PhotoFlip = ({
           alt={alt}
           width={width}
           height={height}
-          quality={quality}
           className={cn(
             "absolute inset-0 mx-auto [transform:rotateY(180deg)] object-cover [backface-visibility:hidden]",
             className

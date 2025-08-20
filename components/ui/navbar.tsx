@@ -47,7 +47,6 @@ const NavLogo = ({
         alt={imgAlt}
         width={64}
         height={64}
-        quality={100}
         priority={priority}
         className={`${className} size-9 lg:size-11`}
       />
