@@ -1,13 +1,12 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { PhotoFlip } from "@/components/ui/photo-flip";
-import ScrollDown from "@/components/shared/scroll-down";
 import { landingHeroData } from "@/lib/data/landing";
 
 export default function LandingHero() {
   return (
     <>
-      <div className='absolute inset-0 z-10 min-h-dvh'>
+      <div className='absolute inset-0 z-20 min-h-dvh'>
         <Image
           src={landingHeroData.src}
           alt="Background of Patricia Penisten's memorial page"
@@ -19,7 +18,7 @@ export default function LandingHero() {
         <div className='absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/90 dark:from-black/70 dark:via-black/80 dark:to-black/90' />
       </div>
 
-      <div className='relative z-20 flex min-h-screen flex-col justify-evenly px-4 md:justify-between [@media(min-width:600px)_and_(max-height:540px)]:pt-20'>
+      <div className='relative z-30 flex min-h-screen flex-col justify-evenly px-4 md:justify-between [@media(min-width:600px)_and_(max-height:540px)]:pt-20'>
         <div className='flex flex-col items-center justify-center gap-0 text-center xs:gap-6 md:flex-1 lg:flex-col lg:items-center lg:text-center [@media(min-width:600px)_and_(max-height:540px)]:flex-row [@media(min-width:600px)_and_(max-height:540px)]:items-start [@media(min-width:600px)_and_(max-height:540px)]:gap-0 [@media(min-width:600px)_and_(max-height:540px)]:text-start'>
           <aside>
             <PhotoFlip className='max-w-[16rem] xs:max-w-[19rem] [@media(min-width:600px)_and_(max-height:540px)]:max-w-[12.5rem]' />
@@ -45,10 +44,6 @@ export default function LandingHero() {
               <span className='font-semibold text-primary'>Wife</span>.
             </p>
           </motion.article>
-        </div>
-
-        <div className='mx-auto md:pb-8'>
-          <ScrollDown targetId='landing-about' />
         </div>
       </div>
     </>

@@ -3,7 +3,9 @@ import { SITE_DATA } from "@/lib/config";
 import ScrollProgress from "@/components/shared/scroll-progress";
 import FarewellNavbar from "@/components/farewell/farewell-navbar";
 import FarewellHero from "@/components/farewell/farewell-hero";
+import ScrollDown from "@/components/shared/scroll-down";
 import FarewellTimeline from "@/components/farewell/farewell-timeline";
+import ScrollUpButton from "@/components/shared/scroll-up";
 
 export const metadata: Metadata = {
   title: SITE_DATA.farewellTitle,
@@ -33,6 +35,7 @@ export default function FarewellPage() {
 
       <section id='farewell-hero'>
         <FarewellHero />
+        <ScrollDown targetId='farewell-timeline' />
       </section>
 
       <section
@@ -43,6 +46,7 @@ export default function FarewellPage() {
           <FarewellTimeline />
         </div>
       </section>
+      <ScrollUpButton targetId='farewell-hero' />
     </>
   );
 }

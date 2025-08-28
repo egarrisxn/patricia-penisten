@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ThemeButton from "@/components/ui/theme-button";
-import { useScrolled } from "@/hooks/use-scrolled";
+import { useHasScrolled } from "@/hooks/use-has-scrolled";
 
 interface NavLogoProps {
   href?: string;
@@ -85,7 +85,7 @@ const Navbar = ({
   scrolledClasses,
   isStatic = false,
 }: NavbarProps) => {
-  const scrolled = useScrolled();
+  const scrolled = useHasScrolled();
 
   const headerClasses = isStatic
     ? `w-full ${transparentClasses}`

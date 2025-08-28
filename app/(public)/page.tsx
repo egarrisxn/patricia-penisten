@@ -1,12 +1,15 @@
 import ScrollProgress from "@/components/shared/scroll-progress";
 import LandingNavbar from "@/components/landing/landing-navbar";
 import LandingHero from "@/components/landing/landing-hero";
+import ScrollDown from "@/components/shared/scroll-down";
 import Section from "@/components/ui/section";
 import LandingAbout from "@/components/landing/landing-about";
 import LandingTimeline from "@/components/landing/landing-timeline";
 import LandingPhotoGallery from "@/components/landing/landing-photo-gallery";
 import LandingGuestbook from "@/components/landing/landing-guestbook";
 import LandingCTA from "@/components/landing/landing-cta";
+
+import ScrollUpButton from "@/components/shared/scroll-up";
 
 export default function LandingPage() {
   return (
@@ -16,6 +19,7 @@ export default function LandingPage() {
 
       <section id='landing-hero' className='rounded-b-lg'>
         <LandingHero />
+        <ScrollDown targetId='landing-about' />
       </section>
 
       <Section
@@ -58,6 +62,7 @@ export default function LandingPage() {
       <section id='landing-cta' className='mt-24 bg-accent dark:bg-background'>
         <LandingCTA />
       </section>
+      <ScrollUpButton targetId='landing-hero' />
     </>
   );
 }
