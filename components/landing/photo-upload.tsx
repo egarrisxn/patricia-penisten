@@ -64,68 +64,115 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedFile) return;
+    if (!selectedFile || isUploading) return;
 
     setIsUploading(true);
-    try {
-      const fileExt = selectedFile.name.split(".").pop();
-      const fileName = `${Date.now()}.${fileExt}`;
 
-      const { error: uploadError } = await supabase.storage
-        .from("photos")
-        .upload(fileName, selectedFile);
+    // --- Upload to Supabase storage ---
+    const fileExt = selectedFile.name.split(".").pop();
+    const fileName = `${Date.now()}.${fileExt}`;
+    const uploadResult = await supabase.storage
+      .from("photos")
+      .upload(fileName, selectedFile);
 
-      if (uploadError) throw uploadError;
-
-      const { data: urlData } = supabase.storage
-        .from("photos")
-        .getPublicUrl(fileName);
-
-      const response = await fetch("/api/get-ip");
-      const { ip } = await response.json();
-
-      const { data, error } = await supabase
-        .from("photos")
-        .insert({
-          name: name || null,
-          caption: caption || null,
-          image_url: urlData.publicUrl,
-          status: "pending",
-          submitted_by_ip: ip,
-        })
-        .select()
-        .single();
-
-      if (error) throw error;
-
-      setIsSubmitted(true);
-      onPhotoSubmitted(data);
-      toast.success("Photo submitted! Pending approval.");
-
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setName("");
-        setCaption("");
-        setSelectedFile(null);
-      }, 3000);
-    } catch (error) {
-      console.error("Error submitting photo:", error);
+    if (uploadResult.error) {
+      console.error("Error uploading to storage:", uploadResult.error);
       toast.error("Error uploading photo. Please try again.");
-    } finally {
       setIsUploading(false);
+      return;
     }
+
+    const { data: urlData } = supabase.storage
+      .from("photos")
+      .getPublicUrl(fileName);
+
+    if (!urlData || !urlData.publicUrl) {
+      console.error("Error getting public URL:", urlData);
+      toast.error("Error uploading photo. Please try again.");
+      setIsUploading(false);
+      return;
+    }
+
+    // --- Get IP ---
+    const response = await fetch("/api/get-ip").catch((err) => {
+      console.error("Error fetching IP:", err);
+      toast.error("Error uploading photo. Please try again.");
+      setIsUploading(false);
+      return undefined;
+    });
+
+    if (!response) {
+      return;
+    }
+
+    if (!response.ok) {
+      console.error("Error fetching IP:", response.status);
+      toast.error("Error uploading photo. Please try again.");
+      setIsUploading(false);
+      return;
+    }
+
+    const ipJson = await response.json().catch((err) => {
+      console.error("Error parsing IP response:", err);
+      toast.error("Error uploading photo. Please try again.");
+      setIsUploading(false);
+      return undefined;
+    });
+
+    if (!ipJson || !ipJson.ip) {
+      console.error("IP missing in response:", ipJson);
+      toast.error("Error uploading photo. Please try again.");
+      setIsUploading(false);
+      return;
+    }
+
+    const ip = ipJson.ip as string;
+
+    // --- Insert DB row ---
+    const { data, error } = await supabase
+      .from("photos")
+      .insert({
+        name: name || null,
+        caption: caption || null,
+        image_url: urlData.publicUrl,
+        status: "pending",
+        submitted_by_ip: ip,
+      })
+      .select()
+      .single();
+
+    if (error || !data) {
+      console.error("Error inserting photo record:", error);
+      toast.error("Error uploading photo. Please try again.");
+      setIsUploading(false);
+      return;
+    }
+
+    // --- Success ---
+    setIsSubmitted(true);
+    onPhotoSubmitted(data as PhotoEntry);
+    toast.success("Photo submitted! Pending approval.");
+
+    setIsUploading(false);
+
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setName("");
+      setCaption("");
+      setSelectedFile(null);
+    }, 3000);
   };
 
   if (isSubmitted) {
     return (
-      <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-card/50 shadow-lg dark:border'>
-          <Check className='size-6 text-green-600 md:size-12' />
+      <div className="pt-20 pb-24 text-center">
+        <div className="mx-auto mb-4 flex size-24 items-center justify-center rounded-full bg-card/50 shadow-lg dark:border">
+          <Check className="size-6 text-green-600 md:size-12" />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
+        <div className="mb-2 text-base font-semibold text-foreground md:text-lg">
           Photo Submitted!
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground md:text-base'>
+        <div className="text-sm tracking-tight text-muted-foreground md:text-base">
           Your image is pending approval and will be visible to others once
           reviewed.
         </div>
@@ -134,24 +181,24 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
   }
 
   return (
-    <Card className='bg-white py-2 xs:aspect-square lg:py-4 dark:bg-background'>
-      <CardContent className='flex-1 px-2 lg:px-4'>
-        <form onSubmit={handleSubmit} className='flex h-full flex-col gap-2'>
-          <div className='flex-1'>
-            <Label htmlFor='photo-upload' className='sr-only'>
+    <Card className="bg-white py-2 xs:aspect-square lg:py-4 dark:bg-background">
+      <CardContent className="flex-1 px-2 lg:px-4">
+        <form onSubmit={handleSubmit} className="flex h-full flex-col gap-2">
+          <div className="flex-1">
+            <Label htmlFor="photo-upload" className="sr-only">
               Choose Photo *
             </Label>
-            <div className='h-full min-h-52'>
+            <div className="h-full min-h-52">
               <input
-                id='photo-upload'
-                type='file'
-                accept='image/*'
+                id="photo-upload"
+                type="file"
+                accept="image/*"
                 onChange={handleFileSelect}
-                className='hidden'
+                className="hidden"
                 required
               />
               <label
-                htmlFor='photo-upload'
+                htmlFor="photo-upload"
                 onDragEnter={handleDrag}
                 onDragLeave={handleDrag}
                 onDragOver={handleDrag}
@@ -161,25 +208,25 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
                 }`}
               >
                 {selectedFile ? (
-                  <div className='flex flex-col items-center justify-center gap-1 md:gap-1.5'>
-                    <Check className='size-6 text-green-600 md:size-7 xl:size-8' />
-                    <p className='text-sm font-medium tracking-tight text-green-700'>
+                  <div className="flex flex-col items-center justify-center gap-1 md:gap-1.5">
+                    <Check className="size-6 text-green-600 md:size-7 xl:size-8" />
+                    <p className="text-sm font-medium tracking-tight text-green-700">
                       Photo ready to upload
                     </p>
-                    <p className='text-xs text-foreground'>
+                    <p className="text-xs text-foreground">
                       {selectedFile.name}
                     </p>
                   </div>
                 ) : (
-                  <div className='flex flex-col items-center justify-center gap-1 pt-5 pb-6 text-center md:gap-1.5'>
-                    <Upload className='size-6 text-muted-foreground md:size-7 xl:size-8' />
-                    <p className='text-sm font-medium tracking-tight text-foreground'>
-                      <span className='font-extrabold'>Click to upload</span> or
+                  <div className="flex flex-col items-center justify-center gap-1 pt-5 pb-6 text-center md:gap-1.5">
+                    <Upload className="size-6 text-muted-foreground md:size-7 xl:size-8" />
+                    <p className="text-sm font-medium tracking-tight text-foreground">
+                      <span className="font-extrabold">Click to upload</span> or
                       drag and drop
                     </p>
 
-                    <div className='flex items-center gap-1 text-xs tracking-tight text-muted-foreground'>
-                      <HardDrive className='size-3' />
+                    <div className="flex items-center gap-1 text-xs tracking-tight text-muted-foreground">
+                      <HardDrive className="size-3" />
                       <span>Max file size: 5MB</span>
                     </div>
                   </div>
@@ -187,37 +234,37 @@ export default function PhotoUpload({ onPhotoSubmitted }: PhotoUploadProps) {
               </label>
             </div>
           </div>
-          <div className='flex flex-shrink-0 flex-col gap-2 lg:gap-4'>
+          <div className="flex shrink-0 flex-col gap-2 lg:gap-4">
             <div>
-              <Label htmlFor='name' className='sr-only'>
+              <Label htmlFor="name" className="sr-only">
                 Name (optional)
               </Label>
               <Input
-                id='name'
+                id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={40}
-                placeholder='Name (optional)'
+                placeholder="Name (optional)"
               />
             </div>
             <div>
-              <Label htmlFor='caption' className='sr-only'>
+              <Label htmlFor="caption" className="sr-only">
                 Caption (optional)
               </Label>
               <Textarea
-                id='caption'
+                id="caption"
                 value={caption}
                 onChange={(e) => setCaption(e.target.value)}
                 maxLength={80}
-                className='min-h-20'
-                placeholder='Caption (optional)'
+                className="min-h-20"
+                placeholder="Caption (optional)"
               />
             </div>
           </div>
           <Button
-            type='submit'
+            type="submit"
             disabled={!selectedFile || isUploading}
-            className='w-full cursor-pointer'
+            className="w-full cursor-pointer"
           >
             {isUploading ? "Uploading..." : "Share Photo"}
           </Button>

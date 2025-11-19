@@ -49,14 +49,14 @@ export default function PhotoList({
 
   if (allPhotos.length === 0) {
     return (
-      <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex items-center justify-center'>
-          <MessageCircle className='size-6 md:size-12' />
+      <div className="pt-20 pb-24 text-center">
+        <div className="mx-auto mb-4 flex items-center justify-center">
+          <MessageCircle className="size-6 md:size-12" />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
+        <div className="mb-2 text-base font-semibold text-foreground md:text-lg">
           No Photos Gallery photos
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground md:text-base'>
+        <div className="text-sm tracking-tight text-muted-foreground md:text-base">
           Be the first to add a photo memory
         </div>
       </div>
@@ -69,9 +69,9 @@ export default function PhotoList({
 
       {selectedPhoto && (
         <Dialog open={selectedIndex !== null} onOpenChange={closeDialog}>
-          <DialogContent className='max-w-4xl gap-2 bg-accent'>
-            <div className='mx-auto flex items-center justify-center gap-1 pt-2 text-sm text-foreground'>
-              <Clock size={16} className='text-accent-foreground' />
+          <DialogContent className="max-w-4xl gap-2 bg-accent">
+            <div className="mx-auto flex items-center justify-center gap-1 pt-2 text-sm text-foreground">
+              <Clock size={16} className="text-accent-foreground" />
               <span>
                 {new Date(selectedPhoto.created_at).toLocaleDateString(
                   "en-US",
@@ -83,8 +83,8 @@ export default function PhotoList({
                 )}
               </span>
             </div>
-            <div className='relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center'>
-              <div className='relative block size-full'>
+            <div className="relative flex max-h-[75vh] min-h-[50vh] w-full items-center justify-center">
+              <div className="relative block size-full">
                 <Image
                   src={selectedPhoto.image_url}
                   alt={
@@ -93,31 +93,31 @@ export default function PhotoList({
                     "Uploaded Photo"
                   }
                   fill
-                  sizes='(max-width: 768px) 100vw, 75vw'
-                  className='object-contain'
+                  sizes="(max-width: 768px) 100vw, 75vw"
+                  className="object-contain"
                   style={{ objectPosition: "center" }}
                 />
               </div>
             </div>
-            <div className='pb-4 text-foreground'>
-              <DialogHeader className='mb-2'>
-                <DialogTitle className='text-center text-base leading-[1.4] font-medium text-wrap'>
+            <div className="pb-4 text-foreground">
+              <DialogHeader className="mb-2">
+                <DialogTitle className="text-center text-base leading-[1.4] font-medium text-wrap">
                   {selectedPhoto.caption || "In loving memory."}
                 </DialogTitle>
               </DialogHeader>
 
               {selectedPhoto.name && (
-                <div className='mx-auto flex items-center justify-center gap-1'>
-                  <User size={16} className='text-accent-foreground' />
-                  <p className='text-wrap'>{selectedPhoto.name}</p>
+                <div className="mx-auto flex items-center justify-center gap-1">
+                  <User size={16} className="text-accent-foreground" />
+                  <p className="text-wrap">{selectedPhoto.name}</p>
                 </div>
               )}
 
-              <div className='absolute bottom-2 left-4'>
+              <div className="absolute bottom-2 left-4">
                 <button
                   onClick={() => window.open(selectedPhoto.image_url, "_blank")}
                   aria-label={`Open photo: ${selectedPhoto.caption || selectedPhoto.name || "photo"}`}
-                  className='hidden cursor-pointer font-semibold text-foreground hover:text-black md:block dark:hover:text-white'
+                  className="hidden cursor-pointer font-semibold text-foreground hover:text-black md:block dark:hover:text-white"
                 >
                   <Download size={14} />
                 </button>
@@ -125,25 +125,25 @@ export default function PhotoList({
                   href={selectedPhoto.image_url}
                   download={selectedPhoto.caption || "Uploaded Photo"}
                 >
-                  <button className='cursor-pointer font-semibold text-accent-foreground hover:text-black md:hidden dark:hover:text-white'>
+                  <button className="cursor-pointer font-semibold text-accent-foreground hover:text-black md:hidden dark:hover:text-white">
                     <Download size={14} />
                   </button>
                 </a>
               </div>
 
               {selectedPhoto.status === "pending" && (
-                <div className='absolute right-4 bottom-2 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]'>
-                  <div className='mb-[1.5px] size-2 animate-pulse rounded-full bg-primary md:size-[8.5px] 2xl:size-2.5'></div>{" "}
-                  <div className='text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm'>
+                <div className="absolute right-4 bottom-2 flex w-fit flex-row items-center justify-center gap-[2.5px] md:gap-[3px] 2xl:gap-[3.5px]">
+                  <div className="mb-[1.5px] size-2 animate-pulse rounded-full bg-primary md:size-[8.5px] 2xl:size-2.5"></div>{" "}
+                  <div className="text-xs font-semibold tracking-tight md:text-[0.825rem] 2xl:text-sm">
                     Pending
                   </div>
                 </div>
               )}
               {selectedPhoto.status === "approved" && (
-                <div className='absolute right-4 bottom-2'>
+                <div className="absolute right-4 bottom-2">
                   <FlagAdmin
                     itemId={selectedPhoto.id}
-                    table='photos'
+                    table="photos"
                     initiallyFlagged={selectedPhoto.flagged}
                   />
                 </div>

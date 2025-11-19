@@ -26,22 +26,37 @@ export const PhotoFlip = ({
   className = "",
 }: PhotoFlipProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [supportsHover, setSupportsHover] = useState(true);
 
+  // ✅ Initialize supportsHover in state initializer, not in an effect
+  const [supportsHover, setSupportsHover] = useState<boolean>(() => {
+    if (typeof window === "undefined") return true;
+    return window.matchMedia("(hover: hover)").matches;
+  });
+
+  // ✅ Effect only subscribes to media query changes, state updates happen in callback
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hoverQuery = window.matchMedia("(hover: hover)");
-      setSupportsHover(hoverQuery.matches);
-    }
+    if (typeof window === "undefined") return;
+
+    const hoverQuery = window.matchMedia("(hover: hover)");
+
+    const handleChange = (event: MediaQueryListEvent) => {
+      setSupportsHover(event.matches);
+    };
+
+    // Modern API
+    hoverQuery.addEventListener("change", handleChange);
+
+    return () => {
+      hoverQuery.removeEventListener("change", handleChange);
+    };
   }, []);
 
+  // Scroll flip
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const onScroll = () => {
-      if (window.scrollY > 0) {
-        setIsFlipped(true);
-      } else {
-        setIsFlipped(false);
-      }
+      setIsFlipped(window.scrollY > 0);
     };
 
     let ticking = false;
@@ -69,7 +84,7 @@ export const PhotoFlip = ({
 
   return (
     <div
-      className='relative'
+      className="relative"
       style={{
         width,
         height,
@@ -82,11 +97,11 @@ export const PhotoFlip = ({
       <div
         className={cn(
           "relative size-full cursor-pointer",
-          "[transform-style:preserve-3d]",
+          "transform-3d",
           "transition-transform duration-700",
           isFlipped
-            ? "[transform:rotateY(180deg)]"
-            : "[transform:rotateY(0deg)]"
+            ? "transform-[rotateY(180deg)]"
+            : "transform-[rotateY(0deg)]"
         )}
       >
         {/* Front Image */}
@@ -97,7 +112,7 @@ export const PhotoFlip = ({
           height={height}
           priority={priority}
           className={cn(
-            "absolute inset-0 mx-auto object-cover [backface-visibility:hidden]",
+            "absolute inset-0 mx-auto object-cover backface-hidden",
             className
           )}
         />
@@ -109,7 +124,7 @@ export const PhotoFlip = ({
           width={width}
           height={height}
           className={cn(
-            "absolute inset-0 mx-auto [transform:rotateY(180deg)] object-cover [backface-visibility:hidden]",
+            "absolute inset-0 mx-auto transform-[rotateY(180deg)] object-cover backface-hidden",
             className
           )}
         />

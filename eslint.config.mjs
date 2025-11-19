@@ -1,32 +1,28 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+import prettier from "eslint-config-prettier/flat";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  {
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@next/next/no-img-element": "off",
     },
-  }),
-  {
-    ignores: [
-      "**/node_modules/",
-      ".git/",
-      ".vscode/",
-      ".next/",
-      "public/",
-      "next-env.d.ts",
-    ],
   },
-];
+  globalIgnores([
+    ".next/**",
+    ".git/**",
+    ".vscode/**",
+    "public/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    "**/node_modules/",
+  ]),
+  prettier,
+]);
 
 export default eslintConfig;

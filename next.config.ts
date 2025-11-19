@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactCompiler: true,
+  // cacheComponents: true,
   images: {
     remotePatterns: [
       {
@@ -9,17 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  //! This will be needed in future versions
-  // Disable smooth scrolling during route transitions
-  // This will optimize navigation and performance
-  // <html lang="en" data-scroll-behavior="smooth" />
-  experimental: {
-    optimizeRouterScrolling: true,
-  },
-  //! This will be needed in future versions
-  // For cross-origin requests during development
-  // Example: checking development on moble device
-  // allowedDevOrigins: ["xxx.xxx.x.xxx", "*xxxxx-xxxxx.xxx"],
 
   async headers() {
     return [

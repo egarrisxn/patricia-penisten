@@ -30,23 +30,23 @@ export const metadata: Metadata = {
 export default function FarewellPage() {
   return (
     <>
-      <ScrollProgress className='top-0' />
+      <ScrollProgress className="top-0" />
       <FarewellNavbar />
 
-      <section id='farewell-hero'>
+      <section id="farewell-hero">
         <FarewellHero />
-        <ScrollDown targetId='farewell-timeline' />
+        <ScrollDown targetId="farewell-timeline" />
       </section>
 
       <section
-        id='farewell-timeline'
-        className='mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28'
+        id="farewell-timeline"
+        className="mx-auto grid min-h-screen w-full place-items-center py-24 xl:pt-32 xl:pb-28"
       >
-        <div className='mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8'>
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8">
           <FarewellTimeline />
         </div>
       </section>
-      <ScrollUpButton targetId='farewell-hero' />
+      <ScrollUpButton targetId="farewell-hero" />
     </>
   );
 }

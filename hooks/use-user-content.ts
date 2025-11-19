@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
 
 export function useUserContent<T extends { id: string }>(
@@ -14,43 +14,64 @@ export function useUserContent<T extends { id: string }>(
   const [approvedItems, setApprovedItems] = useState<T[]>([]);
   const supabase = createClient();
 
-  const fetchUserIP = async () => {
-    try {
-      const response = await fetch("/api/get-ip");
-      const { ip } = await response.json();
-      setUserIP(ip);
-    } catch (error) {
-      console.error("Error fetching IP:", error);
-    }
-  };
+  // ✅ Initial fetch: IP + approved items
+  useEffect(() => {
+    let cancelled = false;
 
-  const fetchApproved = useCallback(async () => {
-    const { data, error } = await supabase
-      .from(table)
-      .select("*")
-      .eq("status", "approved")
-      .order("created_at", { ascending: false });
-    if (!error && data) setApprovedItems(data);
+    const run = async () => {
+      try {
+        // fetch user IP
+        const response = await fetch("/api/get-ip");
+        const { ip } = await response.json();
+        if (!cancelled) {
+          setUserIP(ip);
+        }
+      } catch (error) {
+        console.error("Error fetching IP:", error);
+      }
+
+      // fetch approved items
+      const { data, error } = await supabase
+        .from(table)
+        .select("*")
+        .eq("status", "approved")
+        .order("created_at", { ascending: false });
+
+      if (!cancelled && !error && data) {
+        setApprovedItems(data);
+      }
+    };
+
+    run();
+
+    return () => {
+      cancelled = true;
+    };
   }, [supabase, table]);
 
-  const fetchUserSubmitted = useCallback(async () => {
+  // ✅ Fetch user-submitted items once IP is known
+  useEffect(() => {
     if (!userIP) return;
-    const { data, error } = await supabase
-      .from(table)
-      .select("*")
-      .eq("submitted_by_ip", userIP)
-      .order("created_at", { ascending: false });
-    if (!error && data) setUserItems(data);
+    let cancelled = false;
+
+    const run = async () => {
+      const { data, error } = await supabase
+        .from(table)
+        .select("*")
+        .eq("submitted_by_ip", userIP)
+        .order("created_at", { ascending: false });
+
+      if (!cancelled && !error && data) {
+        setUserItems(data);
+      }
+    };
+
+    run();
+
+    return () => {
+      cancelled = true;
+    };
   }, [supabase, table, userIP]);
-
-  useEffect(() => {
-    fetchUserIP();
-    fetchApproved();
-  }, [fetchApproved]);
-
-  useEffect(() => {
-    if (userIP) fetchUserSubmitted();
-  }, [userIP, fetchUserSubmitted]);
 
   return {
     userIP,

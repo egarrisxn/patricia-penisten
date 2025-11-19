@@ -20,7 +20,7 @@ interface SlideProps {
 const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
   return (
     <li
-      className='relative z-10 mr-8 flex flex-shrink-0 flex-col items-center justify-center text-center text-white opacity-100 transition-transform duration-300 ease-in-out'
+      className="relative z-10 mr-8 flex shrink-0 flex-col items-center justify-center text-center text-white opacity-100 transition-transform duration-300 ease-in-out"
       style={{
         width: SIZE,
         height: SIZE,
@@ -31,12 +31,12 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
         transformOrigin: "bottom",
       }}
     >
-      <div className='absolute top-0 left-0 size-full overflow-hidden rounded-[1%] bg-[#1D1F2F] transition-all duration-150 ease-out'>
+      <div className="absolute top-0 left-0 size-full overflow-hidden rounded-[1%] bg-[#1D1F2F] transition-all duration-150 ease-out">
         <Image
           src={slide.src || "/placeholder.svg"}
           alt={slide.title || "Carousel Image"}
           fill
-          className='absolute inset-0 object-cover'
+          className="absolute inset-0 object-cover"
           style={{
             opacity: current === index ? 1 : 0.5,
             pointerEvents: "none",
@@ -44,9 +44,9 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
           priority={current === index}
         />
         {current === index && slide.status === "pending" && (
-          <div className='absolute top-3 left-3 flex w-fit flex-row items-center justify-center gap-1'>
-            <div className='mb-[1.5px] size-2 animate-pulse rounded-full bg-primary'></div>
-            <div className='text-xs font-semibold tracking-tight'>Pending</div>
+          <div className="absolute top-3 left-3 flex w-fit flex-row items-center justify-center gap-1">
+            <div className="mb-[1.5px] size-2 animate-pulse rounded-full bg-primary"></div>
+            <div className="text-xs font-semibold tracking-tight">Pending</div>
           </div>
         )}
       </div>
@@ -57,13 +57,13 @@ const Slide = ({ slide, index, current, onButtonClick }: SlideProps) => {
         }`}
         style={{ pointerEvents: "auto" }}
       >
-        <h2 className='relative line-clamp-3 text-sm font-semibold sm:text-base md:text-lg lg:text-xl xl:text-2xl'>
+        <h2 className="relative line-clamp-3 text-sm font-semibold sm:text-base md:text-lg lg:text-xl xl:text-2xl">
           {slide.title}
         </h2>
-        <div className='mt-2 flex justify-center'>
+        <div className="mt-2 flex justify-center">
           <Button
-            className='text-accent-background h-9 cursor-pointer rounded-md bg-accent-foreground px-4 py-2 text-sm hover:bg-foreground hover:text-background md:h-10 md:px-6 md:py-0'
-            variant='default'
+            className="text-accent-background h-9 cursor-pointer rounded-md bg-accent-foreground px-4 py-2 text-sm hover:bg-foreground hover:text-background md:h-10 md:px-6 md:py-0"
+            variant="default"
             onClick={(e) => {
               e.stopPropagation();
               onButtonClick(index);
@@ -157,7 +157,7 @@ export function Carousel({ slides, onSlideClick }: CarouselProps) {
   return (
     <div
       ref={containerRef}
-      className='relative mx-auto'
+      className="relative mx-auto"
       style={{
         width: SIZE,
         height: SIZE,
@@ -167,7 +167,7 @@ export function Carousel({ slides, onSlideClick }: CarouselProps) {
     >
       <motion.ul
         ref={slidesRef}
-        drag='x'
+        drag="x"
         dragConstraints={dragConstraints}
         dragElastic={0.2}
         onDragStart={() => setIsDragging(true)}
@@ -193,7 +193,7 @@ export function Carousel({ slides, onSlideClick }: CarouselProps) {
             transition: { type: "spring", stiffness: 300, damping: 30 },
           });
         }}
-        className='absolute flex'
+        className="absolute flex"
         animate={controls}
         style={{ cursor: isDragging ? "grabbing" : "grab" }}
       >
@@ -209,20 +209,20 @@ export function Carousel({ slides, onSlideClick }: CarouselProps) {
       </motion.ul>
 
       {/* Controls */}
-      <div className='absolute top-[calc(100%+1rem)] flex w-full justify-center'>
+      <div className="absolute top-[calc(100%+1rem)] flex w-full justify-center">
         <button
-          className='mx-2 flex size-10 rotate-180 items-center justify-center rounded-full border-3 border-transparent bg-card transition duration-200 hover:-translate-y-0.5 focus:border-primary focus:outline-none active:translate-y-0.5'
-          name='Previous Slide'
+          className="mx-2 flex size-10 rotate-180 items-center justify-center rounded-full border-3 border-transparent bg-card transition duration-200 hover:-translate-y-0.5 focus:border-primary focus:outline-none active:translate-y-0.5"
+          name="Previous Slide"
           onClick={handlePreviousClick}
         >
-          <ArrowRight className='text-foreground' />
+          <ArrowRight className="text-foreground" />
         </button>
         <button
-          className='mx-2 flex size-10 items-center justify-center rounded-full border-3 border-transparent bg-card transition duration-200 hover:-translate-y-0.5 focus:border-primary focus:outline-none active:translate-y-0.5'
-          name='Next Slide'
+          className="mx-2 flex size-10 items-center justify-center rounded-full border-3 border-transparent bg-card transition duration-200 hover:-translate-y-0.5 focus:border-primary focus:outline-none active:translate-y-0.5"
+          name="Next Slide"
           onClick={handleNextClick}
         >
-          <ArrowRight className='text-foreground' />
+          <ArrowRight className="text-foreground" />
         </button>
       </div>
     </div>

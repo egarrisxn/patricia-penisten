@@ -17,7 +17,7 @@ export default function ScrollProgress({ className }: ScrollProgressProps) {
 
   return (
     <motion.div
-      className={`${className} fixed inset-x-0 top-0 z-[1000] h-0.5 origin-left bg-primary`}
+      className={`${className} fixed inset-x-0 top-0 z-1000 h-0.5 origin-left bg-primary`}
       style={{
         scaleX,
       }}

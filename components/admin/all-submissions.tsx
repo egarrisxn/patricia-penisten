@@ -17,13 +17,13 @@ export default function AllSubmissionsSection({
   onEntryAction,
 }: AllSubmissionsSectionProps) {
   return (
-    <div className='space-y-8'>
+    <div className="space-y-8">
       {photos.length > 0 && (
         <div>
-          <h3 className='mb-4 text-lg font-semibold text-accent-foreground'>
+          <h3 className="mb-4 text-lg font-semibold text-accent-foreground">
             All Photos
           </h3>
-          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {photos.map((photo) => (
               <PhotoCard
                 key={photo.id}
@@ -41,10 +41,10 @@ export default function AllSubmissionsSection({
 
       {entries.length > 0 && (
         <div>
-          <h3 className='mb-4 text-lg font-semibold text-accent-foreground'>
+          <h3 className="mb-4 text-lg font-semibold text-accent-foreground">
             All Entries
           </h3>
-          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {entries.map((entry) => (
               <EntryCard
                 key={entry.id}

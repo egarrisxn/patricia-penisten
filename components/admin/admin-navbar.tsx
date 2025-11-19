@@ -6,14 +6,14 @@ export default function AdminNavbar() {
     <Navbar
       logo={
         <NavLogo
-          primary='Patricia Penisten:'
-          secondary='Admin Page'
-          href='/'
+          primary="Patricia Penisten:"
+          secondary="Admin Page"
+          href="/"
           priority
         />
       }
       navLinks={adminNavigation}
-      transparentClasses='z-50'
+      transparentClasses="z-50"
       isStatic={true}
     />
   );

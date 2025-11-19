@@ -29,54 +29,88 @@ export default function GuestbookForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim()) return;
+    if (!message.trim() || isSubmitting) return;
 
     setIsSubmitting(true);
-    try {
-      const response = await fetch("/api/get-ip");
-      const { ip } = await response.json();
 
-      const { data, error } = await supabase
-        .from("entries")
-        .insert({
-          name: name || null,
-          relationship: relationship || null,
-          message: message.trim(),
-          status: "pending",
-          submitted_by_ip: ip,
-        })
-        .select()
-        .single();
+    // --- Fetch IP (no try/catch, use .catch and early returns) ---
+    const response = await fetch("/api/get-ip").catch((err) => {
+      console.error("Error fetching IP:", err);
+      toast.error("Error uploading entry. Please try again.");
+      setIsSubmitting(false);
+      return undefined;
+    });
 
-      if (error) throw error;
+    if (!response) return;
 
-      setIsSubmitted(true);
-      onEntrySubmitted(data);
+    if (!response.ok) {
+      console.error("Error fetching IP: bad response status", response.status);
+      toast.error("Error uploading entry. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
 
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setName("");
-        setRelationship("");
-        setMessage("");
-      }, 3000);
-    } catch (error) {
+    let ip = "";
+
+    const json = await response.json().catch((err) => {
+      console.error("Error parsing IP response:", err);
+      toast.error("Error uploading entry. Please try again.");
+      setIsSubmitting(false);
+      return undefined;
+    });
+
+    if (!json || !json.ip) {
+      console.error("IP missing in response:", json);
+      toast.error("Error uploading entry. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    ip = json.ip as string;
+
+    // --- Insert entry into Supabase ---
+    const { data, error } = await supabase
+      .from("entries")
+      .insert({
+        name: name || null,
+        relationship: relationship || null,
+        message: message.trim(),
+        status: "pending",
+        submitted_by_ip: ip,
+      })
+      .select()
+      .single();
+
+    if (error || !data) {
       console.error("Error submitting entry:", error);
       toast.error("Error uploading entry. Please try again.");
-    } finally {
       setIsSubmitting(false);
+      return;
     }
+
+    // --- Success! ---
+    setIsSubmitted(true);
+    onEntrySubmitted(data as GuestbookEntry);
+    setIsSubmitting(false);
+
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setName("");
+      setRelationship("");
+      setMessage("");
+    }, 3000);
   };
 
   if (isSubmitted) {
     return (
-      <div className='pt-20 pb-24 text-center'>
-        <div className='mx-auto mb-4 flex size-24 items-center justify-center rounded-full'>
-          <Check className='size-6 text-green-600 md:size-12' />
+      <div className="pt-20 pb-24 text-center">
+        <div className="mx-auto mb-4 flex size-24 items-center justify-center rounded-full">
+          <Check className="size-6 text-green-600 md:size-12" />
         </div>
-        <div className='mb-2 text-base font-semibold text-foreground md:text-lg'>
+        <div className="mb-2 text-base font-semibold text-foreground md:text-lg">
           Entry Submitted!
         </div>
-        <div className='text-sm tracking-tight text-muted-foreground'>
+        <div className="text-sm tracking-tight text-muted-foreground">
           Your message is pending approval and will be visible to others once
           reviewed.
         </div>
@@ -85,63 +119,63 @@ export default function GuestbookForm({
   }
 
   return (
-    <Card className='xs:py-4 lg:py-8'>
-      <CardContent className='flex-1'>
+    <Card className="xs:py-4 lg:py-8">
+      <CardContent className="flex-1">
         <form
           onSubmit={handleSubmit}
-          className='flex h-full flex-col gap-2 xl:gap-4'
+          className="flex h-full flex-col gap-2 xl:gap-4"
         >
-          <div className='flex flex-shrink-0 flex-col gap-2 xl:gap-4'>
+          <div className="flex shrink-0 flex-col gap-2 xl:gap-4">
             <div>
-              <Label htmlFor='name' className='text-muted-foreground'>
+              <Label htmlFor="name" className="text-muted-foreground">
                 Name (Optional)
               </Label>
               <Input
-                id='name'
+                id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={50}
-                className='mt-1'
-                placeholder='Jane Doe'
+                className="mt-1"
+                placeholder="Jane Doe"
               />
             </div>
             <div>
-              <Label htmlFor='relationship' className='text-muted-foreground'>
+              <Label htmlFor="relationship" className="text-muted-foreground">
                 Relationship (Optional)
               </Label>
               <Input
-                id='relationship'
+                id="relationship"
                 value={relationship}
                 onChange={(e) => setRelationship(e.target.value)}
                 maxLength={50}
-                className='mt-1'
-                placeholder='Old Friend'
+                className="mt-1"
+                placeholder="Old Friend"
               />
             </div>
           </div>
-          <div className='flex-1'>
+          <div className="flex-1">
             <div>
-              <Label htmlFor='message' className='text-muted-foreground'>
+              <Label htmlFor="message" className="text-muted-foreground">
                 Your Memory or Message *
               </Label>
               <Textarea
-                id='message'
+                id="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 maxLength={500}
-                className='mt-1 min-h-40'
-                placeholder='You and your light will be missed.'
+                className="mt-1 min-h-40"
+                placeholder="You and your light will be missed."
                 required
               />
-              <div className='text-right text-xs text-muted-foreground'>
+              <div className="text-right text-xs text-muted-foreground">
                 {message.length}/500
               </div>
             </div>
           </div>
           <Button
-            type='submit'
+            type="submit"
             disabled={!message.trim() || isSubmitting}
-            className='w-full cursor-pointer'
+            className="w-full cursor-pointer"
           >
             {isSubmitting ? "Submitting..." : "Share Memory"}
           </Button>

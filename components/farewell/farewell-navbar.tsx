@@ -6,15 +6,15 @@ export default function FarewellNavbar() {
     <Navbar
       logo={
         <NavLogo
-          primary='Patricia Penisten:'
-          secondary='The Farewell Tour'
+          primary="Patricia Penisten:"
+          secondary="The Farewell Tour"
           priority
         />
       }
       extraLeft={<CustomAudioPlayer />}
       navLinks={[{ name: "Memorial Page", href: "/" }]}
-      transparentClasses='bg-transparent'
-      scrolledClasses='bg-card text-foreground pointer-events-auto shadow-lg backdrop-blur-lg'
+      transparentClasses="bg-transparent"
+      scrolledClasses="bg-card text-foreground pointer-events-auto shadow-lg backdrop-blur-lg"
     />
   );
 }

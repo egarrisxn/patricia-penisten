@@ -42,81 +42,81 @@ export default function AuthForm() {
   };
 
   return (
-    <div className='mx-auto flex h-fit w-full max-w-7xl justify-center px-4 sm:px-6 lg:px-8'>
-      <Card className='w-full max-w-md'>
-        <CardHeader className='text-center'>
-          <div className='mb-4 flex justify-center'>
-            <div className='flex size-16 items-center justify-center rounded-full bg-accent'>
-              <Shield className='size-8 text-blue-500' />
+    <div className="mx-auto flex h-fit w-full max-w-7xl justify-center px-4 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md">
+        <CardHeader className="text-center">
+          <div className="mb-4 flex justify-center">
+            <div className="flex size-16 items-center justify-center rounded-full bg-accent">
+              <Shield className="size-8 text-blue-500" />
             </div>
           </div>
-          <CardTitle className='text-2xl font-bold text-accent-foreground'>
+          <CardTitle className="text-2xl font-bold text-accent-foreground">
             Admin Login
           </CardTitle>
-          <p className='text-muted-foreground'>
+          <p className="text-muted-foreground">
             Access the admin dashboard to manage submissions
           </p>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className='space-y-4'>
+          <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
-              <div className='rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-600'>
+              <div className="rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-600">
                 {error}
               </div>
             )}
 
             <div>
-              <Label htmlFor='email' className='text-muted-foreground'>
+              <Label htmlFor="email" className="text-muted-foreground">
                 Email
               </Label>
               <Input
-                id='email'
-                type='email'
-                aria-label='email'
+                id="email"
+                type="email"
+                aria-label="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className='mt-1'
+                className="mt-1"
                 required
                 disabled={isLoading}
-                placeholder='admin@example.com'
+                placeholder="admin@example.com"
               />
             </div>
 
-            <div className='pb-1'>
-              <Label htmlFor='password' className='text-muted-foreground'>
+            <div className="pb-1">
+              <Label htmlFor="password" className="text-muted-foreground">
                 Password
               </Label>
-              <div className='relative'>
+              <div className="relative">
                 <Input
-                  id='password'
-                  aria-label='password'
+                  id="password"
+                  aria-label="password"
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className='mt-1'
+                  className="mt-1"
                   required
                   disabled={isLoading}
-                  placeholder='Enter your password'
+                  placeholder="Enter your password"
                 />
                 <button
-                  type='button'
+                  type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className='absolute top-1/2 right-3 -translate-y-1/2 transform text-muted-foreground hover:text-accent-foreground'
+                  className="absolute top-1/2 right-3 -translate-y-1/2 transform text-muted-foreground hover:text-accent-foreground"
                   disabled={isLoading}
                 >
                   {showPassword ? (
-                    <EyeOff className='size-4' />
+                    <EyeOff className="size-4" />
                   ) : (
-                    <Eye className='size-4' />
+                    <Eye className="size-4" />
                   )}
                 </button>
               </div>
             </div>
 
             <Button
-              type='submit'
+              type="submit"
               disabled={isLoading || !email || !password}
-              className='w-full'
+              className="w-full"
             >
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>

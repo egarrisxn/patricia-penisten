@@ -68,8 +68,8 @@ export default function ThemeButton({
           sizeClasses[size],
           className
         )}
-        role='button'
-        aria-label='Loading theme toggle'
+        role="button"
+        aria-label="Loading theme toggle"
       />
     );
   }
@@ -86,7 +86,7 @@ export default function ThemeButton({
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${themeConfigs[nextTheme].label} theme`}
     >
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode="wait">
         <motion.div
           key={safeTheme}
           initial={{ rotate: -180, opacity: 0 }}
@@ -98,7 +98,7 @@ export default function ThemeButton({
         </motion.div>
       </AnimatePresence>
       {showLabel && (
-        <span className='font-medium'>{themeConfigs[safeTheme].label}</span>
+        <span className="font-medium">{themeConfigs[safeTheme].label}</span>
       )}
     </motion.button>
   );

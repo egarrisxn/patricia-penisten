@@ -32,8 +32,8 @@ export function WordRotate({
   }, [words, duration]);
 
   return (
-    <div className='overflow-hidden'>
-      <AnimatePresence mode='wait'>
+    <div className="overflow-hidden">
+      <AnimatePresence mode="wait">
         <motion.h1
           key={words[index]}
           className={`${className}`}

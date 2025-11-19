@@ -41,7 +41,7 @@ const NavLogo = ({
   className = "",
 }: NavLogoProps) => {
   return (
-    <Link href={href} className='flex items-center gap-1.5 pl-[1.5px]'>
+    <Link href={href} className="flex items-center gap-1.5 pl-[1.5px]">
       <Image
         src={iconSrc}
         alt={imgAlt}
@@ -50,7 +50,7 @@ const NavLogo = ({
         priority={priority}
         className={`${className} size-9 lg:size-11`}
       />
-      <p className='font-serif leading-none font-semibold tracking-[-0.005em] lg:text-lg'>
+      <p className="font-serif leading-none font-semibold tracking-[-0.005em] lg:text-lg">
         {primary}
         <br />
         {secondary}
@@ -69,7 +69,7 @@ const NavLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(
         {...rest}
       >
         {name}
-        <span className='absolute -bottom-0.5 left-0 block h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full'></span>
+        <span className="absolute -bottom-0.5 left-0 block h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
       </Link>
     );
   }
@@ -95,18 +95,18 @@ const Navbar = ({
 
   return (
     <header className={headerClasses}>
-      <div className='mx-auto flex items-center justify-between px-3 py-4 sm:px-2 md:px-4'>
-        <div className='flex items-center gap-2.5 lg:gap-4 2xl:gap-6'>
+      <div className="mx-auto flex items-center justify-between px-3 py-4 sm:px-2 md:px-4">
+        <div className="flex items-center gap-2.5 lg:gap-4 2xl:gap-6">
           {logo}
           {extraLeft}
         </div>
-        <div className='flex items-center gap-2.5 lg:gap-4 2xl:gap-6'>
-          <nav className='hidden gap-2.5 sm:flex lg:gap-4 2xl:gap-8'>
+        <div className="flex items-center gap-2.5 lg:gap-4 2xl:gap-6">
+          <nav className="hidden gap-2.5 sm:flex lg:gap-4 2xl:gap-8">
             {navLinks.map((link) => (
               <NavLink key={link.name} {...link} />
             ))}
           </nav>
-          <nav className='flex sm:hidden'>{extraRight}</nav>
+          <nav className="flex sm:hidden">{extraRight}</nav>
           <ThemeButton />
         </div>
       </div>

@@ -21,12 +21,12 @@ export default function PendingSection({
 
   if (!hasPending) {
     return (
-      <div className='py-12 text-center'>
-        <Users className='mx-auto mb-4 size-16 text-muted-foreground/70' />
-        <h3 className='mb-2 text-lg font-semibold text-accent-foreground'>
+      <div className="py-12 text-center">
+        <Users className="mx-auto mb-4 size-16 text-muted-foreground/70" />
+        <h3 className="mb-2 text-lg font-semibold text-accent-foreground">
           No pending submissions
         </h3>
-        <p className='text-muted-foreground'>
+        <p className="text-muted-foreground">
           All submissions have been reviewed!
         </p>
       </div>
@@ -34,13 +34,13 @@ export default function PendingSection({
   }
 
   return (
-    <div className='space-y-8'>
+    <div className="space-y-8">
       {pendingPhotos.length > 0 && (
         <div>
-          <h3 className='mb-4 text-lg font-semibold text-accent-foreground'>
+          <h3 className="mb-4 text-lg font-semibold text-accent-foreground">
             Pending Photos
           </h3>
-          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {pendingPhotos.map((photo) => (
               <PhotoCard
                 key={photo.id}
@@ -57,10 +57,10 @@ export default function PendingSection({
 
       {pendingEntries.length > 0 && (
         <div>
-          <h3 className='mb-4 text-lg font-semibold text-accent-foreground'>
+          <h3 className="mb-4 text-lg font-semibold text-accent-foreground">
             Pending Entries
           </h3>
-          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
             {pendingEntries.map((entry) => (
               <EntryCard
                 key={entry.id}

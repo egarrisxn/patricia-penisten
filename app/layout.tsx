@@ -1,4 +1,3 @@
-import "./globals.css";
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
@@ -6,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SITE_DATA } from "@/lib/config";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/app/_components/theme-provider";
+import "./globals.css";
 
 const fontSans = Roboto({
   variable: "--font-sans",
@@ -70,21 +70,16 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang='en'
-      suppressHydrationWarning
-      // data-scroll-behavior='smooth'
-      // className='scroll-smooth'
-    >
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name='apple-mobile-web-app-title' content={SITE_DATA.title} />
+        <meta name="apple-mobile-web-app-title" content={SITE_DATA.title} />
       </head>
       <body
         className={`${fontSans.variable} ${fontSerif.variable} overflow-x-contain font-sans antialiased`}
       >
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
+          attribute="class"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
