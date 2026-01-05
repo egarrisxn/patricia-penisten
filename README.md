@@ -25,7 +25,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-Have questions, feedback, or concerns?
+Have questions, comments, or concerns?
 
 - GitHub: [@egarrisxn](https://github.com/egarrisxn)
 - Email: **egarrisxn@gmail.com**
